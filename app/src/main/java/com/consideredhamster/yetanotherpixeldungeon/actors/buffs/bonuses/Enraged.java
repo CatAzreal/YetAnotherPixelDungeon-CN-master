@@ -29,14 +29,14 @@ public class Enraged extends Bonus {
 
     @Override
     public String toString() {
-        return "Enraged";
+        return "狂怒";
     }
 
     @Override
-    public String statusMessage() { return "enraged"; }
+    public String statusMessage() { return "狂怒"; }
 
     @Override
-    public String playerMessage() { return "You. Feel. REALLY. ANGRY!"; }
+    public String playerMessage() { return "我-要-撕-了-你-们-这-些-杂-碎！"; }
 
     @Override
     public int icon() {
@@ -55,8 +55,7 @@ public class Enraged extends Bonus {
 
     @Override
     public String description() {
-        return "Murderous rage boils in your veins. Your damage is increased, and every kill will " +
-                "renew duration of this buff.";
+        return "怒火所激发的杀戮本能正在你的血液中游走。你现在能够造成更高的伤害，并且每次击杀都会刷新该增益的持续时间。";
     }
 
     public void reset( int dur ) {

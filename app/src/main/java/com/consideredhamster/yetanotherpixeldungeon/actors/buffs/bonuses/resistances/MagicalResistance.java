@@ -27,15 +27,15 @@ public class MagicalResistance extends ElementResistance {
 	
 	@Override
 	public String toString() {
-		return "Magical resistance";
+		return "魔法抗性";
 	}
 
     @Override
-    public String statusMessage() { return "magical resistance"; }
+    public String statusMessage() { return "魔法抗性"; }
 
     @Override
     public String playerMessage() {
-        return "Your some kind of protective aura.";
+        return "你感受到身体周遭围绕着一股庇护力场。";
     }
 
     @Override
@@ -55,7 +55,6 @@ public class MagicalResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "You fell a kind of a faint protective aura around your body. " +
-            "Your resistance to magical damage such as magic missiles or disintegration is increased.";
+        return "你感受到身体周遭围绕着一股庇护力场。针对魔法飞弹，解离射线等法术伤害的抗性得到增强。";
     }
 }

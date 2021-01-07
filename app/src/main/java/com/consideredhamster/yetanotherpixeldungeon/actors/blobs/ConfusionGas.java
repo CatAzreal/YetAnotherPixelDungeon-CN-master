@@ -51,6 +51,6 @@ public class ConfusionGas extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "A cloud of confusion gas is swirling here.";
+		return "这里盘绕着一片致眩气体。";
 	}
 }

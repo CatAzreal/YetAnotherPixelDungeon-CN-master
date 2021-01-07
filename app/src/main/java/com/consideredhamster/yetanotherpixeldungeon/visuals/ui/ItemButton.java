@@ -50,7 +50,7 @@ public class ItemButton extends Component {
             };
             @Override
             protected void onTouchUp() {
-                bg.resetColorAlpha();
+                bg.resetColor();
             }
             @Override
             protected void onClick() {

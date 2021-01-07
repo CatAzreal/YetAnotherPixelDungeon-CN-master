@@ -39,7 +39,7 @@ public class Fire extends Blob {
     public Fire() {
         super();
 
-        name = "raging fire";
+        name = "烈火";
     }
 
 	@Override
@@ -172,6 +172,6 @@ public class Fire extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "A fire is raging here. Better avoid it.";
+		return "一团火焰正在这里肆虐。最好避开这里。";
 	}
 }

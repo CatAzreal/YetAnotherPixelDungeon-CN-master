@@ -61,7 +61,7 @@ public class PrefsButton extends Button {
 	
 	@Override
 	protected void onTouchUp() {
-		image.resetColorAlpha();
+		image.resetColor();
 	}
 	
 	@Override

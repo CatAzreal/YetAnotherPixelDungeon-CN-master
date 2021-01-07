@@ -27,15 +27,15 @@ public class MindResistance extends ElementResistance {
 
 	@Override
 	public String toString() {
-		return "Mind Resistance";
+		return "精神抗性";
 	}
 
     @Override
-    public String statusMessage() { return "mind resistance"; }
+    public String statusMessage() { return "精神抗性"; }
 
     @Override
     public String playerMessage() {
-        return "You feel totally awake.";
+        return "你现在异常清醒。";
     }
 
     @Override
@@ -50,7 +50,6 @@ public class MindResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "You feel totally awake, nothing can interrupt your thought processes. " +
-            "Your resistance to negative conditions affecting your mind is increased.";
+        return "你感觉自己现在异常清醒，任何情况都不会中断自己的思绪。针对精神的负面状态抗性得到增强。";
     }
 }

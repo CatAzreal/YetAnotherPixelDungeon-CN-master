@@ -171,8 +171,8 @@ public class ItemSlot extends Button {
 
             } else {
 
-                bottomLeft.resetColorAlpha();
-                topLeft.resetColorAlpha();
+                bottomLeft.resetColor();
+                topLeft.resetColor();
 
             }
 
@@ -193,7 +193,7 @@ public class ItemSlot extends Button {
 					if (str > Dungeon.hero.STR()) {
 						topRight.hardlight( DEGRADED );
 					} else {
-						topRight.resetColorAlpha();
+						topRight.resetColor();
 					}
 					
 				} else {
@@ -207,7 +207,7 @@ public class ItemSlot extends Button {
 			} else if( item.shortName != null && item.isTypeKnown() ) {
 
                 topRight.text( Utils.format( "%s", item.shortName ) );
-                topRight.resetColorAlpha();
+                topRight.resetColor();
                 topRight.measure();
 
             } else if( item instanceof Waterskin ) {

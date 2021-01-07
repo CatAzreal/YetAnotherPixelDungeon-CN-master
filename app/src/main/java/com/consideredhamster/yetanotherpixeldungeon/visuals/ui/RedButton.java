@@ -23,23 +23,26 @@ package com.consideredhamster.yetanotherpixeldungeon.visuals.ui;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.NinePatch;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.ui.Button;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Chrome;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
 
+import static com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene.align;
+
 public class RedButton extends Button {
 	
 	protected NinePatch bg;
-	protected BitmapText text;
+	protected RenderedText text;
 	protected Image icon;
 			
 	public RedButton( String label ) {
 		super();
 		
 		text.text( label );
-		text.measure();
+		align(text);
 	}
 	
 	@Override
@@ -49,7 +52,7 @@ public class RedButton extends Button {
 		bg = Chrome.get( Chrome.Type.BUTTON );
 		add( bg );
 		
-		text = PixelScene.createText( 9 );
+		text = PixelScene.renderText( 7 );
 		add( text );
 	}
 	
@@ -79,7 +82,7 @@ public class RedButton extends Button {
 	
 	@Override
 	protected void onTouchUp() {
-		bg.resetColorAlpha();
+		bg.resetColor();
 	};
 	
 	public void enable( boolean value ) {
@@ -89,7 +92,7 @@ public class RedButton extends Button {
 	
 	public void text( String value ) {
 		text.text( value );
-		text.measure();
+		align(text);
 		layout();
 	}
 	

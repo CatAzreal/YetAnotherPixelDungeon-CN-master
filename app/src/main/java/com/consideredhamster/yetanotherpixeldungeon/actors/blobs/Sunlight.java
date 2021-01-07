@@ -125,6 +125,6 @@ public class Sunlight extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "Shafts of light pierce the gloom of the underground, restoring life of everything they touch.";
+		return "阳光刺破了地牢中的黑暗，为其碰触的所有活物带来生机。";
 	}
 }

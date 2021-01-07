@@ -70,6 +70,6 @@ public class Darkness extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "A cloud of impenetrable darkness is swirling here, obstructing your vision.";
+		return "一团无法被光线刺穿的黑暗在此盘旋，阻挡着你的视线。";
 	}
 }

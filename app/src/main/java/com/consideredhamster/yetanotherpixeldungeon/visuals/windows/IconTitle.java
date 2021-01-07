@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Component;
@@ -32,88 +33,89 @@ import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
 
 public class IconTitle extends Component {
 
-	private static final float FONT_SIZE = 9;
-	
+	private static final float FONT_SIZE = 8;
+
 	private static final float GAP = 2;
-	
+
 	protected Image imIcon;
-	protected BitmapTextMultiline tfLabel;
+	protected RenderedTextMultiline tfLabel;
 	protected HealthBar health;
-	
+
 	private float healthLvl = Float.NaN;
-	
+
 	public IconTitle() {
 		super();
 	}
-	
+
 	public IconTitle( Item item ) {
-		this( 
-			new ItemSprite( item.image(), item.glowing() ), 
+		this(
+			new ItemSprite( item.image(), item.glowing() ),
 			Utils.capitalize( item.toString() ) );
 	}
-	
+
 	public IconTitle( Image icon, String label ) {
 		super();
-		
+
 		icon( icon );
 		label( label );
 	}
-	
+
 	@Override
 	protected void createChildren() {
 		imIcon = new Image();
 		add( imIcon );
-		
-		tfLabel = PixelScene.createMultiline( FONT_SIZE );
+
+		tfLabel = PixelScene.renderMultiline((int) FONT_SIZE);
 		tfLabel.hardlight( Window.TITLE_COLOR );
 		add( tfLabel );
-		
+
 		health = new HealthBar();
 		add( health );
 	}
-	
+
 	@Override
 	protected void layout() {
-		
+
 		health.visible = !Float.isNaN( healthLvl );
-		
+
 		imIcon.x = x;
 		imIcon.y = y;
-		
-		tfLabel.x = PixelScene.align( PixelScene.uiCamera, imIcon.x + imIcon.width() + GAP );
-		tfLabel.maxWidth = (int)(width - tfLabel.x);
-		tfLabel.measure();
-		tfLabel.y =  PixelScene.align( PixelScene.uiCamera,
-			imIcon.height > tfLabel.height() ?
-				imIcon.y + (imIcon.height() - tfLabel.baseLine()) / 2 :
-				imIcon.y );
-		
+
+		float x = PixelScene.align( PixelScene.uiCamera, imIcon.x + imIcon.width() + GAP );
+		float y = PixelScene.align( PixelScene.uiCamera,
+                imIcon.height > tfLabel.height() ?
+                        imIcon.y + (imIcon.height() - tfLabel.bottom()) / 2 :
+                        imIcon.y );
+		tfLabel.setPos(x,y);
+		tfLabel.maxWidth((int) (width - x));
+        PixelScene.align(tfLabel);
+
 		if (health.visible) {
-			health.setRect( tfLabel.x, Math.max( tfLabel.y + tfLabel.height(), imIcon.y + imIcon.height() - health.height() ), tfLabel.maxWidth, 0 );
+			health.setRect( x, Math.max( y + tfLabel.height(), imIcon.y + imIcon.height() - health.height() ), tfLabel.maxWidth(), 0 );
 			height = health.bottom();
 		} else {
-			height = Math.max( imIcon.y + imIcon.height(), tfLabel.y + tfLabel.height() );
+			height = Math.max( imIcon.y + imIcon.height(), y + tfLabel.height() );
 		}
 	}
-	
+
 	public void icon( Image icon ) {
 		remove( imIcon );
 		add( imIcon = icon );
 	}
-	
+
 	public void label( String label ) {
 		tfLabel.text( label );
 	}
-	
+
 	public void label( String label, int color ) {
 		tfLabel.text( label );
 		tfLabel.hardlight( color );
 	}
-	
+
 	public void color( int color ) {
 		tfLabel.hardlight( color );
 	}
-	
+
 	public void health( float value ) {
 		health.level( healthLvl = value );
 		layout();

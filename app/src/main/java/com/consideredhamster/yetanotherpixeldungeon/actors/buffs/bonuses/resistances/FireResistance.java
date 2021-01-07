@@ -27,15 +27,15 @@ public class FireResistance extends ElementResistance {
 
 	@Override
 	public String toString() {
-		return "Fire Resistance";
+		return "火焰抗性";
 	}
 
     @Override
-    public String statusMessage() { return "fire resistance"; }
+    public String statusMessage() { return "火焰抗性"; }
 
     @Override
     public String playerMessage() {
-        return "You feel inner warmth.";
+        return "你感受到了体内燃起的温暖。";
     }
 
     @Override
@@ -50,7 +50,6 @@ public class FireResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "You feel an odd warmth inside, as if something was burning deep within you. " +
-                "Your resistance to fire damage is increased.";
+        return "一股暖意席卷全身，就像是体内有什么在燃烧一般。你的火焰抗性得到增强";
     }
 }

@@ -73,6 +73,7 @@ public class InterlevelScene extends PixelScene {
 
 	public static boolean fallIntoPit;
 
+	//todo: The tips are supposed to switch every few seconds but the game seems refused to do so with renderedText
 	private static final String[] TIPS = {
 
 			// GENERAL
@@ -86,7 +87,7 @@ public class InterlevelScene extends PixelScene {
 			"感知属性影响侦察陷阱和周边隐藏门所需的时间",
 			"感知属性影响你被动发现周边隐藏门的概率",
 			"感知属性影响你探索或睡眠时听见周遭敌人声音的几率",
-			"感知属性影响你在格挡时弹反敌人的几率",
+			"感知属性影响你在格挡时防反敌人的几率",
 
 			"潜行属性影响在商店可行窃的次数和成功几率",
 			"潜行属性影响你伏击敌人的几率",
@@ -118,7 +119,7 @@ public class InterlevelScene extends PixelScene {
 			"升级布制护甲能够进一步提高其属性加值",
 
 			"格挡攻击的概率取决于你持有盾牌的护甲等级或武器伤害",
-			"成功格挡攻击有概率弹反你的敌人，让你获得反击敌人的空当",
+			"成功格挡攻击有概率防反你的敌人，让你获得反击敌人的空当",
 
 			"额外力量可以降低重型装备的惩罚",
 			"你可以通过长时间使用武器，护甲，法杖和戒指来自然鉴定其性质",
@@ -178,8 +179,8 @@ public class InterlevelScene extends PixelScene {
 			"浮空药剂在效力期间会提供额外的移动速度和闪避能力",
 			"浮空药剂还能够用于安全降落在深渊下方",
 
-			"隐身时你的潜行能力也会提高，能够进一步降低商店行窃的难度",
-			"敌人在尝试移动到你的所在位置时会解除你的隐身效果",
+			"隐形时你的潜行能力也会提高，能够进一步降低商店行窃的难度",
+			"敌人在尝试移动到你的所在位置时会解除你的隐形效果",
 
 			"饮用护盾药剂也能够在效力期间提高你的物理抗性",
 			"护盾药剂的效果可以和装备相互叠加",

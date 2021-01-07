@@ -21,6 +21,7 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.YetAnotherPixelDungeon;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.items.Item;
@@ -41,8 +42,8 @@ public class WndItem extends Window {
 	private static final int WIDTH_P = 120;
     private static final int WIDTH_L = 240;
 
-    private BitmapTextMultiline normal;
-    private BitmapTextMultiline highlighted;
+    private RenderedTextMultiline normal;
+//    private BitmapTextMultiline highlighted;
 	
 	public WndItem( final WndBag owner, final Item item ) {	
 		
@@ -74,30 +75,15 @@ public class WndItem extends Window {
 //		info.y = titlebar.bottom() + GAP;
 //		add( info );
 
-        Highlighter hl = new Highlighter( item.info() );
-
-        normal = PixelScene.createMultiline( hl.text, 6 );
-        normal.maxWidth = width;
-        normal.measure();
-        normal.x = titlebar.left();
-        normal.y = titlebar.bottom() + GAP;
+        normal = PixelScene.renderMultiline( item.info(), 5 );
+        normal.maxWidth(width);
+        PixelScene.align(normal);
+        float wx = titlebar.left();
+        float wy = titlebar.bottom() + GAP;
+        normal.setPos(wx,wy);
         add( normal );
-
-        if (hl.isHighlighted()) {
-            normal.mask = hl.inverted();
-
-            highlighted = PixelScene.createMultiline( hl.text, 6 );
-            highlighted.maxWidth = normal.maxWidth;
-            highlighted.measure();
-            highlighted.x = normal.x;
-            highlighted.y = normal.y;
-            add( highlighted );
-
-            highlighted.mask = hl.mask;
-            highlighted.hardlight( TITLE_COLOR );
-        }
 	
-		float y = (int)(normal.y + normal.height()) + GAP;
+		float y = (int)(wy + normal.height()) + GAP;
 //		float y = info.y + info.height() + GAP;
 		float x = 0;
 		

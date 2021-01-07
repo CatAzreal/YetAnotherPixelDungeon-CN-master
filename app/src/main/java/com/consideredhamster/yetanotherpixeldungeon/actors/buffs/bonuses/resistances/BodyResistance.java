@@ -27,15 +27,15 @@ public class BodyResistance extends ElementResistance {
 
 	@Override
 	public String toString() {
-		return "Body resistance";
+		return "状态抗性";
 	}
 
     @Override
-    public String statusMessage() { return "body resistance"; }
+    public String statusMessage() { return "状态抗性"; }
 
     @Override
     public String playerMessage() {
-        return "You feel unnaturally healthy.";
+        return "你感觉自己的身体异常健康。";
     }
 
     @Override
@@ -50,7 +50,6 @@ public class BodyResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "You feel unnaturally healthy as if your body started to work in overtime. " +
-            "Your resistance to negative conditions affecting your body is increased.";
+        return "你的身体异常健康，如同经历千锤百炼一般。针对身体的负面状态抗性得到增强。";
     }
 }

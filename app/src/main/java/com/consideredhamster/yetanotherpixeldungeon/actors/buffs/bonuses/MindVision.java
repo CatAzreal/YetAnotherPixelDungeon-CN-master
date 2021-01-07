@@ -29,17 +29,17 @@ public class MindVision extends Bonus {
 	
 	@Override
 	public String toString() {
-		return "Mind vision";
+		return "灵视";
 	}
 
     @Override
-    public String statusMessage() { return "mind vision"; }
+    public String statusMessage() { return "灵视"; }
 
     @Override
     public String playerMessage() {
         return Dungeon.level.mobs.size() > 0 ?
-            "You can somehow feel the presence of other creatures' minds!" :
-            "You can somehow tell that you are alone on this level at the moment.";
+            "你获取到了其他生物的感知！" :
+            "你认为自己能确定本层目前没有其他生命的活动迹象";
     }
 
     @Override
@@ -55,9 +55,7 @@ public class MindVision extends Bonus {
 
     @Override
     public String description() {
-        return "Woah, dude... Your mind feels completely open and connected to the minds of other " +
-                "creatures on the current floor. This makes it possible for you to see their positions, " +
-                "and increases your awareness.";
+        return "哇哦...你的知觉扩张并投射到了本层的其他生物上。你现在的感知能力获得了增强，并且能清楚了解到其他生物的所在位置。";
     }
 
 	@Override

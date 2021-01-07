@@ -330,7 +330,7 @@ public class Toolbar extends Component {
 		@Override
 		protected void onTouchUp() {
 			if (active) {
-				base.resetColorAlpha();
+				base.resetColor();
 			} else {
 				base.tint( BGCOLOR, 0.7f );
 			}
@@ -339,7 +339,7 @@ public class Toolbar extends Component {
 		public void enable( boolean value ) {
 			if (value != active) {
 				if (value) {
-					base.resetColorAlpha();
+					base.resetColor();
 				} else {
 					base.tint( BGCOLOR, 0.7f );
 				}

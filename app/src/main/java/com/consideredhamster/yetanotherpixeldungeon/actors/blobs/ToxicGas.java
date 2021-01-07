@@ -39,7 +39,7 @@ public class ToxicGas extends Blob {
     public ToxicGas() {
         super();
 
-        name = "cloud of gas";
+        name = "毒气";
     }
 
 	@Override
@@ -92,7 +92,7 @@ public class ToxicGas extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "A greenish cloud of toxic gas is swirling here.";
+		return "一团绿色的毒气在此盘旋。";
 	}
 	
 }

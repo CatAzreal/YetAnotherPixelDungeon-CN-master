@@ -30,6 +30,7 @@ import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TouchArea;
 import com.watabou.noosa.audio.Music;
 import com.watabou.noosa.audio.Sample;
@@ -45,10 +46,10 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.PrefsButton;
 
 public class TitleScene extends PixelScene {
 
-    private static final String TXT_PLAY		= "Play";
-    private static final String TXT_HIGHSCORES	= "Rankings";
-    private static final String TXT_BADGES		= "Badges";
-    private static final String TXT_ABOUT		= "About";
+    private static final String TXT_PLAY		= "开始";
+    private static final String TXT_HIGHSCORES	= "排名";
+    private static final String TXT_BADGES		= "徽章";
+    private static final String TXT_ABOUT		= "关于";
 
     private static final int COLOR_NORMAL		= 0x444444;
     private static final int COLOR_BRIGHT	    = 0xCACFC2;
@@ -224,14 +225,14 @@ public class TitleScene extends PixelScene {
         private static final int IMAGE_SIZE	= 32;
 
         private Image image;
-        private BitmapText label;
+        private RenderedText label;
 
         public DashboardItem( String text, int index ) {
             super();
 
             image.frame( image.texture.uvRect( index * IMAGE_SIZE, 0, (index + 1) * IMAGE_SIZE, IMAGE_SIZE ) );
             this.label.text( text );
-            this.label.measure();
+            align(label);
 
             setSize( SIZE, SIZE );
         }
@@ -243,7 +244,7 @@ public class TitleScene extends PixelScene {
             image = new Image( Assets.DASHBOARD );
             add( image );
 
-            label = createText( 9 );
+            label = renderText( 8 );
             add( label );
         }
 
@@ -266,7 +267,7 @@ public class TitleScene extends PixelScene {
 
         @Override
         protected void onTouchUp() {
-            image.resetColorAlpha();
+            image.resetColor();
         }
     }
 }

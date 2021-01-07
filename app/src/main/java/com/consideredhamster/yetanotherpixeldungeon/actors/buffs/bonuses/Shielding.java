@@ -49,14 +49,14 @@ public class Shielding extends Bonus {
 
     @Override
     public String toString() {
-        return "Shield";
+        return "护障";
     }
 
     @Override
-    public String statusMessage() { return "shield"; }
+    public String statusMessage() { return "护障"; }
 
     @Override
-    public String playerMessage() { return "You are surrounded by a magical barrier!"; }
+    public String playerMessage() { return "你被一道魔法壁障保护了起来！"; }
 
     @Override
     public int icon() {
@@ -75,6 +75,6 @@ public class Shielding extends Bonus {
 
 	@Override
     public String description() {
-        return "A holy aura surrounds you, increasing your armor class and resistance against elemental damage.";
+        return "神圣的光壁笼罩着你的全身，提升了你的护甲等级与元素抗性。";
     }
 }

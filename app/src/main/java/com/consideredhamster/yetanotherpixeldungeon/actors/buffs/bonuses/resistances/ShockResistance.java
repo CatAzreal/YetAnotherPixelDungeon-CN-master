@@ -27,15 +27,15 @@ public class ShockResistance extends ElementResistance {
 
 	@Override
 	public String toString() {
-		return "Shock Resistance";
+		return "电击抗性";
 	}
 
     @Override
-    public String statusMessage() { return "shock resistance"; }
+    public String statusMessage() { return "电击抗性"; }
 
     @Override
     public String playerMessage() {
-        return "You feel your hair stand on their own.";
+        return "电流在你的体表游走，毛发因此纷纷直立起来。";
     }
 
     @Override
@@ -50,7 +50,6 @@ public class ShockResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "Air around you seems to be filled with static electricity, making your hair stand " +
-                "on their own. Your resistance to electrical damage is increased.";
+        return "周围的空气充满了静电。对电击伤害的抗性得到增强。";
     }
 }

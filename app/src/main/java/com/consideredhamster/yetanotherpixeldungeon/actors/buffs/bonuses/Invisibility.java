@@ -31,18 +31,18 @@ import com.watabou.noosa.audio.Sample;
 public class Invisibility extends Bonus {
 
     private static final String TXT_DISPEL		=
-            "Invisibility is dispelled!";
+            "隐形被解除！";
 
     @Override
     public String toString() {
-        return "Invisible";
+        return "隐形";
     }
 
     @Override
-    public String statusMessage() { return "invisible"; }
+    public String statusMessage() { return "隐形"; }
 
     @Override
-    public String playerMessage() { return "You see your hands turn invisible!"; }
+    public String playerMessage() { return "你看到自己的手正在失去形体！"; }
 
     @Override
     public int icon() {
@@ -68,9 +68,9 @@ public class Invisibility extends Bonus {
 
     @Override
     public String description() {
-        return "Your body is almost transparent, so enemies are less likely to notice you (but they " +
-                "still can try to find you) and stealing from shops becomes easier. Attacking, " +
-                "stealing or being bumped into will dispel this effect.";
+        return "你和周围的地形完全融为一体，使你不可能被看到(但发现你的敌人仍会试图找到你)，并降低在商店偷窃的难度。 \n" +
+                "\n" +
+                "攻击，偷窃或在敌人尝试移入你的所在位置时会立即解除隐形效果。 ";
     }
 
 	@Override

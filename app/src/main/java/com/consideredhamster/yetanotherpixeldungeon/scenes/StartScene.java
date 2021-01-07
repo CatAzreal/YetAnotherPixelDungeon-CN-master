@@ -28,6 +28,7 @@ import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.ui.Button;
@@ -52,11 +53,11 @@ public class StartScene extends PixelScene {
 	private static final float BUTTON_HEIGHT	= 24;
 	private static final float GAP				= 2;
 	
-	private static final String TXT_LOAD	= "Load Game";
-	private static final String TXT_NEW		= "New Game";
+	private static final String TXT_LOAD	= "加载游戏";
+	private static final String TXT_NEW		= "开始游戏";
 	
-	private static final String TXT_ERASE		= "Erase current game";
-	private static final String TXT_DPTH_LVL	= "Depth: %d, level: %d";
+	private static final String TXT_ERASE		= "将覆盖当前游戏";
+	private static final String TXT_DPTH_LVL	= "第%d层, %d级";
 	
 	private static final String TXT_REALLY	= "Do you really want to start new game?";
 	private static final String TXT_WARNING	= "Your current game progress will be erased.";
@@ -404,7 +405,7 @@ public class StartScene extends PixelScene {
 		private static final int SECONDARY_COLOR_N	= 0xCACFC2;
 		private static final int SECONDARY_COLOR_H	= 0xFFFF88;
 		
-		private BitmapText secondary;
+		private RenderedText secondary;
 		
 		public GameButton( String primary ) {
 			super( primary );
@@ -416,7 +417,7 @@ public class StartScene extends PixelScene {
 		protected void createChildren() {
 			super.createChildren();
 			
-			secondary = createText( 6 );
+			secondary = renderText( 6 );
 			add( secondary );
 		}
 		
@@ -436,7 +437,7 @@ public class StartScene extends PixelScene {
 		
 		public void secondary( String text, boolean highlighted ) {
 			secondary.text( text );
-			secondary.measure();
+			align(secondary);
 			
 			secondary.hardlight( highlighted ? SECONDARY_COLOR_H : SECONDARY_COLOR_N );
 		}
@@ -459,7 +460,7 @@ public class StartScene extends PixelScene {
 		private HeroClass cl;
 		
 		private Image avatar;
-		private BitmapText name;
+		private RenderedText name;
 		private Emitter emitter;
 		
 		private float brightness;
@@ -484,7 +485,7 @@ public class StartScene extends PixelScene {
 			}
 			
 			name.text( cl.name() );
-			name.measure();
+			align(name);
 			name.hardlight( normal );
 			
 			brightness = MIN_BRIGHTNESS;
@@ -499,7 +500,7 @@ public class StartScene extends PixelScene {
 			avatar = new Image( Assets.AVATARS );
 			add( avatar );
 			
-			name = PixelScene.createText( 9 );
+			name = PixelScene.renderText( 9 );
 			add( name );
 			
 			emitter = new Emitter();

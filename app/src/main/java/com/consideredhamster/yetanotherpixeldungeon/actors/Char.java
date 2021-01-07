@@ -69,15 +69,15 @@ public abstract class Char extends Actor {
 
 //	protected static final String TXT_HIT		= "%s hit %s";
 //	protected static final String TXT_KILL		= "You %s...";
-	protected static final String TXT_DEFEAT	= "%s is defeated!";
+	protected static final String TXT_DEFEAT	= "你击败了%s";
 
-	protected static final String TXT_DODGED	= "dodged";
-	protected static final String TXT_MISSED	= "missed";
+	protected static final String TXT_DODGED	= "闪避";
+	protected static final String TXT_MISSED	= "未命中";
 
-	protected static final String TXT_GUARD 	= "guard";
-	protected static final String TXT_AMBUSH	= "sneak attack!";
-	protected static final String TXT_COUNTER	= "counter attack!";
-	protected static final String TXT_EXPOSED	= "exposed!";
+	protected static final String TXT_GUARD 	= "格挡";
+	protected static final String TXT_AMBUSH	= "伏击！";
+	protected static final String TXT_COUNTER	= "反击！";
+	protected static final String TXT_EXPOSED	= "防反！";
 
 //	private static final String TXT_YOU_MISSED	= "%s %s your attack";
 //	private static final String TXT_SMB_MISSED	= "%s %s %s's attack";
@@ -223,7 +223,7 @@ public abstract class Char extends Actor {
                     GameScene.flash(0x330000);
                 }
 
-                Dungeon.hero.interrupt( "You were awoken by an attack!" );
+                Dungeon.hero.interrupt( "你被敌人的攻击惊醒了！" );
             }
 
             if (visibleFight) {
@@ -516,7 +516,7 @@ public abstract class Char extends Actor {
                 dmg += ( dmg / 2 + ( Random.Int(2) < dmg % 2 ? 1 : 0 ) );
             }
 
-            Dungeon.hero.interrupt( "You were awoken by an attack!" );
+            Dungeon.hero.interrupt( "你被敌人的攻击惊醒了！" );
         }
 
         boolean amplified = false;

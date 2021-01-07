@@ -36,11 +36,11 @@ public class Mending extends Bonus {
 
     @Override
     public String toString() {
-        return "Mending";
+        return "愈合";
     }
 
     @Override
-    public String statusMessage() { return "mending"; }
+    public String statusMessage() { return "愈合"; }
 
     @Override
     public int icon() {
@@ -59,8 +59,7 @@ public class Mending extends Bonus {
 
     @Override
     public String description() {
-        return "Warm, tingly sensation flows under your skin, and you can feel your wounds closing " +
-                "at an accelerated rate.";
+        return "温暖舒适的感觉遍布着整个身体，你感受到自己身上的伤口正在高速愈合";
     }
 
     @Override

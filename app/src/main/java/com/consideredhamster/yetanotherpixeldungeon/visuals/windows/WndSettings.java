@@ -32,6 +32,8 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.CheckBox;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RedButton;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Window;
 
+import static com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene.align;
+
 public class WndSettings extends Window {
 	
 	private static final String TXT_ZOOM_IN			= "+";
@@ -122,7 +124,7 @@ public class WndSettings extends Window {
                     YetAnotherPixelDungeon.searchButton( val );
 
                     text.text( searchButtonsText( val ) );
-                    text.measure();
+                    align(text);
                     layout();
                 }
             };
@@ -231,7 +233,7 @@ public class WndSettings extends Window {
                 YetAnotherPixelDungeon.loadingTips(val);
 
                 text.text( loadingTipsText( val ) );
-                text.measure();
+                align(text);
                 layout();
             }
         };

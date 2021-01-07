@@ -38,7 +38,7 @@ public class Miasma extends Blob {
     public Miasma() {
         super();
 
-        name = "cloud of miasma";
+        name = "瘴气";
     }
 
 	@Override
@@ -111,7 +111,7 @@ public class Miasma extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "A blackish cloud of suffocating miasma is swirling here.";
+		return "一团可致人窒息的深色瘴气在此盘旋。";
 	}
 	
 //	@Override

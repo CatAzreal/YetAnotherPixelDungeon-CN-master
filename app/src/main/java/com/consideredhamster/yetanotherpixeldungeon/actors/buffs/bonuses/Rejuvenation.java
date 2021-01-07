@@ -39,16 +39,15 @@ public class Rejuvenation extends Bonus {
 
     @Override
     public String toString() {
-        return "Consecrated";
+        return "化圣";
     }
 
     @Override
-    public String statusMessage() { return "consecrated"; }
+    public String statusMessage() { return "化圣"; }
 
     @Override
     public String description() {
-        return "Being bathed in holy light restores your health. The longer you are affected by " +
-                "this effect, the more health it restores.";
+        return "沐浴在圣光之下，你的生命力开始恢复。在其下滞留愈久，恢复的生命力愈高。";
     }
     @Override
     public boolean act() {

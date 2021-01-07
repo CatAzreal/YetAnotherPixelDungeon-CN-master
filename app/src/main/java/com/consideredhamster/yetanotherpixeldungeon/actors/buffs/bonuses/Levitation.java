@@ -30,14 +30,14 @@ public class Levitation extends Bonus {
 
     @Override
     public String toString() {
-        return "Levitating";
+        return "浮空";
     }
 
     @Override
-    public String statusMessage() { return "levitating"; }
+    public String statusMessage() { return "浮空"; }
 
     @Override
-    public String playerMessage() { return "You start floating in the air!"; }
+    public String playerMessage() { return "你的双脚逐渐离地，身体向空中浮去！"; }
 
     @Override
     public int icon() {
@@ -56,8 +56,7 @@ public class Levitation extends Bonus {
 
     @Override
     public String description() {
-        return "The whole body feels like it is lighter than air! While levitating, traps and " +
-            "terrain effects do not affect you, and your movement speed and dexterity are increased.";
+        return "你感觉自己现在身轻如燕！在浮空状态时，陷阱和地面效果不会影响你，同时你的移动速度和敏捷属性都得到了增强。";
     }
 	
 	@Override

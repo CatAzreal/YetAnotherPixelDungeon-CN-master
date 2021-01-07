@@ -52,7 +52,7 @@ public class IceBlock extends Gizmo {
 	
 	public void melt() {
 
-		target.resetColorAlpha();
+		target.resetColor();
 		killAndErase();
 
 		if (visible) {

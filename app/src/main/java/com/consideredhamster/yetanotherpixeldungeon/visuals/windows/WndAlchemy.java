@@ -21,6 +21,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.ItemButton;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.ItemSlot;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RedButton;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Window;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.ColorBlock;
@@ -29,6 +30,8 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 
 import java.util.ArrayList;
+
+import static com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene.align;
 
 public class WndAlchemy extends Window{
 
@@ -73,12 +76,12 @@ public class WndAlchemy extends Window{
                 "Select two herbs to fill an empty bottle with potion." :
                 "You may select a herb to cook with your piece of raw meat.";
 
-        BitmapTextMultiline message = PixelScene.createMultiline( hint, 6 );
+        RenderedTextMultiline message = PixelScene.renderMultiline( hint, 6 );
 
-        message.maxWidth = WIDTH;
-        message.measure();
+        message.maxWidth(WIDTH);
+        align(message);
 
-        message.y = h;
+        message.setPos(0,h);
         add( message );
 
         h += message.height() + GAP;

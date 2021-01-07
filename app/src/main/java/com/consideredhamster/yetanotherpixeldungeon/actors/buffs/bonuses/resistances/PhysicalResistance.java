@@ -27,15 +27,15 @@ public class PhysicalResistance extends ElementResistance {
 	
 	@Override
 	public String toString() {
-		return "Physical resistance";
+		return "物理抗性";
 	}
 
     @Override
-    public String statusMessage() { return "physical resistance"; }
+    public String statusMessage() { return "物理抗性"; }
 
     @Override
     public String playerMessage() {
-        return "Your skin feel tougher.";
+        return "你感觉自己的皮肤变得更加坚硬。";
     }
 
     @Override
@@ -55,7 +55,6 @@ public class PhysicalResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "Somehow your entire skin becomes much tougher without affecting your mobility. " +
-            "Your resistance to physical damage is partially increased.";
+        return "不知为何你全身上下的表皮都变得坚硬无比，而且表皮的变化完全没有影响到自己的行动能力。对物理伤害的抗性得到增强。";
     }
 }

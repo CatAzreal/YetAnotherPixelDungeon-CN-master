@@ -83,8 +83,8 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.windows.WndStory;
 
 public class GameScene extends PixelScene {
 	
-	private static final String TXT_WELCOME			= "Welcome to level %d of Pixel Dungeon!";
-	private static final String TXT_WELCOME_BACK	= "Welcome back to level %d of Pixel Dungeon!";
+	private static final String TXT_WELCOME			= "欢迎来到像素地牢的第%d层！";
+	private static final String TXT_WELCOME_BACK	= "欢迎回到像素地牢的第%d层！";
 //	private static final String TXT_NIGHT_MODE		= "Be cautious, since the dungeon is even more dangerous at night!";
 	
 //	private static final String TXT_CHASM	= "Your steps echo across the dungeon.";
@@ -583,13 +583,13 @@ public class GameScene extends PixelScene {
 	public static void pickUp( Item item ) {
 		scene.toolbar.pickup( item );
 	}
-	
+
 	public static void updateMap() {
 		if (scene != null) {
 			scene.tiles.updated.set(0, 0, Level.WIDTH, Level.HEIGHT);
 		}
 	}
-	
+
 	public static void updateMap( int cell ) {
 		if (scene != null) {
 			scene.tiles.updated.union(cell % Level.WIDTH, cell / Level.WIDTH);

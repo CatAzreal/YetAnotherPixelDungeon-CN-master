@@ -27,15 +27,15 @@ public class AcidResistance extends ElementResistance {
 
 	@Override
 	public String toString() {
-		return "Acid Resistance";
+		return "酸蚀抗性";
 	}
 
     @Override
-    public String statusMessage() { return "acid resistance"; }
+    public String statusMessage() { return "酸蚀抗性"; }
 
     @Override
     public String playerMessage() {
-        return "You feel your skin becoming oily.";
+        return "你感觉自己的皮肤变得异常光滑油腻。";
     }
 
     @Override
@@ -50,7 +50,6 @@ public class AcidResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "Your skin became somewhat oily, and it feels like it should help against caustic " +
-            "blights of all kind. Your resistance to acid damage is increased.";
+        return "你的表皮附着了一层类油脂物，这种物质应该能帮助你抵御各类酸蚀效果。你的酸蚀抗性提高了。";
     }
 }

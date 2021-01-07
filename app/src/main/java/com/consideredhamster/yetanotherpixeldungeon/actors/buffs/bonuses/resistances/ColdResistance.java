@@ -27,15 +27,15 @@ public class ColdResistance extends ElementResistance {
 
 	@Override
 	public String toString() {
-		return "Cold Resistance";
+		return "寒冷抗性";
 	}
 
     @Override
-    public String statusMessage() { return "cold resistance"; }
+    public String statusMessage() { return "寒冷抗性"; }
 
     @Override
     public String playerMessage() {
-        return "You feel soft chill.";
+        return "你感受到了身体内溢出的轻微寒气。";
     }
 
     @Override
@@ -50,7 +50,6 @@ public class ColdResistance extends ElementResistance {
 
     @Override
     public String description() {
-        return "You feel soft chill filling your entire body, numbing your body to the cold breeze " +
-            "of the dungeon. Your resistance to cold is increased.";
+        return "轻微的寒气充满了身体，使你的身体更加适应地牢中的寒风。你的寒冷抗性得到增强。";
     }
 }

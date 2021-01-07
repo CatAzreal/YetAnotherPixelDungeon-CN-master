@@ -41,13 +41,13 @@ import com.watabou.utils.Random;
 public class WellWater extends Blob {
 
     private static final String TXT_PROCCED =
-            "You refill your waterskins in the well.";
+            "你从井里打了些水。";
 
     private static final String TXT_VIAL_IS_FULL =
-            "Your waterskins are already filled.";
+            "你的水袋已经装满。";
 
     private static final String TXT_NO_MORE_WATER =
-            "The well is empty now.";
+            "水井已经无水可打。";
 
     protected int pos;
 

@@ -51,7 +51,7 @@ public class Thunderstorm extends Blob {
     public Thunderstorm() {
         super();
 
-        name = "thunderstorm";
+        name = "雷暴";
     }
 
 	@Override
@@ -198,7 +198,7 @@ public class Thunderstorm extends Blob {
     }
 
     public static void listen() {
-        GLog.i("You hear thunder somewhere not far away.");
+        GLog.i("你听见了不远处响起的雷声。");
         Sample.INSTANCE.play(Assets.SND_BLAST, 1, 1, Random.Float(1.8f, 2.25f));
         Camera.main.shake(2, 0.2f);
     }
@@ -269,7 +269,7 @@ public class Thunderstorm extends Blob {
         }
 
         if( Dungeon.visible[ cell ] ) {
-            GLog.i("Rain fills the well!");
+            GLog.i("井里的雨水被填满了！");
         }
     }
 	
@@ -282,6 +282,6 @@ public class Thunderstorm extends Blob {
 	
 	@Override
 	public String tileDesc() {
-		return "Storm clouds fly under the ceiling here, raining down water and, occasionally, lightning.";
+		return "雷雨云正漂浮在这片区域的上方，对其降下暴雨和阵雷。";
 	}
 }

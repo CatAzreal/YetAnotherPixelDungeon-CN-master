@@ -43,7 +43,7 @@ public class FrigidVapours extends Blob {
     public FrigidVapours() {
         super();
 
-        name = "frigid vapours";
+        name = "冰雾";
     }
 
     @Override
@@ -95,7 +95,7 @@ public class FrigidVapours extends Blob {
 
     @Override
     public String tileDesc() {
-        return "A cloud of freezing vapours is swirling here.";
+        return "一团冰冷刺骨的雾气在此盘旋。";
     }
 
 //
