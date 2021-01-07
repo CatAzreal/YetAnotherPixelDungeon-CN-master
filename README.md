@@ -1,7 +1,8 @@
 Yet Another Pixel Dungeon(CN)
 
-localization & additional code by Jinkeloid
 =======================
+
+-localization & additional code by Jinkeloid
 
 A mobile roguelike RPG, based on the source code of Pixel Dungeon, by Watabou. Main differences from original game are:
 
