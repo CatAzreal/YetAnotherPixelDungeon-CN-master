@@ -144,7 +144,7 @@ public class QuickSlot extends Button implements WndBag.Listener {
 			}
 			@Override
 			protected void onTouchUp() {
-				icon.resetColor();
+				icon.resetColorAlpha();
 			}
 		};
 

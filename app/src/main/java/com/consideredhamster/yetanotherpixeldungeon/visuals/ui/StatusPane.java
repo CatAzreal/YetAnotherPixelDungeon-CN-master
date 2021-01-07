@@ -261,7 +261,7 @@ public class StatusPane extends Component {
 //			avatar.tint( 0xcc0000, 0.4f );
 //			blood.on = true;
 		} else {
-			avatar.resetColor();
+			avatar.resetColorAlpha();
 //			blood.on = false;
 		}
 		
@@ -342,7 +342,7 @@ public class StatusPane extends Component {
 		
 		@Override
 		protected void onTouchUp() {
-			image.resetColor();
+			image.resetColorAlpha();
 		}
 		
 		@Override

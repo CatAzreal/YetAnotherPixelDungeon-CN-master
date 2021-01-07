@@ -232,6 +232,7 @@ public class Game extends Activity implements GLSurfaceView.Renderer, View.OnTou
 		GLES20.glEnable( GL10.GL_SCISSOR_TEST );
 		
 		TextureCache.reload();
+		RenderedText.reloadCache();
 	}
 	
 	protected void destroyGame() {
@@ -305,7 +306,7 @@ public class Game extends Activity implements GLSurfaceView.Renderer, View.OnTou
 		Camera.updateAll();
 	}
 	
-	public static void vibrate( int milliseconds ) {
-		((Vibrator)instance.getSystemService( VIBRATOR_SERVICE )).vibrate( milliseconds );
-	}
+//	public static void vibrate( int milliseconds ) {
+//		((Vibrator)instance.getSystemService( VIBRATOR_SERVICE )).vibrate( milliseconds );
+//	}
 }

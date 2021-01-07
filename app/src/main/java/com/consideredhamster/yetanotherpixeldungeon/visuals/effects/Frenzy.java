@@ -53,7 +53,7 @@ public class Frenzy extends Gizmo {
 
 	public void calm() {
 
-		target.resetColor();
+		target.resetColorAlpha();
 		killAndErase();
 
 	}

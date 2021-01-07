@@ -63,7 +63,7 @@ public class ExitButton extends Button {
 	
 	@Override
 	protected void onTouchUp() {
-		image.resetColor();
+		image.resetColorAlpha();
 	}
 	
 	@Override

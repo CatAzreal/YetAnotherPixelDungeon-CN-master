@@ -484,7 +484,7 @@ public class StartScene extends PixelScene {
 				highlighted = BASIC_HIGHLIGHTED;
 			}
 			
-			name.text( cl.name() );
+			name.text( cl.hname() );
 			align(name);
 			name.hardlight( normal );
 			

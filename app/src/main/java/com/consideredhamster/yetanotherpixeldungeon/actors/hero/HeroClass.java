@@ -64,12 +64,14 @@ import com.watabou.utils.Bundle;
 
 public enum HeroClass {
 
-	WARRIOR( "warrior" ), BRIGAND( "brigand" ), SCHOLAR( "scholar" ), ACOLYTE( "acolyte" );
+	WARRIOR( "warrior","战士" ), BRIGAND( "brigand","盗贼" ), SCHOLAR( "scholar" ,"学者"), ACOLYTE( "acolyte","侍祭" );
 
 	private String title;
+	private String hname;
 	
-	private HeroClass( String title ) {
+	private HeroClass( String title, String hname ) {
 		this.title = title;
+		this.hname = hname;
 	}
 
     public static final String[] WAR_ABOUT = {
@@ -297,7 +299,11 @@ public enum HeroClass {
 	public String title() {
 		return title;
 	}
-	
+
+	public String hname(){
+	    return hname;
+    }
+
 	public String spritesheet() {
 		
 		switch (this) {

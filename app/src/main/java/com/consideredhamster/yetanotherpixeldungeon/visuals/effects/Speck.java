@@ -143,7 +143,7 @@ public class Speck extends Image {
 		this.x = x - origin.x;
 		this.y = y - origin.y;
 		
-		resetColor();
+		resetColorAlpha();
 		scale.set( 1 );
 		speed.set( 0 );
 		acc.set( 0 );

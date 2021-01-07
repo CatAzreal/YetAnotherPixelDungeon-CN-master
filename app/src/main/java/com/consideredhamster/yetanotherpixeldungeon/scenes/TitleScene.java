@@ -267,7 +267,7 @@ public class TitleScene extends PixelScene {
 
         @Override
         protected void onTouchUp() {
-            image.resetColor();
+            image.resetColorAlpha();
         }
     }
 }

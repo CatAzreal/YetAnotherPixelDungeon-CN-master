@@ -82,7 +82,7 @@ public class RedButton extends Button {
 	
 	@Override
 	protected void onTouchUp() {
-		bg.resetColor();
+		bg.resetColorAlpha();
 	};
 	
 	public void enable( boolean value ) {

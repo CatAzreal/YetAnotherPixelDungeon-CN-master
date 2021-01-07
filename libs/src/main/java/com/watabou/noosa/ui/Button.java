@@ -72,7 +72,7 @@ public class Button extends Component {
 					processed = true;
 					onTouchUp();
 					
-					Game.vibrate( 50 );
+//					Game.vibrate( 50 );
 				}
 			}
 		}
