@@ -41,22 +41,22 @@ public class AcidWard extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of acid ward";
+        return "蚀护之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of corrosion";
+        return "淤蚀之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "cover your enemies in caustic ooze on hit and decrease damage from acids";
+        return "被击中时使敌人身上附着腐蚀淤泥，同时降低酸蚀伤害";
     }
 
     @Override
     protected String desc_n() {
-        return "cover you in caustic ooze you on hit";
+        return "被命中时自己会被腐蚀淤泥覆盖";
     }
 
     @Override

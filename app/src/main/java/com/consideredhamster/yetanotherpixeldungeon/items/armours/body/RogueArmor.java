@@ -30,7 +30,7 @@ public class RogueArmor extends BodyArmorCloth {
 //	private static final String AC_SPECIAL = "SMOKE BOMB";
 	
 	{
-		name = "rogue garb";
+		name = "盗贼风衣";
 		image = ItemSpriteSheet.ARMOR_ROGUE;
 
         appearance = 2;
@@ -42,9 +42,7 @@ public class RogueArmor extends BodyArmorCloth {
 
     @Override
     public String desc() {
-        return "This lightweight armor offers more protection from cold than from enemy blows. " +
-                "However, its dark coloration makes it much more difficult to notice its wearer " +
-                "in the darkness of the dungeon.";
+        return "这件衣物比起抵挡敌人攻击更适合御寒。不过它昏暗的颜色可让使用者在地牢的黑暗中更难被察觉。";
     }
 
 //    public RogueArmor() {

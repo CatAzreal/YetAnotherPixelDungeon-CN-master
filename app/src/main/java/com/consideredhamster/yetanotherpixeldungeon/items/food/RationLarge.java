@@ -26,17 +26,16 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class RationLarge extends Food {
 
 	{
-		name = "dwarven pasty";
+		name = "矮人馅饼";
 		image = ItemSpriteSheet.PASTY;
 
         energy = Satiety.MAXIMUM;
-        message = "That food tasted delicious!";
+        message = "吃起来太美味了！";
     }
 	
 	@Override
 	public String desc() {
-		return "This is an authentic dwarven pasty with traditional filling of beer and sand. " +
-               "Food like these can last for years without spoiling.";
+		return "用啤酒和特制沙馅制作而成的正宗矮人馅饼。如此制作的食物能够保存数年而不腐坏。";
 	}
 	
 	@Override

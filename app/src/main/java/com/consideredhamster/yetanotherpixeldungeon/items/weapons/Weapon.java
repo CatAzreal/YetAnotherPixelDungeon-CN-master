@@ -572,7 +572,7 @@ public abstract class Weapon extends EquipableItem {
                     "，它携带着_" + enchantment.desc(this) + "附魔_。" );
         }
 
-        info.append( "这是一件_" + lootChapterAsString() +"_的的武器。" );
+        info.append( "这是一件稀有度为_" + lootChapterAsString() +"_的武器。" );
 
         return info.toString();
     }

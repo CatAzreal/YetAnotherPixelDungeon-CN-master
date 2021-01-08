@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class SplintArmor extends BodyArmorHeavy {
 
 	{
-		name = "splint armor";
+		name = "条板甲";
 		image = ItemSpriteSheet.ARMOR_SPLINT;
         appearance = 7;
 	}
@@ -38,6 +38,6 @@ public class SplintArmor extends BodyArmorHeavy {
 	@Override
 	public String desc() {
 		return 
-			"The metal stripes sewn together to create a flexible, yet effective armor.";
+			"长条的金属片被一条条固定在一起，形成了这套灵活且有效的护甲。";
 	}
 }

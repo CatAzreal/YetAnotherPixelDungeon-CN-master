@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class ClothArmor extends BodyArmorCloth {
 
 	{	
-		name = "cloth armor";
+		name = "布衣";
 
         image = ItemSpriteSheet.ARMOR_HUNTRESS;
 
@@ -39,6 +39,6 @@ public class ClothArmor extends BodyArmorCloth {
 	
 	@Override
 	public String desc() {
-		return "This lightweight armor offers more protection from cold than from enemy blows. Still, better than nothing.";
+		return "这件衣物比起抵挡敌人攻击更适合御寒。不过总比没有来的强。";
 	}
 }

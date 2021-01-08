@@ -53,22 +53,22 @@ public class StormWard extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of storm ward";
+        return "雷纹之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of potential";
+        return "电势之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "shock your enemies on hit and give you lightning resistance";
+        return "电击命中你的敌人，并获得电击伤害的抗性";
     }
 
     @Override
     protected String desc_n() {
-        return "shock you on hit";
+        return "被敌人命中时电击自身";
     }
 
     @Override

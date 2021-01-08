@@ -27,22 +27,22 @@ public class Wonders extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of wonders";
+        return "奇迹之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of chaos";
+        return "混沌之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "do random stuff to your enemies on hit";
+        return "被命中时对攻击者造成随机减益效果";
     }
 
     @Override
     protected String desc_n() {
-        return "do random stuff to you on hit";
+        return "被命中时受到随机减益效果的影响";
     }
 
     @Override

@@ -26,17 +26,16 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class MeatBurned extends Food {
 
 	{
-		name = "burned meat";
+		name = "烧焦的肉";
 		image = ItemSpriteSheet.BURNED_MEAT;
 
 		energy = Satiety.MAXIMUM * 0.15f;
-        message = "That meat tasted... bad.";
+        message = "这块肉吃起来...糟透了";
 	}
 	
 	@Override
 	public String desc() {
-		return "This piece of meat is covered in soot and grime. It is still edible, " +
-                "but it won't be as tasty or good for you as properly stewed meat.";
+		return "这份肉上沾满了炭灰和结块。它仍可食用，但必然是赶不上正常煮熟的肉的。";
 	}
 	
 	@Override

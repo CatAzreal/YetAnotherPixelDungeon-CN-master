@@ -33,22 +33,22 @@ public class Durability extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of durability";
+        return "坚固之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of fragility";
+        return "易碎之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "last longer without breaking and offer a bit more protection";
+        return "降低受损速度并提供额外的防护能力";
     }
 
     @Override
     protected String desc_n() {
-        return "break even faster than usual and offer a bit less protection";
+        return "加速防具受损并减少护甲的防护能力";
     }
 
     @Override

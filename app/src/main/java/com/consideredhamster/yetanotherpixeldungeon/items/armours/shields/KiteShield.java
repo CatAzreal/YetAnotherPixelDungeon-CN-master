@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class KiteShield extends Shield {
 
 	{
-		name = "kite shield";
+		name = "筝型盾";
 		image = ItemSpriteSheet.SHIELD_KITE;
 	}
 
@@ -34,6 +34,6 @@ public class KiteShield extends Shield {
 	
 	@Override
 	public String desc() {
-		return "This shield gives you a moderate amount of protection in exchange for occupied hand.";
+		return "牺牲一只灵活的手便可为你带来足量的保护。";
 	}
 }

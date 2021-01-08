@@ -42,10 +42,8 @@ public class HuntressArmor extends BodyArmorCloth {
 
     @Override
     public String desc() {
-        return "Elven cloaks are usually valued because elven fabric reacts negatively at everything " +
-                "touched by dark magicks or evil intentions. This effect is hardly noticeable for " +
-                "anyone except the wearer of the cloak, but in a dungeon like this it certainly " +
-                "comes in handy.";
+        return "因为灵织物对一切黑暗魔法和恶意都能产生反应的特性，精灵斗篷的价值远高于寻常布制甲。" +
+                "织物产生的反应几乎无法被使用者外的任何生物察觉，在地牢的环境中异常实用。";
     }
 
 //    public HuntressArmor() {

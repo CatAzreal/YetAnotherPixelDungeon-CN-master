@@ -43,22 +43,22 @@ public class FrostWard extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of frost ward";
+        return "冰障之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of glaciers";
+        return "霜冻之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "freezes your enemies on hit and make you resistant to frost";
+        return "冰冻击中你的敌人，并降低冻伤带来的影响";
     }
 
     @Override
     protected String desc_n() {
-        return "freeze you on hit";
+        return "被击中时冻伤自身";
     }
 
     @Override

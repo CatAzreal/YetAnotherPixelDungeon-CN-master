@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class TowerShield extends Shield {
 
 	{
-		name = "tower shield";
+		name = "塔盾";
 		image = ItemSpriteSheet.SHIELD_TOWER;
 	}
 
@@ -34,6 +34,6 @@ public class TowerShield extends Shield {
 	
 	@Override
 	public String desc() {
-		return "Size of this shield allows to cover your whole body behind it.";
+		return "如此巨大的盾足以保护遮挡你的全身。";
 	}
 }

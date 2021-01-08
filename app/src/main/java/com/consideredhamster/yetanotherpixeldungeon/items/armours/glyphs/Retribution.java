@@ -42,22 +42,22 @@ public class Retribution extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of retribution";
+        return "复仇之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of mercy";
+        return "资敌之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "reflect melee damage back to attacker and increase your physical resilience";
+        return "将所受近战伤害返还给攻击者，并提高物理状态抗性";
     }
 
     @Override
     protected String desc_n() {
-        return "heal your attacker on hit";
+        return "治疗击中你的敌人";
     }
 
     @Override
