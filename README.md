@@ -1,5 +1,8 @@
-Yet Another Pixel Dungeon
+Yet Another Pixel Dungeon(CN)
+
 =======================
+
+-localization & additional code by Jinkeloid
 
 A mobile roguelike RPG, based on the source code of Pixel Dungeon, by Watabou. Main differences from original game are:
 
@@ -37,4 +40,5 @@ Reddit's page:
 https://www.reddit.com/user/ConsideredHamster/
 
 Contact e-mail:
-consideredhamster@gmail.com
+consideredhamster@gmail.com(Author of YAPD)
+jinkeloidovah@gmail.com(CN Translator)
