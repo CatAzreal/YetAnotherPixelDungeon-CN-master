@@ -52,7 +52,7 @@ public class Battery extends Item {
     private static final String TXT_STATUS	= "%d/%d";
 	
 	{
-		name = "arcane battery";
+		name = "奥术晶石";
 		image = ItemSpriteSheet.BATTERY;
 	}
 

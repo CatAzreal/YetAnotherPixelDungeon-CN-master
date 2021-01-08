@@ -51,7 +51,7 @@ public class CraftingKit extends Item {
     private static final String TXT_STATUS	= "%d/%d";
 
     {
-        name = "crafting kit";
+        name = "便携工具箱";
         image = ItemSpriteSheet.CRAFTING_KIT;
     }
 

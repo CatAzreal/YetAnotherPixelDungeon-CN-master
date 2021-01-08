@@ -36,7 +36,7 @@ public abstract class MeleeWeaponHeavyOH extends MeleeWeapon {
     public String descType() {
 //        return "This is a _tier-" + appearance + " heavy one-handed weapon_. It can be paired with any weapon, shield or wand " +
 //                "without any strength requirement penalties.";
-        return "heavy one-handed";
+        return "重型单手";
     }
 
     @Override

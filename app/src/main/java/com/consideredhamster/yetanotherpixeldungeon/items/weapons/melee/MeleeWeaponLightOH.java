@@ -51,7 +51,7 @@ public abstract class MeleeWeaponLightOH extends MeleeWeapon {
     public String descType() {
 //        return "This is a _tier-" + appearance + " _. It can be used as off-hand weapon, " +
 //                "but its strength requirement will be increased that way.";
-        return "light one-handed";
+        return "轻型单手";
     }
 
     @Override

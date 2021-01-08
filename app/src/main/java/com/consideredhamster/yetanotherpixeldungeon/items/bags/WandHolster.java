@@ -29,7 +29,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 public class WandHolster extends Bag {
 
 	{
-		name = "wand holster";
+		name = "法杖筒袋";
 		image = ItemSpriteSheet.HOLSTER;
 		
 		size = 19;
@@ -76,8 +76,7 @@ public class WandHolster extends Bag {
 	@Override
 	public String info() {
 		return
-			"This slim holder is made of leather of some exotic animal. " +
-			"It allows to compactly carry up to " + size + " wands.";
+			"这款细长的皮制筒袋由某种异域动物的毛皮制成。这个容器最多可以放入" + size + "根法杖。";
 	}
 
     @Override

@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.input.Touchscreen.Touch;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Game;
@@ -77,23 +78,18 @@ public class WndStory extends Window {
 		"Very few adventurers have ever descended this far..." );
 	};
 	
-	private BitmapTextMultiline tf;
+	private RenderedTextMultiline tf;
 	
 	private float delay;
 	
 	public WndStory( String text ) {
 		super( 0, 0, Chrome.get( Chrome.Type.SCROLL ) );
-		
-		tf = PixelScene.createMultiline( text, 7 );
-		tf.maxWidth = WIDTH - MARGIN * 2;
-		tf.measure();
-		tf.ra = bgR;
-		tf.ga = bgG;
-		tf.ba = bgB;
-		tf.rm = -bgR;
-		tf.gm = -bgG;
-		tf.bm = -bgB;
-		tf.x = MARGIN;
+
+		tf = PixelScene.renderMultiline( text, 5 );
+		tf.maxWidth(WIDTH - MARGIN * 2);
+		PixelScene.align(tf);
+		tf.invert();
+		tf.setPos(MARGIN, 0);
 		add( tf );
 		
 		add( new TouchArea( chrome ) {

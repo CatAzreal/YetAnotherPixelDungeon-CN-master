@@ -21,6 +21,7 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.YetAnotherPixelDungeon;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.items.Heap;
 import com.consideredhamster.yetanotherpixeldungeon.items.Heap.Type;
@@ -30,6 +31,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.ItemSlot;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Window;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+import com.watabou.noosa.RenderedText;
 
 public class WndInfoItem extends Window {
 	
@@ -53,7 +55,7 @@ public class WndInfoItem extends Window {
     private static final int WIDTH_P = 120;
     private static final int WIDTH_L = 240;
 
-    private BitmapTextMultiline normal;
+    private RenderedTextMultiline normal;
     private BitmapTextMultiline highlighted;
 	
 	public WndInfoItem( Heap heap ) {
@@ -123,28 +125,15 @@ public class WndInfoItem extends Window {
 		titlebar.setRect( 0, 0, width, 0 );
 		add( titlebar );
 
-        Highlighter hl = new Highlighter( info );
 
-        normal = PixelScene.createMultiline( hl.text, 6 );
-        normal.maxWidth = width;
-        normal.measure();
-        normal.x = titlebar.left();
-        normal.y = titlebar.bottom() + GAP;
+        normal = PixelScene.renderMultiline( info, 6 );
+        normal.maxWidth(width);
+        PixelScene.align(normal);
+        float x = titlebar.left();
+        float y = titlebar.bottom() + GAP;
+        normal.setPos(x,y);
         add( normal );
 
-        if (hl.isHighlighted()) {
-            normal.mask = hl.inverted();
-
-            highlighted = PixelScene.createMultiline( hl.text, 6 );
-            highlighted.maxWidth = normal.maxWidth;
-            highlighted.measure();
-            highlighted.x = normal.x;
-            highlighted.y = normal.y;
-            add( highlighted );
-
-            highlighted.mask = hl.mask;
-            highlighted.hardlight( TITLE_COLOR );
-        }
 		
 //		BitmapTextMultiline txtInfo = PixelScene.createMultiline( info, 6 );
 //		txtInfo.maxWidth = WIDTH;
@@ -154,6 +143,6 @@ public class WndInfoItem extends Window {
 //		add( txtInfo );
 		
 //		resize( WIDTH, (int)(txtInfo.y + txtInfo.height()) );
-        resize( width, (int)(normal.y + normal.height()) );
+        resize( width, (int)(y + normal.height()) );
 	}
 }

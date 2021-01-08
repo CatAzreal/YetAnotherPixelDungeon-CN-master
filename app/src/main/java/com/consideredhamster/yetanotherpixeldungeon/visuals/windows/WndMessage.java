@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.YetAnotherPixelDungeon;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
@@ -36,10 +37,10 @@ public class WndMessage extends Window {
 		
 		super();
 
-		BitmapTextMultiline info = PixelScene.createMultiline( text, 6 );
-		info.maxWidth = (YetAnotherPixelDungeon.landscape() ? WIDTH_L : WIDTH_P) - MARGIN * 2;
-		info.measure();
-		info.x = info.y = MARGIN;
+		RenderedTextMultiline info = PixelScene.renderMultiline( text, 6 );
+		info.maxWidth((YetAnotherPixelDungeon.landscape() ? WIDTH_L : WIDTH_P) - MARGIN * 2);
+		PixelScene.align(info);
+		info.setPos(MARGIN, MARGIN);
 		add( info );
 
 		resize( 

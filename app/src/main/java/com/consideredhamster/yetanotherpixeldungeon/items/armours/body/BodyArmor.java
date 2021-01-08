@@ -135,47 +135,42 @@ public abstract class BodyArmor extends Armour {
         info.append( p );
 
         if (isIdentified()) {
-            info.append( "This _tier-" + tier + " " + ( !descType().isEmpty() ? descType() + " " : "" )  + "armor_ requires _" + itemStr + " points of strength_ to use effectively and" +
-                    ( isRepairable() ? ", given its _" + stateToString( state ) + " condition_, " : " " ) +
-                    "will increase your _armor class by " + armor + " points_.");
+            info.append( "这个_" + tier + "阶" + ( !descType().isEmpty() ? descType() + "" : "" )  + "护甲_需要_" + itemStr + "点力量_才能发挥其原有效能" +
+                    ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
+                    "能够为你提供_" + armor + "点护甲等级加成_。");
 
             info.append( p );
 
             if (itemStr > heroStr) {
                 info.append(
-                        "Because of your inadequate strength, your stealth and dexterity in this armor " +
-                                "will be _decreased by " + penalty + "%_ and your movement will be _" + (int)(100 - 10000 / (100 + penalty)) + "% slower_." );
+                        "因为你的力量不足，穿戴该护甲将导致你的潜行和敏捷_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的移动速度。" );
             } else if (itemStr < heroStr) {
                 info.append(
-                        "Because of your excess strength, your stealth and dexterity while you are wearing this armor " +
-                                "will " + ( penalty > 0 ? "be _decreased only by " + penalty + "%_" : "_not be decreased_" ) + " " +
-                                "and your armor class will be increased by _" + ((float)(heroStr - itemStr) / 2) + " bonus points_ on average." );
+                        "因为你的强健体格，穿戴该护甲" + ( penalty > 0 ? "_将仅导致你的潜行和敏捷降低" + penalty + "%_" : "_不会受到惩罚_" ) +
+                        "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点护甲等级。" );
             } else {
                 info.append(
-                        "While you are wearing this armor, your stealth and dexterity will " + ( penalty > 0 ? "be _decreased by " + penalty + "%_, " +
-                                "but with additional strength this penalty can be reduced" : "_not be decreased_" ) + "." );
+                        "穿戴该护甲" + ( penalty > 0 ? "将导致你的潜行和敏捷_降低" + penalty + "%_，" +
+                                "不过超出需求的力量值可以降低该惩罚" : "_不会受到惩罚_" ) + "。" );
             }
         } else {
-            info.append(  "Usually _tier-" + tier + " " + ( !descType().isEmpty() ? descType() + " " : "" )  + "armors_ require _" + itemStr + " points of strength_ to be worn effectively and" +
-                    ( isRepairable() ? ", when in _" + stateToString( state ) + " condition_, " : " " ) +
-                    "will increase your _armor class by " + armor + " points_." );
+            info.append(  "通常这个_" + tier + "阶" + ( !descType().isEmpty() ? descType() + "" : "" )  + "护甲_需要_" + itemStr + "点力量_才能发挥其原有效能" +
+                    ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
+                    "应该能够为你提供_" + armor + "点护甲等级加成_。" );
 
             info.append( p );
 
             if (itemStr > heroStr) {
                 info.append(
-                        "Because of your inadequate strength, your stealth and dexterity in this armor " +
-                                "probably will be _decreased by " + penalty + "%_ and your movement will be _" + (int)(100 - 10000 / (100 + penalty)) + "% slower_." );
+                        "因为你的力量不足，穿戴该护甲大概将导致你的潜行和敏捷_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的移动速度。" );
             } else if (itemStr < heroStr) {
                 info.append(
-                        "Because of your excess strength, your stealth and dexterity while you are wearing this armor " +
-                                "probably will " + ( penalty > 0 ? "be _decreased only by " + penalty + "%_" : "_not be decreased_" ) + " " +
-                                "and your armor class will be increased by _" + ((float)(heroStr - itemStr) / 2) + " bonus points_ on average." );
+                        "因为你的强健体格，穿戴该护甲大概" + ( penalty > 0 ? "_会导致你的潜行和敏捷降低" + penalty + "%_" : "_不会受到惩罚_" ) +
+                                "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点护甲等级。" );
             } else {
                 info.append(
-                        "While you are wearing this armor, your stealth and dexterity probably will " +
-                                ( penalty > 0 ? "be _decreased by " + penalty + "%_" : "_not be decreased_" ) +
-                                ", unless your strength will be different from this armor's actual strength requirement." );
+                        "穿戴该护甲大概" + ( penalty > 0 ? "会导致你的潜行和敏捷_降低" + penalty + "%_，" +
+                                "不过超出需求的力量值可以降低该惩罚" : "_不会受到惩罚_" ) + "。" );
             }
         }
 
@@ -183,36 +178,36 @@ public abstract class BodyArmor extends Armour {
 
         if (isEquipped( Dungeon.hero )) {
 
-            info.append( "You are wearing the " + name + "." );
+            info.append( "你正装备着" + name + "。" );
 
         } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
 
-            info.append( "The " + name + " is in your backpack." );
+            info.append( "这件" + name + "正装在你的背包里。" );
 
         } else {
 
-            info.append( "The " + name + " lies on the dungeon's floor." );
+            info.append( "这件" + name + "在地面上。" );
 
         }
 
         info.append( s );
 
         if( isIdentified() && bonus > 0 ) {
-            info.append( "It appears to be _upgraded_." );
+            info.append( "它看起来被_强化_过。" );
         } else if( isCursedKnown() ) {
-            info.append( bonus >= 0 ? "It appears to be _non-cursed_." :
-                    "A malevolent _curse_ seems to be lurking within this " + name +"." );
+            info.append( bonus >= 0 ? "它看起来_没有受到诅咒_的影响。" :
+                    "恶毒的_诅咒_似乎隐藏在这件" + name +"之下。" );
         } else {
-            info.append( " This " + name + " is _unidentified_." );
+            info.append( "这件" + name + "尚_未被鉴定_。" );
         }
 
         info.append( s );
 
         if( isEnchantKnown() && glyph != null ) {
-            info.append( " " + ( isIdentified() && bonus != 0 ? "Also" : "However" ) + ", it seems to be _enchanted to " + glyph.desc(this) + "_." );
+            info.append( "" + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) + "，它携带着_" + glyph.desc(this) + "附魔_." );
         }
 
-        info.append( " This is a _" + lootChapterAsString() +"_ armor." );
+        info.append( "这是一件_" + lootChapterAsString() +"_的护甲。" );
 
         return info.toString();
 

@@ -32,7 +32,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 public class HerbPouch extends Bag {
 
 	{
-		name = "alchemist's pouch";
+		name = "炼金小袋";
 		image = ItemSpriteSheet.POUCH;
 		
 		size = 19;
@@ -59,7 +59,7 @@ public class HerbPouch extends Bag {
 	@Override
 	public String info() {
 		return
-			"This small velvet pouch allows you to store any number of herbs in it. Very convenient.";
+			"这个丝织小袋能够让你在其中存放任意数量的草药，非常便利。";
 	}
 
     @Override

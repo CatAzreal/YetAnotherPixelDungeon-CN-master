@@ -30,6 +30,7 @@ import com.watabou.input.Touchscreen;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.TouchArea;
 import com.watabou.noosa.audio.Sample;
@@ -205,9 +206,9 @@ public class WndBag extends WndTabbed {
 
         float pos = 0;
 
-        BitmapText txtTitle = PixelScene.createText( title != null ? title : Utils.capitalize( bag.name() ), 9 );
+        RenderedText txtTitle = PixelScene.renderText( title != null ? title : Utils.capitalize( bag.name() ), 9 );
         txtTitle.hardlight( TITLE_COLOR );
-        txtTitle.measure();
+        PixelScene.align(txtTitle);
         txtTitle.x = 1;
 //        txtTitle.x = (int)(slotsWidth - txtTitle.width()) / 2;
         txtTitle.y = (int)(TITLE_HEIGHT - txtTitle.height()) / 2;

@@ -25,7 +25,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class Quarterstaff extends MeleeWeaponHeavyOH {
 
 	{
-		name = "quarterstaff";
+		name = "短杖";
 		image = ItemSpriteSheet.QUARTERSTAFF;
 	}
 	
@@ -40,8 +40,6 @@ public class Quarterstaff extends MeleeWeaponHeavyOH {
 	
 	@Override
 	public String desc() {
-		return "A staff of hardwood, its ends are shod with iron. Favourite weapon of spellcasters, " +
-                "as it allows easier channeling of magical energies, increasing effectiveness of " +
-                "any wands used by its wielder.";
+		return "这是一根两端以金属包覆的硬木短杖。尤其受法师欢迎，独特的设计使得该武器能够增强魔力传导，强化所有法杖的施法效果。";
 	}
 }

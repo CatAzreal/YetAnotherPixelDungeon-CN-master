@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RedButton;
@@ -42,21 +43,19 @@ public class WndOptions extends Window {
 
         this.disabled = disabled();
 
-		BitmapTextMultiline tfTitle = PixelScene.createMultiline( title, 9 );
+		RenderedTextMultiline tfTitle = PixelScene.renderMultiline( title, 9 );
 		tfTitle.hardlight( TITLE_COLOR );
-		tfTitle.x = tfTitle.y = MARGIN;
-		tfTitle.maxWidth = WIDTH - MARGIN * 2;
-		tfTitle.measure();
+		tfTitle.setPos(MARGIN,MARGIN);
+		PixelScene.align(tfTitle);
 		add( tfTitle );
 		
-		BitmapTextMultiline tfMessage = PixelScene.createMultiline( message, 7 );
-		tfMessage.maxWidth = WIDTH - MARGIN * 2;
-		tfMessage.measure();
-		tfMessage.x = MARGIN;
-		tfMessage.y = tfTitle.y + tfTitle.height() + MARGIN;
+		RenderedTextMultiline tfMessage = PixelScene.renderMultiline( message, 7 );
+		tfMessage.maxWidth(WIDTH - MARGIN * 2);
+		PixelScene.align(tfMessage);
+		tfMessage.setPos(MARGIN, MARGIN + tfTitle.height() + MARGIN);
 		add( tfMessage );
 		
-		float pos = tfMessage.y + tfMessage.height() + MARGIN;
+		float pos = MARGIN + tfTitle.height() + MARGIN + tfMessage.height() + MARGIN;
 		
 		for (int i=0; i < options.length; i++) {
 			final int index = i;

@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Component;
@@ -34,7 +35,7 @@ public class WndTitledMessage extends Window {
 	
 	private static final int GAP	= 2;
 	
-	private BitmapTextMultiline normal;
+	private RenderedTextMultiline normal;
 	private BitmapTextMultiline highlighted;
 	
 	public WndTitledMessage( Image icon, String title, String message ) {
@@ -52,29 +53,15 @@ public class WndTitledMessage extends Window {
 		titlebar.setRect( 0, 0, width, 0 );
 		add( titlebar );
 		
-		Highlighter hl = new Highlighter( message );
-		
-		normal = PixelScene.createMultiline( hl.text, 6 );
-		normal.maxWidth = width;
-		normal.measure();
-		normal.x = titlebar.left();
-		normal.y = titlebar.bottom() + GAP;
+		normal = PixelScene.renderMultiline( message, 6 );
+		normal.maxWidth(width);
+		PixelScene.align(normal);
+		float x = titlebar.left();
+		float y = titlebar.bottom() + GAP;
+		normal.setPos(x,y);
 		add( normal );
+
 		
-		if (hl.isHighlighted()) {
-			normal.mask = hl.inverted();
-			
-			highlighted = PixelScene.createMultiline( hl.text, 6 );
-			highlighted.maxWidth = normal.maxWidth;
-			highlighted.measure();
-			highlighted.x = normal.x;
-			highlighted.y = normal.y;
-			add( highlighted );
-	
-			highlighted.mask = hl.mask;
-			highlighted.hardlight( TITLE_COLOR );
-		}
-		
-		resize( width, (int)(normal.y + normal.height()) );
+		resize( width, (int)(y + normal.height()) );
 	}
 }

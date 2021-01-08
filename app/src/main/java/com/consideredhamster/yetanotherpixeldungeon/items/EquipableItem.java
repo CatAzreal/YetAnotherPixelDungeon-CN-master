@@ -42,33 +42,31 @@ import java.util.ArrayList;
 
 public abstract class EquipableItem extends Item {
 
-	protected static final String TXT_EQUIP = "You equip your %s.";
-	protected static final String TXT_UNEQUIP = "You unequip your %s.";
-    protected static final String TXT_ISEQUIPPED	= "%s is already equipped";
+	protected static final String TXT_EQUIP = "你装备上%s。";
+	protected static final String TXT_UNEQUIP = "你卸下了%s。";
+    protected static final String TXT_ISEQUIPPED	= "%s已装备";
 
-	private static final String TXT_UNEQUIP_CURSED = "your %s is cursed, and you cannot remove it.";
-	private static final String TXT_DETECT_CURSED = "this %s was cursed, but you managed to unequip it before it was too late.";
+	private static final String TXT_UNEQUIP_CURSED = "你装备的%s被诅咒了，因此你无法移除它。";
+	private static final String TXT_DETECT_CURSED = "这个%s被诅咒了，不过你在诅咒生效前及时甩开了它。";
 
-    protected static final String TXT_EQUIP_CURSED_HAND = "your grip involuntarily tightens around your %s";
-    protected static final String TXT_EQUIP_CURSED_BODY = "your %s constricts around you painfully";
-    protected static final String TXT_EQUIP_CURSED_RING = "your %s suddenly tightens around your finger";
+    protected static final String TXT_EQUIP_CURSED_HAND = "你的手不受控制地紧握住%s";
+    protected static final String TXT_EQUIP_CURSED_BODY = "%s紧紧地勒住了你";
+    protected static final String TXT_EQUIP_CURSED_RING = "%s突然紧缩，箍住了你的手指！";
 
-	public static final String AC_EQUIP		= "EQUIP";
-	public static final String AC_UNEQUIP	= "UNEQUIP";
+	public static final String AC_EQUIP		= "装备";
+	public static final String AC_UNEQUIP	= "卸下";
 
-    private static final String TXT_ITEM_IS_CURSED = "This item is cursed!";
+    private static final String TXT_ITEM_IS_CURSED = "这个物品被诅咒了！";
 
     private static final String TXT_R_U_SURE =
-            "You are aware that this item is cursed. Once equipped, it would be impossible to " +
-            "remove until the curse is removed. Are you really sure you want to equip it?";
+            "你很清楚这个物品已经被诅咒了。一旦装备物品，直到诅咒消除后无法被移除，你确认要装备它吗？";
 
-    private static final String TXT_ITEM_IS_HEAVY = "This item is heavy!";
+    private static final String TXT_ITEM_IS_HEAVY = "这件物品太重了！";
 
     private static final String TXT_R_U_SURE_HEAVY =
-            "This item seems to be heavier than your current Strength. Once equipped, it may " +
-            "severely decrease your combat proficiency. Are you really sure you want to equip it?";
+            "这件物品的重量超出了你的力量承受范围。一旦装备将会极大影响你的战斗能力。你确认要装备它吗？";
 
-    protected static final String TXT_ITEM_IS_INCOMPATIBLE = "This item is incompatible!";
+    protected static final String TXT_ITEM_IS_INCOMPATIBLE = "这个物品This item is incompatible!";
 
     protected static final String TXT_R_U_SURE_INCOMPATIBLE =
             "You are aware that this item is not compatible with your current gear, and will " +

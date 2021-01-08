@@ -25,6 +25,7 @@ import java.io.IOException;
 import com.consideredhamster.yetanotherpixeldungeon.Difficulties;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Game;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
@@ -38,19 +39,19 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Window;
 
 public class WndGame extends Window {
 	
-	private static final String TXT_SETTINGS	= "Settings";
-    private static final String TXT_JOURNAL		= "Journal";
-	private static final String TXT_CHALLENGES  = "Challenges";
-	private static final String TXT_RANKINGS	= "Rankings";
-	private static final String TXT_TUTORIAL	= "Tutorial";
-	private static final String TXT_START		= "Start New Game";
-	private static final String TXT_MENU		= "Main Menu";
-	private static final String TXT_EXIT		= "Exit Game";
-	private static final String TXT_RETURN		= "Return to Game";
+	private static final String TXT_SETTINGS	= "设置";
+    private static final String TXT_JOURNAL		= "日志";
+	private static final String TXT_CHALLENGES  = "挑战";
+	private static final String TXT_RANKINGS	= "排名";
+	private static final String TXT_TUTORIAL	= "教程";
+	private static final String TXT_START		= "开始新游戏";
+	private static final String TXT_MENU		= "主菜单";
+	private static final String TXT_EXIT		= "退出游戏";
+	private static final String TXT_RETURN		= "返回游戏";
 
 
-    private static final String TXT_VERSION   	= "Version: %s";
-    private static final String TXT_DIFFICULTY 	= "Difficulty: %s";
+    private static final String TXT_VERSION   	= "版本: %s";
+    private static final String TXT_DIFFICULTY 	= "难度: %s";
 
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 20;
@@ -161,27 +162,32 @@ public class WndGame extends Window {
 		} );
 
 
-        BitmapTextMultiline showDifficulty = PixelScene.createMultiline(
-                Utils.format(TXT_DIFFICULTY, Difficulties.NAMES[Dungeon.difficulty]), 6
+        RenderedTextMultiline showDifficulty = PixelScene.renderMultiline(
+                Utils.format(TXT_DIFFICULTY, Difficulties.NAMES[Dungeon.difficulty]), 5
         );
 
         showDifficulty.hardlight( 0xAAAAAA );
-        showDifficulty.maxWidth = WIDTH - GAP * 2;
-        showDifficulty.measure();
-        showDifficulty.x = ( WIDTH - showDifficulty.width() ) / 2 + GAP;
-        showDifficulty.y = pos + ( BTN_HEIGHT / 2 - showDifficulty.height() ) / 2 + GAP * 2;
+        showDifficulty.maxWidth(WIDTH - GAP * 2);
+        PixelScene.align(showDifficulty);
         add(showDifficulty);
 
-        BitmapTextMultiline showVersion = PixelScene.createMultiline(
-                Utils.format( TXT_VERSION, Game.version ), 6
+        RenderedTextMultiline showVersion = PixelScene.renderMultiline(
+                Utils.format( TXT_VERSION, Game.version ), 5
         );
 
         showVersion.hardlight( 0xAAAAAA );
-        showVersion.maxWidth = WIDTH - GAP * 2;
-        showVersion.measure();
-        showVersion.x = ( WIDTH - showVersion.width() ) / 2 + GAP;
-        showVersion.y = pos + ( BTN_HEIGHT - showVersion.height() / 2 ) / 2 + GAP * 2;
+        showVersion.maxWidth(WIDTH - GAP * 2);
+        PixelScene.align(showVersion);
         add(showVersion);
+
+        float x1 = ( WIDTH  + showDifficulty.width()) / 2 + GAP;
+        float y1 = pos + ( BTN_HEIGHT - showDifficulty.height() / 2 ) / 2 + GAP * 2;
+
+        float x2 = ( WIDTH - showVersion.width() - showDifficulty.width()) / 2;
+        float y2 = pos + ( BTN_HEIGHT - showVersion.height() / 2 ) / 2 + GAP * 2;
+
+        showVersion.setPos(x2, y2);
+        showDifficulty.setPos(x1, y1);
 
 		resize( WIDTH, pos + BTN_HEIGHT + GAP );
 	}

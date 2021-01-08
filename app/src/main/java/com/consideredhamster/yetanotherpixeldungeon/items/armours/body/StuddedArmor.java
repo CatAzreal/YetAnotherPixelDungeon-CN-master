@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class StuddedArmor extends BodyArmorLight {
 
 	{	
-		name = "studded armor";
+		name = "镶钉皮甲";
 		image = ItemSpriteSheet.ARMOR_STUDDED;
         appearance = 4;
 	}
@@ -35,7 +35,6 @@ public class StuddedArmor extends BodyArmorLight {
 	
 	@Override
 	public String desc() {
-		return "Armor made from tanned monster hide, reinforced with metal rivets. " +
-                "Not as light as cloth armor but provides better protection.";
+		return "鞣制皮革制成的护甲，其上通过镶钉强化了防御。不像布甲一般轻便但有着更好的防护能力。";
 	}
 }

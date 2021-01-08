@@ -35,7 +35,7 @@ import com.watabou.utils.Bundle;
 
 public abstract class Bag extends Item implements Iterable<Item> {
 
-	public static final String AC_OPEN	= "OPEN";
+	public static final String AC_OPEN	= "打开";
 	
 	{
         visible = false;

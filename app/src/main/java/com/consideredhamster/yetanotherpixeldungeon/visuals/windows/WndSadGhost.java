@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.Hero;
@@ -60,10 +61,11 @@ public class WndSadGhost extends Window {
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
 		
-		BitmapTextMultiline message = PixelScene.createMultiline( item instanceof DriedRose ? TXT_ROSE : TXT_RAT, 6 );
-		message.maxWidth = WIDTH;
-		message.measure();
-		message.y = titlebar.bottom() + GAP;
+		RenderedTextMultiline message = PixelScene.renderMultiline( item instanceof DriedRose ? TXT_ROSE : TXT_RAT, 6 );
+		message.maxWidth(WIDTH);
+		PixelScene.align(message);
+		float y = titlebar.bottom() + GAP;
+		message.setPos(0,y);
 		add( message );
 		
 		RedButton btnWeapon = new RedButton( Ghost.Quest.weapon.toString() ) {
@@ -72,7 +74,7 @@ public class WndSadGhost extends Window {
 				selectReward( ghost, item, Ghost.Quest.weapon );
 			}
 		};
-		btnWeapon.setRect( 0, message.y + message.height() + GAP, WIDTH, BTN_HEIGHT );
+		btnWeapon.setRect( 0, y + message.height() + GAP, WIDTH, BTN_HEIGHT );
 		add( btnWeapon );
 		
 		RedButton btnArmor = new RedButton( Ghost.Quest.armor.toString() ) {

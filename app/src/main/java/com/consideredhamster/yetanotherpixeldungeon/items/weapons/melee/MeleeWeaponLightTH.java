@@ -36,7 +36,7 @@ public abstract class MeleeWeaponLightTH extends MeleeWeapon {
     public String descType() {
 //        return "This is a _tier-" + appearance + " light two-handed weapon_. It can be used with shields, wands and throwing weapons, " +
 //                "but its strength requirement will increase if paired with another melee weapon.";
-        return "light two-handed";
+        return "轻型双手";
     }
 
     @Override

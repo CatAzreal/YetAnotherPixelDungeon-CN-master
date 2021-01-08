@@ -59,7 +59,7 @@ public class AboutScene extends PixelScene {
                         "音乐协力:\n" +
                         "·Jivvy\n" +
                         "\n" +
-                        "整编:\n" +
+                        "文本校审:\n" +
                         "·Inevielle"
     ;
 

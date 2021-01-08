@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.HeroSubClass;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.TomeOfMastery;
@@ -31,8 +32,8 @@ import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
 
 public class WndChooseWay extends Window {
 	
-	private static final String TXT_MESSAGE	= "Which way will you follow?";
-	private static final String TXT_CANCEL	= "I'll decide later";
+	private static final String TXT_MESSAGE	= "你要选择哪一条典范之道？";
+	private static final String TXT_CANCEL	= "之后再做决定";
 	
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 18;
@@ -47,38 +48,39 @@ public class WndChooseWay extends Window {
 		titlebar.label( tome.name() );
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
-		
+
 		Highlighter hl = new Highlighter( way1.desc() + "\n\n" + way2.desc() + "\n\n" + TXT_MESSAGE );
 		
-		BitmapTextMultiline normal = PixelScene.createMultiline( hl.text, 6 );
-		normal.maxWidth = WIDTH;
-		normal.measure();
-		normal.x = titlebar.left();
-		normal.y = titlebar.bottom() + GAP;
+		RenderedTextMultiline normal = PixelScene.renderMultiline( hl.text, 6 );
+		normal.maxWidth(WIDTH);
+		PixelScene.align(normal);
+		float x = titlebar.left();
+		float y = titlebar.bottom() + GAP;
+		normal.setPos(x,y);
 		add( normal );
+
+//		if (hl.isHighlighted()) {
+//			normal.mask = hl.inverted();
+//
+//			BitmapTextMultiline highlighted = PixelScene.createMultiline( hl.text, 6 );
+//			highlighted.maxWidth = normal.maxWidth;
+//			highlighted.measure();
+//			highlighted.x = normal.x;
+//			highlighted.y = normal.y;
+//			add( highlighted );
+//
+//			highlighted.mask = hl.mask;
+//			highlighted.hardlight( TITLE_COLOR );
+//		}
 		
-		if (hl.isHighlighted()) {
-			normal.mask = hl.inverted();
-			
-			BitmapTextMultiline highlighted = PixelScene.createMultiline( hl.text, 6 );
-			highlighted.maxWidth = normal.maxWidth;
-			highlighted.measure();
-			highlighted.x = normal.x;
-			highlighted.y = normal.y;
-			add( highlighted );
-	
-			highlighted.mask = hl.mask;
-			highlighted.hardlight( TITLE_COLOR );
-		}
-		
-		RedButton btnWay1 = new RedButton( Utils.capitalize( way1.title() ) ) {
+		RedButton btnWay1 = new RedButton( way1.title() ) {
 			@Override
 			protected void onClick() {
 				hide();
 				tome.choose( way1 );
 			}
 		};
-		btnWay1.setRect( 0, normal.y + normal.height() + GAP, (WIDTH - GAP) / 2, BTN_HEIGHT );
+		btnWay1.setRect( 0, y + normal.height() + GAP, (WIDTH - GAP) / 2, BTN_HEIGHT );
 		add( btnWay1 );
 		
 		RedButton btnWay2 = new RedButton( Utils.capitalize( way2.title() ) ) {

@@ -46,7 +46,7 @@ public abstract class BodyArmorLight extends BodyArmor {
 
     @Override
     public String descType() {
-        return "light";
+        return "轻型";
     }
 
 }

@@ -49,6 +49,6 @@ public abstract class BodyArmorHeavy extends BodyArmor {
 
     @Override
     public String descType() {
-        return "heavy";
+        return "重型";
     }
 }

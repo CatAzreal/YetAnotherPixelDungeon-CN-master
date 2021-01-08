@@ -38,42 +38,42 @@ public class WndSettings extends Window {
 	
 	private static final String TXT_ZOOM_IN			= "+";
 	private static final String TXT_ZOOM_OUT		= "-";
-	private static final String TXT_ZOOM_DEFAULT	= "Default Zoom";
+	private static final String TXT_ZOOM_DEFAULT	= "默认缩放";
 
-	private static final String TXT_SCALE_UP		= "Scale up UI";
-	private static final String TXT_IMMERSIVE		= "Immersive mode";
+	private static final String TXT_SCALE_UP		= "UI大小";
+	private static final String TXT_IMMERSIVE		= "沉浸模式";
 	
-	private static final String TXT_MUSIC	        = "Music";
+	private static final String TXT_MUSIC	        = "音乐";
 	
-	private static final String TXT_SOUND	        = "Sound FX";
+	private static final String TXT_SOUND	        = "音效";
 
-	private static final String TXT_BUTTONS         = "Waterskins/lantern: %s";
+	private static final String TXT_BUTTONS         = "水袋/油灯：%s";
 
     private static final String[] TXT_BUTTONS_VAR  = {
-            "Right",
-            "Left",
+            "右",
+            "左",
     };
 
-	private static final String TXT_BRIGHTNESS	    = "Brightness";
+	private static final String TXT_BRIGHTNESS	    = "亮度";
 
-	private static final String TXT_LOADING_TIPS  = "Loading tips: %s";
+	private static final String TXT_LOADING_TIPS  = "载入界面提示：%s";
 
 	private static final String[] TXT_TIPS_DELAY  = {
-            "Disabled",
-            "Normal delay",
-            "Doubled delay",
-            "Until tapped",
+            "关闭",
+            "加载延迟",
+            "双倍延迟",
+            "点击跳出",
     };
 
-    private static final String TXT_SEARCH_BTN  = "Search btn: %s";
+    private static final String TXT_SEARCH_BTN  = "搜索按钮：%s";
 
     private static final String[] TXT_SEARCH_VAR  = {
-            "Default behv.",
-            "Reversed behv.",
+            "默认设定",
+            "反向设定",
     };
 
-	private static final String TXT_SWITCH_PORT 	= "Switch to portrait";
-    private static final String TXT_SWITCH_LAND 	= "Switch to landscape";
+	private static final String TXT_SWITCH_PORT 	= "竖屏模式";
+    private static final String TXT_SWITCH_LAND 	= "横屏模式";
 
 	private static final int WIDTH		= 112;
     private static final int BTN_HEIGHT	= 20;

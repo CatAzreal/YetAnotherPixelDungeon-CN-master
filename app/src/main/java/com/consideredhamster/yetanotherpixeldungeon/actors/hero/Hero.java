@@ -290,7 +290,7 @@ public class Hero extends Char {
     }
 
     public String className(){
-        return subClass == null || subClass == HeroSubClass.NONE ? heroClass.title() : subClass.title();
+        return subClass == null || subClass == HeroSubClass.NONE ? heroClass.hname() : subClass.title();
     }
 
     public int viewDistance(){

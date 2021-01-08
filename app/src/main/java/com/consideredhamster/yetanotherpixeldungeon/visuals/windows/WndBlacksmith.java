@@ -21,6 +21,7 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.ItemButton;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.NinePatch;
 import com.watabou.noosa.audio.Sample;
@@ -68,10 +69,11 @@ public class WndBlacksmith extends Window {
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
 		
-		BitmapTextMultiline message = PixelScene.createMultiline( TXT_PROMPT, 6 );
-		message.maxWidth = WIDTH;
-		message.measure();
-		message.y = titlebar.bottom() + GAP;
+		RenderedTextMultiline message = PixelScene.renderMultiline( TXT_PROMPT, 5 );
+		message.maxWidth(WIDTH);
+		PixelScene.align(message);
+		float y = titlebar.bottom() + GAP;
+		message.setPos(0, y);
 		add( message );
 		
 		btnItem1 = new ItemButton() {
@@ -81,7 +83,7 @@ public class WndBlacksmith extends Window {
 				GameScene.selectItem( itemSelector, WndBag.Mode.UPGRADEABLE, TXT_SELECT );
 			}
 		};
-		btnItem1.setRect( (WIDTH - BTN_GAP) / 2 - BTN_SIZE, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
+		btnItem1.setRect( (WIDTH - BTN_GAP) / 2 - BTN_SIZE, y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
 		add( btnItem1 );
 		
 		btnItem2 = new ItemButton() {

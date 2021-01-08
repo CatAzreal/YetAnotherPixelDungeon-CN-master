@@ -27,6 +27,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.armours.body.HuntressA
 import com.consideredhamster.yetanotherpixeldungeon.items.armours.body.MageArmor;
 import com.consideredhamster.yetanotherpixeldungeon.items.armours.body.RogueArmor;
 import com.consideredhamster.yetanotherpixeldungeon.items.weapons.melee.Quarterstaff;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.ScrollPane;
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
@@ -34,6 +35,7 @@ import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TextureFilm;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
@@ -56,19 +58,19 @@ import com.watabou.noosa.ui.Component;
 
 public class WndHero extends WndTabbed {
 	
-	private static final String TXT_STATS	= "Stats";
-	private static final String TXT_BUFFS	= "Buffs";
+	private static final String TXT_STATS	= "属性";
+	private static final String TXT_BUFFS	= "效果";
 	
-	private static final String TXT_EXP		= "Experience";
-	private static final String TXT_STR		= "Strength";
-	private static final String TXT_HEALTH	= "Health";
-	private static final String TXT_SATIETY	= "Satiety";
-    private static final String TXT_STEALTH	= "Stealth";
-    private static final String TXT_ATTNMNT = "Attunement";
-    private static final String TXT_AWARNSS	= "Perception";
-    private static final String TXT_OFFENSE = "Accuracy";
-	private static final String TXT_DEFENSE	= "Dexterity";
-	private static final String TXT_MAGPOWR = "Magic power";
+	private static final String TXT_EXP		= "经验值";
+	private static final String TXT_STR		= "力量";
+	private static final String TXT_HEALTH	= "生命值";
+	private static final String TXT_SATIETY	= "饱食度";
+    private static final String TXT_STEALTH	= "潜行";
+    private static final String TXT_ATTNMNT = "调谐";
+    private static final String TXT_AWARNSS	= "感知";
+    private static final String TXT_OFFENSE = "命中";
+	private static final String TXT_DEFENSE	= "敏捷";
+	private static final String TXT_MAGPOWR = "魔能";
 	private static final String TXT_GOLD	= "Gold Collected";
 	private static final String TXT_DEPTH	= "Maximum Depth";
 	
@@ -123,7 +125,7 @@ public class WndHero extends WndTabbed {
 	
 	private class StatsTab extends Group {
 		
-		private static final String TXT_TITLE		= "Level %d %s";
+		private static final String TXT_TITLE		= "等级%d，%s";
 //		private static final String TXT_CATALOGUS	= "Knowledge";
 //		private static final String TXT_JOURNAL		= "Journal";
 		
@@ -135,12 +137,12 @@ public class WndHero extends WndTabbed {
 			
 			Hero hero = Dungeon.hero; 
 
-			BitmapText title = PixelScene.createText( 
-				Utils.format( TXT_TITLE, hero.lvl, hero.className() ).toUpperCase( Locale.ENGLISH ), 9 );
+			RenderedText title = PixelScene.renderText(
+				Utils.format( TXT_TITLE, hero.lvl, hero.className() ), 9 );
 			title.hardlight( TITLE_COLOR );
-			title.measure();
+			PixelScene.align(title);
 			add(title);
-			
+
 //			RedButton btnCatalogus = new RedButton( TXT_CATALOGUS ) {
 //				@Override
 //				protected void onClick() {
@@ -253,12 +255,12 @@ public class WndHero extends WndTabbed {
 		
 		private void statSlot( String label, String value ) {
 			
-			BitmapText txt = PixelScene.createText( label, 6 );
+			RenderedText txt = PixelScene.renderText( label, 6 );
 			txt.y = pos;
 			add( txt );
 			
-			txt = PixelScene.createText( value, 6 );
-			txt.measure();
+			txt = PixelScene.renderText( value, 6 );
+			PixelScene.align(txt);
 			txt.x = PixelScene.align( WIDTH * 0.65f );
 			txt.y = pos;
 			add( txt );
@@ -310,41 +312,23 @@ public class WndHero extends WndTabbed {
 
                 String title = buff instanceof BuffActive ? String.format( "%s (%s)", buff.toString(), buff.status() ) : buff.toString();
 
-                BitmapText label = PixelScene.createText( title, 8 );
+                RenderedText label = PixelScene.renderText( title, 8 );
                 label.x = icon.width + GAP_X;
                 label.y = pos + (int)(icon.height - label.baseLine()) / 2;
                 content.add( label );
 
-                Highlighter hl = new Highlighter( buff.description() );
 
-                BitmapTextMultiline basicDesc = PixelScene.createMultiline( hl.text, 6 );
+                RenderedTextMultiline basicDesc = PixelScene.renderMultiline( buff.description(), 6 );
 
-                basicDesc.x = GAP_X;
-                basicDesc.y = pos + icon.height + GAP_X;
+                float x = GAP_X;
+                float y = pos + icon.height + GAP_X;
 
-                basicDesc.maxWidth = WIDTH - GAP_Y;
-                basicDesc.measure();
+                basicDesc.maxWidth(WIDTH - GAP_Y);
+                PixelScene.align(basicDesc);
+                basicDesc.setPos(x,y);
 
                 content.add( basicDesc );
 
-                if (hl.isHighlighted()) {
-
-                    basicDesc.mask = hl.inverted();
-
-                    BitmapTextMultiline colorDesc = PixelScene.createMultiline( hl.text, 6 );
-
-                    colorDesc.x = basicDesc.x;
-                    colorDesc.y = basicDesc.y;
-
-                    colorDesc.maxWidth = basicDesc.maxWidth;
-                    colorDesc.measure();
-
-                    colorDesc.mask = hl.mask;
-                    colorDesc.hardlight( TITLE_COLOR );
-
-                    content.add( colorDesc );
-
-                }
 
 				pos += GAP_Y + icon.height + basicDesc.height();
 
