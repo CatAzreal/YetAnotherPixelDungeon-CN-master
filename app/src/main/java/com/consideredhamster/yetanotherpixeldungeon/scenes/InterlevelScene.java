@@ -92,8 +92,8 @@ public class InterlevelScene extends PixelScene {
 			"潜行属性影响在商店可行窃的次数和成功几率",
 			"潜行属性影响你伏击敌人的几率",
 
-			"谐和属性影响所有法杖的充能速率",
-			"谐和属性影响装备物品前感知到诅咒的概率",
+			"调谐属性影响所有法杖的充能速率",
+			"调谐属性影响装备物品前感知到诅咒的概率",
 
 //            "Magic power affects effectiveness of enchanted equipment",
 			"魔能属性影响法杖造成的伤害/效力",

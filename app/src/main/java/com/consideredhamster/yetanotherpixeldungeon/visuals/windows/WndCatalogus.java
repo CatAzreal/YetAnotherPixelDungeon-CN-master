@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.watabou.noosa.RenderedText;
 import com.watabou.utils.RectF;
 
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class WndCatalogus extends WndTabbed {
 	private static final String TXT_WANDS	= "Wands";
 	private static final String TXT_RINGS	= "Rings";
 	
-	private BitmapText txtTitle;
+	private RenderedText txtTitle;
 	private ScrollPane list;
 
     private enum Tabs {
@@ -87,9 +88,9 @@ public class WndCatalogus extends WndTabbed {
 			resize( WIDTH_P, HEIGHT_P );
 		}
 		
-		txtTitle = PixelScene.createText( TXT_TITLE, 9 );
+		txtTitle = PixelScene.renderText( TXT_TITLE, 9 );
 		txtTitle.hardlight( Window.TITLE_COLOR );
-		txtTitle.measure();
+		PixelScene.align(txtTitle);
 		add( txtTitle );
 		
 		list = new ScrollPane( new Component() ) {
@@ -180,7 +181,7 @@ public class WndCatalogus extends WndTabbed {
 	private void updateList( String title ) {
 		
 		txtTitle.text( title );
-		txtTitle.measure();
+        PixelScene.align(txtTitle);
 		txtTitle.x = PixelScene.align( PixelScene.uiCamera, (width - txtTitle.width()) / 2 );
 		
 		items.clear();
@@ -306,7 +307,7 @@ public class WndCatalogus extends WndTabbed {
 //		private boolean identified;
 
 		private ItemSprite sprite;
-		private BitmapText label;
+		private RenderedText label;
 
         public ListItem( Class<? extends Item> cl ) {
             super();
@@ -336,7 +337,7 @@ public class WndCatalogus extends WndTabbed {
 			sprite = new ItemSprite();
 			add( sprite );
 			
-			label = PixelScene.createText( 8 );
+			label = PixelScene.renderText( 8 );
 			add( label );
 		}
 		
@@ -360,7 +361,7 @@ public class WndCatalogus extends WndTabbed {
 
     private static class NoteItem extends Component {
 
-        private BitmapText feature;
+        private RenderedText feature;
         private BitmapText depth;
 
         private Image icon;
@@ -369,7 +370,7 @@ public class WndCatalogus extends WndTabbed {
             super();
 
             feature.text( f.desc );
-            feature.measure();
+            PixelScene.align(feature);
 
             depth.text( Integer.toString( d ) );
             depth.measure();
@@ -382,7 +383,7 @@ public class WndCatalogus extends WndTabbed {
 
         @Override
         protected void createChildren() {
-            feature = PixelScene.createText( 9 );
+            feature = PixelScene.renderText( 8 );
             add( feature );
 
             depth = new BitmapText( PixelScene.font1x );

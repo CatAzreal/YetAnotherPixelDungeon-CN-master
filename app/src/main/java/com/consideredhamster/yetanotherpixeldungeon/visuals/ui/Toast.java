@@ -22,6 +22,7 @@ package com.consideredhamster.yetanotherpixeldungeon.visuals.ui;
 
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.NinePatch;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.ui.Component;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Chrome;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
@@ -33,7 +34,7 @@ public class Toast extends Component {
 	
 	protected NinePatch bg;
 	protected SimpleButton close;
-	protected BitmapText text;
+	protected RenderedText text;
 	
 	public Toast( String text ) {
 		super();
@@ -57,7 +58,7 @@ public class Toast extends Component {
 		};
 		add( close );
 		
-		text = PixelScene.createText( 8 );
+		text = PixelScene.renderText( 8 );
 		add( text );
 	}
 	
@@ -80,7 +81,7 @@ public class Toast extends Component {
 	
 	public void text( String txt ) {
 		text.text( txt );
-		text.measure();
+		PixelScene.align(text);
 	}
 	
 	protected void onClose() {};

@@ -21,6 +21,7 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.watabou.noosa.BitmapText;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.ui.Component;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Bestiary;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
@@ -41,9 +42,12 @@ public class WndInfoMob extends WndTitledMessage {
 	private static String desc( Mob mob ) {
 		
 		StringBuilder builder = new StringBuilder( mob.description() );
-		
-		builder.append( "\n\n" + ( Bestiary.isBoss( mob ) ? "The " : "This " ) + mob.name + " is " + mob.state.status() + "." );
-		
+
+		if (mob.state.status().equals("和平")){
+		builder.append( "\n\n" + "这个" + mob.name + "正在" + mob.state.status() + "。" );}
+		else {
+			builder.append("\n\n" + "这个" + mob.name + "是" + mob.state.status() + "的。" );
+		}
 		return builder.toString();
 	}
 	
@@ -52,15 +56,15 @@ public class WndInfoMob extends WndTitledMessage {
 		private static final int GAP	= 2;
 		
 		private CharSprite image;
-		private BitmapText name;
+		private RenderedText name;
 		private HealthBar health;
 		private BuffIndicator buffs;
 		
 		public MobTitle( Mob mob ) {
 			
-			name = PixelScene.createText( Utils.capitalize( mob.name ), 9 );
+			name = PixelScene.renderText( Utils.capitalize( mob.name ), 9 );
 			name.hardlight( TITLE_COLOR );
-			name.measure();	
+			PixelScene.align(name);
 			add( name );
 			
 			image = mob.sprite();

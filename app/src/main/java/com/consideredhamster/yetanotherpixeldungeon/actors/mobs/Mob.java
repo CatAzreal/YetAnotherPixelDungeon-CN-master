@@ -856,7 +856,7 @@ public abstract class Mob extends Char {
 		
 		@Override
 		public String status() {
-			return "sleeping";
+			return "休眠";
 		}
 	}
 	
@@ -902,7 +902,7 @@ public abstract class Mob extends Char {
 		
 		@Override
 		public String status() {
-			return "wandering";
+			return "漫游";
 		}
 	}
 	
@@ -967,7 +967,7 @@ public abstract class Mob extends Char {
 		
 		@Override
 		public String status() {
-			return enemySeen ? "attacking" : "hunting";
+			return enemySeen ? "交战" : "搜敌";
 		}
 	}
 	
@@ -1044,7 +1044,7 @@ public abstract class Mob extends Char {
 		
 		@Override
 		public String status() {
-			return "fleeing";
+			return "逃离";
 		}
 	}
 	

@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 
 public class Backpack extends Bag {
 	{
-        name = "backpack";
+        name = "背包";
         image = ItemSpriteSheet.BACKPACK;
 
         size = 19;
@@ -54,7 +54,7 @@ public class Backpack extends Bag {
 
     @Override
     public String info() {
-        return "That's your backpack. Everything useful goes in here.";
+        return "这是你的背包，所有物品都储存在这里面。";
     }
 
     @Override

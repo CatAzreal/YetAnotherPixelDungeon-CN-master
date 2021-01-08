@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.scenes;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
@@ -60,11 +61,11 @@ public class AmuletScene extends PixelScene {
 	public void create() {
 		super.create();
 		
-		BitmapTextMultiline text = null;
+		RenderedTextMultiline text = null;
 
-        text = createMultiline( !noText ? TXT : TXT_SHORT , 6 );
-        text.maxWidth = WIDTH;
-        text.measure();
+        text = renderMultiline( !noText ? TXT : TXT_SHORT , 6 );
+        text.maxWidth (WIDTH);
+        PixelScene.align(text);
         add( text );
 		
 		amulet = new Image( Assets.AMULET );
@@ -106,10 +107,11 @@ public class AmuletScene extends PixelScene {
 			amulet.x = align( (Camera.main.width - amulet.width) / 2 );
 			amulet.y = align( (Camera.main.height - height) / 2 );
 
-			text.x =  align( (Camera.main.width - text.width()) / 2 );
-			text.y = amulet.y + amulet.height + LARGE_GAP;
+			float x =  align( (Camera.main.width - text.width()) / 2 );
+			float y = amulet.y + amulet.height + LARGE_GAP;
+			text.setPos(x,y);
 
-			btnExit.setPos( (Camera.main.width - btnExit.width()) / 2, text.y + text.height() + LARGE_GAP );
+			btnExit.setPos( (Camera.main.width - btnExit.width()) / 2, y + text.height() + LARGE_GAP );
 			btnStay.setPos( btnExit.left(), btnExit.bottom() + SMALL_GAP );
 //		}
 

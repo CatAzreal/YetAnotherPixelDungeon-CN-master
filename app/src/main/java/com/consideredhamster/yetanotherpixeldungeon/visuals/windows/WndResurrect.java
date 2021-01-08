@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Game;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
@@ -62,10 +63,11 @@ public class WndResurrect extends Window {
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
 		
-		BitmapTextMultiline message = PixelScene.createMultiline( TXT_MESSAGE, 6 );
-		message.maxWidth = WIDTH;
-		message.measure();
-		message.y = titlebar.bottom() + GAP;
+		RenderedTextMultiline message = PixelScene.renderMultiline( TXT_MESSAGE, 6 );
+		message.maxWidth(WIDTH);
+		PixelScene.align(message);
+		float y = titlebar.bottom() + GAP;
+		message.setPos(0,y);
 		add( message );
 		
 		RedButton btnYes = new RedButton( TXT_YES ) {
@@ -82,7 +84,7 @@ public class WndResurrect extends Window {
 				Game.switchScene( InterlevelScene.class );
 			}
 		};
-		btnYes.setRect( 0, message.y + message.height() + GAP, WIDTH, BTN_HEIGHT );
+		btnYes.setRect( 0, y + message.height() + GAP, WIDTH, BTN_HEIGHT );
 		add( btnYes );
 		
 		RedButton btnNo = new RedButton( TXT_NO ) {

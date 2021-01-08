@@ -22,10 +22,12 @@ package com.consideredhamster.yetanotherpixeldungeon.scenes;
 
 import com.consideredhamster.yetanotherpixeldungeon.Difficulties;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Music;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.ui.Button;
@@ -46,11 +48,12 @@ public class RankingsScene extends PixelScene {
 	
 	private static final int DEFAULT_COLOR	= 0xCCCCCC;
 
-	private static final String TXT_TITLE	    	= "Top Rankings (%s)";
-	private static final String TXT_TOTAL		    = "Games played: %s/%s";
-	private static final String TXT_HAS_NO_GAEMS    = "No games were played\n on %s difficulty yet";
+	private static final String TXT_TITLE	    	= "排行榜(%s)";
+	private static final String TXT_TOTAL		    = "游玩次数：%s/%s";
+	//typo waiting to be fixed, will leave it for now
+	private static final String TXT_HAS_NO_GAEMS    = "尚无%s难度下的游戏记录";
 	
-	private static final String TXT_NO_INFO     	= "No additional information";
+	private static final String TXT_NO_INFO     	= "无额外信息";
 	
 	private static final float ROW_HEIGHT_L	= 22;
 	private static final float ROW_HEIGHT_P	= 28;
@@ -95,9 +98,9 @@ public class RankingsScene extends PixelScene {
 
         int pos = 0;
 
-        BitmapText title = PixelScene.createText( Utils.format( TXT_TITLE, Difficulties.NAMES[ difficulty ] ), 9 );
+        RenderedText title = PixelScene.renderText( Utils.format( TXT_TITLE, Difficulties.NAMES[ difficulty ] ), 9 );
         title.hardlight( Window.TITLE_COLOR );
-        title.measure();
+        PixelScene.align(title);
         title.x = align( (w - title.width()) / 2 );
         title.y = align( top - title.height() - GAP );
         add( title );
@@ -113,9 +116,9 @@ public class RankingsScene extends PixelScene {
 			}
 			
 //			if (Rankings.INSTANCE.totalNumber >= Rankings.TABLE_SIZE) {
-				BitmapText label = PixelScene.createText( Utils.format( TXT_TOTAL, Rankings.INSTANCE.wonNumber, Rankings.INSTANCE.totalNumber ), 8 );
+				RenderedText label = PixelScene.renderText( Utils.format( TXT_TOTAL, Rankings.INSTANCE.wonNumber, Rankings.INSTANCE.totalNumber ), 8 );
 				label.hardlight( Rankings.INSTANCE.wonNumber > 0 ? Window.TITLE_COLOR : DEFAULT_COLOR );
-				label.measure();
+				align(label);
 
                 label.x = align( (w - label.width()) / 2 );
 				label.y = align( top + pos * rowHeight + GAP );
@@ -147,9 +150,9 @@ public class RankingsScene extends PixelScene {
 			
 		} else {
 			
-			BitmapText noGaems = PixelScene.createMultiline( Utils.format( TXT_HAS_NO_GAEMS, Difficulties.NAMES[ difficulty ] ), 8 );
+			RenderedText noGaems = PixelScene.renderText( Utils.format( TXT_HAS_NO_GAEMS, Difficulties.NAMES[ difficulty ] ), 7 );
             noGaems.hardlight( DEFAULT_COLOR );
-            noGaems.measure();
+            align(noGaems);
             noGaems.x = align( (w - noGaems.width()) / 2 );
             noGaems.y = align( (h - noGaems.height()) / 2 );
 			add( noGaems );
@@ -219,7 +222,7 @@ public class RankingsScene extends PixelScene {
 		private Rankings.Record rec;
 
         private Flare flare;
-        private BitmapTextMultiline desc;
+        private RenderedTextMultiline desc;
 
         private ItemSprite shield;
         private BitmapText position;
@@ -246,7 +249,7 @@ public class RankingsScene extends PixelScene {
 			position.measure();
 			
 			desc.text( rec.info );
-			desc.measure();
+			align(desc);
 
             flNumber.text( Integer.toString( rec.depth ) );
             flNumber.measure();
@@ -282,7 +285,7 @@ public class RankingsScene extends PixelScene {
 			position = new BitmapText( PixelScene.font1x );
 			add( position );
 			
-			desc = createMultiline( 7 );
+			desc = renderMultiline( 6 );
 			add( desc );
 
             floorIcon = new Image();
@@ -326,10 +329,11 @@ public class RankingsScene extends PixelScene {
             chLevel.x = align( classIcon.x + (classIcon.width - chLevel.width()) / 2 );
             chLevel.y = align( classIcon.y + (classIcon.height - chLevel.height()) / 2 + 1 );
 
-            desc.x = shield.x + shield.width + GAP;
-            desc.maxWidth = (int)(floorIcon.x - desc.x);
-            desc.measure();
-            desc.y = position.y + position.baseLine() - desc.baseLine();
+            float x = shield.x + shield.width + GAP;
+            desc.maxWidth((int)(floorIcon.x - x));
+            align(desc);
+            float y = position.y + position.baseLine() - desc.bottom();
+            desc.setPos(x,y);
 		}
 		
 		@Override

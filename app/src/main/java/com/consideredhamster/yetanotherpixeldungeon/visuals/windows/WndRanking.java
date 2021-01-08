@@ -28,6 +28,7 @@ import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.ui.Button;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
@@ -52,9 +53,9 @@ public class WndRanking extends WndTabbed {
 	
 	private static final String TXT_ERROR		= "Unable to load additional information";
 	
-	private static final String TXT_STATS	= "Stats";
-	private static final String TXT_ITEMS	= "Items";
-	private static final String TXT_BADGES	= "Badges";
+	private static final String TXT_STATS	= "数据";
+	private static final String TXT_ITEMS	= "装备";
+	private static final String TXT_BADGES	= "徽章";
 	
 	private static final int WIDTH			= 112;
 	private static final int HEIGHT			= 134;
@@ -165,35 +166,35 @@ public class WndRanking extends WndTabbed {
 		
 		private static final int GAP	= 4;
 		
-		private static final String TXT_TITLE	= "Level %d %s";
+		private static final String TXT_TITLE	= "等级%d，%s";
 		
 		private static final String TXT_CHALLENGES	= "Challenges";
 		
-		private static final String TXT_HEALTH	= "Health Amount";
-		private static final String TXT_STR		= "Strength Achieved";
+		private static final String TXT_HEALTH	= "生命上限";
+		private static final String TXT_STR		= "力量";
 
-		private static final String TXT_SCORE	= "Score Points";
-		private static final String TXT_DURATION= "Game Duration";
-		private static final String TXT_DIFF	= "Difficulty";
+		private static final String TXT_SCORE	= "分数";
+		private static final String TXT_DURATION= "游戏时长";
+		private static final String TXT_DIFF	= "游戏难度";
 
-		private static final String TXT_VERSION 	= "Mod Version";
+		private static final String TXT_VERSION 	= "游戏版本";
 
-		private static final String TXT_DEPTH	= "Maximum Depth";
-		private static final String TXT_ENEMIES	= "Mobs Killed";
-		private static final String TXT_GOLD	= "Gold Found";
+		private static final String TXT_DEPTH	= "最大楼层数";
+		private static final String TXT_ENEMIES	= "击杀敌人数";
+		private static final String TXT_GOLD	= "金币收集数";
 		
-		private static final String TXT_FOOD	= "Food Eaten";
-		private static final String TXT_ALCHEMY	= "Potions Cooked";
-		private static final String TXT_ANKHS	= "Ankhs Used";
+		private static final String TXT_FOOD	= "食物消耗量";
+		private static final String TXT_ALCHEMY	= "药剂萃取量";
+		private static final String TXT_ANKHS	= "重生十字架使用数";
 		
 		public StatsTab() {
 			super();
 			
-			String heroClass = Dungeon.hero.className();
+			String heroClass = Dungeon.hero.heroClass.hname();
 			
 			IconTitle title = new IconTitle();
 			title.icon( HeroSprite.avatar( Dungeon.hero.heroClass, Dungeon.hero.appearance() ) );
-			title.label( Utils.format( TXT_TITLE, Dungeon.hero.lvl, heroClass ).toUpperCase( Locale.ENGLISH ) );
+			title.label( Utils.format( TXT_TITLE, Dungeon.hero.lvl, heroClass ));
 			title.setRect( 0, 0, WIDTH, 0 );
 			add( title );
 			
@@ -237,7 +238,7 @@ public class WndRanking extends WndTabbed {
 
             pos += GAP;
 
-            pos = statSlot( this, TXT_VERSION, !rec.version.isEmpty() ? rec.version : "too old", pos );
+            pos = statSlot( this, TXT_VERSION, !rec.version.isEmpty() ? rec.version : "版本过低", pos );
 
             pos += GAP;
 
@@ -247,12 +248,11 @@ public class WndRanking extends WndTabbed {
 		
 		private float statSlot( Group parent, String label, String value, float pos ) {
 			
-			BitmapText txt = PixelScene.createText( label, 7 );
+			RenderedText txt = PixelScene.renderText( label, 6 );
 			txt.y = pos;
 			parent.add( txt );
 			
-			txt = PixelScene.createText( value, 6 );
-			txt.measure();
+			txt = PixelScene.renderText( value, 5 );
 			txt.x = PixelScene.align( WIDTH * 0.65f );
 			txt.y = pos;
 			parent.add( txt );
@@ -433,7 +433,7 @@ public class WndRanking extends WndTabbed {
 	}
 
 	private class LabelledItemButton extends ItemButton {
-		private BitmapText name;
+		private RenderedText name;
 		
 		public LabelledItemButton( Item item ) {
 			super(item);
@@ -443,7 +443,7 @@ public class WndRanking extends WndTabbed {
 		protected void createChildren() {	
 			super.createChildren();
 			
-			name = PixelScene.createText( "?", 7 );
+			name = PixelScene.renderText( "?", 7 );
 			add(name);
 		}
 		
@@ -457,12 +457,12 @@ public class WndRanking extends WndTabbed {
 			
 			String str = Utils.capitalize( item.name() );
 			name.text( str );
-			name.measure();
+			PixelScene.align(name);
 			if (name.width() > width - name.x) {
 				do {
 					str = str.substring( 0, str.length() - 1 );
 					name.text( str + "..." );
-					name.measure();
+					PixelScene.align(name);
 				} while (name.width() > width - name.x);
 			}
 		}

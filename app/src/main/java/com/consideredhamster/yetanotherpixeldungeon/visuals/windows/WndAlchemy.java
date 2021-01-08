@@ -64,7 +64,7 @@ public class WndAlchemy extends Window{
 
         IconTitle titlebar = new IconTitle();
         titlebar.icon( DungeonTilemap.tile( Terrain.ALCHEMY ) );
-        titlebar.label( "Alchemy Pot" );
+        titlebar.label( "炼金釜" );
         titlebar.setRect( 0, 0, WIDTH, 0 );
         add( titlebar );
 
@@ -73,8 +73,8 @@ public class WndAlchemy extends Window{
         h += titlebar.height() + GAP;
 
         String hint = this.mode == MODE_BREW ?
-                "Select two herbs to fill an empty bottle with potion." :
-                "You may select a herb to cook with your piece of raw meat.";
+                "选择两份草药并将萃取液装入空瓶。" :
+                "你可以在烹饪生肉时选择一个用于调味的草药。";
 
         RenderedTextMultiline message = PixelScene.renderMultiline( hint, 6 );
 
@@ -115,7 +115,7 @@ public class WndAlchemy extends Window{
                         //slot.item(new WndBag.Placeholder(ItemSpriteSheet.SOMETHING));
                     }
 
-                    GameScene.selectItem( itemSelector, WndBag.Mode.HERB, "select" );
+                    GameScene.selectItem( itemSelector, WndBag.Mode.HERB, "选择" );
                 }
             };
 
@@ -203,7 +203,7 @@ public class WndAlchemy extends Window{
         h += 4;
         float btnWidth = ( w - 14 ) / 2f;
 
-        btnCombine = new RedButton( this.mode == MODE_BREW ? "Brew" : "Cook" ){
+        btnCombine = new RedButton( this.mode == MODE_BREW ? "精炼" : "烹饪" ){
             @Override
             protected void onClick() {
                 super.onClick();
@@ -216,7 +216,7 @@ public class WndAlchemy extends Window{
         btnCombine.enable(false);
         add(btnCombine);
 
-        RedButton btnCancel = new RedButton( "Cancel"){
+        RedButton btnCancel = new RedButton( "取消"){
             @Override
             protected void onClick() {
                 super.onClick();

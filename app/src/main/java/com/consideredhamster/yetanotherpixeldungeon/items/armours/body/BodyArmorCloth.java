@@ -40,7 +40,7 @@ public abstract class BodyArmorCloth extends BodyArmor {
     @Override
     public String descType() {
 //        return "This is a _tier-" + appearance + " light armor_. It offers less protection, but hinders your dexterity and stealth to much lesser extent.";
-        return "cloth";
+        return "布制";
     }
 
 }

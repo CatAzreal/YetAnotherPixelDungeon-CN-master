@@ -38,7 +38,7 @@ public class WndChangelog extends Window {
 	private static final int WIDTH_L	= 210;
 	private static final int HEIGHT_L	= 128;
 
-	private static final String TXT_TITLE	= "另类地牢中文版Beta1";
+	private static final String TXT_TITLE	= "另类地牢中文版Beta2";
 
     private static final String TXT_DESCR =
 
@@ -47,13 +47,12 @@ public class WndChangelog extends Window {
                 "\n" +
                 "当前汉化进度：\n" +
                 "Actors: 增/减益效果已完成50%汉化，其余部分待处理\n" +
-                "Items: 暂无\n" +
+                "Items: 武器/护甲/盾牌已完成数据介绍汉化\n" +
                 "Levels: 暂无\n" +
                 "Scenes: 主要场景已经进行了汉化\n" +
-                "Windows: 少数窗口进行了汉化\n" +
+                "Windows: 少数窗口进行了汉化，90%以上的UI已兼容字体\n" +
                 "\n" +
                 "Q&A\n" +
-                "\n" +
                 "Q：为什么还没汉化完就发出来？\n" +
                 "A：YAPD采用的是5年前Watabou开发的原版代码，而本次汉化采用的是Evan已经修补更迭数年的SPD基础引擎，" +
                 "两者间有许多不兼容处，因此需要交由各位玩家协助debug，目前阶段源码修改和字符串翻译全部由我一人进行，" +

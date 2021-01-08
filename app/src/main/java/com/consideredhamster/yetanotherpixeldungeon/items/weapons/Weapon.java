@@ -500,48 +500,42 @@ public abstract class Weapon extends EquipableItem {
         info.append( p );
 
         if (isIdentified()) {
-            info.append( "This _tier-" + tier + " " + ( !descType().isEmpty() ? descType() + " " : "" )  + "weapon_ " +
-                    "requires _" + itemStr + " points of strength_ to use effectively and" +
-                    ( isRepairable() ? ", given its _" + stateToString( state ) + " condition_, " : " " ) +
-                    "will deal _" + min() + "-" + max() + " points of damage_ per hit.");
+            info.append( "这个_" + tier + "阶" + ( !descType().isEmpty() ? descType() + "" : "" )  + "武器_需要_" + itemStr + "点力量_才能发挥其原有效能" +
+                    ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
+                    "每次攻击能够造成_" + min() + "-" + max() + "点伤害_。");
 
             info.append( p );
 
             if (itemStr > heroStr) {
                 info.append(
-                        "Because of your inadequate strength, your stealth and accuracy with it " +
-                        "will be _decreased by " + penalty + "%_ and attacking with it will be _" + (int)(100 - 10000 / (100 + penalty)) + "% slower_." );
+                        "因为你的力量不足，装备该武器将导致你的潜行和命中_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的攻击速度。" );
             } else if (itemStr < heroStr) {
                 info.append(
-                        "Because of your excess strength, your stealth and accuracy with it " +
-                        "will " + ( penalty > 0 ? "be _decreased only by " + penalty + "%_" : "_not be decreased_" ) + " " +
-                        "and attacking with it will deal additional _0-" + (heroStr - itemStr) + " points of damage_." );
+                        "因为你的强健体格，装备该武器" + ( penalty > 0 ? "_将仅导致你的潜行和命中降低" + penalty + "%_" : "_不会受到惩罚_" ) +
+                                "，并且攻击时额外造成_0-" + (heroStr - itemStr) + "点伤害_。" );
             } else {
                 info.append(
-                        "When wielding this weapon, your stealth and accuracy with it will " + ( penalty > 0 ? "be _decreased by " + penalty + "%_, " +
-                        "but with additional strength this penalty can be reduced" : "_not be decreased_" ) + "." );
+                        "装备该武器" + ( penalty > 0 ? "将导致你的潜行和命中_降低" + penalty + "%_，" +
+                                "不过超出需求的力量值可以降低该惩罚" : "_不会受到惩罚_" ) + "。" );
             }
         } else {
-            info.append(  "Usually _tier-" + tier + " " + ( !descType().isEmpty() ? descType() + " " : "" )  + "weapons_ require _" + itemStr + " points of strength_ to use effectively and" +
-                    ( isRepairable() ? ", when in _" + stateToString( state ) + " condition_, " : " " ) +
-                    "deal _" + min(0) + "-" + max(0) + " points of damage_ per hit." );
+            info.append( "通常这个_" + tier + "阶" + ( !descType().isEmpty() ? descType() + "" : "" )  + "武器_需要_" + itemStr + "点力量_才能发挥其原有效能" +
+                    ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
+                    "每次攻击应该能够造成_" + min() + "-" + max() + "点伤害_。");
 
             info.append( p );
 
             if (itemStr > heroStr) {
                 info.append(
-                        "Because of your inadequate strength, your stealth and accuracy with it " +
-                                "probably will be _decreased by " + penalty + "%_ and attacking with it will be _" + (int)(100 - 10000 / (100 + penalty)) + "% slower_." );
+                        "因为你的力量不足，装备该武器应该会导致你的潜行和命中_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的攻击速度。" );
             } else if (itemStr < heroStr) {
                 info.append(
-                        "Because of your excess strength, your stealth and accuracy with it " +
-                                "probably will " + ( penalty > 0 ? "be _decreased only by " + penalty + "%_" : "_not be decreased_" ) + " " +
-                                "and attacking with it will deal additional _0-" + (heroStr - itemStr) + " points of damage_." );
+                        "因为你的强健体格，装备该武器应该" + ( penalty > 0 ? "_会仅导致你的潜行和命中降低" + penalty + "%_" : "_不会受到惩罚_" ) +
+                                "，并且攻击时额外造成_0-" + (heroStr - itemStr) + "点伤害_。" );
             } else {
                 info.append(
-                        "When wielding this weapon, your stealth and accuracy with it probably will " +
-                                ( penalty > 0 ? "be _decreased by " + penalty + "%_" : "_not be decreased_" ) +
-                                ", unless your strength will be different from this weapon's actual strength requirement." );
+                        "装备该武器应该" + ( penalty > 0 ? "会导致你的潜行和命中_降低" + penalty + "%_，" +
+                                "不过超出需求的力量值可以降低该惩罚" : "_不会受到惩罚_" ) + "。" );
             }
         }
 
@@ -549,37 +543,36 @@ public abstract class Weapon extends EquipableItem {
 
         if (isEquipped( Dungeon.hero )) {
 
-            info.append("You hold the " + name + " at the ready.");
+            info.append("你正手持着" + name + "。");
 
         } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
 
-            info.append( "The " + name + " is in your backpack." );
+            info.append( "这件" + name + "正装在你的背包里。" );
 
         } else {
 
-            info.append( "The " + name + " lies on the dungeon's floor." );
+            info.append( "这件" + name + "在地面上。" );
 
         }
 
         info.append( s );
-
         if( isIdentified() && bonus > 0 ) {
-            info.append( "It appears to be _upgraded_." );
+            info.append( "它看起来被_强化_过。" );
         } else if( isCursedKnown() ) {
-            info.append( bonus >= 0 ? "It appears to be _non-cursed_." :
-                    "A malevolent _curse_ seems to be lurking within this " + name +"." );
+            info.append( bonus >= 0 ? "它看起来_没有受到诅咒_的影响。" :
+                    "恶毒的_诅咒_似乎隐藏在这件" + name +"之下。" );
         } else {
-            info.append( " This " + name + " is _unidentified_." );
+            info.append( "这件" + name + "尚_未被鉴定_。" );
         }
 
         info.append( s );
 
         if( isEnchantKnown() && enchantment != null ) {
-            info.append( " " + ( isIdentified() && bonus != 0 ? "Also" : "However" ) +
-                    ", it seems to be _enchanted to " + enchantment.desc(this) + "_." );
+            info.append( " " + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) +
+                    "，它携带着_" + enchantment.desc(this) + "附魔_。" );
         }
 
-        info.append( " This is a _" + lootChapterAsString() +"_ weapon." );
+        info.append( "这是一件_" + lootChapterAsString() +"_的的武器。" );
 
         return info.toString();
     }

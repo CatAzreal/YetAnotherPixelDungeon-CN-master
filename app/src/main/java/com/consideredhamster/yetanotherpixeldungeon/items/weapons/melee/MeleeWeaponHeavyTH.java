@@ -39,7 +39,7 @@ public abstract class MeleeWeaponHeavyTH extends MeleeWeapon {
     public String descType() {
 //        return "This is a _tier-" + appearance + " heavy two-handed weapon_. It can be used with wands and throwing weapons, " +
 //                "but its strength requirement will increase if paired with shield or another melee weapon.";
-        return "heavy two-handed";
+        return "重型双手";
     }
 
     @Override

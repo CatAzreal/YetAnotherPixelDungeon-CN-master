@@ -261,7 +261,7 @@ public class Toolbar extends Component {
 		}	
 		@Override
 		public String prompt() {
-			return "Select a cell or tap again";
+			return "选择一个地格或再点一次";
 		}
 	};
 

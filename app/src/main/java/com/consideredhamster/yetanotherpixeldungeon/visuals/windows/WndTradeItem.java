@@ -21,6 +21,7 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Invisibility;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.Hero;
@@ -60,7 +61,7 @@ public class WndTradeItem extends Window {
 
 	private WndBag owner;
 
-    private BitmapTextMultiline normal;
+    private RenderedTextMultiline normal;
     private BitmapTextMultiline highlighted;
 	
 	public WndTradeItem( final Item item, WndBag owner ) {
@@ -208,28 +209,14 @@ public class WndTradeItem extends Window {
 			titlebar.color( ItemSlot.DEGRADED );	
 		}
 
-        Highlighter hl = new Highlighter( item.info() );
-
-        normal = PixelScene.createMultiline( hl.text, 6 );
-        normal.maxWidth = WIDTH;
-        normal.measure();
-        normal.x = titlebar.left();
-        normal.y = titlebar.bottom() + GAP;
+        normal = PixelScene.renderMultiline( item.info(), 6 );
+        normal.maxWidth(WIDTH);
+        PixelScene.align(normal);
+        float x = titlebar.left();
+        float y = titlebar.bottom() + GAP;
+        normal.setPos(x,y);
         add( normal );
 
-        if (hl.isHighlighted()) {
-            normal.mask = hl.inverted();
-
-            highlighted = PixelScene.createMultiline( hl.text, 6 );
-            highlighted.maxWidth = normal.maxWidth;
-            highlighted.measure();
-            highlighted.x = normal.x;
-            highlighted.y = normal.y;
-            add( highlighted );
-
-            highlighted.mask = hl.mask;
-            highlighted.hardlight( TITLE_COLOR );
-        }
 		
 //		BitmapTextMultiline info = PixelScene.createMultiline( item.info(), 6 );
 //		info.maxWidth = WIDTH;
@@ -239,7 +226,7 @@ public class WndTradeItem extends Window {
 //		add( info );
 //
 //		return info.y + info.height();
-		return normal.y + normal.height();
+		return y + normal.height();
 	}
 	
 	private void sell( Item item ) {

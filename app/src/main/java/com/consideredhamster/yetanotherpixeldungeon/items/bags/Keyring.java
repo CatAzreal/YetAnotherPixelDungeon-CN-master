@@ -29,7 +29,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 public class Keyring extends Bag {
 
 	{
-		name = "keys";
+		name = "钥匙";
 		image = ItemSpriteSheet.KEYRING;
 		
 		size = 14;
@@ -55,8 +55,7 @@ public class Keyring extends Bag {
 	@Override
 	public String info() {
 		return
-			"This is a copper keyring, that lets you keep all your keys " +
-			"separately from the rest of your belongings.";
+			"这是一个铜制钥匙串，用于存放各种钥匙。";
 	}
 
     @Override

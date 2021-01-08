@@ -30,7 +30,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 public class PotionSash extends Bag{
 
     {
-        name = "potion belt";
+        name = "药剂挎带";
         image = ItemSpriteSheet.BELT;
 
         size = 19;
@@ -56,9 +56,7 @@ public class PotionSash extends Bag{
     @Override
     public String info() {
         return
-            "You can store a significant number of potions in the curiously made containers " +
-            "which go around this wondrous sash. It would not only save room in your backpack, " +
-            "but also protect these potions from breaking.";
+            "你可以在这个挂满小隔间的奇特肩带上存放大量的药剂。挎带不仅能节省你的背包空间，还可以保护挎带内的药剂不受损伤。";
     }
 
     @Override

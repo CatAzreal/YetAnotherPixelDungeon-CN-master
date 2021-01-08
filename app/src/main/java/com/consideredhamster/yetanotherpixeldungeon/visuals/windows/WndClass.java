@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Group;
@@ -28,13 +29,14 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.hero.HeroClass;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.HeroSubClass;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+import com.watabou.noosa.RenderedText;
 
 public class WndClass extends WndTabbed {
 	
-	private static final String TXT_MASTERY = "Mastery";
-	private static final String TXT_DETAILS = "Details";
+	private static final String TXT_MASTERY = "典范之道";
+	private static final String TXT_DETAILS = "信息";
 
-	private static final int WIDTH			= 124;
+	private static final int WIDTH			= 120;
 	
 	private static final int TAB_WIDTH	= 44;
 	
@@ -54,7 +56,7 @@ public class WndClass extends WndTabbed {
         tabHistory = new HistoryTab();
         add(tabHistory);
 
-        tab = new RankingTab(Utils.capitalize(cl.title()), tabHistory);
+        tab = new RankingTab(Utils.capitalize(cl.hname()), tabHistory);
         tab.setSize(TAB_WIDTH, tabHeight());
         add( tab );
 
@@ -64,7 +66,7 @@ public class WndClass extends WndTabbed {
         tab = new RankingTab( TXT_DETAILS, tabDetails);
         tab.setSize(TAB_WIDTH, tabHeight());
         add( tab );
-		
+//		Badges.isUnlocked( cl.masteryBadge() )
 		if (Badges.isUnlocked( cl.masteryBadge() )) {
 			tabMastery = new MasteryTab();
 			add( tabMastery );
@@ -123,11 +125,12 @@ public class WndClass extends WndTabbed {
 					pos += GAP;
 				}
 				
-				BitmapTextMultiline item = PixelScene.createMultiline( items[i], 6 );
-				item.x = MARGIN;
-				item.y = pos;
-				item.maxWidth = WIDTH - MARGIN * 2;
-				item.measure();
+				RenderedTextMultiline item = PixelScene.renderMultiline( items[i], 6 );
+				float x = MARGIN;
+				float y = pos;
+				item.maxWidth(WIDTH - MARGIN * 2);
+				PixelScene.align(item);
+				item.setPos(x,y);
 				add( item );
 				
 				pos += item.height();
@@ -167,20 +170,21 @@ public class WndClass extends WndTabbed {
                     pos += GAP;
                 }
 
-                BitmapText dot = PixelScene.createText( DOT, 6 );
+                RenderedText dot = PixelScene.renderText( DOT, 6 );
                 dot.x = MARGIN;
                 dot.y = pos;
                 if (dotWidth == 0) {
-                    dot.measure();
+                    PixelScene.align(dot);
                     dotWidth = dot.width();
                 }
                 add( dot );
 
-                BitmapTextMultiline item = PixelScene.createMultiline( items[i], 6 );
-                item.x = dot.x + dotWidth;
-                item.y = pos;
-                item.maxWidth = (int)(WIDTH - MARGIN * 2 - dotWidth);
-                item.measure();
+                RenderedTextMultiline item = PixelScene.renderMultiline( items[i], 6 );
+               	float x = dot.x + dotWidth;
+               	float y = pos;
+                item.maxWidth((int)(WIDTH - MARGIN * 2 - dotWidth));
+				PixelScene.align(item);
+				item.setPos(x,y);
                 add( item );
 
                 pos += item.height();
@@ -190,7 +194,7 @@ public class WndClass extends WndTabbed {
                 }
             }
 
-            width += MARGIN + dotWidth;
+            width += MARGIN;
             height = pos + MARGIN;
         }
     }
@@ -199,7 +203,7 @@ public class WndClass extends WndTabbed {
 		
 		private static final int MARGIN	= 4;
 		
-		private BitmapTextMultiline normal;
+		private RenderedTextMultiline normal;
 		private BitmapTextMultiline highlighted;
 		
 		public float height;
@@ -223,32 +227,17 @@ public class WndClass extends WndTabbed {
 				text = HeroSubClass.SNIPER.desc() + "\n\n" + HeroSubClass.WARDEN.desc();
 				break;
 			}
-			
-			Highlighter hl = new Highlighter( text );
-			
-			normal = PixelScene.createMultiline( hl.text, 6 );
-			normal.maxWidth = WIDTH - MARGIN * 2;
-			normal.measure();
-			normal.x = MARGIN;
-			normal.y = MARGIN;
+
+			RenderedTextMultiline normal = PixelScene.renderMultiline( text, 6 );
+			normal.maxWidth(WIDTH);
+			PixelScene.align(normal);
+			float x = MARGIN;
+			float y = MARGIN;
+			normal.setPos(x,y);
 			add( normal );
 			
-			if (hl.isHighlighted()) {
-				normal.mask = hl.inverted();
-				
-				highlighted = PixelScene.createMultiline( hl.text, 6 );
-				highlighted.maxWidth = normal.maxWidth;
-				highlighted.measure();
-				highlighted.x = normal.x;
-				highlighted.y = normal.y;
-				add( highlighted );
-		
-				highlighted.mask = hl.mask;
-				highlighted.hardlight( TITLE_COLOR );
-			}
-			
-			height = normal.y + normal.height() + MARGIN;
-			width = normal.x + normal.width() + MARGIN;
+			height = y + normal.height() + MARGIN;
+			width = x + normal.width() + MARGIN;
 		}
 	}
 }

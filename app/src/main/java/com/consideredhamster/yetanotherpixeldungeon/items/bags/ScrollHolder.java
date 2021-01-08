@@ -29,7 +29,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 public class ScrollHolder extends Bag {
 
 	{
-		name = "scroll holder";
+		name = "卷轴筒";
 		image = ItemSpriteSheet.HOLDER;
 		
 		size = 19;
@@ -55,8 +55,7 @@ public class ScrollHolder extends Bag {
 	@Override
 	public String info() {
 		return
-			"You can place any number of scrolls into this tubular container. " +
-			"It saves room in your backpack and protects scrolls from fire.";
+			"你可以向这个管状容器内放入任意数量的卷轴。这个容器不仅能节省你的背包空间还能保护卷轴不被点燃。";
 	}
 
     @Override

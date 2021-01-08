@@ -30,6 +30,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.herbs.SungrassHerb;
 import com.consideredhamster.yetanotherpixeldungeon.items.herbs.WhirlvineHerb;
 import com.consideredhamster.yetanotherpixeldungeon.items.herbs.WyrmflowerHerb;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.OilLantern;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.TomeOfMastery;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.EmptyBottle;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfMindVision;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfThunderstorm;
@@ -115,58 +116,58 @@ public enum HeroClass {
     };
 
     public static final String[] WAR_DETAILS = {
-            "\u007F shortsword",
-            "\u007F round shield",
-            "\u007F studded armor",
-            "\u007F armorer's kit",
+            "· 短剑",
+            "· 圆盾",
+            "· 镶钉皮甲",
+            "· 维护套件",
             "",
-            "+ health",
-            "+ strength",
+            "+ 最大生命",
+            "+ 力量",
             "",
-            "- dexterity",
-            "- stealth",
+            "- 敏捷",
+            "- 潜行",
     };
 
     public static final String[] ROG_DETAILS = {
-            "\u007F dagger",
-            "\u007F throwing knives x10",
-            "\u007F rogue garb",
-            "\u007F whetstone",
-            "\u007F ring of Shadows",
+            "· 匕首",
+            "· 飞刀x10",
+            "· 盗贼风衣",
+            "· 磨刀石",
+            "· 暗影戒指",
             "",
-            "+ dexterity",
-            "+ stealth",
+            "+ 敏捷",
+            "+ 潜行",
             "",
-            "- magic power",
-            "- attunement",
+            "- 魔能",
+            "- 调谐",
     };
 
     public static final String[] MAG_DETAILS = {
-            "\u007F quarterstaff",
-            "\u007F wand of Magic Missile",
-            "\u007F mystic robe",
-            "\u007F arcane battery",
-            "\u007F scroll of Raise Dead",
+            "· 短杖",
+            "· 魔弹法杖",
+            "· 秘法长袍",
+            "· 奥术晶石",
+            "· 死灵卷轴",
             "",
-            "+ magic power",
-            "+ attunement",
+            "+ 魔能",
+            "+ 调谐",
             "",
-            "- accuracy",
-            "- perception",
+            "- 命中",
+            "- 感知",
     };
 
     public static final String[] HUN_DETAILS = {
-            "\u007F sling",
-            "\u007F bullets x30",
-            "\u007F elven cloak",
-            "\u007F crafting kit",
-            "\u007F empty bottle x3",
+            "· 投索",
+            "· 弹药x30",
+            "· 精灵斗篷",
+            "· 便携工具包",
+            "· 空瓶x3",
             "",
-            "+ accuracy",
-            "+ perception",
+            "+ 命中",
+            "+ 感知",
             "",
-            "- health",
-            "- strength",
+            "- 最大生命",
+            "- 力量",
     };
 	
 	public void initHero( Hero hero ) {
@@ -246,6 +247,7 @@ public enum HeroClass {
         (hero.belongings.weap2 = new RoundShield()).identify().repair().fix();
         (hero.belongings.armor = new StuddedArmor()).identify().repair().fix();
 
+//        new TomeOfMastery().collect();
         new ArmorerKit().collect();
 
     }
