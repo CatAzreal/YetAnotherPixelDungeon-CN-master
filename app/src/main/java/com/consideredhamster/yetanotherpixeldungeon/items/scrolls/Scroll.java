@@ -182,15 +182,14 @@ public abstract class Scroll extends Item {
 	
 	@Override
 	public String name() {
-		return isTypeKnown() ? name : "scroll \"" + rune + "\"";
+		return isTypeKnown() ? name : "\"" + rune + "\"卷轴";
 	}
 	
 	@Override
 	public String info() {
 		return isTypeKnown() ?
 			desc() :
-			"This parchment is covered with indecipherable writing, and bears a title " +
-			"of rune " + rune + ". Who knows what it will do when read aloud?";
+			"这张羊皮纸上写满了难以破译的魔法文字，上面还附有一个" + rune + "符文。大声念出会发生什么呢？";
 	}
 	
 	public static HashSet<Class<? extends Scroll>> getKnown() {

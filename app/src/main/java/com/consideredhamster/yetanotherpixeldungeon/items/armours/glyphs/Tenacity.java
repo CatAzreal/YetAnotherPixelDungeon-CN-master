@@ -39,22 +39,22 @@ public class Tenacity extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of tenacity";
+        return "强韧之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of vulnerability";
+        return "脆弱之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "increase your protection when on low health and give you greater mental resilience";
+        return "低生命值时获得额外防护能力，并提高精神状态抗性";
     }
 
     @Override
     protected String desc_n() {
-        return "decrease your protection when on low health";
+        return "低生命值时受到更多伤害";
     }
 
     @Override

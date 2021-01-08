@@ -30,19 +30,18 @@ public class MeatStewed extends Food {
 	protected ItemSprite.Glowing spiceGlow = null;
 
 	{
-		name = "stewed meat";
+		name = "炖肉";
 		image = ItemSpriteSheet.STEWED_MEAT;
 
 		energy = Satiety.MAXIMUM * 0.25f;
-        message = "That meat tasted... ok.";
+        message = "这块肉尝起来...倒是不差";
 	}
 
 	
 	@Override
 	public String desc() {
         return
-            "This meat was stewed in a pot. It smells pretty good, compared to these bland rations." +
-            "Even though it has _no special effects_ when consumed, it is still better than just raw meat.";
+            "这块肉好好地在锅里煮了一番。比起那些平淡无奇的干粮，它闻起来要美味的多。尽管食用它并_不会带来任何特殊效果_，但肯定比生着吃要好很多。";
 
 	}
 

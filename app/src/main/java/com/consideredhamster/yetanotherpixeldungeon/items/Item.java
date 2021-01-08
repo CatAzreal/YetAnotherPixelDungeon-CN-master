@@ -62,12 +62,12 @@ import com.watabou.utils.Random;
 
 public class Item implements Bundlable {
 
-	private static final String TXT_PACK_FULL	= "Your pack is too full for the %s";
+	private static final String TXT_PACK_FULL	= "你的背包已满，无法装下%s了！";
 
-	private static final String TXT_DEGRADED		= "Your %s has degraded.";
-	private static final String TXT_UNUSABLE		= "Your %s has broken!";
-	private static final String TXT_GONNA_DEGRADE	= "Your %s is going to degrade soon.";
-    private static final String TXT_GONNA_BREAK	        = "Your %s is going to break soon.";
+	private static final String TXT_DEGRADED		= "你的%s受损了。";
+	private static final String TXT_UNUSABLE		= "你的%s被毁了！";
+	private static final String TXT_GONNA_DEGRADE	= "你的%s即将受损。";
+    private static final String TXT_GONNA_BREAK	        = "你的%s即将毁坏。";
 
     private static final String TXT_TARGET_CHARMED	= "You can't bring yourself to throw anything at someone so... charming.";
 
@@ -80,8 +80,8 @@ public class Item implements Bundlable {
 //    public static final float TIME_TO_PICK_UP	= 1.0f;
     public static final float TIME_TO_DROP		= 0.5f;
 
-	public static final String AC_DROP		= "DROP";
-	public static final String AC_THROW		= "THROW";
+	public static final String AC_DROP		= "丢弃";
+	public static final String AC_THROW		= "扔出";
 
     public static final int ITEM_UNKNOWN = 0;
     public static final int CURSED_KNOWN = 1;
@@ -471,13 +471,13 @@ public class Item implements Bundlable {
                                 CharSprite sprite = Dungeon.hero.sprite;
 
                                 if (this instanceof Weapon) {
-                                    sprite.showStatus(CharSprite.NEUTRAL, "weapon degraded");
+                                    sprite.showStatus(CharSprite.NEUTRAL, "武器受损");
                                 } else if (this instanceof Shield) {
-                                    sprite.showStatus(CharSprite.NEUTRAL, "shield degraded");
+                                    sprite.showStatus(CharSprite.NEUTRAL, "盾牌受损");
                                 } else if (this instanceof BodyArmor) {
-                                    sprite.showStatus(CharSprite.NEUTRAL, "armor degraded");
+                                    sprite.showStatus(CharSprite.NEUTRAL, "护甲受损");
                                 } else if (this instanceof Wand) {
-                                    sprite.showStatus(CharSprite.NEUTRAL, "wand degraded");
+                                    sprite.showStatus(CharSprite.NEUTRAL, "法杖受损");
                                 }
 
                                 Sample.INSTANCE.play(Assets.SND_DEGRADE);
@@ -510,15 +510,15 @@ public class Item implements Bundlable {
     protected String stateToString( int state ) {
         switch(state) {
             case 3:
-                return "perfect";
+                return "崭新";
             case 2:
-                return "good";
+                return "尚可";
             case 1:
-                return "bad";
+                return "磨损";
             case 0:
-                return "horrible";
+                return "损毁";
             default:
-                return "unknown";
+                return "未知";
         }
     }
 
@@ -642,17 +642,17 @@ public class Item implements Bundlable {
     public String lootChapterAsString() {
         switch( lootChapter() ){
             case 1:
-                return "common";
+                return "常见";
             case 2:
-                return "regular";
+                return "稀有";
             case 3:
-                return "infrequent";
+                return "罕见";
             case 4:
-                return "exceptional";
+                return "卓越";
             case 5:
-                return "mythical";
+                return "秘稀";
             default:
-                return "unknown";
+                return "未知";
         }
     }
 
@@ -792,7 +792,7 @@ public class Item implements Bundlable {
 		}
 		@Override
 		public String prompt() {
-			return "Choose direction of throw";
+			return "选择扔出的方向";
 		}
 	};
 }

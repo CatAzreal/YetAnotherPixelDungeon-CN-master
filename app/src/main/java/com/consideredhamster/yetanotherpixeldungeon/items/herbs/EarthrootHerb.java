@@ -36,7 +36,7 @@ public class EarthrootHerb extends Herb {
     private static final ItemSprite.Glowing BROWN = new ItemSprite.Glowing( 0x663300 );
 
     {
-        name = "Earthroot herb";
+        name = "地缚根";
         image = ItemSpriteSheet.HERB_EARTHROOT;
 
         cooking = ChewyMeat.class;

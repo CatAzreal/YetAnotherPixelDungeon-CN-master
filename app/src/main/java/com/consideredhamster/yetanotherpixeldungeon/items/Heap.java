@@ -59,12 +59,12 @@ import com.watabou.utils.Random;
 
 public class Heap implements Bundlable {
 
-	private static final String TXT_MIMIC = "This is a mimic!";
-	private static final String TXT_BURNED = "Fire burns %s lying on the floor!";
+	private static final String TXT_MIMIC = "这是只拟态怪！";
+	private static final String TXT_BURNED = "蔓延的火势烧掉了地上的%s！";
 
-	private static final String TXT_BLOWNUP = "%s is destroyed!";
-	private static final String TXT_DAMAGED = "%s is damaged!";
-	private static final String TXT_SHATTER = "%s is shattered!";
+	private static final String TXT_BLOWNUP = "%s被炸毁了！";
+	private static final String TXT_DAMAGED = "%s受损了！";
+	private static final String TXT_SHATTER = "%s被打碎了！";
 
 	private static final String TXT_KNOWN_BY_BREWING = "You now know that this is %s!";
 

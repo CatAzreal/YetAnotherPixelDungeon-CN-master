@@ -66,15 +66,13 @@ public abstract class EquipableItem extends Item {
     private static final String TXT_R_U_SURE_HEAVY =
             "这件物品的重量超出了你的力量承受范围。一旦装备将会极大影响你的战斗能力。你确认要装备它吗？";
 
-    protected static final String TXT_ITEM_IS_INCOMPATIBLE = "这个物品This item is incompatible!";
+    protected static final String TXT_ITEM_IS_INCOMPATIBLE = "这个物品无法搭配现有配置！";
 
     protected static final String TXT_R_U_SURE_INCOMPATIBLE =
-            "You are aware that this item is not compatible with your current gear, and will " +
-            "require additional strength to be properly wielded. Once equipped, it may decrease " +
-            "your combat proficiency. Are you really sure you want to equip it?";
+            "你意识到这件物品与你现在的装备配置并不兼容，并且需要更高的力量属性才能有效使用。一旦装备它你的战斗效能可能会受影响。你确定要装备这件物品吗？";
 
-    protected static final String TXT_YES			= "Yes, I know what I'm doing";
-    protected static final String TXT_NO			= "No, I changed my mind";
+    protected static final String TXT_YES			= "是的，我很清楚自己在做什么";
+    protected static final String TXT_NO			= "还是算了，我改主意了";
 
     @Override
 	public ArrayList<String> actions( Hero hero ) {

@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class ScaleArmor extends BodyArmorLight {
 
 	{
-		name = "scale armor";
+		name = "鳞甲";
 		image = ItemSpriteSheet.ARMOR_SCALE;
         appearance = 8;
 	}
@@ -38,7 +38,6 @@ public class ScaleArmor extends BodyArmorLight {
 	@Override
 	public String desc() {
         return
-			"This armor miraculously combines protection of heavy armors and mobility of " +
-            "light armors. Truly a work of a master.";
+			"这套护甲在具有重型护甲的保护能力的同时保留了轻型护甲的轻便性。真正的名匠之作。";
 	}
 }

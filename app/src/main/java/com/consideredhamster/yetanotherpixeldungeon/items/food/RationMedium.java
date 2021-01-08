@@ -26,17 +26,17 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class RationMedium extends Food {
 
 	{
-		name = "ration of food";
+		name = "干粮";
 		image = ItemSpriteSheet.RATION;
 
         energy = Satiety.MAXIMUM * 0.75f;
-        message = "That food tasted very good!";
+        message = "吃起来不错！";
     }
 	
 	@Override
 	public String desc() {
 		return 
-			"Nothing fancy here: dried meat, some biscuits - things like that.";
+			"里面没什么特别的：一些肉干，面饼之类的玩意。";
 	}
 	
 	@Override

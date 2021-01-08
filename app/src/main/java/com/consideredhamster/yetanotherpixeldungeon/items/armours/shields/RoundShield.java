@@ -26,7 +26,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class RoundShield extends Shield {
 
 	{
-		name = "round shield";
+		name = "小圆盾";
 		image = ItemSpriteSheet.SHIELD_ROUND;
 	}
 
@@ -34,6 +34,6 @@ public class RoundShield extends Shield {
 	
 	@Override
 	public String desc() {
-		return "Simple yet very sturdily made shield.";
+		return "设计简单，坚固耐用的盾牌。";
 	}
 }

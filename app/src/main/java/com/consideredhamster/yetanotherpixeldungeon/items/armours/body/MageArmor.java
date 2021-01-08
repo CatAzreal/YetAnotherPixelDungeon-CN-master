@@ -29,7 +29,7 @@ public class MageArmor extends BodyArmorCloth {
 //	private static final String TXT_NOT_MAGE	= "Only mages can use this armor!";
 	
 	{
-		name = "mystic robe";
+		name = "秘法长袍";
 		image = ItemSpriteSheet.ARMOR_MAGE;
 
         appearance = 1;
@@ -41,8 +41,7 @@ public class MageArmor extends BodyArmorCloth {
 
     @Override
     public String desc() {
-        return "Combination of intricate magicks and rare materials sewn into fabric of this robe " +
-                "allow it to increasing your attunement with mystical energies.";
+        return "长袍所用的布料覆盖着一层稀有线材织造而出的精密术式，允许使用者提高自己的魔能亲和力。";
     }
 
 //    public MageArmor() {

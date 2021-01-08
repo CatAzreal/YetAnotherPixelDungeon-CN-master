@@ -26,17 +26,16 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class MeatRaw extends Food {
 
 	{
-		name = "raw meat";
+		name = "生肉";
 		image = ItemSpriteSheet.MEAT;
 
 		energy = Satiety.MAXIMUM * 0.20f;
-		message = "That meat tasted... strange.";
+		message = "这块肉尝起来...非常怪异。";
 	}
 
 	@Override
 	public String desc() {
-		return "This is a piece of raw, uncooked meat. Definitely an option if you are starving, " +
-            "but it is better be stewed otherwise.";
+		return "这是一份未被烹饪的生肉。极度饥饿的情形下仍可作为食物选择，但最好还是拿去煮熟了吃。";
 	}
 	
 	public int price() {

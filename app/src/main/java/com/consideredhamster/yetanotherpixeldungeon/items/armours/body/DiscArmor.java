@@ -25,7 +25,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 
 public class DiscArmor extends BodyArmorHeavy {
     {
-        name = "disc armor";
+        name = "碟甲";
         image = ItemSpriteSheet.ARMOR_DISC;
         appearance = 5;
     }
@@ -36,6 +36,6 @@ public class DiscArmor extends BodyArmorHeavy {
 
     @Override
     public String desc() {
-        return "This armor is made of a metal disc sewn on top of a cloth (hence the name). It's pretty durable, but bulky.";
+        return "这件护甲由下层的布制衣物和其上钉入的金属碟组成(也因此得名碟甲)。坚固但笨重。";
     }
 }

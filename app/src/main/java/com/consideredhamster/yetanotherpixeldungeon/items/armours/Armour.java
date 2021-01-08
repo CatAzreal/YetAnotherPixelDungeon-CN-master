@@ -49,9 +49,9 @@ public abstract class Armour extends EquipableItem {
 
 	private static final int HITS_TO_KNOW	= 15;
 
-	private static final String TXT_EQUIP_CURSED	= "your %s constricts around you painfully";
+	private static final String TXT_EQUIP_CURSED	= "你身上的%s紧紧箍住了你。";
 
-	private static final String TXT_IDENTIFY	= "you are now familiar enough with your %s to identify it. It is %s.";
+	private static final String TXT_IDENTIFY	= "你对身上的%s了解已经足以鉴定其本质，它是%s。";
 
 	public int tier;
 	public int appearance;

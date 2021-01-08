@@ -26,16 +26,16 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 public class RationSmall extends Food {
 
 	{
-		name = "small ration";
+		name = "小份干粮";
 		image = ItemSpriteSheet.OVERPRICED;
 
 		energy = Satiety.MAXIMUM * 0.5f;
-		message = "That food tasted good!";
+		message = "吃起来还行。";
 	}
 	
 	@Override
 	public String desc() {
-		return "It looks exactly like a standard ration of food but smaller.";
+		return "和普通干粮有着一样的包装和内容物，就是量更少了。";
 	}
 	
 	@Override

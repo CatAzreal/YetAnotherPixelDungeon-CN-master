@@ -33,7 +33,7 @@ import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 
 public class Revival extends Armour.Glyph {
 
-    private static final String TXT_RESURRECT	= "You are revived by the powers of your enchantment!";
+    private static final String TXT_RESURRECT	= "你因寄宿在附魔之中的力量获得重生！";
 	
 	@Override
 	public Glowing glowing() {
@@ -47,22 +47,22 @@ public class Revival extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of revival";
+        return "重生之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of martyrdom";
+        return "灭亡之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "save you from death with a certain chance and make you more resistant to unholy damage";
+        return "一定几率使你起死回生，并提高对邪恶伤害的抗性";
     }
 
     @Override
     protected String desc_n() {
-        return "prevent ankhs from working with a certain chance";
+        return "一定几率中断重生十字架的复活进程";
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Revival extends Armour.Glyph {
 
         Debuff.removeAll( hero );
 
-        hero.sprite.showStatus(CharSprite.POSITIVE, "resurrected!");
+        hero.sprite.showStatus(CharSprite.POSITIVE, "复活！");
         GLog.w(TXT_RESURRECT);
     }
 }

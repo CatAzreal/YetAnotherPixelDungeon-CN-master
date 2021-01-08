@@ -32,7 +32,7 @@ public class PlateArmor extends BodyArmorHeavy {
 //	private static final String TXT_NOT_WARRIOR	= "Only warriors can use this armor!";
 	
 	{
-		name = "plate armor";
+		name = "板甲";
 		image = ItemSpriteSheet.ARMOR_PLATE;
 
         appearance = 9;
@@ -68,8 +68,7 @@ public class PlateArmor extends BodyArmorHeavy {
 //			"While this armor looks heavy, it allows a warrior to perform heroic leap towards " +
 //			"a targeted location, slamming down to stun all neighbouring enemies.";
         return
-                "Enormous plates of metal are joined together into a suit that provides " +
-                "unmatched protection to any adventurer strong enough to bear its staggering weight.";
+                "庞大的金属板定接在一起组成了这套护甲，为能承受护甲之重的冒险者提供无与伦比的防护能力。";
 	}
 	
 //	protected static CellSelector.Listener leaper = new  CellSelector.Listener() {

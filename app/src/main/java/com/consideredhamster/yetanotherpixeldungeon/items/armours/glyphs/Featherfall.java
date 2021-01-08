@@ -39,22 +39,22 @@ public class Featherfall extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of featherfall";
+        return "羽落之%";
     }
 
     @Override
     protected String name_n() {
-        return "%s of burden";
+        return "笨重之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "weight lesser and decrease damage from falling";
+        return "护甲更轻且降低所受坠落伤害";
     }
 
     @Override
     protected String desc_n() {
-        return "weight even more than usual";
+        return "进一步提高护甲重量";
     }
 
     @Override

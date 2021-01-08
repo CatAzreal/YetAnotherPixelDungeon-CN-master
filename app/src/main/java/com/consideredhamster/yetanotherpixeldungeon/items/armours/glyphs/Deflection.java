@@ -39,22 +39,22 @@ public class Deflection extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "%s of deflection";
+        return "反射之%s";
     }
 
     @Override
     protected String name_n() {
-        return "%s of discharge";
+        return "泄能之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "reflect non-physical damage back to it's source and make you more resistant to energy damage";
+        return "将非物理伤害反射回攻击者，并提高魔法伤害抗性";
     }
 
     @Override
     protected String desc_n() {
-        return "deflect your non-physical damage back to you";
+        return "将造成的非物理伤害返还给自身";
     }
 
     @Override
