@@ -34,10 +34,10 @@ public class ScrollOfIdentify extends InventoryScroll {
 //    private static final String TXT_NOTHING 	= "Nothing happens.";
 
 	{
-		name = "Scroll of Identify";
+		name = "鉴定卷轴";
         shortName = "Id";
 
-		inventoryTitle = "Select an item to identify";
+		inventoryTitle = "选择一个需要鉴定的物品";
 		mode = WndBag.Mode.UNIDENTIFED;
 
         spellSprite = SpellSprite.SCROLL_IDENTIFY;
@@ -87,9 +87,10 @@ public class ScrollOfIdentify extends InventoryScroll {
 	@Override
 	public String desc() {
 		return
-			"Incantation etched on this scroll can bestow its reader with ability to perceive the " +
-            "very nature of things, revealing their purposes and qualities. However, duration of " +
-            "this spell is really short, so it is possible to assess only a single item with its help.";
+                "[临时字串]顾名思义，不在此赘述";
+//			"Incantation etched on this scroll can bestow its reader with ability to perceive the " +
+//            "very nature of things, revealing their purposes and qualities. However, duration of " +
+//            "this spell is really short, so it is possible to assess only a single item with its help.";
 	}
 
     public static boolean identify( Item... items ) {

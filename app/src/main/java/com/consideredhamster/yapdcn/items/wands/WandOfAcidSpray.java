@@ -41,7 +41,7 @@ public class WandOfAcidSpray extends WandCombat {
     public static final int MAX_DISTANCE = 6;
 
 	{
-		name = "Wand of Acid Spray";
+		name = "酸蚀法杖";
         image = ItemSpriteSheet.WAND_ACIDSPRAY;
 	}
 
@@ -161,9 +161,9 @@ public class WandOfAcidSpray extends WandCombat {
 	
 	@Override
 	public String desc() {
-		return
-			"The vile power of this twisted bit of wood will release a torrent of a deadly blight. " +
-            "Due to its unfocused nature, this wand is most effective when used at point blank range, " +
-            "but can also be used to cover entire groups of enemies in this corrosive sludge.";
+		return "[临时字串]酸蚀法杖在近战范围可造成150%有效伤害，但在对抗远处敌人时会受到50%的伤害惩罚";
+//			"The vile power of this twisted bit of wood will release a torrent of a deadly blight. " +
+//            "Due to its unfocused nature, this wand is most effective when used at point blank range, " +
+//            "but can also be used to cover entire groups of enemies in this corrosive sludge.";
 	}
 }

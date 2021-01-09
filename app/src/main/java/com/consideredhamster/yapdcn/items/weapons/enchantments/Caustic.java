@@ -42,22 +42,22 @@ public class Caustic extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Caustic %s";
+        return "浸酸之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Acidic %s";
+        return "蚀化之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "cover your enemies in caustic ooze on hit";
+        return "使命中的敌人被腐蚀淤泥覆盖";
     }
 
     @Override
     protected String desc_n() {
-        return "cover you in caustic ooze on hit";
+        return "命中敌人时使自己被腐蚀淤泥覆盖";
     }
 
     @Override

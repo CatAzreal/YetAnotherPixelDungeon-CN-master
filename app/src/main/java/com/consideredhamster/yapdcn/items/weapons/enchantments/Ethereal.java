@@ -33,22 +33,22 @@ public class Ethereal extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Ethereal %s";
+        return "轻盈之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Weighted %s";
+        return "钝重之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "weight lesser and have reduced weight penalties";
+        return "重量更轻并减少武器惩罚";
     }
 
     @Override
     protected String desc_n() {
-        return "weight even more than usual";
+        return "提升武器的重量";
     }
 
     @Override

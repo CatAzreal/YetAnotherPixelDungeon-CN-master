@@ -28,7 +28,7 @@ import java.util.Locale;
 public class RingOfVitality extends Ring {
 	
 	{
-		name = "Ring of Vitality";
+		name = "活力之戒";
         shortName = "Vi";
 	}
 
@@ -54,9 +54,10 @@ public class RingOfVitality extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "Donning this ring will increase regenerative properties of the wearer's body, " +
-            "strengthening effects of any sources of healing, and increasing his or her resistance " +
-            "to negative effects such as poison or withering."
+                "[介绍文本暂无]"
+//            "Donning this ring will increase regenerative properties of the wearer's body, " +
+//            "strengthening effects of any sources of healing, and increasing his or her resistance " +
+//            "to negative effects such as poison or withering."
         );
 
         desc.append( "\n\n" );
@@ -66,9 +67,7 @@ public class RingOfVitality extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase potence of all _healing effects by " + mainEffect + "%_ " +
-            "(including natural regeneration rate) and increase your _resistance to body effects " +
-            "by " + sideEffect + "%_."
+                "佩戴这枚戒指将提高所有治疗行为_" + mainEffect + "%_" + "的效力(包含自然恢复)_，并且_提高"+sideEffect+"%负面物理状态抗性_。"
         );
 
         return desc.toString();
@@ -78,8 +77,8 @@ public class RingOfVitality extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "Warm feeling rushes down your veins, soothing the pain in your wounds." :
-                "Feeling of discomfort fills your body, making you feel sick." ;
+                "血液中传来一股暖流，治愈着伤口所带来的痛苦。" :
+                "不适的感觉传遍了整个身体，你觉得自己如同患病一般。" ;
         }
 	}
 }

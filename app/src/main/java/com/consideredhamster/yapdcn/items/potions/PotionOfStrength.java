@@ -20,6 +20,8 @@
  */
 package com.consideredhamster.yapdcn.items.potions;
 
+import android.util.FloatMath;
+
 import com.consideredhamster.yapdcn.Badges;
 import com.consideredhamster.yapdcn.actors.buffs.Buff;
 import com.consideredhamster.yapdcn.actors.buffs.debuffs.Withered;
@@ -32,7 +34,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 public class PotionOfStrength extends Potion {
 
 	{
-		name = "Potion of Strength";
+		name = "力量药剂";
         shortName = "St";
 	}
 	
@@ -54,13 +56,13 @@ public class PotionOfStrength extends Potion {
             hero.sprite.showStatus(CharSprite.POSITIVE, "%+dHP", restore);
         }
 
-        hero.sprite.showStatus( CharSprite.POSITIVE, "+1 str, +1 mag, +%d hp", hpBonus );
+        hero.sprite.showStatus( CharSprite.POSITIVE, "+1力量,+1魔能,+%d生命上限", hpBonus );
 
         hero.sprite.emitter().burst(Speck.factory(Speck.MASTERY), 12);
 
         Buff.detach(hero, Withered.class);
 
-        GLog.p("Newfound strength surges through your body and mind." );
+        GLog.p("新生的力量从你的身体和精神中喷薄而出。" );
 
         QuickSlot.refresh();
 
@@ -69,9 +71,9 @@ public class PotionOfStrength extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"This powerful liquid will course through your muscles, permanently increasing your " +
-            "physical and magical powers, as well as fully restoring your health.";
+        return "[临时字串]使用方式：饮用；效果：增加力量和魔能，回复所有生命，增加生命上限";
+//			"This powerful liquid will course through your muscles, permanently increasing your " +
+//            "physical and magical powers, as well as fully restoring your health.";
 	}
 	
 	@Override

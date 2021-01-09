@@ -39,16 +39,16 @@ import com.watabou.utils.Callback;
 
 public class Pickaxe extends Item {
 	
-	public static final String AC_MINE	= "MINE";
+	public static final String AC_MINE	= "采掘";
 	
 	public static final float TIME_TO_MINE = 2;
 	
-	private static final String TXT_NO_VEIN = "There is no dark gold vein near you to mine";
+	private static final String TXT_NO_VEIN = "附近没有可供采掘的暗金矿脉";
 	
 //	private static final Glowing BLOODY = new Glowing( 0x550000 );
 	
 	{
-		name = "pickaxe";
+		name = "镐子";
 		image = ItemSpriteSheet.PICKAXE;
 		
 		unique = true;
@@ -165,6 +165,6 @@ public class Pickaxe extends Item {
 	@Override
 	public String info() {
 		return
-			"This is a large and sturdy tool for breaking rocks.";
+			"这是一件巨大且耐用的凿岩工具。";
 	}
 }

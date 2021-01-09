@@ -28,7 +28,7 @@ import com.watabou.utils.Random;
 public class Tomahawks extends ThrowingWeaponHeavy {
 
 	{
-		name = "tomahawks";
+		name = "投斧";
 		image = ItemSpriteSheet.TOMAHAWK;
 	}
 	

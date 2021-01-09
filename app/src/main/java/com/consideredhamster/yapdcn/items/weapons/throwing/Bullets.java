@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Bullets extends ThrowingWeaponAmmo {
 
 	{
-		name = "bullets";
+		name = "铅弹";
 		image = ItemSpriteSheet.PELLET;
 	}
 

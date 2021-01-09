@@ -33,25 +33,25 @@ import com.consideredhamster.yapdcn.visuals.windows.WndBag;
 public class ScrollOfUpgrade extends InventoryScroll {
 
     private static final String TXT_KNOWN_UPGRADED	=
-            "your %s looks much better now!";
+            "你的%s看起来状态好多了！";
     private static final String TXT_KNOWN_REPAIRED  =
-            "your %s can't be upgraded any further, but it looks a bit better now.";
+            "你的%s不能再升级了，但它看起来状态好了不少。";
 
 	private static final String TXT_UNKNW_REPAIRED  =
-            "your %s looks a bit better now. But maybe you should have identified it first?";
+            "你的%s看起来比之前应该要好了不少，不过你是不是应该先鉴定一下它？";
 	private static final String TXT_UNKNW_WHOKNOWS	=
-            "your %s doesn't look different. Maybe you should have identified it first?";
+            "你的%s看起来没什么变化，你是不是应该先鉴定一下它？";
 
     private static final String TXT_CURSE_WEAKENED =
-            "your %s was cursed, but now the curse seems to be weaker.";
+            "你的%s上的诅咒似乎被弱化了。";
     private static final String TXT_CURSE_DISPELLED	=
-            "your %s was cursed, but now the curse seems to be removed.";
+            "你的%s上的诅咒被净化了。";
 
 	{
-		name = "Scroll of Upgrade";
+		name = "升级卷轴";
         shortName = "Up";
 
-		inventoryTitle = "Select an item to upgrade";
+		inventoryTitle = "选择一个要升级的物品";
 		mode = WndBag.Mode.UPGRADEABLE;
 
         spellSprite = SpellSprite.SCROLL_UPGRADE;
@@ -105,11 +105,8 @@ public class ScrollOfUpgrade extends InventoryScroll {
 	@Override
 	public String desc() {
 		return
-			"This scroll will upgrade a single item, improving its quality. A wand will " +
-			"increase in power and in number of charges; a weapon will inflict more damage " +
-			"or find its mark more frequently; a suit of armor will deflect additional blows; " +
-			"the effect of a ring on its wearer will intensify. Weapons and armor will also " +
-			"require less strength to use.";
+			"这张卷轴可以升级一件物品，提升其品质。法杖的魔力及充能数会获得提升，武器和护甲可以造成或吸收" +
+                    "更多的伤害，戒指的效果将会增强。也会同时降低武器和护甲的力量需求。";
 	}
 
     @Override

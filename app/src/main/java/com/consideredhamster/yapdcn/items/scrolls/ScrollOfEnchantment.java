@@ -34,17 +34,17 @@ import com.watabou.utils.Random;
 
 public class ScrollOfEnchantment extends InventoryScroll {
 
-    private static final String TXT_ITEM_ENCHANT	= "the scroll turned your %s into %s!";
-    private static final String TXT_ITEM_UPGRADE	= "the scroll upgraded your %s because it is already enchanted!";
-    private static final String TXT_ITEM_RESISTS	= "the scroll weakened the curse on your %s!";
-    private static final String TXT_ITEM_UNCURSE	= "the scroll removed the curse from your %s!";
-	private static final String TXT_ITEM_UNKNOWN	= "the scroll is useless for the %s!";
+    private static final String TXT_ITEM_ENCHANT	= "卷轴将你的%s转换为%s！";
+    private static final String TXT_ITEM_UPGRADE	= "因%s已经被附魔，卷轴对其进行了升级！";
+    private static final String TXT_ITEM_RESISTS	= "卷轴弱化了%s上的诅咒！";
+    private static final String TXT_ITEM_UNCURSE	= "卷轴移除了%s上的诅咒！";
+	private static final String TXT_ITEM_UNKNOWN	= "卷轴在%s没能起到任何作用！";
 
 	{
-		name = "Scroll of Enchantment";
+		name = "附魔卷轴";
         shortName = "En";
 
-		inventoryTitle = "Select an enchantable item";
+		inventoryTitle = "选择一个可被附魔的物品";
 		mode = WndBag.Mode.ENCHANTABLE;
 
         spellSprite = SpellSprite.SCROLL_ENCHANT;
@@ -185,11 +185,12 @@ public class ScrollOfEnchantment extends InventoryScroll {
 	@Override
 	public String desc() {
 		return
-			"This scroll is able to imbue unenchanted weapon or armor with random enchantment, or " +
-            "even upgrade already enchanted item. Wands and rings count as enchanted items by default. " +
-            "If used on a cursed item, it will try to dispel the curse and will even turn its " +
-            "enchantment into benevolent one in case of success. Using it on something which can't " +
-            "be improved any further may have... unpredictable results.";
+                "[临时字串]附魔武器或护甲，若已附魔则升级，若被诅咒则尝试转换诅咒，几率将诅咒转为其对应正向附魔";
+//			"This scroll is able to imbue unenchanted weapon or armor with random enchantment, or " +
+//            "even upgrade already enchanted item. Wands and rings count as enchanted items by default. " +
+//            "If used on a cursed item, it will try to dispel the curse and will even turn its " +
+//            "enchantment into benevolent one in case of success. Using it on something which can't " +
+//            "be improved any further may have... unpredictable results.";
 	}
 
     @Override

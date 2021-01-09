@@ -50,7 +50,7 @@ import java.util.HashSet;
 public class WandOfThornvines extends WandUtility {
 
 	{
-		name = "Wand of Thornvines";
+		name = "棘藤法杖";
         image = ItemSpriteSheet.WAND_THORNVINE;
         goThrough = false;
 	}
@@ -88,7 +88,7 @@ public class WandOfThornvines extends WandUtility {
                 if ( candidates.size() > 0 ){
                     Thornvine.spawnAt( stats, level, candidates.get( Random.Int( candidates.size() ) ) );
                 } else {
-                    GLog.i( "nothing happened" );
+                    GLog.i( "什么都没发生" );
                 }
             }
         }
@@ -105,10 +105,11 @@ public class WandOfThornvines extends WandUtility {
 	@Override
 	public String desc() {
 		return
-			"This wand possesses the mystical force of summoning forces of the very earth to the " +
-            "wielder's command, allowing him or her to spawn thornvines from the floor. These " +
-            "plants will fiercely lash out at any enemy passing through, and are especially strong " +
-            "when created on grass-covered tiles.";
+                "[临时字串]召唤棘藤攻击敌人，植被地格上生成的棘藤更强。";
+//			"This wand possesses the mystical force of summoning forces of the very earth to the " +
+//            "wielder's command, allowing him or her to spawn thornvines from the floor. These " +
+//            "plants will fiercely lash out at any enemy passing through, and are especially strong " +
+//            "when created on grass-covered tiles.";
 	}
 
     public static class Thornvine extends NPC {
@@ -118,7 +119,7 @@ public class WandOfThornvines extends WandUtility {
 
         public Thornvine(){
 
-            name = "thornvine";
+            name = "棘藤";
             spriteClass = ThornvineSprite.class;
 
             resistances.put( Element.Flame.class, Element.Resist.VULNERABLE );
@@ -180,12 +181,12 @@ public class WandOfThornvines extends WandUtility {
                         ( ( HP - 1 ) * charges / HT )
                 );
 
-                GLog.i( "You recall the thornvine into the wand." );
+                GLog.i( "你将棘藤回收至法杖之中" );
                 Sample.INSTANCE.play( Assets.SND_PLANT );
 
             } else {
 
-                GLog.i( "You unsummon the thornvine." );
+                GLog.i( "你中断了棘藤的召唤" );
                 Sample.INSTANCE.play( Assets.SND_PLANT );
 
             }
@@ -297,16 +298,17 @@ public class WandOfThornvines extends WandUtility {
 
             @Override
             public String status(){
-                return "guarding";
+                return "护卫";
             }
         }
 
         @Override
         public String description() {
             return
-                "Thornvines are kind of semisentient plants which are very territorial and will " +
-                "attack anything which comes near. Their sharp thorns can inflict grievous wounds, " +
-                "but they are very vulnerable to fire and will quickly wither as time passes.";
+                    "[临时字串]棘藤弱火，并会快速消亡";
+//                "Thornvines are kind of semisentient plants which are very territorial and will " +
+//                "attack anything which comes near. Their sharp thorns can inflict grievous wounds, " +
+//                "but they are very vulnerable to fire and will quickly wither as time passes.";
         }
 
         private static final String STATS	= "stats";

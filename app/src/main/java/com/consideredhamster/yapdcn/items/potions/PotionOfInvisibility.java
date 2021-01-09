@@ -29,7 +29,7 @@ public class PotionOfInvisibility extends Potion {
     public static final float DURATION	= 15f;
 
 	{
-		name = "Potion of Invisibility";
+		name = "隐形药剂";
         shortName = "In";
 	}
 	
@@ -41,11 +41,11 @@ public class PotionOfInvisibility extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Drinking this potion will render you temporarily invisible. While invisible, " +
-			"enemies will be unable to see you, but they can try to find you nevertheless. " +
-            "Attacking an enemy, as well as using a wand or a scroll before enemy's eyes, " +
-            "will dispel the effect.";
+        return "[临时字串]使用方式：饮用；效果：隐形。攻击，敌前使用法杖/卷轴破除效果";
+//			"Drinking this potion will render you temporarily invisible. While invisible, " +
+//			"enemies will be unable to see you, but they can try to find you nevertheless. " +
+//            "Attacking an enemy, as well as using a wand or a scroll before enemy's eyes, " +
+//            "will dispel the effect.";
 	}
 
     @Override

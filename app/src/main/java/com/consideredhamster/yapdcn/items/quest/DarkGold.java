@@ -26,7 +26,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class DarkGold extends Item {
 	
 	{
-		name = "dark gold ore";
+		name = "暗金矿";
 		image = ItemSpriteSheet.ORE;
 		
 		stackable = true;
@@ -36,8 +36,7 @@ public class DarkGold extends Item {
 	@Override
 	public String info() {
 		return
-			"This metal is called dark not because of its color (it doesn't differ from the normal gold), " +
-			"but because it melts under the daylight, making it useless on the surface.";
+			"这种金属名中的暗并非源于其色泽(它看起来和普通金子一样)，而是因为它会在阳光下熔化，令其在地表上毫无用处。";
 	}
 	
 	@Override

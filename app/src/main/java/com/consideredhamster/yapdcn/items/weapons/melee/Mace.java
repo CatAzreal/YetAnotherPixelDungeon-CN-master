@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Mace extends MeleeWeaponHeavyOH {
 
 	{
-		name = "mace";
+		name = "锤杖";
 		image = ItemSpriteSheet.MACE;
 	}
 	

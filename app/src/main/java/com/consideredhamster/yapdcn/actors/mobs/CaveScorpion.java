@@ -49,7 +49,7 @@ public class CaveScorpion extends MobHealthy {
 
          */
 
-		name = "cave scorpion";
+		name = "洞窟毒蝎";
 		spriteClass = ScorpionSprite.class;
 
         resistances.put( Element.Acid.class, Element.Resist.PARTIAL );

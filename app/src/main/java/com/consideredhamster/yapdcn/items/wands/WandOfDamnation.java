@@ -41,7 +41,7 @@ import com.watabou.utils.Callback;
 public class WandOfDamnation extends WandUtility {
 
 	{
-		name = "Wand of Damnation";
+		name = "咒罚法杖";
         image = ItemSpriteSheet.WAND_DAMNATION;
 	}
 
@@ -88,10 +88,11 @@ public class WandOfDamnation extends WandUtility {
 	
 	@Override
 	public String desc() {
-		return 
-			"This wand is crafted from bones and obsidian, its shape reminding you of a sickle. " +
-            "A creation of the dark arts, it can infuse its victims with unholy miasma, dooming " +
-            "them to an inevitable death after a certain amount of time.";
+		return
+                "[临时字串]使目标在一定回合数后死亡，所需时长取决于目标生命值。";
+//			"This wand is crafted from bones and obsidian, its shape reminding you of a sickle. " +
+//            "A creation of the dark arts, it can infuse its victims with unholy miasma, dooming " +
+//            "them to an inevitable death after a certain amount of time.";
 	}
 	
 

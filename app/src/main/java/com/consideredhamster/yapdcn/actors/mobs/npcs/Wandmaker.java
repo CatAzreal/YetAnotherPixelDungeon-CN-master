@@ -57,7 +57,7 @@ import com.watabou.utils.Random;
 public class Wandmaker extends NPC {
 
 	{	
-		name = "old wandmaker";
+		name = "制杖老人";
 		spriteClass = WandmakerSprite.class;
 	}
 	

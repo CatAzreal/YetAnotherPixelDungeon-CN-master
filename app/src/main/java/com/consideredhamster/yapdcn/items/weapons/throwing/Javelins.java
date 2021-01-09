@@ -28,7 +28,7 @@ import com.watabou.utils.Random;
 public class Javelins extends ThrowingWeaponHeavy {
 
 	{
-		name = "javelins";
+		name = "标枪";
 		image = ItemSpriteSheet.JAVELIN;
 	}
 

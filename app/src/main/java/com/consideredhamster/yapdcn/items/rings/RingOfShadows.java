@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfShadows extends Ring {
 
 	{
-		name = "Ring of Shadows";
+		name = "暗影之戒";
         shortName = "Sh";
 	}
 	
@@ -46,9 +46,10 @@ public class RingOfShadows extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "The curious enchantment on this ring controls the shadows around its wearer, helping " +
-            "him or her to blend with their surroundings. Such rings are indispensable for those " +
-            "whose job revolves around espionage or assassinations."
+                "[介绍文本暂无]"
+//            "The curious enchantment on this ring controls the shadows around its wearer, helping " +
+//            "him or her to blend with their surroundings. Such rings are indispensable for those " +
+//            "whose job revolves around espionage or assassinations."
         );
 
         desc.append( "\n\n" );
@@ -58,8 +59,7 @@ public class RingOfShadows extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _stealth by " + mainEffect + "%_ and increasing " +
-            "_sneak attack damage by " + sideEffect + "%_."
+                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的潜行能力_，并且_提高"+sideEffect+"%伏击所造成的伤害_。"
         );
 
         return desc.toString();
@@ -69,8 +69,8 @@ public class RingOfShadows extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "Suddenly, shadows thicken around you, obfuscating your presence." :
-                "Suddenly, shadows bend around you, highlighting your presence." ;
+                "一瞬之间，暗影如有形般缠绕着你，使你的身形更难被察觉。" :
+                "一瞬之间，你周边的阴影纷纷逃开，使你的身形暴露在光线之中。" ;
         }
 	}
 }

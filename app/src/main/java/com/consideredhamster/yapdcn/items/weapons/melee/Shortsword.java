@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Shortsword extends MeleeWeaponLightOH {
 
 	{
-		name = "shortsword";
+		name = "短剑";
 		image = ItemSpriteSheet.GLADIUS;
 	}
 	

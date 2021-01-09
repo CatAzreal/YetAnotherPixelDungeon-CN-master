@@ -58,15 +58,15 @@ public class StartScene extends PixelScene {
 	private static final String TXT_ERASE		= "将覆盖当前游戏";
 	private static final String TXT_DPTH_LVL	= "第%d层, %d级";
 	
-	private static final String TXT_REALLY	= "Do you really want to start new game?";
-	private static final String TXT_WARNING	= "Your current game progress will be erased.";
-	private static final String TXT_YES		= "Yes, start new game";
-	private static final String TXT_NO		= "No, I changed my mind";
+	private static final String TXT_REALLY	= "你真的要开始新游戏吗？";
+	private static final String TXT_WARNING	= "你的当前进度将被覆盖。";
+	private static final String TXT_YES		= "是的，开始新游戏";
+	private static final String TXT_NO		= "不必，我改主意了";
 
-    private static final String TXT_DIFF_TITLE	= "Select difficulty";
+    private static final String TXT_DIFF_TITLE	= "选择难度";
     private static final String TXT_DIFF_ABOUT	= "";
 
-    private static final String TXT_DIFFICULTY	= "Start on %s difficulty?";
+    private static final String TXT_DIFFICULTY	= "是否在%s难度下游玩？";
 //            "\u007F You can't earn badges while playing on Easy mode gives no badges\n" +
 //            "\u007F Hardcore";
 	
@@ -74,7 +74,7 @@ public class StartScene extends PixelScene {
 //	private static final String TXT_UNLOCK_2	= "To unlock this character class, defeat the 2nd boss on %s difficulty or higher";
 //	private static final String TXT_UNLOCK_3	= "To unlock this character class, defeat the 3rd boss on %s difficulty or higher";
 
-	private static final String TXT_LOCKED = "Got it!";
+	private static final String TXT_LOCKED = "了解！";
 
 	private static final float WIDTH_P	= 116;
 	private static final float HEIGHT_P	= 220;

@@ -41,7 +41,7 @@ public class WndInfoMob extends WndTitledMessage {
 		
 		StringBuilder builder = new StringBuilder( mob.description() );
 
-		if (mob.state.status().equals("和平")){
+		if (!mob.state.status().equals("和平")){
 		builder.append( "\n\n" + "这个" + mob.name + "正在" + mob.state.status() + "。" );}
 		else {
 			builder.append("\n\n" + "这个" + mob.name + "是" + mob.state.status() + "的。" );

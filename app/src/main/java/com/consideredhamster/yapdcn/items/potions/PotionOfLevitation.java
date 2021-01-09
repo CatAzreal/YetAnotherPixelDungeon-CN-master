@@ -29,7 +29,7 @@ public class PotionOfLevitation extends Potion {
     public static final float DURATION	= 25f;
 
 	{
-		name = "Potion of Levitation";
+		name = "浮空药剂";
         shortName = "Le";
 	}
 	
@@ -41,10 +41,10 @@ public class PotionOfLevitation extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Drinking this curious liquid will cause you to hover in the air, moving faster and stealthier. " +
-			"This state also allows drifting over traps or chasms and seeing over the high grass. Flames and gases " +
-			"fill the air, however, and cannot be bypassed while airborne.";
+        return "[临时字串]使用方式：饮用；效果：免疫陷阱/地面效果(不免疫气体和火焰)，提高移动速度和潜行能力";
+//			"Drinking this curious liquid will cause you to hover in the air, moving faster and stealthier. " +
+//			"This state also allows drifting over traps or chasms and seeing over the high grass. Flames and gases " +
+//			"fill the air, however, and cannot be bypassed while airborne.";
 	}
 
     @Override

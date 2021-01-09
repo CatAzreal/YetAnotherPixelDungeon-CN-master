@@ -41,7 +41,7 @@ public class WandOfLightning extends WandCombat {
     private final static int MAX_DISTANCE = 16;
 
 	{
-		name = "Wand of Lightning";
+		name = "雷霆法杖";
         image = ItemSpriteSheet.WAND_LIGHTNING;
 
         goThrough = false;
@@ -185,8 +185,9 @@ public class WandOfLightning extends WandCombat {
 	@Override
 	public String desc() {
 		return
-			"This wand conjures forth deadly arcs of electricity, roasting its target with a high " +
-            "voltage zap. Effects of this wand can be transmitted by water, so it should be used " +
-            "with a certain amount of care - mind to not stand in the same pool as your enemy!";
+                "[临时字串]电击伤害，可通过水面传导伤害至目标周边";
+//			"This wand conjures forth deadly arcs of electricity, roasting its target with a high " +
+//            "voltage zap. Effects of this wand can be transmitted by water, so it should be used " +
+//            "with a certain amount of care - mind to not stand in the same pool as your enemy!";
 	}
 }

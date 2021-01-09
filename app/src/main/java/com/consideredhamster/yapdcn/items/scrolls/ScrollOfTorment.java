@@ -37,7 +37,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 public class ScrollOfTorment extends Scroll {
 
 	{
-		name = "Scroll of Torment";
+		name = "苦痛卷轴";
         shortName = "To";
 
         spellSprite = SpellSprite.SCROLL_MASSHARM;
@@ -78,13 +78,13 @@ public class ScrollOfTorment extends Scroll {
 
 		switch (count) {
             case 0:
-                GLog.i( "Suddenly your whole mind is engulfed in pure agony!" );
+                GLog.i( "一瞬之间你的思维被痛苦所吞噬。" );
                 break;
             case 1:
-                GLog.i( "Suddenly your whole mind and the " + affected.name + " start writhing in agony!" );
+                GLog.i( "一瞬之间你和" + affected.name + "的思维被痛苦所吞噬。" );
                 break;
             default:
-                GLog.i( "Suddenly your whole mind and the creatures all around you start writhing in agony!" );
+                GLog.i( "一瞬之间你和周围所有生物的思维都被痛苦所吞噬！" );
 		}
 
 
@@ -95,12 +95,13 @@ public class ScrollOfTorment extends Scroll {
 	@Override
 	public String desc() {
 		return
-			"Upon reading this parchment, mind-tearing flash of pain will affect all the " +
-            "present creatures in the field of view, harming them and making them flee. " +
-            "The user of this scroll is only partially affected by this effect, and higher " +
-            "magic skill allows to diminish this backlash even further." +
-            "\n\nPower of these effects depend on magic skill of the reader and current " +
-            "health of the target.";
+                "对自己视野内敌人造成伤害和恐惧效果，自己承受部分卷轴效果，高魔能可弱化负面效果。伤害和恐惧效果取决于使用者魔能和目标当前生命值";
+//			"Upon reading this parchment, mind-tearing flash of pain will affect all the " +
+//            "present creatures in the field of view, harming them and making them flee. " +
+//            "The user of this scroll is only partially affected by this effect, and higher " +
+//            "magic skill allows to diminish this backlash even further." +
+//            "\n\nPower of these effects depend on magic skill of the reader and current " +
+//            "health of the target.";
 	}
 	
 	@Override

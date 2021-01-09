@@ -34,7 +34,7 @@ public class ScrollOfSunlight extends Scroll {
     private static final String TXT_MESSAGE	= "The whole area is suddenly illuminated with rays of warm light.";
 
 	{
-		name = "Scroll of Sunlight";
+		name = "圣光卷轴";
         shortName = "Su";
 
         spellSprite = SpellSprite.SCROLL_SUNLIGHT;
@@ -57,11 +57,12 @@ public class ScrollOfSunlight extends Scroll {
 	@Override
 	public String desc() {
 		return
-			"Reading this scroll will light the area with a bright sunlight. Here deep in the " +
-            "dungeon, sunlight can mean much more than simple illumination. Everything that lives " +
-            "which is touched by this light, will be rejuvenated in mere moments. Everything " +
-            "unnatural, on the contrary, will become disoriented and more susceptible to attacks." +
-            "\n\nDuration of this effect of depends on magic skill of the reader.";
+				"照亮区域，正常生物回复生命值，秘法生物受到阻滞";
+//			"Reading this scroll will light the area with a bright sunlight. Here deep in the " +
+//            "dungeon, sunlight can mean much more than simple illumination. Everything that lives " +
+//            "which is touched by this light, will be rejuvenated in mere moments. Everything " +
+//            "unnatural, on the contrary, will become disoriented and more susceptible to attacks." +
+//            "\n\nDuration of this effect of depends on magic skill of the reader.";
 	}
 	
 	@Override

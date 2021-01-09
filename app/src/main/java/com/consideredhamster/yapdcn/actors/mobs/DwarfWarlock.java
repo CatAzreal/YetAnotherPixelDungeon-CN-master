@@ -56,7 +56,7 @@ public class DwarfWarlock extends MobRanged {
 
          */
 
-		name = "dwarf warlock";
+		name = "矮人术士";
 		spriteClass = WarlockSprite.class;
 		
 		loot = Gold.class;

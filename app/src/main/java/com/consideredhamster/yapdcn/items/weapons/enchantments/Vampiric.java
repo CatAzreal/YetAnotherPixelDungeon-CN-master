@@ -43,22 +43,22 @@ public class Vampiric extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Vampiric %s";
+        return "嗜血之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Malicious %s";
+        return "恶毒之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "drain health from non-magical enemies";
+        return "从非秘法敌人身上吸取生命";
     }
 
     @Override
     protected String desc_n() {
-        return "damage you on hit";
+        return "命中敌人时伤害自身";
     }
 
     @Override

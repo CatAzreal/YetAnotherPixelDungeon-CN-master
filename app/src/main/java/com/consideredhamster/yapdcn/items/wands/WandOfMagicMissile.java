@@ -31,7 +31,7 @@ import com.watabou.utils.Random;
 public class WandOfMagicMissile extends WandCombat {
 
 	{
-		name = "Wand of Magic Missile";
+		name = "魔弹法杖";
 		image = ItemSpriteSheet.WAND_MAGICMISSILE;
 	}
 
@@ -67,9 +67,10 @@ public class WandOfMagicMissile extends WandCombat {
 	@Override
 	public String desc() {
 		return
-			"This wand's effect is quite simple, as it just launches bolts of pure magical energy. " +
-            "These bolts may be affected by the target's armor or miss entirely, but they " +
-            "partially compensate for this by being quite powerful.";
+                "[临时字串]伤害可被护甲阻挡，攻击也有概率失误，但基础伤害高于其他法杖";
+//			"This wand's effect is quite simple, as it just launches bolts of pure magical energy. " +
+//            "These bolts may be affected by the target's armor or miss entirely, but they " +
+//            "partially compensate for this by being quite powerful.";
 	}
 
 }

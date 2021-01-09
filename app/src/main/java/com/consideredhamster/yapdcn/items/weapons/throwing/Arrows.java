@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Arrows extends ThrowingWeaponAmmo {
 
 	{
-		name = "arrows";
+		name = "箭矢";
 		image = ItemSpriteSheet.ARROW;
 	}
 

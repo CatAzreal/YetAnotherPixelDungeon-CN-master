@@ -34,16 +34,16 @@ import com.watabou.noosa.audio.Sample;
 
 public abstract class Trap {
 
-    private static final String TXT_HIDDEN_PLATE_CLICKS = "A hidden pressure plate clicks!";
-    private static final String TXT_TRAPPED = "This tile is trapped!";
+    private static final String TXT_HIDDEN_PLATE_CLICKS = "一个隐藏的压力板发出响动！";
+    private static final String TXT_TRAPPED = "这个地格设有陷阱";
 
     private static final String TXT_R_U_SURE =
             "You are aware of a trap on this tile. Once you step on it, the trap would be " +
             "activated, which would most likely be quite a painful experience. Are you " +
             "REALLY sure you want to step here?";
 
-    private static final String TXT_YES			= "Yes, I know what I'm doing";
-    private static final String TXT_NO			= "No, I changed my mind";
+    private static final String TXT_YES			= "没错，我知道自己在做什么";
+    private static final String TXT_NO			= "算了，我改主意了";
 
     public static boolean stepConfirmed = false;
 

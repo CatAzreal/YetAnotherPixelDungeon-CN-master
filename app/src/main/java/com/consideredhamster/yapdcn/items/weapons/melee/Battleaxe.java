@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Battleaxe extends MeleeWeaponHeavyTH {
 
 	{
-		name = "battle axe";
+		name = "战斧";
 		image = ItemSpriteSheet.BATTLE_AXE;
 	}
 	

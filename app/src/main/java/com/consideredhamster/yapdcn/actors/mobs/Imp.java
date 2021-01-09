@@ -67,7 +67,7 @@ public class Imp extends MobEvasive {
 
          */
 
-        name = "malicious imp";
+        name = "小恶魔";
         spriteClass = ImpSprite.class;
 
         flying = true;

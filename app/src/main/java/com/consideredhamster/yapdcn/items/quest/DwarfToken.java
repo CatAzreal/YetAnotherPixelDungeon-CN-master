@@ -26,7 +26,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class DwarfToken extends Item {
 	
 	{
-		name = "dwarf token";
+		name = "矮人徽记";
 		image = ItemSpriteSheet.TOKEN;
 		
 		stackable = true;
@@ -36,8 +36,7 @@ public class DwarfToken extends Item {
 	@Override
 	public String info() {
 		return
-			"Many dwarves and some of their larger creations carry these small pieces of metal of unknown purpose. " +
-			"Maybe they are jewelry or maybe some kind of ID. Dwarves are strange folk.";
+			"很多矮人和他们的造物都携带着这种小块金属，理由不详。兴许它是装饰品或什么身份识别牌。 矮人都挺奇怪的。";
 	}
 	
 	@Override

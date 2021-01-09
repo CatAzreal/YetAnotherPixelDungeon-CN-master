@@ -50,7 +50,7 @@ public class PotionOfBlessing extends Potion {
             "A cleansing light shines from above, but nothing happens.";
 	
 	{
-		name = "Potion of Blessing";
+		name = "祝圣药剂";
         shortName = "Bl";
         harmful = true;
 	}
@@ -114,10 +114,10 @@ public class PotionOfBlessing extends Potion {
 
     @Override
 	public String desc() {
-		return
-			"This potion is imbued with great disruptive energy. Shattering it will bathe " +
-            "everything near the point of impact in a cleansing light, removing curses and " +
-            "harming creatures of purely magical origin.";
+		return "[临时字串]使用方式：投掷；效果：移除诅咒/伤害秘法生物";
+//			"This potion is imbued with great disruptive energy. Shattering it will bathe " +
+//            "everything near the point of impact in a cleansing light, removing curses and " +
+//            "harming creatures of purely magical origin.";
 	}
 
     public static boolean uncurse( int pos, Item... items ) {

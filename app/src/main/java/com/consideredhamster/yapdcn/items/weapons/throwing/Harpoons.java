@@ -33,7 +33,7 @@ import com.watabou.utils.Callback;
 public class Harpoons extends ThrowingWeaponHeavy {
 
 	{
-		name = "harpoons";
+		name = "鱼叉";
 		image = ItemSpriteSheet.HARPOON;
 	}
 

@@ -30,7 +30,7 @@ public class HuntressArmor extends BodyArmorCloth {
 //	private static final String AC_SPECIAL = "SPECTRAL BLADES";
 
 	{
-		name = "elven cloak";
+		name = "精灵斗篷";
 		image = ItemSpriteSheet.ARMOR_HUNTRESS;
 
         appearance = 3;

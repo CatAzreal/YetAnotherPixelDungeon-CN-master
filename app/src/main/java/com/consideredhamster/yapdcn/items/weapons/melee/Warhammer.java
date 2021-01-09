@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Warhammer extends MeleeWeaponHeavyTH {
 
 	{
-		name = "warhammer";
+		name = "战锤";
 		image = ItemSpriteSheet.WARHAMMER;
 	}
 	

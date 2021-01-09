@@ -30,7 +30,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.RatKingSprite;
 public class RatKing extends NPC {
 
 	{
-		name = "rat king";
+		name = "鼠王";
 		spriteClass = RatKingSprite.class;
 		
 		state = SLEEPING;

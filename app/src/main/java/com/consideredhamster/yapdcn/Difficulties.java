@@ -28,32 +28,32 @@ public class Difficulties {
 	public static final int IMPOSSIBLE		= 3;
 	
 	public static final String[] NAMES = {
-		"Easy",
-		"Normal",
-		"Hardcore",
-		"Impossible"
+		"简单",
+		"普通",
+		"硬核",
+		"另类"
 	};
 
     public static final String[] ABOUT = {
 
-            "- Player character receives less damage\n" +
-            "- Bosses have 20% less health\n" +
-            "- Mobs have their health minimized\n" +
-            "- Can't earn any badges on this difficulty!\n",
+            "-玩家承受更少伤害\n" +
+            "-Boss血量减少20%\n" +
+            "-普通怪物生命上限设为最低\n" +
+            "-本难度下无法获得徽章！\n",
 
-            "- Player character receives normal damage\n" +
-            "- Bosses have normal health\n"+
-            "- Mobs have their health randomized\n" +
-            "- This difficulty has no special features\n",
+			"-玩家承受正常伤害\n" +
+			"-Boss血量保持正常\n" +
+			"-普通怪物生命上限在随机范围内生成\n" +
+			"-本难度无其他特性\n",
 
-            "- Player character receives normal damage\n" +
-            "- Bosses have 20% more health\n"+
-            "- Mobs have their health maximized\n" +
-            "- Beat the game on Normal to unlock!\n",
+			"-玩家承受正常伤害\n" +
+			"-Boss血量增加20%\n" +
+			"-普通怪物生命上限设为最高\n" +
+			"-通关普通难度以解锁(该版本初始解锁)！\n",
 
-            "- Player character receives more damage\n" +
-            "- Bosses have 50% more health\n"+
-            "- Mobs have their health maximized\n" +
-            "- Beat the game on Hardcore to unlock!\n",
+			"-玩家承受额外伤害\n" +
+			"-Boss血量增加50%\n" +
+			"-普通怪物生命上限设为最高\n" +
+			"-通关硬核难度以解锁(该版本初始解锁)！\n",
     };
 }

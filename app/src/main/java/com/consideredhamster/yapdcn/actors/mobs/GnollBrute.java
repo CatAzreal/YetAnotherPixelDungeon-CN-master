@@ -58,7 +58,7 @@ public class GnollBrute extends MobPrecise {
 
          */
 
-		name = "gnoll brute";
+		name = "豺狼暴徒";
 		spriteClass = BruteSprite.class;
 		
 		loot = Gold.class;

@@ -28,7 +28,7 @@ import com.consideredhamster.yapdcn.items.rings.RingOfKnowledge;
 public class PotionOfWisdom extends Potion {
 
 	{
-		name = "Potion of Wisdom";
+		name = "智慧药剂";
         shortName = "Wi";
 	}
 	
@@ -49,9 +49,9 @@ public class PotionOfWisdom extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"The stored experiences of multitudes of lifetimes reduced to liquid form, " +
-			"this draught will instantly raise your experience level.";
+		return "[临时字串]使用方式：饮用；效果：提高经验值";
+//			"The stored experiences of multitudes of lifetimes reduced to liquid form, " +
+//			"this draught will instantly raise your experience level.";
 	}
 	
 	@Override

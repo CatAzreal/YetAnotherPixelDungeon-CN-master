@@ -46,7 +46,7 @@ public class Golem extends MobHealthy {
 
          */
 
-		name = "stone golem";
+		name = "石造魔像";
 		spriteClass = GolemSprite.class;
 
         dexterity /= 2;

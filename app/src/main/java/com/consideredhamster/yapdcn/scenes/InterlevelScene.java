@@ -157,7 +157,7 @@ public class InterlevelScene extends PixelScene {
 
 			"魅惑法杖可以伤害并扰乱具有秘法特性的敌人",
 			"窃血法杖在对抗睡眠或漫游状态的敌人时效力更强",
-			"定命法杖的效率基本取决于目标的当前生命值",
+			"咒罚法杖的效率基本取决于目标的当前生命值",
 
 			// POTIONS
 

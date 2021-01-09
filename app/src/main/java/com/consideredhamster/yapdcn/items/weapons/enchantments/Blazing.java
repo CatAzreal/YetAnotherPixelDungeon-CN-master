@@ -42,22 +42,22 @@ public class Blazing extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Blazing %s";
+        return "烈焰之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Burning %s";
+        return "烧灼之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "burn your enemies on hit";
+        return "点燃命中的敌人";
     }
 
     @Override
     protected String desc_n() {
-        return "burn you on hit";
+        return "命中时点燃自己";
     }
 
 	@Override

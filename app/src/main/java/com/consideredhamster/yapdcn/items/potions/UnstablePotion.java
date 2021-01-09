@@ -28,7 +28,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class UnstablePotion extends Potion {
 
 	{
-		name = "Unstable Potion";
+		name = "混合药剂";
         shortName = "??";
 
         image = ItemSpriteSheet.POTION_UNSTABLE;
@@ -71,9 +71,9 @@ public class UnstablePotion extends Potion {
 
     @Override
 	public String desc() {
-		return
-            "This flask contains odd layered liquid and is obviously unstable. " +
-            "Its effects will be completely unpredictable whether drunk or thrown.";
+        return "[临时字串]使用方式：？；效果：？";
+//            "This flask contains odd layered liquid and is obviously unstable. " +
+//            "Its effects will be completely unpredictable whether drunk or thrown.";
 	}
 
     @Override

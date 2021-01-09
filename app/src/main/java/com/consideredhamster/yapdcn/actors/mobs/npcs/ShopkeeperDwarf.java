@@ -25,10 +25,10 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 
 public class ShopkeeperDwarf extends Shopkeeper {
 
-	private static final String TXT_GREETINGS = "I may not like humans like you,\nbut coins are always welcome.";
+	private static final String TXT_GREETINGS = "我看不惯你们这些人类，\n不过钱我还是欢迎的。";
 	
 	{
-		name = "dwarf shopkeeper";
+		name = "矮人店主";
 		spriteClass = ShopkeeperDwarfSprite.class;
 	}
 

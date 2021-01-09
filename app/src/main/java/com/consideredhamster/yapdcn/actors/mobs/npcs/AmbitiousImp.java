@@ -57,7 +57,7 @@ import com.watabou.utils.Random;
 public class AmbitiousImp extends NPC {
 
 	{
-		name = "ambitious imp";
+		name = "雄心勃勃的小恶魔";
 		spriteClass = AmbitiousImpSprite.class;
 	}
 	

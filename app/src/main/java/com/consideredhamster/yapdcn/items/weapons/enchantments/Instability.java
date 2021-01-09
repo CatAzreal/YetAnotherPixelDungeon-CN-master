@@ -27,22 +27,22 @@ public class Instability extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Unstable %s";
+        return "不定之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Chaotic %s";
+        return "混乱之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "do random stuff to your enemies on hit";
+        return "命中时对敌造成随机减益效果";
     }
 
     @Override
     protected String desc_n() {
-        return "do random stuff to you on hit";
+        return "命中时对己造成随机减益效果";
     }
 
     @Override

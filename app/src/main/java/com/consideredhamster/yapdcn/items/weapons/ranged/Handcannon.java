@@ -27,7 +27,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Handcannon extends RangedWeaponFlintlock {
 
 	{
-		name = "handcannon";
+		name = "铳炮";
 		image = ItemSpriteSheet.HANDCANNON;
 	}
 

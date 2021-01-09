@@ -64,12 +64,12 @@ public abstract class RangedWeaponFlintlock extends RangedWeapon {
 
 	}
 
-    public static final String AC_RELOAD = "RELOAD";
+    public static final String AC_RELOAD = "装填";
 
-    protected static final String TXT_POWDER_NEEDED = "You don't have enough gunpowder to reload this gun.";
-    protected static final String TXT_NOT_LOADED = "This gun is not loaded.";
-    protected static final String TXT_ALREADY_LOADED = "This gun is already loaded.";
-    protected static final String TXT_RELOADING = "reloading...";
+    protected static final String TXT_POWDER_NEEDED = "你没有足够的弹药为其进行装填。";
+    protected static final String TXT_NOT_LOADED = "这把武器没有装填";
+    protected static final String TXT_ALREADY_LOADED = "这把武器已经完成装填";
+    protected static final String TXT_RELOADING = "装填中...";
 
     @Override
     public int maxDurability() {
@@ -114,7 +114,7 @@ public abstract class RangedWeaponFlintlock extends RangedWeapon {
 
     @Override
     public String descType() {
-        return "flintlock";
+        return "燧发";
     }
 
 //    @Override
@@ -320,7 +320,7 @@ public abstract class RangedWeaponFlintlock extends RangedWeapon {
 
         @Override
         public String prompt() {
-            return "Choose target to shoot at";
+            return "选择射击目标";
         }
     };
 

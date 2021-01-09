@@ -29,7 +29,7 @@ import com.consideredhamster.yapdcn.Element;
 public class RingOfProtection extends Ring {
 
 	{
-		name = "Ring of Protection";
+		name = "防护之戒";
         shortName = "Pr";
 	}
 	
@@ -50,9 +50,10 @@ public class RingOfProtection extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "This ring makes the wearer's own body to become sturdier, effectively channeling his " +
-            "or her physical strength into additional armor. It also greatly increases resistances " +
-            "to various magical and elemental threats."
+                "[介绍文本暂无]"
+//            "This ring makes the wearer's own body to become sturdier, effectively channeling his " +
+//            "or her physical strength into additional armor. It also greatly increases resistances " +
+//            "to various magical and elemental threats."
         );
 
         desc.append( "\n\n" );
@@ -62,9 +63,7 @@ public class RingOfProtection extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _armor class by " + mainEffect + "_ and " +
-            "increase your _resistance_ to fire, cold, shock, acid and energy by " +
-            "_" + sideEffect + "%_."
+                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的护甲等级_，并且_提高"+sideEffect+"%的元素抗性_。"
         );
 
         return desc.toString();
@@ -88,8 +87,8 @@ public class RingOfProtection extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel more protected." :
-                "You feel more vulnerable." ;
+                "你觉得自己正受到庇护。" :
+                "你感觉自己变得更加脆弱。" ;
         }
 	}
 }

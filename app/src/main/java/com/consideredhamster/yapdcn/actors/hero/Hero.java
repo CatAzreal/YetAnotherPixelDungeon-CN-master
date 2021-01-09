@@ -148,24 +148,24 @@ public class Hero extends Char {
     private static final String TXT_LEAVE_ACOLYTE = "I can't go back now. Everything is at stake. Retreating will only delay the inevitable!";
 
     private static final String TXT_EXP = "%+dEXP";
-    private static final String TXT_LEVEL_UP = "level up!";
+    private static final String TXT_LEVEL_UP = "升级！";
     private static final String TXT_NEW_LEVEL =
-            "Welcome to level %d! You receive %s.";
+            "你达到了等级%d！你获得%s.";
 
-    public static final String TXT_YOU_NOW_HAVE = "You pick up %s";
+    public static final String TXT_YOU_NOW_HAVE = "你捡起了%s";
 
     private static final String TXT_SOMETHING_ELSE = "There is something else here";
-    private static final String TXT_LOCKED_CHEST = "This chest is locked and you don't have matching key";
-    private static final String TXT_LOCKED_DOOR = "You don't have a matching key";
-    private static final String TXT_NOTICED_SMTH = "You noticed something";
+    private static final String TXT_LOCKED_CHEST = "箱子锁着而你没有对应的钥匙";
+    private static final String TXT_LOCKED_DOOR = "你没有对应的钥匙";
+    private static final String TXT_NOTICED_SMTH = "你注意到了什么";
 
-    private static final String TXT_WOKEN_UP = "You were woken up by someone's presence!";
+    private static final String TXT_WOKEN_UP = "你被他人的气息惊醒！";
 
-    private static final String TXT_BREAK_FREE_FAILED = "ensnared";
-    private static final String TXT_BREAK_FREE_WORKED = "escaped!";
+    private static final String TXT_BREAK_FREE_FAILED = "束缚";
+    private static final String TXT_BREAK_FREE_WORKED = "挣脱！";
 
     private static final String TXT_WAIT = "...";
-    private static final String TXT_SEARCH = "search";
+    private static final String TXT_SEARCH = "搜查";
 
     public static final int STARTING_STR = 10;
 
@@ -862,9 +862,9 @@ public class Hero extends Char {
             ready();
 
             YetAnotherPixelDungeon.scene().add(
-                    new WndOptions("Alchemy Pot", "Do you want to brew potions or cook meat? ",
-                            Utils.capitalize( "Brew potions" ),
-                            Utils.capitalize( "Cook meat" ) ) {
+                    new WndOptions("炼金釜", "你是想精炼药剂还是进行烹饪？",
+                            Utils.capitalize( "精炼药剂" ),
+                            Utils.capitalize( "烹饪食物" ) ) {
 
                         @Override
                         protected void onSelect( int index ) {
@@ -1321,7 +1321,7 @@ public class Hero extends Char {
                 Buff.detach( this, Light.class );
                 restoreHealth = true;
             } else {
-                GLog.n( "You are too hungry too sleep right now." );
+                GLog.n( "你太饿了，现在无法入眠" );
             }
         }
 
@@ -1702,23 +1702,23 @@ public class Hero extends Char {
             if( hpBonus > 0 )
                 bonusList.add( Utils.format( "+%d hp", hpBonus ) );
             if( attBonus > 0 )
-                bonusList.add( Utils.format( "+%d acc", attBonus ) );
+                bonusList.add( Utils.format( "+%d精准", attBonus ) );
             if( defBonus > 0 )
-                bonusList.add( Utils.format( "+%d dex", defBonus ) );
+                bonusList.add( Utils.format( "+%d敏捷", defBonus ) );
             if( magBonus > 0 )
-                bonusList.add( Utils.format( "+%d mag", magBonus ) );
+                bonusList.add( Utils.format( "+%d魔能", magBonus ) );
 
             if( strBonus > 0 )
-                bonusList.add( Utils.format( "+%d strength", strBonus ) );
+                bonusList.add( Utils.format( "+%d力量", strBonus ) );
             if( detBonus > 0 )
-                bonusList.add( Utils.format( "+%d%% perception", detBonus ) );
+                bonusList.add( Utils.format( "+%d%%感知", detBonus ) );
             if( stlBonus > 0 )
-                bonusList.add( Utils.format( "+%d%% stealth", stlBonus ) );
+                bonusList.add( Utils.format( "+%d%%潜行", stlBonus ) );
             if( wilBonus > 0 )
-                bonusList.add( Utils.format( "+%d%% attunement", wilBonus ) );
+                bonusList.add( Utils.format( "+%d%%调谐", wilBonus ) );
 
             if( sprite != null ){
-                GLog.p( TXT_NEW_LEVEL, lvl, TextUtils.join( ", ", bonusList ) );
+                GLog.p( TXT_NEW_LEVEL, lvl, TextUtils.join( "，", bonusList ) );
                 sprite.showStatus( CharSprite.POSITIVE, TXT_LEVEL_UP );
 
                 sprite.emitter().burst( Speck.factory( Speck.MASTERY ), 12 );

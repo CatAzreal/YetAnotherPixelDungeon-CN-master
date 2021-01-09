@@ -59,10 +59,11 @@ public class EmptyBottle extends Potion {
 
 	@Override
 	public String info() {
-		return "Any alchemist knows that proper potion brewing requires having an airtight " +
-            "container at hand, as most resulting chemicals either quickly lose their potence " +
-            "when exposed to air or, even worse, react violently to it. These bottles can be " +
-            "used only once, however.";
+	    return "[临时字串]精炼药剂必需材料";
+//		return "Any alchemist knows that proper potion brewing requires having an airtight " +
+//            "container at hand, as most resulting chemicals either quickly lose their potence " +
+//            "when exposed to air or, even worse, react violently to it. These bottles can be " +
+//            "used only once, however.";
 	}
 
 	@Override

@@ -208,7 +208,7 @@ public abstract class RangedWeaponMissile extends RangedWeapon {
 
         @Override
         public String prompt() {
-            return "Choose direction to shoot at";
+            return "选择射击方向";
         }
     };
 

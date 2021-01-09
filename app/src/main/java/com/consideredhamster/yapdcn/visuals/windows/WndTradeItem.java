@@ -45,12 +45,12 @@ public class WndTradeItem extends Window {
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 16;
 	
-	private static final String TXT_SALE		= "FOR SALE: %s - %dg";
-	private static final String TXT_BUY			= "Buy for %dg";
-	private static final String TXT_SELL		= "Sell for %dg";
-	private static final String TXT_SELL_1		= "Sell 1 for %dg";
-	private static final String TXT_SELL_ALL	= "Sell all for %dg";
-	private static final String TXT_CANCEL		= "Never mind";
+	private static final String TXT_SALE		= "出售：%s - %dg";
+	private static final String TXT_BUY			= "以%dg价格购买";
+	private static final String TXT_SELL		= "以%dg价格出售";
+	private static final String TXT_SELL_1		= "以%dg价格出售一个";
+	private static final String TXT_SELL_ALL	= "以%dg价格出售全部";
+	private static final String TXT_CANCEL		= "算了";
 
     private static final String TXT_BOUGHT	= "You've bought %s for %dg";
     private static final String TXT_SOLD	= "You've sold your %s for %dg";

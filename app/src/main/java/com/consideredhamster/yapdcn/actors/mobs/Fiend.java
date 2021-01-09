@@ -63,7 +63,7 @@ public class Fiend extends MobRanged {
 
          */
 
-		name = "fiend";
+		name = "恶魔化身";
 		spriteClass = FiendSprite.class;
 
 //        resistances.put( Element.Mind.class, Element.Resist.PARTIAL );

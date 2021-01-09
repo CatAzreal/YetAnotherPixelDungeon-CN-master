@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Broadsword extends MeleeWeaponHeavyOH {
 	
 	{
-		name = "broadsword";
+		name = "长剑";
 		image = ItemSpriteSheet.SWORD;
 	}
 	

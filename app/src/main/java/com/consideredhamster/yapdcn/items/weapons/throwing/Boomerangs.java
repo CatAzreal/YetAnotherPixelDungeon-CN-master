@@ -29,7 +29,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Boomerangs extends ThrowingWeaponSpecial {
 
 	{
-		name = "boomerangs";
+		name = "回旋镖";
 		image = ItemSpriteSheet.BOOMERANG;
 	}
 

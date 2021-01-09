@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfDurability extends Ring {
 
 	{
-		name = "Ring of Durability";
+		name = "耐久之戒";
         shortName = "Du";
 	}
 	
@@ -46,8 +46,9 @@ public class RingOfDurability extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "Rings of Durability are valued by men of crafts and warfare alike, due to their ability " +
-            "to make tools of their trade to serve longer and be repaired with greater ease."
+                "[介绍文本暂无]"
+//            "Rings of Durability are valued by men of crafts and warfare alike, due to their ability " +
+//            "to make tools of their trade to serve longer and be repaired with greater ease."
         );
 
         desc.append( "\n\n" );
@@ -57,8 +58,7 @@ public class RingOfDurability extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase overall _durability of your items by " + mainEffect + "%_ " +
-            "and give _" + sideEffect + "% chance to repair your items for free_."
+                "佩戴这枚戒指将提高你所用_物品" + mainEffect + "%_" + "的耐久度_，并且修理物品时_"+sideEffect+"%不消耗修理工具_。"
         );
 
         return desc.toString();
@@ -68,8 +68,8 @@ public class RingOfDurability extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel how some kind of protective aura surrounds your equipment." :
-                "You feel how some kind of disruptive aura surrounds your equipment." ;
+                "你感受到自己身上的物品被笼罩在了一层保护光环之下。" :
+                "你感受到自己身上的物品被笼罩在了一层滞阻光环之下。" ;
         }
 	}
 }

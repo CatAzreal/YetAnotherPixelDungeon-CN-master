@@ -47,7 +47,7 @@ public class CarrionSwarm extends MobEvasive {
 
          */
 
-        name = "carrion eater";
+        name = "食腐蝇群";
         spriteClass = SwarmSprite.class;
 
         flying = true;

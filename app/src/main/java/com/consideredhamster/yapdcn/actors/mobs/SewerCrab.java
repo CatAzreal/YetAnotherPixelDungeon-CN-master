@@ -47,7 +47,7 @@ public class SewerCrab extends MobHealthy {
 
          */
 
-        name = "sewer crab";
+        name = "水道巨蟹";
         spriteClass = CrabSprite.class;
 		
 		loot = new MeatRaw();

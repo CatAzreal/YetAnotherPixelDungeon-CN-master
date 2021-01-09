@@ -35,7 +35,7 @@ public class PotionOfCausticOoze extends Potion {
     public static final int BASE_VAL = 10;
 
 	{
-		name = "Potion of Caustic Ooze";
+		name = "淤泥药剂";
         shortName = "CO";
         harmful = true;
 	}
@@ -67,9 +67,9 @@ public class PotionOfCausticOoze extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Uncorking or shattering this pressurized glass will cause its contents to explode " +
-            "into a deadly vapours, which will cover everything around in a highly caustic ooze.";
+        return "[临时字串]使用方式：投掷；效果：生成腐蚀淤泥";
+//			"Uncorking or shattering this pressurized glass will cause its contents to explode " +
+//            "into a deadly vapours, which will cover everything around in a highly caustic ooze.";
 	}
 	
 	@Override

@@ -26,7 +26,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class RatSkull extends Item {
 	
 	{
-		name = "giant rat skull";
+		name = "巨鼠头骨";
 		image = ItemSpriteSheet.SKULL;
 		
 		unique = true;
@@ -35,7 +35,7 @@ public class RatSkull extends Item {
 	@Override
 	public String info() {
 		return
-			"It could be a nice hunting trophy, but it smells too bad to place it on a wall.";
+			"看起来是件不错的狩猎纪念品，但它的气味过于刺鼻完全没法挂在墙上。";
 	}
 	
 	@Override

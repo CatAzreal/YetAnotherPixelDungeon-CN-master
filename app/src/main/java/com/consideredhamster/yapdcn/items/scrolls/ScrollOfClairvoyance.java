@@ -32,7 +32,7 @@ public class ScrollOfClairvoyance extends Scroll {
 	private static final String TXT_LAYOUT = "The layout of current floor is revealed to you!";
 	
 	{
-		name = "Scroll of Clairvoyance";
+		name = "探地卷轴";
         shortName = "Cl";
 
         spellSprite = SpellSprite.SCROLL_FARSIGHT;
@@ -86,9 +86,7 @@ public class ScrollOfClairvoyance extends Scroll {
 	@Override
 	public String desc() {
 		return
-			"Once this scroll is read, an image of crystal clarity will be etched into your memory, " +
-			"alerting you to the precise layout of the floor and revealing all of the treasures it keeps. " +
-			"The locations of traps and creatures will remain unknown.";
+			"阅读这张卷轴时，一副明晰的景象会刻入你的记忆中，告知你整个楼层的精确布局并揭开所有隐藏的秘密。不过道具位置和生物分布依旧是未知状态。";
 	}
 	
 	@Override

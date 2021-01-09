@@ -37,22 +37,22 @@ public class Vorpal extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Unholy %s";
+        return "渎神之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Damned %s";
+        return "咒孽之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "deal tremendous unholy damage to your enemy";
+        return "对敌人造成大量邪恶伤害";
     }
 
     @Override
     protected String desc_n() {
-        return "deal tremendous unholy damage to you";
+        return "对自身造成大量邪恶伤害";
     }
 
     @Override

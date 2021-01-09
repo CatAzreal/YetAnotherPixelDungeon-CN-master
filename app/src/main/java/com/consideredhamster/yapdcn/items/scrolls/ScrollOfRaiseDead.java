@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class ScrollOfRaiseDead extends Scroll {
 	
 	{
-		name = "Scroll of Raise Dead";
+		name = "死灵卷轴";
         shortName = "Ra";
 
         spellSprite = SpellSprite.SCROLL_RAISEDEAD;
@@ -60,11 +60,11 @@ public class ScrollOfRaiseDead extends Scroll {
 
 	@Override
 	public String desc() {
-		return
-                "Malicious magics hidden within this scroll allow its reader to commune with unspeakable, " +
-                "giving him or her an ability to summon a lost soul from the underworld. Be careful, " +
-                "as it will eventually turn on its master!" +
-                "\n\nDuration of controlling effect depends on magic skill of the reader.";
+		return "[临时字串]召唤死灵，一段时间内为友，时间过后为敌，控制时长取决于使用者魔能";
+//                "Malicious magics hidden within this scroll allow its reader to commune with unspeakable, " +
+//                "giving him or her an ability to summon a lost soul from the underworld. Be careful, " +
+//                "as it will eventually turn on its master!" +
+//                "\n\nDuration of controlling effect depends on magic skill of the reader.";
 	}
 
     @Override

@@ -40,7 +40,7 @@ public class ScrollOfChallenge extends Scroll {
     private static final String TXT_MESSAGE	= "The scroll emits a challenging roar that echoes throughout the dungeon!";
 
 	{
-		name = "Scroll of Challenge";
+		name = "挑战卷轴";
         shortName = "Ch";
 
         spellSprite = SpellSprite.SCROLL_CHALLENGE;
@@ -95,10 +95,11 @@ public class ScrollOfChallenge extends Scroll {
 	
 	@Override
 	public String desc() {
-		return 
-			"When read aloud, this scroll will bless you with an unholy wrath, significantly " +
-            "increasing strength of your blows for a limited time. However, it will also aggravate " +
-            "all creatures on the level and reveal your position to them.";
+		return
+                "[临时字串]强化伤害/惊醒并将所在位置暴露给敌人";
+//			"When read aloud, this scroll will bless you with an unholy wrath, significantly " +
+//            "increasing strength of your blows for a limited time. However, it will also aggravate " +
+//            "all creatures on the level and reveal your position to them.";
 	}
 
     @Override

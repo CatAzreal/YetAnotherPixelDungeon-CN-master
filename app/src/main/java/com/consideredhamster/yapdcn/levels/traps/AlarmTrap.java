@@ -42,7 +42,7 @@ public class AlarmTrap extends Trap {
 		}
 		
 		if (Dungeon.visible[pos]) {
-			GLog.w( "The trap emits a piercing sound that echoes throughout the dungeon!" );
+			GLog.w( "陷阱产生的尖锐的警报声在地牢里回荡！" );
 			CellEmitter.center( pos ).start( Speck.factory( Speck.SCREAM ), 0.3f, 3 );
 		}
 		

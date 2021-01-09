@@ -49,7 +49,7 @@ import com.watabou.utils.Random;
 public class Ghost extends NPC {
 
 	{
-		name = "sad ghost";
+		name = "悲伤幽灵";
 		spriteClass = GhostSprite.class;
 		
 		flying = true;

@@ -33,7 +33,7 @@ public class Statue extends MobPrecise {
 
         super( Dungeon.depth + 1 );
 
-        name = "animated statue";
+        name = "活化石像";
         spriteClass = StatueSprite.class;
 
         minDamage += tier;

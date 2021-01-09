@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Halberd extends MeleeWeaponLightTH {
 
 	{
-		name = "halberd";
+		name = "长戟";
 		image = ItemSpriteSheet.HALBERD;
 	}
 

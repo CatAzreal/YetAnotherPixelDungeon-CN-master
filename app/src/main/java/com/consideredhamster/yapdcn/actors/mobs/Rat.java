@@ -46,7 +46,7 @@ public class Rat extends MobEvasive {
 
          */
 
-        name = "marsupial rat";
+        name = "噬齿小鼠";
         spriteClass = RatSprite.class;
 
         minDamage += 1;

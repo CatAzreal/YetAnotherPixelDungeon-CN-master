@@ -47,7 +47,7 @@ public class ScrollOfBanishment extends Scroll {
 		"You are engulfed in a cleansing light, but nothing happens.";
 	
 	{
-		name = "Scroll of Banishment";
+		name = "放逐卷轴";
         shortName = "Ba";
 
         spellSprite = SpellSprite.SCROLL_EXORCISM;
@@ -98,10 +98,11 @@ public class ScrollOfBanishment extends Scroll {
 	@Override
 	public String desc() {
 		return
-			"The incantation on this scroll will attempt to banish any evil magics that might " +
-            "happen to exist near the reader, weakening curses on carried items, banishing " +
-            "nearby creatures of magical origin and even dispelling some malicious effects." +
-            "\n\nDuration of effect inflicted by this scroll depends on magic skill of the reader.";
+                "[临时字串]驱除诅咒/对秘法敌人造成伤害，魔能属性决定效果";
+//			"The incantation on this scroll will attempt to banish any evil magics that might " +
+//            "happen to exist near the reader, weakening curses on carried items, banishing " +
+//            "nearby creatures of magical origin and even dispelling some malicious effects." +
+//            "\n\nDuration of effect inflicted by this scroll depends on magic skill of the reader.";
 	}
 	
 	public static boolean uncurse( Hero hero, Item... items ) {

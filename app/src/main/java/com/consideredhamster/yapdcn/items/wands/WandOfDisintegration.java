@@ -41,7 +41,7 @@ import com.watabou.utils.Random;
 public class WandOfDisintegration extends WandCombat {
 
 	{
-		name = "Wand of Disintegration";
+		name = "解离法杖";
         image = ItemSpriteSheet.WAND_DISINTEGRATION;
 
         hitChars = false;
@@ -210,7 +210,8 @@ public class WandOfDisintegration extends WandCombat {
 	@Override
 	public String desc() {
 		return
-			"This wand emits a beam of destructive energy, which pierces all creatures in its way " +
-            "and bounce from solid obstacles, allowing its user to sohot them around the corners.";
+                "[临时字串]发射可通过墙壁反射的解离射线，穿透并伤害路径上的所有敌人";
+//			"This wand emits a beam of destructive energy, which pierces all creatures in its way " +
+//            "and bounce from solid obstacles, allowing its user to sohot them around the corners.";
 	}
 }

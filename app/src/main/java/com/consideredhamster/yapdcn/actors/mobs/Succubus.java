@@ -60,7 +60,7 @@ public class Succubus extends MobPrecise {
 
          */
 
-        name = "succubus";
+        name = "魅魔";
         spriteClass = SuccubusSprite.class;
 
         armorClass /= 3;

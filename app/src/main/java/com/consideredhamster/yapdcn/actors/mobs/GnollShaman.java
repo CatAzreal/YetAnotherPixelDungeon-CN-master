@@ -59,7 +59,7 @@ public class GnollShaman extends MobRanged {
 
          */
 
-		name = "gnoll shaman";
+		name = "豺狼萨满";
 		spriteClass = ShamanSprite.class;
 
         resistances.put( Element.Dispel.class, Element.Resist.IMMUNE );

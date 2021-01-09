@@ -27,7 +27,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Arbalest extends RangedWeaponMissile {
 
 	{
-		name = "arbalest";
+		name = "十字弩";
 		image = ItemSpriteSheet.ARBALEST;
 	}
 
