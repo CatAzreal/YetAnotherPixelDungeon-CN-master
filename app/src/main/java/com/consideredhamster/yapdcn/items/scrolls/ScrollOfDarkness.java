@@ -34,7 +34,7 @@ public class ScrollOfDarkness extends Scroll {
     private static final String TXT_MESSAGE	= "You are suddenly engulfed by a clouds of impenetrable shadow.";
 
 	{
-		name = "Scroll of Darkness";
+		name = "黑暗卷轴";
         shortName = "Da";
 
         spellSprite = SpellSprite.SCROLL_DARKNESS;
@@ -57,10 +57,11 @@ public class ScrollOfDarkness extends Scroll {
 	@Override
 	public String desc() {
 		return
-			"Unnatural darkness from the deepest abysses is summoned by the call of this otherwise " +
-            "unremarkable sheet of paper. This darkness is so thick that it nothing can see through it " +
-            "without magical means." +
-            "\n\nDuration of this effect depends on magic skill of the reader.";
+                "[临时字串]释放阻挡视线的黑雾，持续效果取决于魔能";
+//			"Unnatural darkness from the deepest abysses is summoned by the call of this otherwise " +
+//            "unremarkable sheet of paper. This darkness is so thick that it nothing can see through it " +
+//            "without magical means." +
+//            "\n\nDuration of this effect depends on magic skill of the reader.";
 	}
 
     @Override

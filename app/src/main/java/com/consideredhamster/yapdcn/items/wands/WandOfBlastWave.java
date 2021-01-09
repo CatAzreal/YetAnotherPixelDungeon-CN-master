@@ -46,7 +46,7 @@ import com.watabou.utils.Random;
 public class WandOfBlastWave extends WandUtility {
 
 	{
-		name = "Wand of Force Blast";
+		name = "原力法杖";
         image = ItemSpriteSheet.WAND_BLAST_WAVE;
         // I am really not sure how I managed to end up with exact the same name for a wand as in
         // ShPD despite intentionally trying to avoid that. Well, I guess I'll keep it for now.
@@ -144,8 +144,9 @@ public class WandOfBlastWave extends WandUtility {
 	@Override
 	public String desc() {
 		return
-			"Wand will release a wave of force so strong that it may send your target flying back, " +
-            "slamming into walls or someone else. If this wave hits a wall or other solid object, " +
-            "it will cause an avalanche of stones, damaging and stunning everyone in the nearby area.";
+                "[临时字串]向墙壁释放->造成崩塌，向敌人释放->击退并伤害目标";
+//			"Wand will release a wave of force so strong that it may send your target flying back, " +
+//            "slamming into walls or someone else. If this wave hits a wall or other solid object, " +
+//            "it will cause an avalanche of stones, damaging and stunning everyone in the nearby area.";
 	}
 }

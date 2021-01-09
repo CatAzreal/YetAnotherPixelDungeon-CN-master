@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Knives extends ThrowingWeaponLight {
 
 	{
-		name = "throwing knives";
+		name = "飞刀";
 		image = ItemSpriteSheet.THROWING_KNIFE;
 	}
 	

@@ -512,9 +512,9 @@ public class Item implements Bundlable {
             case 3:
                 return "崭新";
             case 2:
-                return "尚可";
+                return "良好";
             case 1:
-                return "磨损";
+                return "破损";
             case 0:
                 return "损毁";
             default:

@@ -195,7 +195,7 @@ public abstract class Goo extends MobEvasive {
 
             super();
 
-            name = "Goo";
+            name = "黏咕";
             spriteClass = GooSprite.class;
 
             loot = Gold.class;
@@ -391,7 +391,7 @@ public abstract class Goo extends MobEvasive {
 
             super();
 
-            name = "spawn of Goo";
+            name = "黏咕分裂体";
             spriteClass = GooSprite.SpawnSprite.class;
 
             minDamage /= 2;

@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfAccuracy extends Ring {
 
 	{
-		name = "Ring of Accuracy";
+		name = "精准之戒";
         shortName = "Ac";
 	}
 	
@@ -46,9 +46,10 @@ public class RingOfAccuracy extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "It is said that such rings were imbued with spirits of long-forgotten hunters and " +
-            "warriors, which allows them to grant the wearer greater skill with all manners of " +
-            "melee and ranged weapons."
+                "[介绍文本暂无]"
+//            "It is said that such rings were imbued with spirits of long-forgotten hunters and " +
+//            "warriors, which allows them to grant the wearer greater skill with all manners of " +
+//            "melee and ranged weapons."
         );
 
         desc.append( "\n\n" );
@@ -58,8 +59,7 @@ public class RingOfAccuracy extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _accuracy by " + mainEffect + "%_ " +
-            "and _bonus damage from combo attacks by " + sideEffect + "%_."
+            "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的命中能力_，并且_提高"+sideEffect+"%连击所造成的伤害_。"
         );
 
         return desc.toString();
@@ -69,8 +69,8 @@ public class RingOfAccuracy extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel that your fighting prowess is enhanced." :
-                "You feel that your fighting prowess is dulled." ;
+                "你感觉自己的战斗技巧得到了升华。" :
+                "你感觉自己的战斗技巧变得生疏起来。" ;
         }
 	}
 }

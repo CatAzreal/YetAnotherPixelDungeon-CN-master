@@ -34,7 +34,7 @@ import com.watabou.utils.Random;
 public class Bee extends NPC {
 	
 	{
-		name = "golden bee";
+		name = "黄金蜂";
 		spriteClass = BeeSprite.class;
 		
 //		viewDistance = 4;

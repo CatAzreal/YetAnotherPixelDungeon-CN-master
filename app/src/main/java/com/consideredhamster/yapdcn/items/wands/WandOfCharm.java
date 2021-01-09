@@ -37,7 +37,7 @@ import com.watabou.utils.Callback;
 public class WandOfCharm extends WandUtility {
 
 	{
-		name = "Wand of Charm";
+		name = "魅惑法杖";
         image = ItemSpriteSheet.WAND_DOMINATION;
 	}
 
@@ -69,7 +69,7 @@ public class WandOfCharm extends WandUtility {
 
 		} else {
 			
-			GLog.i( "nothing happened" );
+			GLog.i( "什么都没有发生" );
 			
 		}
 	}
@@ -82,8 +82,9 @@ public class WandOfCharm extends WandUtility {
 	@Override
 	public String desc() {
 		return
-			"The purple light from this wand will hypnotize the target, forcing it to violently " +
-            "protect you against other enemies for a while. It cannot charm magical enemies, but " +
-            "will instead harm and disrupt their senses, causing them to be confused and vulnerable.";
+				"[临时字串]正常生物->魅惑，秘法生物->伤害并使目标陷入混乱";
+//			"The purple light from this wand will hypnotize the target, forcing it to violently " +
+//            "protect you against other enemies for a while. It cannot charm magical enemies, but " +
+//            "will instead harm and disrupt their senses, causing them to be confused and vulnerable.";
 	}
 }

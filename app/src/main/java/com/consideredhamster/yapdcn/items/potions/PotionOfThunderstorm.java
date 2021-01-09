@@ -31,7 +31,7 @@ public class PotionOfThunderstorm extends Potion {
     public static final int BASE_VAL	= 300;
 
 	{
-		name = "Potion of Thunderstorm";
+		name = "雷暴药剂";
         shortName = "Th";
         harmful = true;
 	}
@@ -58,11 +58,11 @@ public class PotionOfThunderstorm extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Upon exposure to open air, the liquid in this flask will start a localized rainfall, " +
-            "complete with storm clouds and lightning. While the main use of this potion is to " +
-            "water crops, nothing stops you from using it to fry your enemies with occasional " +
-            "thunderbolts. Be careful to not get hit yourself!";
+        return "[临时字串]使用方式：投掷；效果：生成雷云，下雨并打雷，可使植被增长";
+//			"Upon exposure to open air, the liquid in this flask will start a localized rainfall, " +
+//            "complete with storm clouds and lightning. While the main use of this potion is to " +
+//            "water crops, nothing stops you from using it to fry your enemies with occasional " +
+//            "thunderbolts. Be careful to not get hit yourself!";
 	}
 	
 	@Override

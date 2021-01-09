@@ -63,7 +63,7 @@ public class Elemental extends MobPrecise {
 
          */
 
-        name = "fire elemental";
+        name = "火焰元素";
         spriteClass = ElementalSprite.class;
 
         flying = true;

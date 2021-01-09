@@ -36,7 +36,7 @@ public class Piranha extends MobEvasive {
 
 		super( Dungeon.depth + 1 );
 
-        name = "giant piranha";
+        name = "巨型食人鱼";
         spriteClass = PiranhaSprite.class;
 
         baseSpeed = 2f;

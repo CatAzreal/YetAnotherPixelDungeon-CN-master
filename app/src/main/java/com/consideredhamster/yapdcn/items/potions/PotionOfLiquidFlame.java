@@ -31,7 +31,7 @@ public class PotionOfLiquidFlame extends Potion {
     public static final float BASE_VAL	= 0.5f;
 
 	{
-		name = "Potion of Liquid Flame";
+		name = "液火药剂";
         shortName = "Li";
         harmful = true;
 	}
@@ -53,9 +53,9 @@ public class PotionOfLiquidFlame extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"This flask contains an unstable compound which will burst " +
-			"violently into flame upon exposure to open air.";
+        return "[临时字串]使用方式：投掷；效果：生成火焰";
+//			"This flask contains an unstable compound which will burst " +
+//			"violently into flame upon exposure to open air.";
 	}
 
     @Override

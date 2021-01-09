@@ -25,10 +25,10 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 
 public class ShopkeeperTroll extends Shopkeeper {
 
-	private static final String TXT_GREETINGS = "A human down here?\nInteresting.";
+	private static final String TXT_GREETINGS = "人类？这里？\n有意思。";
 	
 	{
-		name = "troll shopkeeper";
+		name = "巨魔店主";
 		spriteClass = ShopkeeperTrollSprite.class;
 	}
 

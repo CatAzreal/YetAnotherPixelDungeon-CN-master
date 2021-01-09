@@ -48,7 +48,7 @@ public class VampireBat extends MobEvasive {
 
          */
 
-        name = "vampire bat";
+        name = "吸血蝙蝠";
         spriteClass = BatSprite.class;
 
         flying = true;

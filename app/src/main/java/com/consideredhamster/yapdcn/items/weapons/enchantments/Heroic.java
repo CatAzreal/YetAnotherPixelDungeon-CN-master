@@ -34,22 +34,22 @@ public class Heroic extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Heroic %s";
+        return "英勇之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Cowardly %s";
+        return "怯懦之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "increase your damage when on low health and make it impossible to knock it out of your hands";
+        return "生命值较低时提高造成伤害，并使该武器无法被击落";
     }
 
     @Override
     protected String desc_n() {
-        return "decrease your damage when on low health";
+        return "生命值较低时减少造成伤害";
     }
 
     @Override

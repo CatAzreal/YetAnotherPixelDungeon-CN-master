@@ -38,7 +38,7 @@ import com.watabou.utils.Random;
 public class WandOfLifeDrain extends WandUtility {
 
 	{
-		name = "Wand of Life Drain";
+		name = "窃血法杖";
         image = ItemSpriteSheet.WAND_LIFEDRAIN;
 	}
 
@@ -76,7 +76,7 @@ public class WandOfLifeDrain extends WandUtility {
 
         } else {
 
-            GLog.i( "nothing happened" );
+            GLog.i( "什么都没发生" );
 
         }
     }
@@ -121,8 +121,9 @@ public class WandOfLifeDrain extends WandUtility {
 	@Override
 	public String desc() {
 		return
-			"This wand will allow you to steal life energy from living creatures to restore your " +
-            "own health. Using it against non-living creatures will just harm them, but it is " +
-            "especially effective against targets which are sleeping or otherwise unaware of danger.";
+                "[临时字串]对生物施放->吸血，对非生物释放->仅造成伤害，对非警戒状态敌人造成额外伤害。";
+//			"This wand will allow you to steal life energy from living creatures to restore your " +
+//            "own health. Using it against non-living creatures will just harm them, but it is " +
+//            "especially effective against targets which are sleeping or otherwise unaware of danger.";
 	}
 }

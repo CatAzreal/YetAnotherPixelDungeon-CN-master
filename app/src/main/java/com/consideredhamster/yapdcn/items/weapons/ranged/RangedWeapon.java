@@ -35,11 +35,11 @@ public abstract class RangedWeapon extends Weapon {
 
 	}
 
-    protected static final String AC_SHOOT = "SHOOT";
-    protected static final String TXT_SELF_TARGET	= "You can't target yourself";
+    protected static final String AC_SHOOT = "射击";
+    protected static final String TXT_SELF_TARGET	= "你无法瞄准自己";
     protected static final String TXT_TARGET_CHARMED	= "You can't bring yourself to harm someone so... charming.";
-    protected static final String TXT_NOTEQUIPPED = "You have to equip this weapon first.";
-    protected static final String TXT_AMMO_NEEDED = "You have to equip proper ammo first.";
+    protected static final String TXT_NOTEQUIPPED = "你必须先装备该武器。";
+    protected static final String TXT_AMMO_NEEDED = "你必须装备武器适配的弹药类型。";
 
     public Class<? extends ThrowingWeaponAmmo> ammunition() {
         return null;

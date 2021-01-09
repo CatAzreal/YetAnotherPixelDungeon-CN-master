@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Quarrels extends ThrowingWeaponAmmo {
 
 	{
-		name = "quarrels";
+		name = "弩箭";
 		image = ItemSpriteSheet.QUARREL;
 	}
 

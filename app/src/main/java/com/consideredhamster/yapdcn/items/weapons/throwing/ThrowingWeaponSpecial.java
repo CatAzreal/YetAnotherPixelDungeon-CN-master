@@ -30,7 +30,7 @@ public abstract class ThrowingWeaponSpecial extends ThrowingWeapon {
 
     @Override
     public String descType() {
-        return "special throwing";
+        return "特殊投掷";
     }
 
     @Override

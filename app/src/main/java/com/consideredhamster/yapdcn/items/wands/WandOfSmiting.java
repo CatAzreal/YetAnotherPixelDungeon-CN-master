@@ -43,7 +43,7 @@ import com.watabou.utils.Random;
 public class WandOfSmiting extends WandCombat {
 
 	{
-		name = "Wand of Smiting";
+		name = "神罚法杖";
         image = ItemSpriteSheet.WAND_SMITING;
 
         goThrough = false;
@@ -114,8 +114,9 @@ public class WandOfSmiting extends WandCombat {
 	@Override
 	public String desc() {
 		return
-			"This gilded piece of wood allows its user to channel and release bursts of hallowed " +
-            "energy, harming and sometimes even blinding any wrongdoer caught in its area of " +
-            "effect. Its effects are even stronger against undead or magical foes.";
+                "[临时字串]有概率对目标和周边单位造成目盲，对秘法生物造成更高伤害";
+//			"This gilded piece of wood allows its user to channel and release bursts of hallowed " +
+//            "energy, harming and sometimes even blinding any wrongdoer caught in its area of " +
+//            "effect. Its effects are even stronger against undead or magical foes.";
 	}
 }

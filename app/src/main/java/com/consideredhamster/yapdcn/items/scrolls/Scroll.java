@@ -43,7 +43,7 @@ public abstract class Scroll extends Item {
 	private static final String TXT_BLINDED	= "You can't read a scroll while blinded";
 	private static final String TXT_CONFUSED	= "You can't read a scroll while confused";
 
-	public static final String AC_READ	= "READ";
+	public static final String AC_READ	= "吟唱";
 	
 	protected static final float TIME_TO_READ	= 1f;
 

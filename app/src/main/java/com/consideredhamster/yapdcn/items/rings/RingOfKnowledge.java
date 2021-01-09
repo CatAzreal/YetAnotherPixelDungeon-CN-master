@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfKnowledge extends Ring {
 
 	{
-		name = "Ring of Knowledge";
+		name = "知识之戒";
         shortName = "Kn";
 	}
 	
@@ -44,8 +44,9 @@ public class RingOfKnowledge extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "Both scholars and their pupils appreciate such rings, because they increase cognitive " +
-            "capacity of their wearer, allowing to learn more things in a shorter amount of time."
+                "[介绍文本暂无]"
+//            "Both scholars and their pupils appreciate such rings, because they increase cognitive " +
+//            "capacity of their wearer, allowing to learn more things in a shorter amount of time."
         );
 
         desc.append( "\n\n" );
@@ -55,8 +56,7 @@ public class RingOfKnowledge extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase both the _amount of experience_ earned and " +
-            "_identification rate_ of equipped items _by " + mainEffect + "%_."
+            "佩戴这枚戒指能够_提高" + mainEffect + "%的经验获取和道具鉴定速率。"
         );
 
         return desc.toString();
@@ -66,8 +66,8 @@ public class RingOfKnowledge extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel that your mind starts working better, your memory improves." :
-                "You start feeling stupid. It is like something prevents you from thinking clearly." ;
+                "你感觉自己的思绪变得更加敏锐，并且能够记下更多事情。" :
+                "你感觉自己变得更加愚钝，就像什么东西在阻碍你的思考一样。" ;
         }
 	}
 }

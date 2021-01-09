@@ -33,22 +33,22 @@ public class Tempered extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Tempered %s";
+        return "精良之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Crude %s";
+        return "拙劣之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "last longer without breaking and deal a bit more damage";
+        return "降低受损速度并提供额外的伤害";
     }
 
     @Override
     protected String desc_n() {
-        return "break even faster than usual and deal a bit less damage";
+        return "加速武器受损并减少造成伤害";
     }
 
     @Override

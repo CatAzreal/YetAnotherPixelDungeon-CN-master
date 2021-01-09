@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Glaive extends MeleeWeaponLightTH {
 
 	{
-		name = "glaive";
+		name = "关刀";
 		image = ItemSpriteSheet.GLAIVE;
 	}
 	

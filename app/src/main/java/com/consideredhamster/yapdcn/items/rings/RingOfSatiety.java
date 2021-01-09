@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfSatiety extends Ring {
 
 	{
-		name = "Ring of Satiety";
+		name = "饱食之戒";
         shortName = "Sa";
 	}
 	
@@ -46,9 +46,10 @@ public class RingOfSatiety extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "Rings of satiety optimize digestive mechanisms of wearer's body, making it possible " +
-            "to go without food longer and increasing nutriety of consumed meals, both helping in " +
-            "the times of hunger and helping to prolong times of excess."
+                "[介绍文本暂无]"
+//            "Rings of satiety optimize digestive mechanisms of wearer's body, making it possible " +
+//            "to go without food longer and increasing nutriety of consumed meals, both helping in " +
+//            "the times of hunger and helping to prolong times of excess."
         );
 
         desc.append( "\n\n" );
@@ -58,8 +59,7 @@ public class RingOfSatiety extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will decrease the rate at which your _satiety drops by " + mainEffect +
-            "%_ and increasing _effectiveness of eating by " + sideEffect + "%_."
+                "佩戴这枚戒指将降低_" + mainEffect + "%_" + "的饱食度流失速率_，并且_提高"+sideEffect+"%食物效果_。"
         );
 
         return desc.toString();
@@ -69,8 +69,8 @@ public class RingOfSatiety extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel comfortable warmth in your stomach." :
-                "You feel your hunger growing faster." ;
+                "你感受到一股舒适的暖流在自己的肠胃中游走。" ://胃暖暖的，舒服！（差点用这句了）
+                "你感觉自己饿的更快了。" ;
         }
 	}
 }

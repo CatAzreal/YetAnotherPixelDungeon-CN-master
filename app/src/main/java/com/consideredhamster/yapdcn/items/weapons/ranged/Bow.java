@@ -27,7 +27,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Bow extends RangedWeaponMissile {
 
 	{
-		name = "bow";
+		name = "长弓";
 		image = ItemSpriteSheet.BOW;
 	}
 

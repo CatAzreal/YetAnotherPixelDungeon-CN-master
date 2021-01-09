@@ -29,7 +29,7 @@ public class PotionOfRage extends Potion {
     public static final float DURATION	= 20f;
 
 	{
-		name = "Potion of Rage";
+		name = "狂怒药剂";
         shortName = "Ra";
 	}
 	
@@ -41,10 +41,10 @@ public class PotionOfRage extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Drinking this potion will induce a berserker state, significantly " +
-			"increasing strength of your blows for a limited time. "+
-			"Killing an enemy in this state will extend this bloodthirsty state.";
+        return "[临时字串]使用方式：饮用；效果：提高伤害，击杀敌人以延长效果";
+//			"Drinking this potion will induce a berserker state, significantly " +
+//			"increasing strength of your blows for a limited time. "+
+//			"Killing an enemy in this state will extend this bloodthirsty state.";
 
 	}
 

@@ -26,7 +26,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Knuckles extends MeleeWeaponLightOH {
 
 	{
-		name = "knuckleduster";
+		name = "指虎";
 		image = ItemSpriteSheet.KNUCKLEDUSTER;
 	}
 	

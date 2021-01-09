@@ -50,22 +50,22 @@ public class Shocking extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Shocking %s";
+        return "涌雷之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Sparking %s";
+        return "电损之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "shock your enemies on hit";
+        return "电击命中的敌人";
     }
 
     @Override
     protected String desc_n() {
-        return "shock you on hit";
+        return "命中敌人时电击自身";
     }
 
     @Override

@@ -46,8 +46,9 @@ public class RingOfEvasion extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "Rings of this kind serve to improve reflexes and speed of their wearer, making them " +
-            "harder to be hit - especially when they are on the move."
+                "[介绍文本暂无]"
+//            "Rings of this kind serve to improve reflexes and speed of their wearer, making them " +
+//            "harder to be hit - especially when they are on the move."
         );
 
         desc.append( "\n\n" );
@@ -57,8 +58,7 @@ public class RingOfEvasion extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _evasion by " + mainEffect + "%_ when you " +
-            "are standing still and by _" + sideEffect + "% when you are moving_."
+                "佩戴这枚戒指在站定不动时提供_" + mainEffect + "%_" + "的闪避能力_，而移动中时提高_"+sideEffect+"%的闪避能力_。"
         );
 
         return desc.toString();
@@ -68,8 +68,8 @@ public class RingOfEvasion extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel that your reflexes are improved." :
-                "You feel that your reflexes are dampened." ;
+                "你感觉自己的反应速度得到增强。" :
+                "你感觉自己的反应速度变得迟缓。" ;
         }
 	}
 }

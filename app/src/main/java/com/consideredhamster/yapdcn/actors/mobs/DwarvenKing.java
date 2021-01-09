@@ -144,7 +144,7 @@ public class DwarvenKing extends MobPrecise {
 //        minDamage = 0;
 //        maxDamage = 0;
 
-        name = Dungeon.depth == Statistics.deepestFloor ? "King of Dwarves" : "undead King of Dwarves";
+        name = Dungeon.depth == Statistics.deepestFloor ? "矮人国王" : "不灭的矮人国王";
         spriteClass = KingSprite.class;
 
         loot = Gold.class;

@@ -53,7 +53,7 @@ public class Thief extends MobPrecise {
 
          */
 
-        name = "mugger";
+        name = "窃贼";
         spriteClass = ThiefSprite.class;
 
         loot = Gold.class;

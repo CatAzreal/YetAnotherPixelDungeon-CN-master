@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Dagger extends MeleeWeaponLightOH {
 	
 	{
-		name = "dagger";
+		name = "匕首";
 		image = ItemSpriteSheet.DAGGER;
 	}
 

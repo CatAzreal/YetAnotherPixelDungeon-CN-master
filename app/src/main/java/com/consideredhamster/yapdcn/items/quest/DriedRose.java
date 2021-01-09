@@ -26,7 +26,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class DriedRose extends Item {
 	
 	{
-		name = "dried rose";
+		name = "干枯玫瑰";
 		image = ItemSpriteSheet.ROSE;
 		
 		unique = true;
@@ -35,6 +35,6 @@ public class DriedRose extends Item {
 	@Override
 	public String info() {
 		return
-			"The rose has dried long ago, but it has kept all its petals somehow.";
+			"这朵玫瑰很久以前就已经彻底干枯，但不知为何其上的花瓣仍然齐整。";
 	}
 }

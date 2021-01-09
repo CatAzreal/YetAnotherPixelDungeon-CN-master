@@ -29,7 +29,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class PoisonDarts extends ThrowingWeaponSpecial {
 
 	{
-		name = "poison darts";
+		name = "浸毒飞镖";
 		image = ItemSpriteSheet.THROWING_DART;
 	}
 

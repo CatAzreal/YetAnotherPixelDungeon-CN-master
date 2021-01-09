@@ -26,7 +26,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class CorpseDust extends Item {
 	
 	{
-		name = "corpse dust";
+		name = "尸尘";
 		image = ItemSpriteSheet.DUST;
 		
 //		cursed = true;
@@ -38,7 +38,6 @@ public class CorpseDust extends Item {
 	@Override
 	public String info() {
 		return
-			"The ball of corpse dust doesn't differ outwardly from a regular dust ball. However, " +
-			"you know somehow that it's better to get rid of it as soon as possible.";
+			"在外观上这团尸尘和普通灰尘差不多。但直觉告诉你尽快脱手为好。";
 	}
 }

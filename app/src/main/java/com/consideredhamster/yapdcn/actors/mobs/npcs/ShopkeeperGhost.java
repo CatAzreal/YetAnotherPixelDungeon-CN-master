@@ -25,10 +25,10 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 
 public class ShopkeeperGhost extends Shopkeeper {
 
-	private static final String TXT_GREETINGS = "Welcome, wanderer.\nWould you be my guest?";
+	private static final String TXT_GREETINGS = "你好，迷途者，\n要来店里看看吗？";
 	
 	{
-		name = "strange shopkeeper";
+		name = "奇异的店主";
 		spriteClass = ShopkeeperGhostSprite.class;
 	}
 

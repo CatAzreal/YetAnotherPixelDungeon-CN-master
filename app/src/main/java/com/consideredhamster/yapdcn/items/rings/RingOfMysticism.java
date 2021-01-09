@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfMysticism extends Ring {
 	
 	{
-		name = "Ring of Mysticism";
+		name = "秘法之戒";
         shortName = "My";
 	}
 	
@@ -46,9 +46,10 @@ public class RingOfMysticism extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "This ring was enchanted to increase magical sensitivity of it's wearer. Rings of " +
-            "this kind are often used by spellcasters of all kinds, since having greater " +
-            "attunement with magical currents really helps in their line of work."
+                "[介绍文本暂无]"
+//            "This ring was enchanted to increase magical sensitivity of it's wearer. Rings of " +
+//            "this kind are often used by spellcasters of all kinds, since having greater " +
+//            "attunement with magical currents really helps in their line of work."
         );
 
         desc.append( "\n\n" );
@@ -58,8 +59,7 @@ public class RingOfMysticism extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _attunement by " + mainEffect + "%_ and _chance " +
-            "to proc_ of enchants on your weapons and armors by _" + sideEffect + "%_."
+                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的调谐能力_，并且_护甲和武器的附魔触发几率提高"+sideEffect+"%_。"
         );
 
         return desc.toString();
@@ -69,8 +69,8 @@ public class RingOfMysticism extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "Suddenly, your perception of magical currents is improved." :
-                "Suddenly, your perception of magical currents is dampened." ;
+                "一瞬之间，你对魔能流向的感知得到了强化。" :
+                "一瞬之间，你对魔能流向的感知变得更加迟钝。" ;
         }
 	}
 }

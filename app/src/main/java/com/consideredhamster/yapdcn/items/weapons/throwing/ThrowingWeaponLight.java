@@ -28,7 +28,7 @@ public abstract class ThrowingWeaponLight extends ThrowingWeapon {
 
     @Override
     public String descType() {
-        return "light throwing";
+        return "轻型投掷";
     }
 
     @Override

@@ -30,7 +30,7 @@ public abstract class ThrowingWeaponHeavy extends ThrowingWeapon {
 
     @Override
     public String descType() {
-        return "heavy throwing";
+        return "重型投掷";
     }
 
     @Override

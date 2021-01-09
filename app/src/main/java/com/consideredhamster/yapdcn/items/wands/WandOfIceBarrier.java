@@ -46,7 +46,7 @@ import java.util.ArrayList;
 public class WandOfIceBarrier extends WandUtility {
 
 	{
-		name = "Wand of Ice Barrier";
+		name = "冰壁法杖";
         image = ItemSpriteSheet.WAND_ICEBARRIER;
 
         hitChars = false;
@@ -96,7 +96,7 @@ public class WandOfIceBarrier extends WandUtility {
             }
 
         } else {
-            GLog.i( "nothing happened" );
+            GLog.i( "什么都没有发生" );
         }
     }
 
@@ -118,11 +118,12 @@ public class WandOfIceBarrier extends WandUtility {
 	
 	@Override
 	public String desc() {
-		return 
-			"This rime-covered wand allows its user to create a wall of ice between any two points. " +
-            "Durability of this wall is heavily dependent on amount of tiles affected, but it can be " +
-            "used on the same spot if its user desires. Ice shards created by this wand also may harm " +
-            "and chill your enemies.";
+		return
+                "[临时字串]创建冰墙并伤害冻伤墙壁周边敌人，冰墙耐久取决于长度";
+//			"This rime-covered wand allows its user to create a wall of ice between any two points. " +
+//            "Durability of this wall is heavily dependent on amount of tiles affected, but it can be " +
+//            "used on the same spot if its user desires. Ice shards created by this wand also may harm " +
+//            "and chill your enemies.";
 	}
 
     private static class SecondaryListener implements CellSelector.Listener {
@@ -168,7 +169,7 @@ public class WandOfIceBarrier extends WandUtility {
 
         @Override
         public String prompt(){
-            return "Choose another tile";
+            return "选择冰壁终点";
         }
     };
 
@@ -176,7 +177,7 @@ public class WandOfIceBarrier extends WandUtility {
 
         public IceBlock(){
 
-            name = "ice block";
+            name = "冰墙";
             spriteClass = IceBlockSprite.class;
 
             resistances.put( Element.Flame.class, Element.Resist.VULNERABLE );
@@ -231,7 +232,7 @@ public class WandOfIceBarrier extends WandUtility {
 
         @Override
         public void interact(){
-            GLog.i( "You dispel the ice block." );
+            GLog.i( "你驱散了这块墙壁" );
             Dungeon.hero.sprite.operate( pos );
 
             Dungeon.hero.spend( TICK );

@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfAwareness extends Ring {
 
 	{
-		name = "Ring of Awareness";
+		name = "感知之戒";
         shortName = "Aw";
 	}
 	
@@ -46,8 +46,9 @@ public class RingOfAwareness extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "These rings improve wearer's perception, making him or her to be more aware " +
-            "of different threats as well as allowing for a much deadlier counterattacks."
+                "[介绍文本暂无]"
+//            "These rings improve wearer's perception, making him or her to be more aware " +
+//            "of different threats as well as allowing for a much deadlier counterattacks."
         );
 
         desc.append( "\n\n" );
@@ -57,8 +58,7 @@ public class RingOfAwareness extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _perception by " + mainEffect + "%_ " +
-            "and _bonus damage from counter attacks by " + sideEffect + "%_."
+                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的感知能力_，并且_提高"+sideEffect+"%反击所造成的伤害_。"
         );
 
         return desc.toString();
@@ -69,8 +69,8 @@ public class RingOfAwareness extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You feel that your alertness is improved." :
-                "You feel that your alertness is dimmed." ;
+                "你感觉自己变得更加警觉。" :
+                "你感觉自己的意识不再敏锐。" ;
         }
 	}
 }

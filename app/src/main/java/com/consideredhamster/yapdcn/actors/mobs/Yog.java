@@ -58,7 +58,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 public class Yog extends Mob {
 	
 	{
-		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "echo of Yog-Dzewa";
+		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "Yog-Dzewa之回响";
 		spriteClass = YogSprite.class;
 		
 		HP = HT = 500;

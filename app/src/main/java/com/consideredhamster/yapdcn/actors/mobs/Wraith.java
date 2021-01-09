@@ -54,7 +54,7 @@ public class Wraith extends MobRanged {
 
         super( depth / 6 + 1, depth + 1, false );
 
-        name = "wraith";
+        name = "恶灵";
         spriteClass = WraithSprite.class;
 
         minDamage += tier;

@@ -31,7 +31,7 @@ public abstract class ThrowingWeaponAmmo extends ThrowingWeapon {
 
     @Override
     public String descType() {
-        return "ammo";
+        return "弹药";
     }
 
     @Override
@@ -83,15 +83,15 @@ public abstract class ThrowingWeaponAmmo extends ThrowingWeapon {
 
         if (isEquipped( Dungeon.hero )) {
 
-            info.append("You hold these " + name + " at the ready.");
+            info.append("你正随身携带着这些" + name + "。");
 
         } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
 
-            info.append( "These " + name + " are in your backpack. " );
+            info.append( "这些" + name + "正装在背包里。" );
 
         } else {
 
-            info.append( "These " + name + " are on the dungeon's floor." );
+            info.append( "这些" + name + "在地面上。" );
 
         }
 

@@ -41,10 +41,10 @@ public class ScrollOfPhaseWarp extends Scroll {
         "In a blink of an eye you were teleported to somewhere else. You can't remember this place.";
 	
 	public static final String TXT_NO_TELEPORT = 
-		"Teleportation fails!";
+		"传送失败！";
 	
 	{
-		name = "Scroll of Phase Warp";
+		name = "变相卷轴";
         shortName = "Ph";
 
         spellSprite = SpellSprite.SCROLL_TELEPORT;
@@ -103,10 +103,7 @@ public class ScrollOfPhaseWarp extends Scroll {
     @Override
 	public String desc() {
 		return
-			"The spell on this parchment instantly transports the reader " +
-			"to a random location on the dungeon level. It can be used " +
-			"to escape a dangerous situation, but this method of transportation " +
-            "can be harmful for the mind of its user.";
+			"羊皮纸上的咒语能立刻让阅读者传送到本层的另一处。危急时刻可用作逃脱手段，不过这种传送方式会对使用者的精神造成影响。";
 	}
 
     @Override

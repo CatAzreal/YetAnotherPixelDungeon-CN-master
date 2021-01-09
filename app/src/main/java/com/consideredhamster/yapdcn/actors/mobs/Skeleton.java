@@ -53,7 +53,7 @@ public class Skeleton extends MobPrecise {
 
          */
 
-        name = "skeleton";
+        name = "骷髅";
         spriteClass = SkeletonSprite.class;
 
         loot = Gold.class;

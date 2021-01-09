@@ -49,7 +49,7 @@ public class DwarfMonk extends MobEvasive {
 
          */
 
-        name = "dwarf monk";
+        name = "矮人武僧";
 
         spriteClass = MonkSprite.class;
 

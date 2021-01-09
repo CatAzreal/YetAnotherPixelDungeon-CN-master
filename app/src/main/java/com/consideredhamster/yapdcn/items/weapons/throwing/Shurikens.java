@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Shurikens extends ThrowingWeaponLight {
 
 	{
-		name = "shurikens";
+		name = "手里剑";
 		image = ItemSpriteSheet.THROWING_STAR;
 	}
 	

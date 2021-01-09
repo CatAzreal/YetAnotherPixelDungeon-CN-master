@@ -25,10 +25,10 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 
 public class ShopkeeperDemon extends Shopkeeper {
 
-    private static final String TXT_GREETINGS = "Hello, friend!";
+    private static final String TXT_GREETINGS = "你好啊朋友！";
 	
 	{
-		name = "ambitious imp";
+		name = "雄心勃勃的小恶魔";
 		spriteClass = AmbitiousImpSprite.class;
 	}
 

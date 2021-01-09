@@ -27,7 +27,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Arquebuse extends RangedWeaponFlintlock {
 
 	{
-		name = "arquebuse";
+		name = "火绳枪";
 		image = ItemSpriteSheet.ARQUEBUS;
 	}
 

@@ -42,7 +42,7 @@ import com.consideredhamster.yapdcn.visuals.windows.WndTradeItem;
 
 public class Shopkeeper extends NPC {
 
-    private static final String TXT_GREETINGS = "Good day! Are you interested in my wares?";
+    private static final String TXT_GREETINGS = "你好啊！要来看看我的商品吗？";
 
     private static String[][] LINES_THREATENED = {
 
@@ -128,7 +128,7 @@ public class Shopkeeper extends NPC {
     private boolean seenBefore = false;
 
 	{
-		name = "shopkeeper";
+		name = "店主";
 		spriteClass = ShopkeeperHumanSprite.class;
 	}
 

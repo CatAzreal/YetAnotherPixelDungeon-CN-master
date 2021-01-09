@@ -42,22 +42,22 @@ public class Freezing extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Freezing %s";
+        return "冰霜之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Chilling %s";
+        return "冻凝之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "freeze your enemies on hit";
+        return "命中时冻伤敌人";
     }
 
     @Override
     protected String desc_n() {
-        return "freeze you on hit";
+        return "命中时冻伤自己";
     }
 
     @Override

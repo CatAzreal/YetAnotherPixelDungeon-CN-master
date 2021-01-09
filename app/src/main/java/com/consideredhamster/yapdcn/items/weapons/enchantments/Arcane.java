@@ -46,22 +46,22 @@ public class Arcane extends Weapon.Enchantment {
 
     @Override
     protected String name_p() {
-        return "Arcane %s";
+        return "奥术之%s";
     }
 
     @Override
     protected String name_n() {
-        return "Negating %s";
+        return "噬能之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "recharge your wands when attacking";
+        return "攻击时为法杖充能";
     }
 
     @Override
     protected String desc_n() {
-        return "discharge your wands when attacking";
+        return "攻击时消耗法杖能量";
     }
 
     @Override

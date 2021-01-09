@@ -147,35 +147,31 @@ public abstract class WandUtility extends Wand {
         if ( !isIdentified() ){
 
             info.append(
-                    "This wand is _" + ( isCursedKnown() && bonus < 0 ? "cursed" : "unidentified" ) +
-                    "_, but is in a _" + stateToString( state ) + " condition_. Most likely, it " +
-                    "holds only _up to " + maxCharges( 0 ) + " charges_ and will probably " +
-                    "have _" + chance + "% chance_ to miscast when used."
+                    "这根法杖_" + ( isCursedKnown() && bonus < 0 ? "受到了诅咒" : "未被鉴定" ) +
+                            "_, 不过它现在_状态为" + stateToString( state ) + "_。多数情况下这根法杖应该只有_" + maxCharges( 0 ) + " charges_ and will probably " +
+                            "点充能，并且使用时有_" + chance + "%的几率施法失败。"
             );
 
             info.append( p );
 
             info.append(
-                "With your current magic power and attunement values, power of this wand will " +
-                "(probably) be _" + min + "-" + max + " points_ when fully charged and it will " +
-                "recover one charge _per " + recharge + " turns_."
+                    "基于你的当前魔能和调谐属性，这根法杖大概每次释放充能时可以造成_" + min + "-" + max + "点伤害" +
+                            "_并且_每" + recharge + "回合_恢复1充能。"
             );
 
         } else {
 
             info.append(
-                "This wand is _" + ( bonus < 0 ? "cursed" : "not cursed" ) + "_ and is " +
-                "in a _" + stateToString( state ) + " condition_. It currently holds _" +
-                getCharges() + "/" + maxCharges() + " charges_ and will have _" + chance +"% " +
-                "chance_ to " + ( bonus < 0 ? "miscast when used." : "squeeze an additional charge." )
+                    "这根法杖_" + ( bonus < 0 ? "受到了诅咒" : "未被诅咒" ) + "_，并且它目前状态为_" + stateToString( state ) +
+                            "_。法杖目前充能量为_" +  getCharges() + "/" + maxCharges() + "_，并且使用时有_" + chance +"%_的概率"
+                            + ( bonus < 0 ? "施法失败" : "无充能施法" )
             );
 
             info.append( p );
 
             info.append(
-                "With your current magic power and attunement values, power of this wand will " +
-                "be  _" + min + "-" + max + " points_ when fully charged and it will recover " +
-                "one charge _per " + recharge  + " turns_."
+                    "基于你的当前魔能和调谐属性，这根法杖每次释放充能时可以造成_" + min + "-" + max + "点伤害" +
+                            "_并且_每" + recharge + "回合_恢复1充能。"
             );
 
         }

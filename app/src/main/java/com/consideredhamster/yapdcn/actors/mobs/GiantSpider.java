@@ -52,7 +52,7 @@ public class GiantSpider extends MobHealthy {
 
          */
 
-		name = "giant spider";
+		name = "巨型蜘蛛";
 		spriteClass = SpiderSprite.class;
 		
 		loot = new MeatRaw();

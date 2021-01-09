@@ -34,11 +34,11 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 
 public class WndInfoItem extends Window {
 	
-	private static final String TXT_CHEST			= "Chest";
-	private static final String TXT_LOCKED_CHEST	= "Locked chest";
-	private static final String TXT_CRYSTAL_CHEST	= "Crystal chest";
-	private static final String TXT_TOMB			= "Tomb";
-	private static final String TXT_SKELETON		= "Skeletal remains";
+	private static final String TXT_CHEST			= "宝箱";
+	private static final String TXT_LOCKED_CHEST	= "上锁宝箱";
+	private static final String TXT_CRYSTAL_CHEST	= "水晶宝箱";
+	private static final String TXT_TOMB			= "坟墓";
+	private static final String TXT_SKELETON		= "英雄遗骸";
 	private static final String TXT_WONT_KNOW		= "You won't know what's inside until you open it!";
 	private static final String TXT_NEED_KEY		= TXT_WONT_KNOW + " But to open it you need a golden key.";
 	private static final String TXT_INSIDE			= "You can see %s inside, but to open the chest you need a golden key.";

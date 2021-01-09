@@ -62,7 +62,7 @@ public class Tengu extends MobRanged {
 
         super( 3, 15, true );
 
-        name = Dungeon.depth == Statistics.deepestFloor ? "Tengu" : "memory of Tengu";
+        name = Dungeon.depth == Statistics.deepestFloor ? "天狗" : "天狗之残影";
         spriteClass = TenguSprite.class;
 
         loot = Gold.class;

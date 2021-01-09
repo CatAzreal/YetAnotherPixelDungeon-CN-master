@@ -55,7 +55,7 @@ public class GnollHunter extends MobRanged {
 
          */
 
-		name = "gnoll hunter";
+		name = "豺狼猎手";
 		spriteClass = GnollSprite.class;
 
         resistances.put( Element.Dispel.class, Element.Resist.IMMUNE );

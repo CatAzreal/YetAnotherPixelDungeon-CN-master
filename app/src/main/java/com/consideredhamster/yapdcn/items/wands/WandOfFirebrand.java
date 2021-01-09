@@ -43,7 +43,7 @@ import com.watabou.utils.Random;
 public class WandOfFirebrand extends WandCombat {
 
 	{
-		name = "Wand of Firebrand";
+		name = "火纹法杖";
         image = ItemSpriteSheet.WAND_FIREBRAND;
 
         goThrough = false;
@@ -122,8 +122,9 @@ public class WandOfFirebrand extends WandCombat {
 	@Override
 	public String desc() {
 		return
-			"Using this wand will release a single blast of flame. Using it on the ground, however, " +
-            "creates a temporary fiery rune, which will explode when triggered by another object. " +
-            "Repeated castings will enhance this rune, increasing its power, duration and area of effect.";
+                "[临时字串]可喷射火焰伤害敌人，可释放符文，触发符文将引发伤害更高的爆炸。";
+//			"Using this wand will release a single blast of flame. Using it on the ground, however, " +
+//            "creates a temporary fiery rune, which will explode when triggered by another object. " +
+//            "Repeated castings will enhance this rune, increasing its power, duration and area of effect.";
 	}
 }

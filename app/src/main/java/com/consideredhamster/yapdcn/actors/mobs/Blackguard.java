@@ -43,7 +43,7 @@ public class Blackguard extends MobHealthy {
 
          */
 
-        name = "blackguard";
+        name = "暗蚀守卫";
         spriteClass = BlackguardSprite.class;
 
         resistances.put( Element.Flame.class, Element.Resist.PARTIAL );

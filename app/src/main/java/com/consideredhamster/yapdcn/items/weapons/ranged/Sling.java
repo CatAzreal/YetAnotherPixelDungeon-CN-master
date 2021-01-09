@@ -27,7 +27,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Sling extends RangedWeaponMissile {
 
 	{
-		name = "sling";
+		name = "投索";
 		image = ItemSpriteSheet.SLING;
 	}
 

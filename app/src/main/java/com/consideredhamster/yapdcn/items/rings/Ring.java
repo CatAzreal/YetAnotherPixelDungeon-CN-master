@@ -42,20 +42,19 @@ import com.watabou.utils.Random;
 public abstract class Ring extends EquipableItem {
 
 	private static final int TICKS_TO_KNOW	= 100;
-	
-	private static final float TIME_TO_EQUIP = 1f;
-	
-	private static final String TXT_IDENTIFY_NORMAL = "you are now familiar enough with your %s to identify it. It is %s +%d.";
-	private static final String TXT_IDENTIFY_CURSED = "you are now familiar enough with your %s to identify it. It is %s -%d.";
 
-	private static final String TXT_UNEQUIP_TITLE = "Unequip one ring";
-	private static final String TXT_UNEQUIP_MESSAGE = 
-		"You can only wear two rings at a time. " +
-		"Unequip one of your equipped rings.";
-	
+	private static final float TIME_TO_EQUIP = 1f;
+
+	private static final String TXT_IDENTIFY_NORMAL = "你对你的戒指已经足够熟悉并且可以因此将其完全鉴定。它是%s +%d。";
+	private static final String TXT_IDENTIFY_CURSED = "你对你的戒指已经足够熟悉并且可以因此将其完全鉴定。它是%s -%d。";
+
+	private static final String TXT_UNEQUIP_TITLE = "卸下一枚戒指";
+	private static final String TXT_UNEQUIP_MESSAGE =
+		"你只能同时装备两枚戒指，请卸下一枚已装备戒指再尝试。";
+
 	protected Buff buff;
-	
-	private static final Class<?>[] rings = { 
+
+	private static final Class<?>[] rings = {
 		RingOfVitality.class,
 		RingOfAwareness.class,
 		RingOfShadows.class,
@@ -69,48 +68,48 @@ public abstract class Ring extends EquipableItem {
 		RingOfProtection.class,
 		RingOfWillpower.class
 	};
-	private static final String[] gems = 
-		{"diamond", "opal", "garnet", "ruby", "amethyst", "topaz", "onyx", "tourmaline", "emerald", "sapphire", "quartz", "agate"};
+	private static final String[] gems =
+		{"钻石", "欧珀", "石榴石", "红宝石", "紫水晶", "黄玉", "黑曜石", "碧玺", "绿宝石", "蓝宝石", "石英", "玛瑙"};
 	private static final Integer[] images = {
-		ItemSpriteSheet.RING_DIAMOND, 
-		ItemSpriteSheet.RING_OPAL, 
-		ItemSpriteSheet.RING_GARNET, 
-		ItemSpriteSheet.RING_RUBY, 
-		ItemSpriteSheet.RING_AMETHYST, 
-		ItemSpriteSheet.RING_TOPAZ, 
-		ItemSpriteSheet.RING_ONYX, 
-		ItemSpriteSheet.RING_TOURMALINE, 
-		ItemSpriteSheet.RING_EMERALD, 
-		ItemSpriteSheet.RING_SAPPHIRE, 
-		ItemSpriteSheet.RING_QUARTZ, 
+		ItemSpriteSheet.RING_DIAMOND,
+		ItemSpriteSheet.RING_OPAL,
+		ItemSpriteSheet.RING_GARNET,
+		ItemSpriteSheet.RING_RUBY,
+		ItemSpriteSheet.RING_AMETHYST,
+		ItemSpriteSheet.RING_TOPAZ,
+		ItemSpriteSheet.RING_ONYX,
+		ItemSpriteSheet.RING_TOURMALINE,
+		ItemSpriteSheet.RING_EMERALD,
+		ItemSpriteSheet.RING_SAPPHIRE,
+		ItemSpriteSheet.RING_QUARTZ,
 		ItemSpriteSheet.RING_AGATE};
-	
+
 	private static ItemStatusHandler<Ring> handler;
-	
+
 	private String gem;
 
 	private int ticksToKnow = Random.IntRange(TICKS_TO_KNOW, TICKS_TO_KNOW * 2);
-	
+
 	@SuppressWarnings("unchecked")
 	public static void initGems() {
 		handler = new ItemStatusHandler<Ring>( (Class<? extends Ring>[])rings, gems, images );
 	}
-	
+
 	public static void save( Bundle bundle ) {
 		handler.save( bundle );
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static void restore( Bundle bundle ) {
 		handler = new ItemStatusHandler<Ring>( (Class<? extends Ring>[])rings, gems, images, bundle );
 	}
-	
+
 	public Ring() {
 		super();
 		syncGem();
         shortName = "??";
     }
-	
+
 	public void syncGem() {
 		image	= handler.image( this );
 		gem		= handler.label( this );
@@ -120,25 +119,25 @@ public abstract class Ring extends EquipableItem {
     public String quickAction() {
         return isEquipped( Dungeon.hero ) ? AC_UNEQUIP : AC_EQUIP;
     }
-	
+
 	@Override
 	public boolean doEquip( final Hero hero ) {
-		
+
 		if (hero.belongings.ring1 != null && hero.belongings.ring2 != null) {
-			
+
 			final Ring r1 = hero.belongings.ring1;
 			final Ring r2 = hero.belongings.ring2;
-			
+
 			YetAnotherPixelDungeon.scene().add(
-				new WndOptions( TXT_UNEQUIP_TITLE, TXT_UNEQUIP_MESSAGE, 
-					Utils.capitalize( r1.toString() ), 
+				new WndOptions( TXT_UNEQUIP_TITLE, TXT_UNEQUIP_MESSAGE,
+					Utils.capitalize( r1.toString() ),
 					Utils.capitalize( r2.toString() ) ) {
-					
+
 					@Override
 					protected void onSelect( int index ) {
-						
+
 						detach( hero.belongings.backpack );
-						
+
 						Ring equipped = (index == 0 ? r1 : r2);
 
                         if( QuickSlot.quickslot1.value == Ring.this && equipped.bonus >= 0 )
@@ -163,9 +162,9 @@ public abstract class Ring extends EquipableItem {
 						}
 					}
 				} );
-			
+
 			return false;
-			
+
 		} else {
 
             if( ( bonus >= 0 || isCursedKnown() || !detectCursed( this, hero ) ) ) {
@@ -225,27 +224,27 @@ public abstract class Ring extends EquipableItem {
 	@Override
 	public boolean doUnequip( Hero hero, boolean collect, boolean single ) {
 		if (super.doUnequip( hero, collect, single )) {
-			
+
 			if (hero.belongings.ring1 == this) {
 				hero.belongings.ring1 = null;
 			} else {
 				hero.belongings.ring2 = null;
 			}
-			
+
 			hero.remove( buff );
 			buff = null;
 
             QuickSlot.refresh();
-			
+
 			return true;
-			
+
 		} else {
-			
+
 			return false;
-			
+
 		}
 	}
-	
+
 	@Override
 	public boolean isEquipped( Hero hero ) {
 		return hero.belongings.ring1 == this || hero.belongings.ring2 == this;
@@ -270,15 +269,15 @@ public abstract class Ring extends EquipableItem {
 	public boolean isTypeKnown() {
 		return handler.isKnown( this );
 	}
-	
+
 	protected void setKnown() {
 		if (!isTypeKnown()) {
 			handler.know( this );
 		}
-		
+
 		Badges.validateAllRingsIdentified();
 	}
-	
+
 	@Override
 	public String name() {
 		return isTypeKnown() ? super.name() : gem + " ring";
@@ -287,11 +286,11 @@ public abstract class Ring extends EquipableItem {
     @Override
     public String desc() {
         if( isIdentified() && bonus >= 0 ) {
-            return "This ring is _identified_. Effects from the rings of the same type stack additively.";
+            return "这枚戒指_已被鉴定_。同种类戒指效果可叠加。";
         } else if( isCursedKnown() && bonus < 0 ) {
-            return "This ring is _cursed_. Its effects are reversed and it cannot be removed voluntarily.";
+            return "这枚戒指被诅咒了。其效果与非诅咒戒指正好相反，并且无法正常摘除。";
         } else {
-            return "This ring is _not identified_. You are not sure about its exact effects.";
+            return "这枚戒指_尚未鉴定_。你不清楚它的具体功用。";
         }
     }
 
@@ -301,40 +300,39 @@ public abstract class Ring extends EquipableItem {
         final String p = "\n\n";
 
         StringBuilder info = new StringBuilder( isTypeKnown() ? desc() :
-            "This metal band is adorned with a large " + gem + " gem " +
-            "that glitters in the darkness. Who knows what effect it has when worn?"
+            "这枚金属环镶嵌着一颗在黑暗中闪烁光芒的大块"+gem+"。谁知道戴上后会有什么效果？"
         );
 
         info.append( p );
 
         if ( isEquipped( Dungeon.hero ) ) {
-            info.append( "You wear this ring on your finger." );
+            info.append( "这枚戒指正戴在自己的手指上。" );
         } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
-            info.append( "This ring is in your backpack." );
+            info.append( "这枚戒指正在你的背包里。" );
         } else {
-            info.append( "This ring lies on the dungeon's floor." );
+            info.append( "这枚戒指在地面上。" );
         }
 
         if( bonus < 0 && isCursedKnown() ) {
 
-            info.append( " " );
+            info.append( "" );
 
             if( isEquipped( Dungeon.hero ) ){
-                info.append( "Malevolent magic prevents you from removing it." );
+                info.append( "恶毒的法术正阻止着你将其除下。" );
             } else {
-                info.append( "You can feel a malevolent magic lurking within it." );
+                info.append( "你能感觉到这件戒指里潜伏着一股充满恶意的魔力。" );
             }
         }
 
         return info.toString();
 	}
-	
+
 	@Override
 	public Item identify() {
 		setKnown();
 		return super.identify();
 	}
-	
+
 	public static boolean allKnown() {
 		return handler.known().size() == rings.length;
 	}
@@ -342,7 +340,7 @@ public abstract class Ring extends EquipableItem {
     public static HashSet<Class<? extends Ring>> getKnown() {
         return handler.known();
     }
-	
+
 	@Override
 	public int price() {
 
@@ -361,7 +359,7 @@ public abstract class Ring extends EquipableItem {
 
     @Override
     public float stealingDifficulty() { return 0.75f; }
-	
+
 	protected RingBuff buff() {
 		return null;
 	}
@@ -369,15 +367,15 @@ public abstract class Ring extends EquipableItem {
     public static float effect( int level ) {
         return level >= 0 ? 0.2f + 0.1f * level : 0.1f * level - 0.1f;
     }
-	
+
 	private static final String UNFAMILIRIARITY	= "unfamiliarity";
-	
+
 	@Override
 	public void storeInBundle( Bundle bundle ) {
 		super.storeInBundle( bundle );
 		bundle.put( UNFAMILIRIARITY, ticksToKnow );
 	}
-	
+
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		super.restoreFromBundle( bundle );
@@ -389,7 +387,7 @@ public abstract class Ring extends EquipableItem {
     public class RingBuff extends Buff {
 
         protected String desc() {
-            return "You don't feel anything special on equipping this ring.";
+            return "你没能感觉到这枚戒指有任何特殊的效果。";
         }
 
         public float effect() {

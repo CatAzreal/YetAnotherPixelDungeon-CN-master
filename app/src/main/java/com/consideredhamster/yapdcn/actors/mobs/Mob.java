@@ -71,8 +71,8 @@ import com.watabou.utils.Random;
 
 public abstract class Mob extends Char {
 	
-	private static final String	TXT_DIED     = "You hear something died in the distance";
-    private static final String TXT_HEARD    = "You think you hear a %s %s nearby";
+	private static final String	TXT_DIED     = "你听见有什么东西在远处消亡了";
+    private static final String TXT_HEARD    = "你认为自己听到了%s在附近%s的响动";
 	
 	protected static final String TXT_ECHO  = "echo of ";
 
@@ -334,7 +334,7 @@ public abstract class Mob extends Char {
             && !sprite.visible && state != PASSIVE && Level.distance( pos, Dungeon.hero.pos ) == 2
             && Dungeon.hero.detected( this ) && Dungeon.hero.detected( this )
         ) {
-            Dungeon.hero.interrupt( "You were awoken by a noise." );
+            Dungeon.hero.interrupt( "你被一阵声音吵醒。" );
 
             if( !enemySeen ) {
                 GLog.w(TXT_HEARD, name, state.status());
@@ -583,7 +583,7 @@ public abstract class Mob extends Char {
     protected void onRangedAttack( int cell ) {
 
         if ( enemy == Dungeon.hero ) {
-            Dungeon.hero.interrupt( "You were awoken by an attack!" );
+            Dungeon.hero.interrupt( "快醒醒，你受到攻击了！" );
         }
 
         sprite.idle();
@@ -1060,7 +1060,7 @@ public abstract class Mob extends Char {
 		
 		@Override
 		public String status() {
-			return "passive";
+			return "和平";
 		}
 	}
 }

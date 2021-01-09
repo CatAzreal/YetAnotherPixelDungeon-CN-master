@@ -51,7 +51,7 @@ public class Mimic extends MobHealthy {
 
         super( Dungeon.depth + 1 );
 
-        name = "mimic";
+        name = "宝箱怪";
         spriteClass = MimicSprite.class;
 
         items = new ArrayList<>();

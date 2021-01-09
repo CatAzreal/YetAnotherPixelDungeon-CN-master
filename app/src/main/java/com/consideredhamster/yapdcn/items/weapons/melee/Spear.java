@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Spear extends MeleeWeaponLightTH {
 
 	{
-		name = "spear";
+		name = "长枪";
 		image = ItemSpriteSheet.SPEAR;
 	}
 	

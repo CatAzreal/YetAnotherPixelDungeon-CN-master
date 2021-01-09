@@ -29,7 +29,7 @@ public class PotionOfToxicGas extends Potion {
     public static final int BASE_VAL	= 450;
 
 	{
-		name = "Potion of Toxic Gas";
+		name = "毒气药剂";
         shortName = "TG";
         harmful = true;
 	}
@@ -44,10 +44,10 @@ public class PotionOfToxicGas extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Uncorking or shattering this pressurized glass will cause its contents to explode " +
-            "into a deadly cloud of highly flammable toxic gas, which will poison whoever happen to inhale it. " +
-            "You might choose to fling this potion at distant enemies instead of uncorking it by hand.";
+		return "[临时字串]使用方式：投掷；效果：生成毒气";
+//			"Uncorking or shattering this pressurized glass will cause its contents to explode " +
+//            "into a deadly cloud of highly flammable toxic gas, which will poison whoever happen to inhale it. " +
+//            "You might choose to fling this potion at distant enemies instead of uncorking it by hand.";
 	}
 	
 	@Override

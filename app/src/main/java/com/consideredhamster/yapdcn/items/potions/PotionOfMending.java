@@ -32,7 +32,7 @@ public class PotionOfMending extends Potion {
     public static final float DURATION	= 20f;
 
 	{
-		name = "Potion of Mending";
+		name = "愈合药剂";
         shortName = "Me";
 	}
 	
@@ -52,9 +52,9 @@ public class PotionOfMending extends Potion {
 
 	@Override
 	public String desc() {
-		return
-			"When imbibed, this elixir will vastly improve imbiber's natural regeneration and cure " +
-            "any physical ailments as well.";
+		return "[临时字串]使用方式：饮用；效果：提高治疗速度，解除负面物理状态";
+//			"When imbibed, this elixir will vastly improve imbiber's natural regeneration and cure " +
+//            "any physical ailments as well.";
 	}
 	
 	@Override

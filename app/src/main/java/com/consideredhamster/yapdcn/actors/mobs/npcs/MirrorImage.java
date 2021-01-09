@@ -35,7 +35,7 @@ import com.watabou.utils.Random;
 public class MirrorImage extends NPC {
 	
 	{
-		name = "mirror image";
+		name = "镜像";
 		spriteClass = MirrorSprite.class;
 
 		state = HUNTING;

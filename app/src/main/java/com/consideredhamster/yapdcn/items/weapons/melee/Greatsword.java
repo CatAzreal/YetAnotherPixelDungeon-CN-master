@@ -25,7 +25,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Greatsword extends MeleeWeaponHeavyTH {
 	
 	{
-		name = "greatsword";
+		name = "大剑";
 		image = ItemSpriteSheet.GREATSWORD;
 	}
 	

@@ -30,7 +30,7 @@ public class PotionOfShield extends Potion {
     public static final float DURATION	= 30f;
 
 	{
-		name = "Potion of Shield";
+		name = "护盾药剂";
         shortName = "Sh";
 	}
 
@@ -42,10 +42,10 @@ public class PotionOfShield extends Potion {
 
     @Override
 	public String desc() {
-		return
-			"This potion is imbued with a powerful protective magic. Consuming it will temporarily " +
-            "create a kind of force field around you, giving you both improved physical protection " +
-            "and resistance to most sources of magical damage.";
+        return "[临时字串]使用方式：饮用；效果：提高物理及魔法伤害抗性";
+//			"This potion is imbued with a powerful protective magic. Consuming it will temporarily " +
+//            "create a kind of force field around you, giving you both improved physical protection " +
+//            "and resistance to most sources of magical damage.";
 	}
 
 	

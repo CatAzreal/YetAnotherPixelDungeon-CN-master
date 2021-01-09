@@ -48,15 +48,15 @@ import com.consideredhamster.yapdcn.visuals.windows.WndBag;
 
 public class ScrollOfTransmutation extends InventoryScroll {
 
-	private static final String TXT_ITEM_TRANSMUTED	= "your %s is transmuted into %s!";
-    private static final String TXT_ITEM_RESISTS	= "Your %s is cursed and resists being transmuted!";
-	private static final String TXT_ITEM_UNKNOWN	= "%s cannot be transmuted!";
+	private static final String TXT_ITEM_TRANSMUTED	= "你的%s转化成了%s！";
+    private static final String TXT_ITEM_RESISTS	= "你的%s之上的诅咒抗拒了嬗变之力！";
+	private static final String TXT_ITEM_UNKNOWN	= "%s无法被转化！";
 
 	{
-		name = "Scroll of Transmutation";
+		name = "嬗变卷轴";
         shortName = "Tr";
 
-		inventoryTitle = "Select an transmutable item";
+		inventoryTitle = "选择一个可嬗变物品";
 		mode = WndBag.Mode.TRANSMUTABLE;
 
         spellSprite = SpellSprite.SCROLL_TRANSMUT;
@@ -358,8 +358,7 @@ public class ScrollOfTransmutation extends InventoryScroll {
 	@Override
 	public String desc() {
 		return
-			"This scroll is able to transmute an item into a different one, but of a similar value. It " +
-            "works on weapons, armors, wands and rings.";
+			"这张卷轴能够将一个道具转换成其他价值近似的道具，只能用在武器，护甲，法杖和戒指上。";
 	}
 
     @Override

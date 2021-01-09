@@ -29,7 +29,7 @@ public class PotionOfConfusionGas extends Potion {
     public static final int BASE_VAL	= 600;
 
 	{
-		name = "Potion of Confusion Gas";
+		name = "幻气药剂";
         shortName = "CG";
         harmful = true;
 	}
@@ -44,9 +44,10 @@ public class PotionOfConfusionGas extends Potion {
 	
 	@Override
 	public String desc() {
-		return	"Upon exposure to open air, the liquid in this flask will vaporize " +
-            "into a confusing chromatic haze. Anyone who inhales the cloud will be disoriented " +
-            "instantly.";
+		return "[临时字串]使用方式：投掷；效果：生成可造成迷惑状态的气体";
+//				"Upon exposure to open air, the liquid in this flask will vaporize " +
+//            "into a confusing chromatic haze. Anyone who inhales the cloud will be disoriented " +
+//            "instantly.";
 	}
 	
 	@Override

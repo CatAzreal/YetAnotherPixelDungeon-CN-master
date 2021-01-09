@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfFortune extends Ring {
 
 	{
-		name = "Ring of Fortune";
+		name = "幸运之戒";
         shortName = "Fo";
 	}
 	
@@ -44,9 +44,10 @@ public class RingOfFortune extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "First impression is that this ring affects nothing at all, but when using it for an " +
-            "extended amount of time you may find your wealth to be increased substantially due to " +
-            "being blessing with greater luck."
+                "[介绍文本暂无]"
+//            "First impression is that this ring affects nothing at all, but when using it for an " +
+//            "extended amount of time you may find your wealth to be increased substantially due to " +
+//            "being blessing with greater luck."
         );
 
         desc.append( "\n\n" );
@@ -56,8 +57,7 @@ public class RingOfFortune extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase _amount of gold_ spawned and _amount of loot_ " +
-            "dropped by defeated enemies _by " + mainEffect + "%_."
+            "佩戴这枚戒指能够提高_" + mainEffect + "%的金币获取和物品掉落_。"
         );
 
         return desc.toString();
@@ -67,8 +67,8 @@ public class RingOfFortune extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "You don't feel anything special on equipping this ring. Is that good?" :
-                "You don't feel anything special on equipping this ring. Is that bad?" ;
+                "装备这枚戒指后你并没能感受到任何特殊效果，这该算是件好事吗？" :
+                "装备这枚戒指后你并没能感受到任何特殊效果，这该算是件坏事吗？" ;
         }
 	}
 }

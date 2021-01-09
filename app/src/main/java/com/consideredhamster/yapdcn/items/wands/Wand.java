@@ -56,20 +56,20 @@ public abstract class Wand extends EquipableItem {
 
 	private static final int USAGES_TO_KNOW	= 5;
 	
-	public static final String AC_ZAP	= "ZAP";
+	public static final String AC_ZAP	= "发射";
 	
 //	private static final String TXT_WOOD	= "This thin %s wand is warm to the touch. Who knows what it will do when used?";
 //	private static final String TXT_DAMAGE	= "When this wand is used as a melee weapon, its average damage is %d points per hit.";
 //	private static final String TXT_WEAPON	= "You can use this wand as a melee weapon.";
 			
-	private static final String TXT_FIZZLES		= "fizzle";
-	private static final String TXT_SQUEEZE		= "You squeeze another charge from your wand";
+	private static final String TXT_FIZZLES		= "失能";
+	private static final String TXT_SQUEEZE		= "你从法杖中抽取了额外的充能";
 //	private static final String TXT_MISCAST		= "The wand miscasts!";
-	private static final String TXT_SELF_TARGET	= "You can't target yourself";
+	private static final String TXT_SELF_TARGET	= "你不能瞄准自己！";
 //	private static final String TXT_TARGET_CHARMED	= "You can't bring yourself to harm someone so... charming.";
 
-	private static final String TXT_IDENTIFY	= "You are now familiar enough with your %s.";
-	private static final String TXT_UNEQUIPPED	= "You can't use unequipped wands.";
+	private static final String TXT_IDENTIFY	= "你对手上的%s已经足够熟悉";
+	private static final String TXT_UNEQUIPPED	= "你不能使用未装备的法杖";
 
 	private static final float TIME_TO_ZAP	= 1f;
 
@@ -96,8 +96,9 @@ public abstract class Wand extends EquipableItem {
 	};
 
 	// not really needed after the wands update, but I guess can stay here until moving to the Evan's engine
+    // Didn't see the line above before I translated all these strings below, welp, silly me.
 	private static final String[] woods =
-		{"holly", "yew", "ebony", "cherry", "teak", "rowan", "willow", "mahogany", "bamboo", "purpleheart", "oak", "birch"};
+		{"青枝", "紫杉", "乌木", "樱木", "柚木", "楸木", "柳木", "mahogany", "bamboo", "purpleheart", "oak", "birch"};
 
 	private static final Integer[] images = {
             ItemSpriteSheet.WAND_MAGICMISSILE,
@@ -522,7 +523,7 @@ public abstract class Wand extends EquipableItem {
 
 		@Override
 		public String prompt() {
-			return "Choose direction to zap";
+			return "选择施法方向";
 		}
 	};
 
@@ -564,11 +565,11 @@ public abstract class Wand extends EquipableItem {
             info.append( p );
 
             if( isEquipped( Dungeon.hero ) ){
-                info.append( "You hold this wand at the ready." );
+                info.append( "你正手持着这根法杖。" );
             } else if( Dungeon.hero.belongings.backpack.items.contains( this ) ){
-                info.append( "This wand is in your backpack." );
+                info.append( "这根法杖正装在你的背包里。" );
             } else {
-                info.append( "This wand lies on the dungeon's floor." );
+                info.append( "这根法杖在地面上。" );
             }
 
             if( bonus < 0 && isCursedKnown() ){
@@ -576,9 +577,9 @@ public abstract class Wand extends EquipableItem {
                 info.append( " " );
 
                 if( isEquipped( Dungeon.hero ) ){
-                    info.append( "Malevolent magic prevents you from releasing it." );
+                    info.append( "恶毒的法术正阻止着你将其放下。" );
                 } else {
-                    info.append( "You can feel a malevolent magic lurking within it." );
+                    info.append( "你能感觉到这根法杖里潜伏着一股充满恶意的魔力。" );
                 }
             }
         }

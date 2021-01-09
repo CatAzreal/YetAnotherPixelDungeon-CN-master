@@ -28,7 +28,7 @@ import java.util.Locale;
 public class RingOfWillpower extends Ring {
 
 	{
-		name = "Ring of Willpower";
+		name = "意志之戒";
         shortName = "Wi";
 	}
 
@@ -54,9 +54,10 @@ public class RingOfWillpower extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-            "By increasing wearer's willpower, this ring indirectly increases their magical " +
-            "abilities. Also, it offers additional benefit of making it easier to " +
-            "shrug off all kinds of mental debuffs."
+                "[介绍文本暂无]"
+//            "By increasing wearer's willpower, this ring indirectly increases their magical " +
+//            "abilities. Also, it offers additional benefit of making it easier to " +
+//            "shrug off all kinds of mental debuffs."
         );
 
         desc.append( "\n\n" );
@@ -66,8 +67,7 @@ public class RingOfWillpower extends Ring {
         desc.append( " " );
 
         desc.append(
-            "Wearing this ring will increase your _magic power by " + mainEffect + "%_ and " +
-            "increase your _resistance to mind effects by " + sideEffect + "%_."
+                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的魔能_，并且_提高"+sideEffect+"%的负面精神状态抗性_。"
         );
 
         return desc.toString();
@@ -77,8 +77,8 @@ public class RingOfWillpower extends Ring {
         @Override
         public String desc() {
             return bonus >= 0 ?
-                "Your arcane proficiency is improved." :
-                "Your arcane proficiency is decreased." ;
+                "你的奥术亲和得到了强化。" :
+                "你的奥术知识和此地的魔能连结弱化了。" ;
         }
     }
 }

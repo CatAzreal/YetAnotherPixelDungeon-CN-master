@@ -59,7 +59,7 @@ public abstract class ThrowingWeapon extends Weapon {
 
     private static final String TXT_TARGET_CHARMED	= "You can't bring yourself to harm someone so... charming.";
 
-    private static final String AC_SHOOT = "SHOOT";
+    private static final String AC_SHOOT = "扔出";
 
     public ThrowingWeapon(int tier) {
         super();
@@ -262,44 +262,41 @@ public abstract class ThrowingWeapon extends Weapon {
 
         info.append( p );
 
-        info.append( "This _tier-" + tier + " " + ( !descType().isEmpty() ? descType() + " " : "" )  + "weapon_ requires _" + itemStr + " points of strength_ to use effectively and" +
-                ( isRepairable() ? ", given its _" + stateToString( state ) + " condition_, " : " " ) +
-                "will deal _" + min() + "-" + max() + " points of damage_ per hit.");
+        info.append( "这个_" + tier + "阶" + ( !descType().isEmpty() ? descType() + "" : "" )  + "武器_需要_" + itemStr + "点力量_才能发挥其原有效能" +
+                ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
+                "每次攻击能够造成_" + min() + "-" + max() + "点伤害_。");
 
         info.append( p );
 
         if (itemStr > heroStr) {
             info.append(
-                    "Because of your inadequate strength, your stealth and accuracy with it " +
-                            "will be _decreased by " + penalty + "%_ and attacking with it will be _" + (int)(100 - 10000 / (100 + penalty)) + "% slower_." );
+                    "因为你的力量不足，装备该武器将导致你的潜行和命中_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的攻击速度。" );
         } else if (itemStr < heroStr) {
             info.append(
-                    "Because of your excess strength, your stealth and accuracy with it " +
-                            "will " + ( penalty > 0 ? "be _decreased only by " + penalty + "%_" : "_not be decreased_" ) + " " +
-                            "and attacking with it will deal additional _" + (float)(heroStr - itemStr) / 2 + " points of damage_." );
+                    "因为你的强健体格，装备该武器" + ( penalty > 0 ? "_将仅导致你的潜行和命中降低" + penalty + "%_" : "_不会受到惩罚_" ) +
+                            "，并且攻击时额外造成_0-" + (float)(heroStr - itemStr) / 2 + "点伤害_。" );
         } else {
             info.append(
-                    "When wielding this weapon, your stealth and accuracy with it will " + ( penalty > 0 ? "be _decreased by " + penalty + "%_, " +
-                            "but with additional strength this penalty can be reduced" : "_not be decreased_" ) + "." );
+                    "装备该武器" + ( penalty > 0 ? "将导致你的潜行和命中_降低" + penalty + "%_，" +
+                            "不过超出需求的力量值可以降低该惩罚" : "_不会受到惩罚_" ) + "。" );
         }
-
         info.append( p );
 
         if (isEquipped( Dungeon.hero )) {
 
-            info.append( "You hold these " + name + " at the ready." );
+            info.append("你正手持着" + name + "。");
 
         } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
 
-            info.append( "These " + name + " are in your backpack. " );
+            info.append( "这件" + name + "正装在你的背包里。" );
 
         } else {
 
-            info.append( "These " + name + " are on the dungeon's floor." );
+            info.append( "这件" + name + "在地面上。" );
 
         }
 
-        info.append( " This is a _" + lootChapterAsString() +"_ weapon." );
+        info.append( "这是一件稀有度为_" + lootChapterAsString() +"_的武器。" );
 
         return info.toString();
     }
@@ -393,7 +390,7 @@ public abstract class ThrowingWeapon extends Weapon {
 
         @Override
         public String prompt() {
-            return "Choose target to throw at";
+            return "选择投掷目标";
         }
     };
 
@@ -441,7 +438,7 @@ public abstract class ThrowingWeapon extends Weapon {
 
         } else {
 
-            enemy.sprite.showStatus( CharSprite.DEFAULT, "ammo lost" );
+            enemy.sprite.showStatus( CharSprite.DEFAULT, "弹药损耗" );
 
             if (quantity == 1) {
 

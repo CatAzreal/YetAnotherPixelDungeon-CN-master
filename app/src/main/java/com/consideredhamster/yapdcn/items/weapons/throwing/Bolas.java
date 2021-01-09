@@ -29,7 +29,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.ItemSpriteSheet;
 public class Bolas extends ThrowingWeaponSpecial {
 
 	{
-		name = "bolas";
+		name = "套绳球";
 		image = ItemSpriteSheet.HUNTING_BOLAS;
 	}
 
