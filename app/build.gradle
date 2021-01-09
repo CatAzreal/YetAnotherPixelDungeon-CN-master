@@ -4,11 +4,11 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.consideredhamster.yetanotherpixeldungeon"
+        applicationId "com.consideredhamster.yapdcn"
         minSdkVersion 9
         targetSdkVersion 28
-        versionCode 335
-        versionName '0.3.2-Beta2'
+        versionCode 336
+        versionName '0.3.2-Beta2.5'
         archivesBaseName = "yapdcn-$versionName"
     }
 
