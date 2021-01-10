@@ -36,7 +36,7 @@ public class WndChangelog extends Window {
 	private static final int WIDTH_L	= 210;
 	private static final int HEIGHT_L	= 128;
 
-	private static final String TXT_TITLE	= "另类地牢中文版Beta3";
+	private static final String TXT_TITLE	= "另类地牢中文版Beta3.2";
 
     private static final String TXT_DESCR =
 

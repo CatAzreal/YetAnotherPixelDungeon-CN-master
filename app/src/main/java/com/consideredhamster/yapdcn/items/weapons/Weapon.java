@@ -45,7 +45,7 @@ public abstract class Weapon extends EquipableItem {
 	private static final int HITS_TO_KNOW	= 10;
 	
 	private static final String TXT_IDENTIFY		= 
-		"你对你的武器已经足够熟悉并且可以因此将其完全鉴定。它是%s +%d。";
+		"你对你的武器已经足够熟悉并且可以因此将其完全鉴定。它是%s。\n";
 //	private static final String TXT_INCOMPATIBLE	=
 //		"Interaction of different types of magic has negated the enchantment on this weapon!";
 	private static final String TXT_TO_STRING		= "%s :%d";
@@ -527,7 +527,7 @@ public abstract class Weapon extends EquipableItem {
 
             if (itemStr > heroStr) {
                 info.append(
-                        "因为你的力量不足，装备该武器应该会导致你的潜行和命中_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的攻击速度。" );
+                        "因为你的力量不足，装备该武器应该会导致你的潜行和命中_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的攻击速度_。" );
             } else if (itemStr < heroStr) {
                 info.append(
                         "因为你的强健体格，装备该武器应该" + ( penalty > 0 ? "_会仅导致你的潜行和命中降低" + penalty + "%_" : "_不会受到惩罚_" ) +

@@ -45,8 +45,8 @@ public abstract class Ring extends EquipableItem {
 
 	private static final float TIME_TO_EQUIP = 1f;
 
-	private static final String TXT_IDENTIFY_NORMAL = "你对你的戒指已经足够熟悉并且可以因此将其完全鉴定。它是%s +%d。";
-	private static final String TXT_IDENTIFY_CURSED = "你对你的戒指已经足够熟悉并且可以因此将其完全鉴定。它是%s -%d。";
+	private static final String TXT_IDENTIFY_NORMAL = "你对你的戒指已经足够熟悉并且可以因此将其完全鉴定。它是%s+";
+	private static final String TXT_IDENTIFY_CURSED = "你对你的戒指已经足够熟悉并且可以因此将其完全鉴定。它是%s-";
 
 	private static final String TXT_UNEQUIP_TITLE = "卸下一枚戒指";
 	private static final String TXT_UNEQUIP_MESSAGE =
@@ -425,9 +425,11 @@ public abstract class Ring extends EquipableItem {
                 if (ticksToKnow <= 0) {
                     String gemName = name();
                     identify();
+					String normal = TXT_IDENTIFY_NORMAL + Math.abs(Ring.this.bonus) + "。\n";
+					String cursed = TXT_IDENTIFY_CURSED + Math.abs(Ring.this.bonus) + "。\n";
                     GLog.i(
-                        Ring.this.bonus >= 0 ? TXT_IDENTIFY_NORMAL : TXT_IDENTIFY_CURSED,
-                        gemName, Ring.this.name(), Math.abs(Ring.this.bonus)
+                        Ring.this.bonus >= 0 ? normal : cursed,
+                        gemName, Ring.this.name()
                     );
                 }
             }
