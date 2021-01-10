@@ -54,7 +54,7 @@ import com.watabou.utils.Random;
 
 public abstract class Wand extends EquipableItem {
 
-	private static final int USAGES_TO_KNOW	= 5;
+	private static final int USAGES_TO_KNOW	= 1;
 	
 	public static final String AC_ZAP	= "发射";
 	

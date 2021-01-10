@@ -21,11 +21,18 @@
 package com.consideredhamster.yapdcn.actors.hero;
 
 import com.consideredhamster.yapdcn.items.food.RationMedium;
+import com.consideredhamster.yapdcn.items.misc.Explosives;
 import com.consideredhamster.yapdcn.items.misc.OilLantern;
+import com.consideredhamster.yapdcn.items.misc.TomeOfMastery;
 import com.consideredhamster.yapdcn.items.potions.EmptyBottle;
+import com.consideredhamster.yapdcn.items.rings.RingOfAccuracy;
 import com.consideredhamster.yapdcn.items.rings.RingOfShadows;
 import com.consideredhamster.yapdcn.items.wands.Wand;
+import com.consideredhamster.yapdcn.items.wands.WandOfDamnation;
 import com.consideredhamster.yapdcn.items.wands.WandOfMagicMissile;
+import com.consideredhamster.yapdcn.items.weapons.melee.Halberd;
+import com.consideredhamster.yapdcn.items.weapons.ranged.Arquebuse;
+import com.consideredhamster.yapdcn.items.weapons.ranged.Pistole;
 import com.consideredhamster.yapdcn.visuals.Assets;
 import com.consideredhamster.yapdcn.Badges;
 import com.consideredhamster.yapdcn.items.misc.ArmorerKit;
@@ -233,6 +240,13 @@ public enum HeroClass {
         (hero.belongings.armor = new StuddedArmor()).identify().repair().fix();
 
 //        new TomeOfMastery().collect();
+//        new Halberd().repair().fix().collect();
+//        new Pistole().identify().repair().fix().collect();
+//        new Arquebuse().identify().repair().fix().collect();
+//        new Bullets().quantity( 300 ).collect();
+//        new Explosives.Gunpowder().quantity( 300 ).collect();
+//        new WandOfDamnation().repair().fix().collect();
+//        new RingOfAccuracy().repair().fix().collect();
         new ArmorerKit().collect();
 
     }
