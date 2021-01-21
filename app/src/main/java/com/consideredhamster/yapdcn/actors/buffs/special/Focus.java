@@ -34,7 +34,7 @@ public class Focus extends BuffReactive {
 
     @Override
     public String toString() {
-        return "Focused";
+        return "专注";
     }
 
 //    @Override
@@ -51,8 +51,7 @@ public class Focus extends BuffReactive {
 
     @Override
     public String description() {
-        return "You spent a turn to take aim at present enemies. Your next attack or wand zap will " +
-                "be twice more precise than usual.";
+        return "你凝神静气，消耗了一个回合的时间准备自己的下一击。你的下次攻击/施法的命中能力增强了一倍。";
     }
 
 

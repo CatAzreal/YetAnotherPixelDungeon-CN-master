@@ -32,11 +32,11 @@ public class Disrupted extends Debuff {
 
     @Override
     public String toString() {
-        return "Disrupted";
+        return "阻断";
     }
 
     @Override
-    public String statusMessage() { return "disrupted"; }
+    public String statusMessage() { return "阻断"; }
 
 //    @Override
 //    public String playerMessage() { return "You catch fire! Quickly, run to the water!"; }

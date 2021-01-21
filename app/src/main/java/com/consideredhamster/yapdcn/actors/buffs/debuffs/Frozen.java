@@ -32,7 +32,7 @@ import com.watabou.utils.Random;
 
 public class Frozen extends Debuff {
 
-    public final static String TXT_CANNOT_LIGHT = "Your lantern is too cold to be lit again. You'll have to wait a little.";
+    public final static String TXT_CANNOT_LIGHT = "你手中的煤油灯温度过低无法点燃，稍等片刻再试。";
 
     @Override
     public Element buffType() {
@@ -41,14 +41,14 @@ public class Frozen extends Debuff {
 
     @Override
     public String toString() {
-        return "Frozen";
+        return "冻伤";
     }
 
     @Override
-    public String statusMessage() { return "frozen"; }
+    public String statusMessage() { return "冻伤"; }
 
     @Override
-    public String playerMessage() { return "Intense cold slows your movement!"; }
+    public String playerMessage() { return "强烈的寒意减缓了你的行动速度！"; }
 
     @Override
     public int icon() {
@@ -67,9 +67,8 @@ public class Frozen extends Debuff {
 
     @Override
     public String description() {
-        return "Brrr, it is cold! All your actions are slowed, your lantern is not working, and on " +
-                "top of that you are less likely to hit and dodge. Oh, and being in water prolongs " +
-                "duration of this effect.";
+        return "啊叭叭叭，真冷啊！你的所有行动都变得更加缓慢，煤油灯在此期间无法正常运作，在此之上更糟糕的" +
+                "是你的命中和闪避能力都被降低了。哦对，在水中行走只会进一步延长你从该状态恢复的时间。";
     }
 
 

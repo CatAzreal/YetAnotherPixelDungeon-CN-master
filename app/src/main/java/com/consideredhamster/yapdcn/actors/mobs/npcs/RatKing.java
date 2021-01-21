@@ -70,17 +70,16 @@ public class RatKing extends NPC {
 		sprite.turnTo( pos, Dungeon.hero.pos );
 		if (state == SLEEPING) {
 			notice();
-			yell( "I'm not sleeping!" );
+			yell( "我可不是在睡觉！" );
 			state = WANDERING;
 		} else {
-			yell( "What is it? I have no time for this nonsense. My kingdom won't rule itself!" );
+			yell( "你这是想干什么？我可没时间管这些破事。我的王国可不会自己运转下去！" );
 		}
 	}
 	
 	@Override
 	public String description() {
 		return 
-			"This rat is a little bigger than a regular marsupial rat " +
-			"and it's wearing a tiny crown on its head.";
+			"这只老鼠比普通的啮齿小鼠大一点。它戴着一顶小小的的皇冠。";
 	}
 }

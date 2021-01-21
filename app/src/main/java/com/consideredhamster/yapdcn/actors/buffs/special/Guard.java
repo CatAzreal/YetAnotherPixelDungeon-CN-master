@@ -33,10 +33,10 @@ import com.watabou.noosa.audio.Sample;
 public class Guard extends BuffReactive {
 
 //    private static String TXT_PARRIED = "parried";
-    private static String TXT_BLOCKED = "blocked";
+    private static String TXT_BLOCKED = "格挡";
 
 //    private static String TXT_PARRY_BROKEN = "parry failed!";
-    private static String TXT_BLOCK_BROKEN = "block failed!";
+    private static String TXT_BLOCK_BROKEN = "格挡失败！";
 
     @Override
     public int icon() {
@@ -45,11 +45,11 @@ public class Guard extends BuffReactive {
 
     @Override
     public String toString() {
-        return "Guard";
+        return "格挡";
     }
 
     @Override
-    public String statusMessage() { return "guard"; }
+    public String statusMessage() { return "格挡"; }
 
     @Override
     public boolean attachTo( Char target ) {
@@ -62,8 +62,7 @@ public class Guard extends BuffReactive {
 
     @Override
     public String description() {
-        return "You are standing in a defensive position, trying to block physical attacks. Every " +
-                "successful block will possibly expose your attacker to a powerful counterattack.";
+        return "你正保持着防御姿态，随时准备挡下敌人的攻势。每次成功格挡都有概率使敌人被弹反，给予你对敌人实施强力反击的机会。";
     }
 
     public void reset( boolean withShield ) {

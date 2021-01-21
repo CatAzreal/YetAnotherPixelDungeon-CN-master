@@ -36,13 +36,13 @@ public class Corrosion extends Debuff {
     }
 
     @Override
-    public String toString() { return "Corrosion"; }
+    public String toString() { return "酸蚀"; }
 
     @Override
-    public String statusMessage() { return "corrosion"; }
+    public String statusMessage() { return "酸蚀"; }
 
     @Override
-    public String playerMessage() { return "Caustic ooze is eating your flesh!"; }
+    public String playerMessage() { return "污泥正在腐蚀着你的身体！"; }
 
     @Override
     public int icon() {
@@ -61,9 +61,7 @@ public class Corrosion extends Debuff {
 
     @Override
     public String description() {
-        return "Caustic ooze corrodes your armor and skin. This is not only painful, but also " +
-                "slowly damages your armor and makes it less effective for the duration of the " +
-                "effect. Use water to remove it as soon as possible!";
+        return "污泥正腐蚀着你的护甲和表皮。这代表的不仅仅是痛苦和伤害，在此期间你的护甲防御能力降低且会被缓慢腐蚀。尽快用水洗掉！";
     }
 
     @Override

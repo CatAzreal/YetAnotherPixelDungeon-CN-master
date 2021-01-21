@@ -34,14 +34,14 @@ public class Ensnared extends Debuff {
 
     @Override
     public String toString() {
-        return "Ensnared";
+        return "束缚";
     }
 
     @Override
-    public String statusMessage() { return "ensnared"; }
+    public String statusMessage() { return "束缚"; }
 
     @Override
-    public String playerMessage() { return "You are ensnared! Struggle to escape!"; }
+    public String playerMessage() { return "你被束缚住了！尝试移动以挣扎逃脱！"; }
 
     @Override
     public int icon() {
@@ -60,9 +60,7 @@ public class Ensnared extends Debuff {
 
     @Override
     public String description() {
-        return "You are ensnared and cannot move. Evading attacks is more difficult, and you are " +
-                "more likely to be noticed. You can try to break out, but this can attract unwanted " +
-                "attention.";
+        return "你被束缚住了。束缚状态下无法移动，闪避攻击会比平时更加困难，并且更容易被敌人察觉。你可以试着逃脱，但挣扎产生的响动必然会招来敌人注意。";
     }
 
     @Override

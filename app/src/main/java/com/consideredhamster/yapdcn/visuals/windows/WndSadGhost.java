@@ -35,14 +35,12 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 
 public class WndSadGhost extends Window {
 	
-	private static final String TXT_ROSE	= 
-		"Yes! Yes!!! This is it! Please give it to me! " +
-		"And you can take one of these items, maybe they " +
-		"will be useful to you in your journey...";
+	private static final String TXT_ROSE	=
+		"太好了！就是它！请立刻把它给我！" +
+		"拿走其中一件装备吧，愿它能成为你征途中的助力...";
 	private static final String TXT_RAT	= 
-		"Yes! The ugly creature is slain and I can finally rest... " +
-		"Please take one of these items, maybe they " +
-		"will be useful to you in your journey...";
+		"太好了！那只可恶的生物终于伏诛，我也可以安息了..." +
+		"请拿走其中一件装备吧，愿它能成为你征途中的助力...";
 	private static final String TXT_WEAPON	= "Ghost's weapon";
 	private static final String TXT_ARMOR	= "Ghost's armor";
 	
@@ -100,7 +98,7 @@ public class WndSadGhost extends Window {
 			Dungeon.level.drop( reward, ghost.pos ).sprite.drop();
 		}
 		
-		ghost.yell( "Farewell, adventurer!" );
+		ghost.yell( "再见，冒险者！" );
 		ghost.die( null );
 		
 		Ghost.Quest.complete();

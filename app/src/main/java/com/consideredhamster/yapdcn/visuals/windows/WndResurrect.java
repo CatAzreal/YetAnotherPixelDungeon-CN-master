@@ -36,9 +36,9 @@ import com.consideredhamster.yapdcn.visuals.ui.Window;
 
 public class WndResurrect extends Window {
 	
-	private static final String TXT_MESSAGE = "You died, but the ankh you were carrying can give you yet another chance to live. Will you accept it?";
-	private static final String TXT_YES		= "Yes, I will fight!";
-	private static final String TXT_NO		= "No, I give up";
+	private static final String TXT_MESSAGE = "你本应就此消亡，但身上的重生十字架能够给予你重生的机会，你接受吗？";
+	private static final String TXT_YES		= "接受，我还能再战！";
+	private static final String TXT_NO		= "不，我放弃了";
 	
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 20;

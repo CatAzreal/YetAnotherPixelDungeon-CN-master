@@ -86,10 +86,10 @@ public class GameScene extends PixelScene {
 //	private static final String TXT_NIGHT_MODE		= "Be cautious, since the dungeon is even more dangerous at night!";
 	
 //	private static final String TXT_CHASM	= "Your steps echo across the dungeon.";
-	private static final String TXT_WATER	= "You hear the water splashing around you.";
-	private static final String TXT_GRASS	= "The smell of vegetation is thick in the air.";
-	private static final String TXT_TRAPS	= "The atmosphere hints that this floor hides many secrets.";
-	private static final String TXT_HAUNT	= "Eerie feeling sends shivers down your spine.";
+	private static final String TXT_WATER	= "水花的冲刷声围绕着本层。";
+	private static final String TXT_GRASS	= "空气中弥漫着浓郁的植物清香。";
+	private static final String TXT_TRAPS	= "本层的气氛似乎暗示着其下隐藏的众多秘密。";
+	private static final String TXT_HAUNT	= "诡异的气息顺着脊梁传遍你的全身。";
 
 //	private static final String TXT_SECRETS	= "The atmosphere hints that this floor hides many secrets.";
 	

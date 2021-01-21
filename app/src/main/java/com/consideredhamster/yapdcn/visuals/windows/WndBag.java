@@ -71,10 +71,10 @@ import java.util.Iterator;
 public class WndBag extends WndTabbed {
 
 
-    private static final String TXT_SELECT_TITLE = "Select quickslot";
-    private static final String TXT_SELECT_CANCEL = "Nevermind";
+    private static final String TXT_SELECT_TITLE = "选择快捷栏";
+    private static final String TXT_SELECT_CANCEL = "算了";
     private static final String TXT_SELECT_MESSAGE =
-            "Which quickslot do you want to set for this item?";
+            "你打算将此道具设置在哪个快捷栏上？";
 
 	public static enum Mode {
 		ALL,

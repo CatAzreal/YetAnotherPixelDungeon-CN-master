@@ -58,20 +58,17 @@ public class Ghost extends NPC {
 	}
 	
 	private static final String TXT_ROSE1	=
-		"Hello adventurer... Once I was like you - strong and confident... " +
-		"And now I'm dead... But I can't leave this place... Not until I have my _dried rose_... " +
-		"It's very important to me... Some monster stole it from my body...";
+		"你好，冒险者…曾经我像你一样——既强大又自信...然后死在了这里...可还我不能离开这个地方...直到我找到自己的_干枯玫瑰_" +
+		"它对我来说非常重要...应该是被什么怪物从我的遗体旁夺走了...";
 	
 	private static final String TXT_ROSE2	=
 		"Please... Help me... Find the rose...";
 	
 	private static final String TXT_RAT1	=
-		"Hello adventurer... Once I was like you - strong and confident... " +
-		"And now I'm dead... But I can't leave this place... Not until I have my revenge... " +
-		"Slay the _fetid rat_, that has taken my life...";
+		"你好，冒险者...曾经我像你一样——既强大又自信...然后死在了这里...可还我不能离开这个地方...直到我完成我的复仇…杀死_腐臭老鼠_，就是它夺走了我的生命...";
 		
 	private static final String TXT_RAT2	=
-		"Please... Help me... Slay the abomination...";
+		"请帮帮我…杀了那个可憎的怪物…";
 
 	
 	public Ghost() {
@@ -171,8 +168,7 @@ public class Ghost extends NPC {
 	@Override
 	public String description() {
 		return 
-			"The ghost is barely visible. It looks like a shapeless " +
-			"spot of faint light with a sorrowful face.";
+			"这个幽灵几乎看不清形体。它看起来像是由一片无形的昏暗光斑和一张悲痛的面孔所组成的。";
 	}
 	
 //	private static final HashSet<Class<?>> IMMUNITIES = new HashSet<Class<?>>();

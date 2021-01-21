@@ -50,15 +50,15 @@ public class Chasm {
     // FIXME
     private static Chasm CHASM = new Chasm();
 
-	private static final String TXT_CHASM	= "Chasm";
-	private static final String TXT_YES		= "Yes, I know what I'm doing";
-	private static final String TXT_NO		= "No, I changed my mind";
-    private static final String TXT_POTION	= "Use potion of Levitation";
+	private static final String TXT_CHASM	= "深渊";
+	private static final String TXT_YES		= "没错，我知道自己在做什么";
+	private static final String TXT_NO		= "算了，我改主意了";
+    private static final String TXT_POTION	= "使用浮空药剂";
 	private static final String TXT_JUMP 	=
-		"Do you really want to jump into the chasm? You can probably die.";
+		"你确定要让自己跳下深渊吗？你可能会因此死亡。";
 
-    private static final String TXT_LANDS_SAFELY = "You safely land on the floor!";
-    private static final String TXT_SHATTER_PACK = "Your %s has not survived the fall!";
+    private static final String TXT_LANDS_SAFELY = "你安全地降落在地面上！";
+    private static final String TXT_SHATTER_PACK = "你身上的%s没能承受住重压！";
 
 	public static boolean jumpConfirmed = false;
 	public static boolean useLevitation = false;

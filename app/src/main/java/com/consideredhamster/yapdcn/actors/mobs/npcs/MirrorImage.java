@@ -116,8 +116,7 @@ public class MirrorImage extends NPC {
 	@Override
 	public String description() {
 		return
-			"This illusion bears a close resemblance to you, " +
-			"but it's paler and twitches a little.";
+			"这个幻象和你非常相似，但它更加透明且形体不断波动着。";
 	}
 	
 	@Override

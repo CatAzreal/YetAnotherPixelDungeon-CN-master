@@ -36,10 +36,9 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 public class WndWandmaker extends Window {
 	
 	private static final String TXT_MESSAGE	= 
-		"Oh, I see you have succeeded! I do hope it hasn't troubled you too much. " +
-		"As I promised, you can choose one of my high quality wands.";
+		"哦，看样子你成功了！希望这件事没有对你造成太多困扰。就像我承诺的，你可以选择我制作的一把高品质法杖。";
 	
-	private static final String TXT_FAREWELL = "Good luck in your quest, %s!";
+	private static final String TXT_FAREWELL = "祝你在试炼中好运，%s！";
 	
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 20;

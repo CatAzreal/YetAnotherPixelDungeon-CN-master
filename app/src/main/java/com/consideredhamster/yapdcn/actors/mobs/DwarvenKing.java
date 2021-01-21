@@ -447,7 +447,7 @@ public class DwarvenKing extends MobPrecise {
 
             super( 5, 0, false );
 
-			name = "undead dwarf";
+			name = "死灵矮人";
 			spriteClass = UndeadSprite.class;
 
             minDamage /= 2;
@@ -601,7 +601,7 @@ public class DwarvenKing extends MobPrecise {
         public Spawner() {
             super();
 
-            name = "bone pit";
+            name = "骸骨坑";
         }
 
         @Override

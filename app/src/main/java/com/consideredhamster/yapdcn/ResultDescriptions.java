@@ -47,7 +47,7 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 public abstract class ResultDescriptions {
 
 //    public static final String FAIL	= "%s";
-    public static final String WIN	= "Obtained the Amulet of Yendor";
+    public static final String WIN	= "获得Yendor护符";
 
     public static String generateResult( Object killedBy, Element killedWith ) {
 

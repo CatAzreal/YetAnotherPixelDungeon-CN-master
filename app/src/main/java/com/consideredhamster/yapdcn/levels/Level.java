@@ -1099,7 +1099,7 @@ public abstract class Level implements Bundlable {
 
 		switch (tile) {
 		case Terrain.CHASM:
-			return "Chasm";
+			return "深渊";
 		case Terrain.EMPTY:
 		case Terrain.EMPTY_SP:
 		case Terrain.EMPTY_DECO:
@@ -1109,70 +1109,70 @@ public abstract class Level implements Bundlable {
 		case Terrain.SECRET_POISON_TRAP:
 		case Terrain.SECRET_ALARM_TRAP:
 		case Terrain.SECRET_LIGHTNING_TRAP:
-			return "Floor";
+			return "地面";
 		case Terrain.GRASS:
-			return "Grass";
+			return "植被";
 		case Terrain.WATER:
-			return "Water";
+			return "水潭";
 		case Terrain.WALL:
 		case Terrain.WALL_DECO:
 		case Terrain.DOOR_ILLUSORY:
-			return "Wall";
+			return "墙壁";
 		case Terrain.DOOR_CLOSED:
-			return "Closed door";
+			return "关闭的门";
 		case Terrain.OPEN_DOOR:
-			return "Open door";
+			return "开启的门";
 		case Terrain.ENTRANCE:
-			return "Depth entrance";
+			return "上层楼梯";
 		case Terrain.EXIT:
-			return "Depth exit";
+			return "下层楼梯";
 		case Terrain.EMBERS:
-			return "Embers";
+			return "余烬";
 		case Terrain.LOCKED_DOOR:
-			return "Locked door";
+			return "上锁房门";
 		case Terrain.PEDESTAL:
-			return "Pedestal";
+			return "底座";
 		case Terrain.BARRICADE:
-			return "Barricade";
+			return "路障";
 		case Terrain.HIGH_GRASS:
-			return "High grass";
+			return "茂密植被";
 		case Terrain.LOCKED_EXIT:
-			return "Locked depth exit";
+			return "上锁出口";
 		case Terrain.UNLOCKED_EXIT:
-			return "Unlocked depth exit";
+			return "解锁出口";
 		case Terrain.WALL_SIGN:
 		case Terrain.SIGN:
-			return "Sign";
+			return "告示牌";
 		case Terrain.WELL:
-			return "Well";
+			return "水井";
 		case Terrain.EMPTY_WELL:
-			return "Empty well";
+			return "空井";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "Statue";
+			return "石像";
 		case Terrain.TOXIC_TRAP:
-			return "Toxic gas trap";
+			return "毒气陷阱";
 		case Terrain.FIRE_TRAP:
-			return "Fire trap";
+			return "烈焰陷阱";
 		case Terrain.BOULDER_TRAP:
-			return "Boulder trap";
+			return "落石陷阱";
 		case Terrain.POISON_TRAP:
-			return "Confusion gas trap";
+			return "幻气陷阱";
 		case Terrain.ALARM_TRAP:
-			return "Alarm trap";
+			return "警报陷阱";
 		case Terrain.LIGHTNING_TRAP:
-			return "Lightning trap";
+			return "电击陷阱";
 		case Terrain.BLADE_TRAP:
-			return "Blade trap";
+			return "尖刺陷阱";
 		case Terrain.SUMMONING_TRAP:
-			return "Summoning trap";
+			return "召唤陷阱";
 		case Terrain.INACTIVE_TRAP:
-			return "Triggered trap";
+			return "失效陷阱";
 		case Terrain.BOOKSHELF:
 		case Terrain.SHELF_EMPTY:
-			return "Bookshelf";
+			return "书架";
 		case Terrain.ALCHEMY:
-			return "Alchemy pot";
+			return "炼金釜";
 		default:
 			return "???";
 		}

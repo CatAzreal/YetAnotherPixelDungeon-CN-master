@@ -20,6 +20,9 @@
  */
 package com.consideredhamster.yapdcn.actors.hero;
 
+import com.consideredhamster.yapdcn.items.armours.Armour;
+import com.consideredhamster.yapdcn.items.armours.body.SplintArmor;
+import com.consideredhamster.yapdcn.items.armours.glyphs.FrostWard;
 import com.consideredhamster.yapdcn.items.food.RationMedium;
 import com.consideredhamster.yapdcn.items.misc.Explosives;
 import com.consideredhamster.yapdcn.items.misc.OilLantern;
@@ -29,10 +32,13 @@ import com.consideredhamster.yapdcn.items.rings.RingOfAccuracy;
 import com.consideredhamster.yapdcn.items.rings.RingOfShadows;
 import com.consideredhamster.yapdcn.items.wands.Wand;
 import com.consideredhamster.yapdcn.items.wands.WandOfDamnation;
+import com.consideredhamster.yapdcn.items.wands.WandOfFirebrand;
+import com.consideredhamster.yapdcn.items.wands.WandOfIceBarrier;
 import com.consideredhamster.yapdcn.items.wands.WandOfMagicMissile;
 import com.consideredhamster.yapdcn.items.weapons.melee.Halberd;
 import com.consideredhamster.yapdcn.items.weapons.ranged.Arquebuse;
 import com.consideredhamster.yapdcn.items.weapons.ranged.Pistole;
+import com.consideredhamster.yapdcn.items.weapons.throwing.PoisonDarts;
 import com.consideredhamster.yapdcn.visuals.Assets;
 import com.consideredhamster.yapdcn.Badges;
 import com.consideredhamster.yapdcn.items.misc.ArmorerKit;
@@ -72,9 +78,8 @@ public enum HeroClass {
 //            "Now, your family is broken and ruined, but blood of your fathers still flows strong in your veins. There is a way to remind all the world about your clan's former glory!",
 //            "A way as simple as retrieving a single lost treasure hidden down there, below this city. How hard can that be, after all?",
 
-            "Warrior's main advantage is his greater physique - his amount of health is greater than anyone else's and he gets bonus strength with levels.",
-            "However, because of huge size and brash attitude, warrior is unreliable when it comes to stealth and evasion, making him somewhat vulnerable to ranged attacks and spells.",
-            "The improved survivability and ability to use heavy equipment much earlier make this class the most fitting for beginners.",
+            "战士的优势在于其优秀的身体素质-他比其他角色的生命力都更加强大，并且能够随着等级提高获得力量。不过因为他庞大的体型和急躁的性格，战士在潜行和闪避方面毫无天赋可言，使其在面对远程法术和攻击时更易受到伤害。",
+            "强大的生存能力和对重型武器的适应力使得该角色非常适合新人游玩。",
     };
 
     public static final String[] ROG_ABOUT = {
@@ -82,9 +87,8 @@ public enum HeroClass {
 //            "Should've been a simple choice, normally. But... this one is in the Dungeon! There is a lots of rumors about this place - evil magics and stuff. You know how it goes with all these spellcasting bastards and their experiments.",
 //            "Argh, to hell with that! You have always been a gambler. Nobody would say that you have let the Reaper claim you the easy way. And, who knows... After all of this is done, maybe you'll keep this trinket for yourself?",
 
-            "Nobody can compete with Brigand in dexterity and overall sneakiness, even if he has to limit himself to light armor if he wants to utilize these talents to their fullest.",
-            "And he is not lacking in physical fitness or weapon skills either. He would've been the strongest character if not for his disdain of everything magical, especially wands.",
-            "Some knowledge of the game mechanics is required to play this class properly, so it can be considered a class for advanced players.",
+            "在潜行和敏捷行动领域里，没有人能与盗贼比肩，尽管他必须通过使用轻型护甲才能更有效的利用自己的天赋。但他在武器运用和身体素质方面也毫不逊色。若不是因为对魔能，尤其是法杖的唾弃，游戏最强的职业非他莫属。",
+            "游玩本角色需要玩家对游戏机制的基本了解，因此他更适合经验丰富的玩家游玩。",
     };
 
     public static final String[] MAG_ABOUT = {
@@ -92,9 +96,8 @@ public enum HeroClass {
 //            "All threads lead here. All these years you've spent on seeking the Amulet weren't in vain. The key to all power imaginable, to all knowledge obtainable is hidden in this darkness.",
 //            "You only need to brace yourself and make your first step. Your search has ended here. And here, it has only began.",
 
-            "Scholar is the expert wand user. His greater attunement allows him to recharge wands much faster, and he is the most skilled in the arcane arts than other character classes.",
-            "However, decades of study have dulled his senses, decreasing his accuracy and perception, forcing him to rely on wands to progress. He is still somewhat strong and agile, though.",
-            "Inability to properly use weapons and reliance on wands make him a bit tricky to play as, and therefore this class is only recommended for veteran players.",
+            "学者精通于法杖的运用之道。绝佳的魔能调谐能力允许他以更高的速率填充法杖充能，并且在法术领域无人能出其右。常年封闭于研究室的生活钝化了他的五感，降低他的命中和感知能力，迫使他必须依赖法杖深入地牢。",
+            "不过以同僚的标准来看，他仍然算得上强壮且行动敏捷。武器的低适应性和对法杖的极度依赖使得这名角色更需要技巧游玩，因此该职业仅推荐老手游玩",
     };
 
     public static final String[] HUN_ABOUT = {
@@ -102,9 +105,8 @@ public enum HeroClass {
 //            "Beautiful Artemis, proud Athena and wise Gaia - they have always guided you, sending you insights and prophetic dreams. But, as time went, predictions started to became dark and foreboding.",
 //            "They are crystal-clear now - something grows down there, under this City. Something wicked. And it must be nipped in the bud as soon as possible, or else... No gods would save us.",
 
-            "The Acolyte is blessed with extremely sensitive intuition. Her awareness of surroundings and precision of her strikes are unparalleled, allowing for more reliable counterattacks and ranged attacks.",
-            "Alas, the elven heritage made her body frail and sickly. Her starting strength is lower and her vitality grows slightly slower with levels when compared with others.",
-            "This vulnerability makes Acolyte a fairly challenging class, better fit for an expert player rather than someone who still learns how to play.",
+            "侍祭拥有与生俱来得强大直觉。侍祭对周遭环境的感知与精准的战斗技巧无与伦比，使她更有效地反击敌人和执行远程攻击。不过，精灵血统使她的身体脆弱且多病。她的起始力量低于其他角色，并且升级时得到的额外生命力成长略低于他人。" +
+            "脆弱的角色起始条件使侍祭成为一个更具挑战性的职业，该职业更适合精通本游戏的专业玩家，而非仅了解游戏表层机制的玩家游玩。",
     };
 
     public static final String[] WAR_DETAILS = {
@@ -240,13 +242,17 @@ public enum HeroClass {
         (hero.belongings.armor = new StuddedArmor()).identify().repair().fix();
 
 //        new TomeOfMastery().collect();
-//        new Halberd().repair().fix().collect();
-//        new Pistole().identify().repair().fix().collect();
-//        new Arquebuse().identify().repair().fix().collect();
-//        new Bullets().quantity( 300 ).collect();
-//        new Explosives.Gunpowder().quantity( 300 ).collect();
-//        new WandOfDamnation().repair().fix().collect();
-//        new RingOfAccuracy().repair().fix().collect();
+        new Halberd().repair().fix().collect();
+        new Pistole().identify().repair().fix().collect();
+        new Arquebuse().identify().repair().fix().collect();
+        new Bullets().quantity( 300 ).collect();
+        new Explosives.Gunpowder().quantity( 300 ).collect();
+        new WandOfDamnation().repair().fix().collect();
+        new RingOfAccuracy().repair().fix().collect();
+        new WandOfFirebrand().repair().fix().identify().collect();
+        new WandOfIceBarrier().repair().fix().identify().collect();
+        new SplintArmor().inscribe().repair().fix().identify().collect();
+        new PoisonDarts().quantity(100).collect();
         new ArmorerKit().collect();
 
     }

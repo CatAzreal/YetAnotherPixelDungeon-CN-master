@@ -62,22 +62,20 @@ public class Wandmaker extends NPC {
 	}
 	
 	private static final String TXT_BERRY1	=
-		"Oh, what a pleasant surprise to meet a decent person in such place! I came here for a rare ingredient - " +
-		"a _Rotberry seed_. Being a magic user, I'm quite able to defend myself against local monsters, " +
-		"but I'm getting lost in no time, it's very embarrassing. Probably you could help me? I would be " +
-		"happy to pay for your service with one of my best wands.";
+		"啊，能在这片地方遇见一位英雄可真是个惊喜！我来这里是为了寻找一个稀有材料，其名为_腐莓种子_。" +
+		"作为一名法师我在这里有自保之力，可我在地牢里转几圈就迷路了，很丢人对吧。也许你能帮帮我？我很愿意将" +
+		"自己的一把精制法杖作为奖励送给你！";
 	
 	private static final String TXT_DUST1	=
-		"Oh, what a pleasant surprise to meet a decent person in such place! I came here for a rare ingredient - " +
-		"_corpse dust_. It can be gathered from skeletal remains and there is an ample number of them in the dungeon. " +
-		"Being a magic user, I'm quite able to defend myself against local monsters, but I'm getting lost in no time, " +
-		"it's very embarrassing. Probably you could help me? I would be happy to pay for your service with one of my best wands.";
+		"啊，能在这片地方遇见一位英雄可真是个惊喜！我来这里是为了寻找一个稀有材料，其名为_尸尘_。你能够从遗骸之中找到它，而这片地牢最不缺的就是遗骸了。" +
+		"作为一名法师我在这里有自保之力，可我在地牢里转几圈就迷路了，很丢人对吧。也许你能帮帮我？我很愿意将" +
+		"自己的一把精制法杖作为奖励送给你！";
 	
 	private static final String TXT_BERRY2	=
-		"Any luck with a Rotberry seed, %s? No? Don't worry, I'm not in a hurry.";
+		"腐莓种子找到了吗，%s？没有？没事，我没有那么急。";
 	
 	private static final String TXT_DUST2	=
-		"Any luck with corpse dust, %s? Bone piles are the most obvious places to look.";
+		"尸尘找到了吗，%s？没有？试着找些遗骸看看。";
 	
 	@Override
 	protected boolean act() {

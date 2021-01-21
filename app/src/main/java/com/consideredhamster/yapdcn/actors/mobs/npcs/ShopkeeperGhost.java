@@ -45,7 +45,6 @@ public class ShopkeeperGhost extends Shopkeeper {
 	@Override
 	public String description() {
 		return 
-			"This guy doesn't look threatening in any way. Yet, for some reason, mere presence of this mysterious fellow " +
-            "unnerves you. You wonder what business he can lead here?";
+			"这家伙看起来没有任何威胁，可它仅仅是存在于此就让你紧张不安。你不禁思考它这究竟会卖些什么东西？";
 	}
 }

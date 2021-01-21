@@ -38,9 +38,7 @@ public abstract class Trap {
     private static final String TXT_TRAPPED = "这个地格设有陷阱";
 
     private static final String TXT_R_U_SURE =
-            "You are aware of a trap on this tile. Once you step on it, the trap would be " +
-            "activated, which would most likely be quite a painful experience. Are you " +
-            "REALLY sure you want to step here?";
+            "你已经意识到该地格上的陷阱。一旦你踩上去陷阱就会被激活，通常来讲绝对不是件好事。你真的要踩进去吗？";
 
     private static final String TXT_YES			= "没错，我知道自己在做什么";
     private static final String TXT_NO			= "算了，我改主意了";

@@ -40,7 +40,6 @@ public class ShopkeeperTroll extends Shopkeeper {
 	@Override
 	public String description() {
 		return 
-			"This troll looks like all trolls look: he is tall and lean, and his skin resembles stone " +
-            "in both color and texture. You haven't seen many trolls owning a shop, though.";
+			"这个巨魔看起来和任何其他巨魔一样：又高又瘦，皮肤的色泽和纹理都像是石头。不过你可没见过几只会开商店的巨魔。";
 	}
 }

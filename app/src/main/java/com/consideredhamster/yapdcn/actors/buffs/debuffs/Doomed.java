@@ -34,11 +34,11 @@ public class Doomed extends Debuff {
 
     @Override
     public String toString() {
-        return "Doomed";
+        return "咒罚";
     }
 
     @Override
-    public String statusMessage() { return "doomed"; }
+    public String statusMessage() { return "咒罚"; }
 
     @Override
     public int icon() {
@@ -61,12 +61,11 @@ public class Doomed extends Debuff {
     }
 
     @Override
-    public String playerMessage() { return "You are doomed!"; }
+    public String playerMessage() { return "你感到死期将至！"; }
 
     @Override
     public String description() {
-        return "You're doomed. Simple as that. When the duration of this effect will end, you'll " +
-                "die on the spot. Have a fun death!";
+        return "你即将死亡，就这么简单。该效果结束之时便是你的死期。祝您玩的开心！";
     }
 
     @Override

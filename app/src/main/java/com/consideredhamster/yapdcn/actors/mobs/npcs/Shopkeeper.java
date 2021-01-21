@@ -47,54 +47,54 @@ public class Shopkeeper extends NPC {
     private static String[][] LINES_THREATENED = {
 
             {
-                    "Hey, cut it off.",
-                    "Don't do that.",
-                    "That's not allowed in my shop.",
-                    "Stop it, please.",
-                    "Ouch! Stop it!",
+                    "嘿，停下。",
+                    "别这么做。",
+                    "我们店里禁止这种行为。",
+                    "请停止你的行为。",
+                    "嗄！快停下！",
             },
             {
-                    "One more time and I'll call for help!",
-                    "Stop that! Or I will call someone!",
-                    "I advise you to leave me alone.",
+                    "再让我看见我就叫人来了！",
+                    "快停下！我要叫人了！",
+                    "我建议你不要惹我。",
             },
             {
-                    "GUARDS! GUARDS!",
-                    "SOMEONE, HELP ME!",
-                    "I AM UNDER ASSAULT!",
+                    "守卫！守卫！",
+                    "来人啊，抢劫啦！",
+                    "杀人啦！救命啊！",
             },
             {
-                    "Ah, screw it. I am leaving.",
-                    "That's it. I am outta here.",
-                    "Why don't you leave me alone!",
+                    "算球，我要走了。",
+                    "够了，我不干了。",
+                    "你为什么就不能让我安生一会！",
             },
     };
 
     private static String[][] LINES_CAUGHT = {
 
             {
-                    "No touching!",
-                    "Don't touch items on sell, please.",
-                    "Just look, don't touch.",
-                    "You can just ask me instead of touching.",
-                    "What was it that you put in your bag there?",
+                    "不要乱碰！No touching!",
+                    "不想买的话请不要碰它。",
+                    "只许看，不准碰。",
+                    "如果对商品有什么疑问请过来问我，不要碰它们。",
+                    "你刚刚往背包里放了个什么东西？",
             },
             {
-                    "Hey, put that back!",
-                    "Erm... Did you really try to steal from me?",
-                    "Did I see you take something?",
-                    "I saw you trying to steal this!",
+                    "嘿，把它放回去！",
+                    "嗯...你真打算从我这偷东西？",
+                    "我刚是不是看见你拿了个什么东西？",
+                    "我看见了！你在行窃！",
             },
             {
-                    "Does your mother approves your stealing?",
-                    "Thief! Thief! I saw everything!",
-                    "Do you feel lucky, punk?",
-                    "Stop right there criminal scum!",
+                    "你老妈看见了会怎么想？?",
+                    "有贼！有贼！我全都看见了！",
+                    "小兔崽子，搁这碰运气呢？",
+                    "给我站住你这个行窃败类！",
             },
             {
-                    "Nah, I am leaving now. I had enough.",
-                    "Thieves like you should be banned. Bye.",
-                    "What's up with these adventurers nowadays?...",
+                    "算了，走了，我受够了。",
+                    "你这种窃贼迟早会遭报应的，再见。",
+                    "这一代冒险者...世风日下啊...",
             },
     };
 
@@ -103,24 +103,24 @@ public class Shopkeeper extends NPC {
     private static String[][] LINES_STOLEN = {
 
             {
-                    "Huh?",
-                    "Hmmm...",
-                    "Weird.",
+                    "哈？",
+                    "嗯...",
+                    "奇怪...",
             },
             {
-                    "Something's wrong...",
-                    "Hmm... Where did that thing go?",
-                    "That's strange.",
+                    "有什么不太对劲...",
+                    "嗯...刚才放这的东西哪去了？",
+                    "怪了事了。",
             },
             {
-                    "All of that is very suspicious.",
-                    "I can swear I had more items before.",
-                    "Snooping as usual, I see.",
+                    "这事太邪门了。",
+                    "我卖的道具绝对不止这点。",
+                    "又在这鬼鬼祟祟，我盯着你呢。",
             },
             {
-                    "Not gonna wait 'til you steal everything else.",
-                    "Feeling so smart, right? Huh, good luck then!",
-                    "I will not tolerate your stealing any more.",
+                    "不会再让你偷下去了。",
+                    "把自己当小天才了？那就祝你玩得开心！",
+                    "我不会再容忍你的偷窃行为了。",
             },
     };
 
@@ -260,8 +260,7 @@ public class Shopkeeper extends NPC {
 	@Override
 	public String description() {
 		return 
-			"This stout guy looks more appropriate for a trade district in some large city " +
-			"than this little black market down here. Better for you, anyway.";
+			"这个矮胖的家伙看起来更适合在某些大城市里做买卖而不是这种地牢黑市。不过对你来说算是个好消息。";
 	}
 	
 	public float stealingChance( Item item  ) {
@@ -273,7 +272,7 @@ public class Shopkeeper extends NPC {
     }
 
 	public static WndBag sell() {
-		return GameScene.selectItem( itemSelector, WndBag.Mode.FOR_SALE, "Select an item to sell" );
+		return GameScene.selectItem( itemSelector, WndBag.Mode.FOR_SALE, "选择一件要出售的物品" );
 	}
 	
 	private static WndBag.Listener itemSelector = new WndBag.Listener() {

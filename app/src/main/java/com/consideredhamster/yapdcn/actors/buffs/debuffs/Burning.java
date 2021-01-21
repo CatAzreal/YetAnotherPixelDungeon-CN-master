@@ -46,7 +46,7 @@ import com.watabou.utils.Random;
 
 public class Burning extends Debuff {
 
-	private static final String TXT_BURNS_UP		= "%s burns up!";
+	private static final String TXT_BURNS_UP		= "%s被烧毁了！";
 
     @Override
     public Element buffType() {
@@ -55,14 +55,14 @@ public class Burning extends Debuff {
 
     @Override
     public String toString() {
-        return "Burning";
+        return "燃烧";
     }
 
     @Override
-    public String statusMessage() { return "burning"; }
+    public String statusMessage() { return "燃烧"; }
 
     @Override
-    public String playerMessage() { return "You catch fire! Quickly, run to the water!"; }
+    public String playerMessage() { return "你身上烧起来了！快，去找水！"; }
 
     @Override
     public int icon() {
@@ -86,8 +86,7 @@ public class Burning extends Debuff {
 
     @Override
     public String description() {
-        return "It really burns! While burning, you constantly receive damage and can lose some of " +
-                "the flammable items in your inventory. Also enemies are more likely to notice you.";
+        return "烧起来了！燃烧状态下，你会受到持续伤害，且有可能导致可燃物品被烧毁。同时该状态下敌人会更容易注意到你的存在。";
     }
 	
 	@Override
