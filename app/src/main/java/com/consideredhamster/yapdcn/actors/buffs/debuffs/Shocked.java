@@ -41,14 +41,14 @@ public class Shocked extends Debuff {
 
     @Override
     public String toString() {
-        return "Electrified";
+        return "触电";
     }
 
     @Override
-    public String statusMessage() { return "electrified"; }
+    public String statusMessage() { return "触电"; }
 
     @Override
-    public String playerMessage() { return "You are electrified!"; }
+    public String playerMessage() { return "你触电了！"; }
 
     @Override
     public int icon() {
@@ -67,9 +67,8 @@ public class Shocked extends Debuff {
 
     @Override
     public String description() {
-        return "Lightning coarses through your body, waiting for a moment to be released - being " +
-                "zapped again or stepping into water will discharge it, knocking your weapons out " +
-                "of your hands. Also, your wands are way less reliable because of the static charge.";
+        return "电流在你的体内涌动，等待着被释放的时机-再次被击中或踏入水中将释放这些多余电流，" +
+                "并使你持有的武器掉落在地。同时，在此期间你的法杖会因为电流变得极度不稳定。";
     }
 
     @Override

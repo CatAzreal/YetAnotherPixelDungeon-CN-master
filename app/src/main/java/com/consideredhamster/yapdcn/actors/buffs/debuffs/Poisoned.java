@@ -27,7 +27,7 @@ import com.consideredhamster.yapdcn.visuals.ui.BuffIndicator;
 
 public class Poisoned extends Debuff {
 
-    public final static String TXT_CANNOT_EAT = "You can't stomach anything right now.";
+    public final static String TXT_CANNOT_EAT = "你全身难受恶心，现在吃不下任何东西。";
 
     @Override
     public Element buffType() {
@@ -36,14 +36,14 @@ public class Poisoned extends Debuff {
 
     @Override
     public String toString() {
-        return "Poisoned";
+        return "中毒";
     }
 
     @Override
-    public String statusMessage() { return "poisoned"; }
+    public String statusMessage() { return "中毒"; }
 
     @Override
-    public String playerMessage() { return "You are poisoned!"; }
+    public String playerMessage() { return "你中毒了！"; }
 
     @Override
     public int icon() {
@@ -62,8 +62,8 @@ public class Poisoned extends Debuff {
 
     @Override
     public String description() {
-        return "You are not feeling well... Seems like there is a poison in your veins. This will " +
-                "slowly damage you and make you weaker, decreasing your damage and attack speed.";
+        return "你感觉非常不适...毒素似乎正在你的体内游走。该状态会对你造成持续伤害并使你更加孱弱，" +
+                "降低攻击速度和伤害。";
     }
 
     @Override

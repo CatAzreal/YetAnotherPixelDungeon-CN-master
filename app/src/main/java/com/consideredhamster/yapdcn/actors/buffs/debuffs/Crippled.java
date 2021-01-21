@@ -34,14 +34,14 @@ public class Crippled extends Debuff {
 
     @Override
     public String toString() {
-        return "Crippled";
+        return "残废";
     }
 
     @Override
-    public String statusMessage() { return "crippled"; }
+    public String statusMessage() { return "残废"; }
 
     @Override
-    public String playerMessage() { return "Your legs are crippled! Don't move too much."; }
+    public String playerMessage() { return "你的腿残废了！最好不要乱动。"; }
 
     @Override
     public int icon() {
@@ -60,8 +60,7 @@ public class Crippled extends Debuff {
 
     @Override
     public String description() {
-        return "Your legs are severely wounded, making it harder to dodge and significantly " +
-                "slowing your movement. Running around will prolong duration of this effect.";
+        return "你的双腿受到了严重伤害，使你更难闪避攻击并大幅降低移动速度。继续尝试移动只会延长恢复所需的时间。";
     }
 
     @Override

@@ -36,14 +36,14 @@ public class Charmed extends Debuff {
 
     @Override
     public String toString() {
-        return "Charmed";
+        return "魅惑";
     }
 
     @Override
-    public String statusMessage() { return "charmed"; }
+    public String statusMessage() { return "魅惑"; }
 
     @Override
-    public String playerMessage() { return "You are charmed!"; }
+    public String playerMessage() { return "你被魅惑了！"; }
 
     @Override
     public int icon() {
@@ -62,8 +62,7 @@ public class Charmed extends Debuff {
 
     @Override
     public String description() {
-        return "Someone's trying to control your mind. You cannot bring yourself to attack your " +
-            "enemies with full strength. Still, weaker minds would be completely enslaved by now.";
+        return "有人正在试图控制你的精神。你无法迫使自己全力进攻自己的敌人。不过，若是精神力不足的话，此刻恐怕早已沦为施法者的傀儡。";
     }
 
     @Override

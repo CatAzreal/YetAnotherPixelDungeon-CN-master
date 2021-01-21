@@ -33,14 +33,14 @@ public class Withered extends Debuff {
 
     @Override
     public String toString() {
-        return "Weakened";
+        return "虚弱";
     }
 
     @Override
-    public String statusMessage() { return "weakened"; }
+    public String statusMessage() { return "虚弱"; }
 
     @Override
-    public String playerMessage() { return "You feel weakened!"; }
+    public String playerMessage() { return "你感到力量正在被抽走！"; }
 
     @Override
     public int icon() {
@@ -59,8 +59,7 @@ public class Withered extends Debuff {
 
     @Override
     public String description() {
-        return "Touch of unholy magic corrupted your body, weakening your weapons and armor. " +
-                "Means of recovery such as healing and recharging are hindered as well.";
+        return "不洁之力渗入了你的身体之中，弱化着你手中的武具。诸如治疗，充能等回复手段也因此受到影响。";
     }
 
 }

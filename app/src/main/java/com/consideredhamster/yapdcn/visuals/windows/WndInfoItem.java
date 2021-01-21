@@ -39,15 +39,13 @@ public class WndInfoItem extends Window {
 	private static final String TXT_CRYSTAL_CHEST	= "水晶宝箱";
 	private static final String TXT_TOMB			= "坟墓";
 	private static final String TXT_SKELETON		= "英雄遗骸";
-	private static final String TXT_WONT_KNOW		= "You won't know what's inside until you open it!";
-	private static final String TXT_NEED_KEY		= TXT_WONT_KNOW + " But to open it you need a golden key.";
-	private static final String TXT_INSIDE			= "You can see %s inside, but to open the chest you need a golden key.";
+	private static final String TXT_WONT_KNOW		= "直到开启前你都没法弄清楚里面究竟放着什么东西！";
+	private static final String TXT_NEED_KEY		= TXT_WONT_KNOW + "你需要一把金钥匙来打开它。";
+	private static final String TXT_INSIDE			= "你能看见箱子里的%s，但你需要一把金钥匙来打开它。";
 	private static final String TXT_OWNER	= 
-		"This ancient tomb may contain something useful, " +
-		"but its owner will most certainly object to checking.";
+		"这处古旧坟墓里可能埋藏着一些有用的东西，但其下埋葬的人必然不希望你如此做。";
 	private static final String TXT_REMAINS	= 
-		"This is all that's left from one of your predecessors. " +
-		"Maybe it's worth checking for any valuables.";
+		"在你之前的先驱者们所能留下的所有东西都在里面了，也许你该看看里面有些什么。";
 	
 	private static final float GAP	= 2;
 

@@ -24,18 +24,18 @@ import com.consideredhamster.yapdcn.visuals.ui.BuffIndicator;
 
 public class Blinded extends Debuff {
 
-    public final static String TXT_CANNOT_READ = "Reading? You can barely see your hands.";
+    public final static String TXT_CANNOT_READ = "读东西？现在？你连自己手都看不清楚。";
 
     @Override
     public String toString() {
-        return "Blinded";
+        return "目盲";
     }
 
     @Override
-    public String statusMessage() { return "blinded"; }
+    public String statusMessage() { return "目盲"; }
 
     @Override
-    public String playerMessage() { return "You cannot see anything!"; }
+    public String playerMessage() { return "你什么都看不见了！"; }
 
     @Override
     public int icon() {
@@ -54,7 +54,6 @@ public class Blinded extends Debuff {
 
     @Override
     public String description() {
-        return "Your eyes are unable to perceive anything further than a length of your hand. Your " +
-                "attack and perception is decreased, and you are unable to read scrolls.";
+        return "你无法分辨视野内数寸之外的任何事物。你的命中和感知能力降低，并且持续期间无法阅读任何卷轴。";
     }
 }

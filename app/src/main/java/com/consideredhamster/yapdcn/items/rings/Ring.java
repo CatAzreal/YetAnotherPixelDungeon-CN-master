@@ -280,7 +280,7 @@ public abstract class Ring extends EquipableItem {
 
 	@Override
 	public String name() {
-		return isTypeKnown() ? super.name() : gem + " ring";
+		return isTypeKnown() ? super.name() : gem + "戒指";
 	}
 
     @Override

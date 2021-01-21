@@ -26,7 +26,7 @@ import com.watabou.utils.Random;
 
 public class Tormented extends Debuff {
 	
-	public final static String TXT_CANNOT_ATTACK = "You are in panic! You cannot attack!";
+	public final static String TXT_CANNOT_ATTACK = "你处于极端痛苦和恐慌之中！你现在没办法进攻！";
 
     @Override
     public Element buffType() {
@@ -35,14 +35,14 @@ public class Tormented extends Debuff {
 
     @Override
     public String toString() {
-        return "Tormented";
+        return "笞挞";
     }
 
     @Override
-    public String statusMessage() { return "tormented"; }
+    public String statusMessage() { return "笞挞"; }
 
     @Override
-    public String playerMessage() { return "Your mind is seized with fear and pain!"; }
+    public String playerMessage() { return "你的精神正被恐惧和痛苦所灌洗！"; }
 
     @Override
     public int icon() {
@@ -61,8 +61,8 @@ public class Tormented extends Debuff {
 
     @Override
     public String description() {
-        return "Terrifying magic fills your mind with pain. Your ranged attacks become very " +
-                "unreliable, and attacking in melee is not even an option. RUN!";
+        return "令人恐惧的魔法被径直灌入你的精神之中，制造着痛苦与恐慌。" +
+                "你的远程攻击几乎无法瞄准，克服恐惧去攻击敌人更不可能。快跑！";
     }
 
     @Override

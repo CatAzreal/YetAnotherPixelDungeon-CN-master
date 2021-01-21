@@ -40,13 +40,12 @@ public class Combo extends BuffReactive {
 
     @Override
     public String toString() {
-        return "Combo x" + count;
+        return count+"连击！";
     }
 
     @Override
     public String description() {
-        return "Every consecutive attack increases your damage slightly. Performing any actions " +
-                "except attacking again will reset this counter, though.";
+        return "每次连续的攻击行为都会小幅提高你的伤害。不过执行任何攻击之外的行为都会中断该效果。";
     }
 
     @Override

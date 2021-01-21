@@ -199,7 +199,7 @@ public class Yog extends Mob {
         public RottingFist() {
 
             super( 5, 25, true );
-			name = "rotting fist";
+			name = "腐烂之拳";
 			spriteClass = RottingFistSprite.class;
 
 			EXP = 0;
@@ -290,7 +290,7 @@ public class Yog extends Mob {
         public BurningFist() {
 
             super( 5, 25, true );
-			name = "burning fist";
+			name = "燃烧之拳";
 			spriteClass = BurningFistSprite.class;
 			
 			EXP = 0;

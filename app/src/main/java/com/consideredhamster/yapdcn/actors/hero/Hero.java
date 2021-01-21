@@ -141,11 +141,11 @@ import com.watabou.utils.Random;
 
 public class Hero extends Char {
 
-    private static final String TXT_LEAVE = "One does not simply leave Pixel Dungeon.";
-    private static final String TXT_LEAVE_WARRIOR = "There is no honor in running away. I must push on.";
-    private static final String TXT_LEAVE_SCHOLAR = "It doesn't matter how foolish my decisions were, surrendering now would be even worse.";
-    private static final String TXT_LEAVE_BRIGAND = "That is not the stairs I am looking for.\nI must go down, not up.";
-    private static final String TXT_LEAVE_ACOLYTE = "I can't go back now. Everything is at stake. Retreating will only delay the inevitable!";
+    private static final String TXT_LEAVE = "没有人会如此轻易放弃像素地牢的征程。";
+    private static final String TXT_LEAVE_WARRIOR = "逃跑毫无荣誉可言，我必须前进。";
+    private static final String TXT_LEAVE_SCHOLAR = "不论我所做的决定有多么愚蠢，这个地步彻底放弃只会让事情变得更糟。";
+    private static final String TXT_LEAVE_BRIGAND = "这不是我要走的方向。\n我必须下去，而非往回走。";
+    private static final String TXT_LEAVE_ACOLYTE = "我不能回去，这世间已经危如累卵。现在逃开也只是在拖延不可避免的宿命罢了！";
 
     private static final String TXT_EXP = "%+dEXP";
     private static final String TXT_LEVEL_UP = "升级！";
@@ -167,7 +167,7 @@ public class Hero extends Char {
     private static final String TXT_WAIT = "...";
     private static final String TXT_SEARCH = "搜查";
 
-    public static final int STARTING_STR = 10;
+    public static final int STARTING_STR = 16;
 
     private static final float TIME_TO_REST = 1f;
     private static final float TIME_TO_PICKUP = 1f;
@@ -212,7 +212,7 @@ public class Hero extends Char {
         super();
         name = "you";
 
-        HP = HT = 25;
+        HP = HT = 250;
         STR = STARTING_STR;
 
         belongings = new Belongings( this );

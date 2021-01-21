@@ -62,30 +62,22 @@ public class AmbitiousImp extends NPC {
 	}
 	
 	private static final String TXT_GOLEMS1	=
-		"Are you an adventurer? I love adventurers! You can always rely on them " +
-		"if something needs to be killed. Am I right? For a bounty, of course ;)\n" +
-		"In my case this is _golems_ who need to be killed. You see, I'm going to start a " +
-		"little business here, but these stupid golems are bad for business! " +
-		"It's very hard to negotiate with wandering lumps of granite, damn them! " +
-		"So please, kill... let's say _6 of them_ and a reward is yours.";
+			"你是个冒险家吗？我爱冒险家！如果有什么东西需要被解决的话，他们永远都能把活干好。我说的对吗？当然是在有赏金的前提下；)\n" +
+					"总之，我需要你杀一些_魔像_。你看，我要在这里开始搞点小本生意，但这些愚蠢的傀儡只会毁掉我的生意！跟这些发着光" +
+					"的大个子花岗岩根本没法交流，真是该死！所以请，杀死……我想想，_6个魔像_，然后奖励就是你的了。";
 	
 	private static final String TXT_MONKS1	=
-		"Are you an adventurer? I love adventurers! You can always rely on them " +
-		"if something needs to be killed. Am I right? For a bounty, of course ;)\n" +
-		"In my case this is _monks_ who need to be killed. You see, I'm going to start a " +
-		"little business here, but these lunatics don't buy anything themselves and " +
-		"will scare away other customers. " +
-		"So please, kill... let's say _8 of them_ and a reward is yours.";
+		"你是个冒险家吗？我爱冒险家！如果有什么东西需要被解决的话，他们永远都能把活干好。我说的对吗？当然是在有赏金的前提下  ；)\n" +
+				"总之，我需要你杀一些_武僧_。你看，我要在这里开始搞点小本生意，但这些疯子不买任何东西还会吓跑顾客。所以请，杀死……我想想，_8个武僧_，然后奖励就是你的了。";
 	
 	private static final String TXT_GOLEMS2	=
-		"How is your golem safari going?";	
+		"你的魔像狩猎做的怎么样了？";
 	
 	private static final String TXT_MONKS2	=
-		"Oh, you are still alive! I knew that your kung-fu is stronger ;) " +
-		"Just don't forget to grab these monks' tokens.";	
+		"喔，你还活着！我就知道你得功夫很好；) 只要别忘了拿来那些武僧的标记就好。";
 	
-	private static final String TXT_CYA	= "See you, %s!";
-	private static final String TXT_HEY	= "Psst, %s!";
+	private static final String TXT_CYA	= "我们会再见的，%s!";
+	private static final String TXT_HEY	= "喂喂喂，%s!";
 	
 	private boolean seenBefore = false;
 	
@@ -172,8 +164,8 @@ public class AmbitiousImp extends NPC {
 	@Override
 	public String description() {
 		return 
-			"Imps are lesser demons. They are notable neither for their strength nor their magic talent, but for their cruelty " +
-            "and greed. However, some of them are actually quite smart and sociable. This one looks quite friendly, for example.";
+			"小恶魔是一种低等恶魔。没有强大的力量也没有魔法天赋，这些生物仅以其残忍品性和贪婪无餍而恶名昭彰。" +
+			"不过其中少数个体相当聪明且善于交际。比如这边这只，看起来就挺像回事的。";
 	}
 	
 	public static class Quest {

@@ -52,12 +52,12 @@ public class WndTradeItem extends Window {
 	private static final String TXT_SELL_ALL	= "以%dg价格出售全部";
 	private static final String TXT_CANCEL		= "算了";
 
-    private static final String TXT_BOUGHT	= "You've bought %s for %dg";
-    private static final String TXT_SOLD	= "You've sold your %s for %dg";
+    private static final String TXT_BOUGHT	= "你买下了%s，花费%dg";
+    private static final String TXT_SOLD	= "你卖出了%s，获得%dg";
 
-    private static final String TXT_STEAL	    = "Steal (%d%% chance)";
-    private static final String TXT_STOLEN	    = "You successfully steal %s!";
-    private static final String TXT_CAUGHT	    = "You fail to steal %s.";
+    private static final String TXT_STEAL	    = "偷窃(%d%%几率)";
+    private static final String TXT_STOLEN	    = "你成功窃取了%s！";
+    private static final String TXT_CAUGHT	    = "你没能窃取到%s。";
 
 	private WndBag owner;
 

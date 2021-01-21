@@ -32,8 +32,8 @@ import com.watabou.utils.Random;
 
 public class Bookshelf {
 
-    private static final String TXT_FOUND_SCROLL	= "You found a scroll!";
-    private static final String TXT_FOUND_NOTHING	= "You found nothing interesting.";
+    private static final String TXT_FOUND_SCROLL	= "你找到了一张卷轴！";
+    private static final String TXT_FOUND_NOTHING	= "这里没什么值得注意的。";
     private static final String TXT_FOUND_READING	= "You found %s";
 
     private static final String[] BOOKS = {

@@ -56,7 +56,7 @@ public abstract class Wand extends EquipableItem {
 
 	private static final int USAGES_TO_KNOW	= 1;
 	
-	public static final String AC_ZAP	= "发射";
+	public static final String AC_ZAP	= "施放";
 	
 //	private static final String TXT_WOOD	= "This thin %s wand is warm to the touch. Who knows what it will do when used?";
 //	private static final String TXT_DAMAGE	= "When this wand is used as a melee weapon, its average damage is %d points per hit.";

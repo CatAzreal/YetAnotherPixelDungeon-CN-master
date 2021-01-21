@@ -45,13 +45,12 @@ public class Light extends BuffPassive {
 
     @Override
     public String toString() {
-        return "Light";
+        return "光源";
     }
 
     @Override
     public String description() {
-        return "Your lantern shines brightly, increasing your field of view and your " +
-                "chance to find traps, but making it easier to notice you as well." ;
+        return "你腰间的灯笼绽放出明亮的光芒，提高你的视野范围和发现陷阱的几率，但也让敌人更容易找到你的行踪。" ;
     }
 
     @Override

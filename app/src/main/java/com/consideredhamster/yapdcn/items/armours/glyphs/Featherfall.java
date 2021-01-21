@@ -39,7 +39,7 @@ public class Featherfall extends Armour.Glyph {
 
     @Override
     protected String name_p() {
-        return "羽落之%";
+        return "羽落之%s";
     }
 
     @Override

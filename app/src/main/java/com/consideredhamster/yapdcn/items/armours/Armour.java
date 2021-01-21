@@ -240,7 +240,7 @@ public abstract class Armour extends EquipableItem {
 			Tenacity.class, Featherfall.class, Durability.class, Retribution.class,
 			Deflection.class, Revival.class };
 		
-		private static final float[] chances= new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+		private static final float[] chances= new float[]{ 1, 1, 10, 1, 1, 10, 1, 1, 1, 1 };
 
         protected static ItemSprite.Glowing ORANGE = new ItemSprite.Glowing( 0xFF5511 );
         protected static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF );

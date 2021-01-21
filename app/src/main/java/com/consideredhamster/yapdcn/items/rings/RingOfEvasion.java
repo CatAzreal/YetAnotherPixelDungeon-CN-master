@@ -25,7 +25,7 @@ import java.util.Locale;
 public class RingOfEvasion extends Ring {
 
 	{
-		name = "Ring of Evasion";
+		name = "闪避之戒";
         shortName = "Ev";
 	}
 	

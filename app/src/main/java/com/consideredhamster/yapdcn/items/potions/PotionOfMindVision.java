@@ -44,7 +44,7 @@ public class PotionOfMindVision extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：饮用；效果：获知全局生物位置移除诅咒，提高感知";
+        return "[临时字串]使用方式：饮用；效果：获知全局生物位置，提高感知";
 //			"After drinking this, your mind will become attuned to the psychic signature " +
 //			"of distant creatures, enabling you to sense everyone on current floor through walls. " +
 //			"Also this potion will negate most of the disadvantages of blindness.";

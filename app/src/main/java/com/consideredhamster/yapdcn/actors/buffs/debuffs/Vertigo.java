@@ -33,14 +33,14 @@ public class Vertigo extends Debuff {
 
     @Override
     public String toString() {
-        return "Vertigo";
+        return "混乱";
     }
 
     @Override
-    public String statusMessage() { return "vertigo"; }
+    public String statusMessage() { return "混乱"; }
 
     @Override
-    public String playerMessage() { return "Everything is spinning around you!"; }
+    public String playerMessage() { return "周围的一切都转起来了！"; }
 
     @Override
     public int icon() {
@@ -59,7 +59,6 @@ public class Vertigo extends Debuff {
 
     @Override
     public String description() {
-        return "Everything is spinning around you! Your movement can be erratic at times, you " +
-                "cannot concentrate, and your dexterity and perception are decreased.";
+        return "整个世界都绕着你转起来了！你很难移动到目标地点，并且无法击中注意，在此期间敏捷和感知属性都会受到惩罚。";
     }
 }

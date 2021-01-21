@@ -36,14 +36,14 @@ public class Controlled extends Debuff {
 
     @Override
     public String toString() {
-        return "Controlled";
+        return "受控";
     }
 
     @Override
-    public String statusMessage() { return "controlled"; }
+    public String statusMessage() { return "受控"; }
 
     @Override
-    public String playerMessage() { return "You are controlled!"; }
+    public String playerMessage() { return "你被精神控制了！"; }
 
     @Override
     public int icon() {

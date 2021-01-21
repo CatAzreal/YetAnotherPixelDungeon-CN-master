@@ -44,18 +44,18 @@ public class Satiety extends Buff {
     public static final float STARVING_HALF = MAXIMUM * -0.25f;
     public static final float STARVING_FULL = MAXIMUM * -0.50f;
 
-	private static final String TXT_NOT_SATIATED	= "You are not satiated anymore.";
-	private static final String TXT_NOT_HUNGRY		= "You are not hungry anymore.";
-	private static final String TXT_NOT_STARVING	= "You are not starving anymore.";
+	private static final String TXT_NOT_SATIATED	= "你不再感到饱腹。";
+	private static final String TXT_NOT_HUNGRY		= "你不再感到饥饿。";
+	private static final String TXT_NOT_STARVING	= "你不再感到饥肠辘辘。";
 
-	private static final String TXT_SATIATED		= "You are stuffed!";
-	private static final String TXT_HUNGRY		    = "You are hungry.";
-	private static final String TXT_STARVING	    = "You are starving!";
-	private static final String TXT_STARVING_HALF   = "Starving gets worse!";
-	private static final String TXT_STARVING_FULL   = "Starving becomes unbearable!";
+	private static final String TXT_SATIATED		= "你吃的很饱！";
+	private static final String TXT_HUNGRY		    = "你开始饿了。";
+	private static final String TXT_STARVING	    = "你感到饥肠辘辘！";
+	private static final String TXT_STARVING_HALF   = "你饿的更严重了！";
+	private static final String TXT_STARVING_FULL   = "你饿的快要死了！";
 
-	private static final String TXT_AWAKE_HUNGRY	= "You were awoken by a rumbling in your stomach.";
-	private static final String TXT_AWAKE_STARVING	= "You were awoken by a pain in your stomach.";
+	private static final String TXT_AWAKE_HUNGRY	= "你被肚里传来的叫声惊醒。";
+	private static final String TXT_AWAKE_STARVING	= "你被肚里传来的空腹疼痛惊醒。";
 
 	private float remaining = MAXIMUM;
     private float surplus = 0.0f;
@@ -130,8 +130,8 @@ public class Satiety extends Buff {
 
                         ( (Hero) target ).interrupt(
                             Level.water[ target.pos ] ?
-                            "You don't feel well. Better not sleep in the water next time." :
-                            "You feel well rested.", !Level.water[ target.pos ]
+                            "你睡得很不舒服。下次最好别躺在水滩上睡着。" :
+                            "你精神抖擞地醒来。", !Level.water[ target.pos ]
                         );
 
                     }
@@ -154,7 +154,7 @@ public class Satiety extends Buff {
                 if( hero.HP > 1 && ( hero.HP + (int) surplus <= 1 ) ){
                     hero.HP = 1;
                     hero.interrupt();
-                    GLog.n( "You're about to die from starvation!" );
+                    GLog.n( "你即将因饥饿而死！" );
                 } else {
                     hero.HP = Math.max( 0, hero.HP + (int) surplus );
                 }
