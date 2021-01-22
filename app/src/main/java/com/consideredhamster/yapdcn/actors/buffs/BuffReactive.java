@@ -53,7 +53,7 @@ public abstract class BuffReactive extends Buff {
         return true;
     }
 
-    private static final String DURATION	= "剩余时长";
+    private static final String DURATION	= "duration";
 
     @Override
     public void storeInBundle( Bundle bundle ) {

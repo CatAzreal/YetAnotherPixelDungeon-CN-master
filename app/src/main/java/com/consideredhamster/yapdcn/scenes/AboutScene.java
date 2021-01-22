@@ -43,7 +43,10 @@ public class AboutScene extends PixelScene {
             "\n" +
             "中文本地化\n" +
             "·Jinkeloid(冰杖)\n" +
-            "·Evan Debenham(SPD本地化框架)";
+            "\n" +
+            "本地化协力\n" +
+            "·Evan Debenham(SPD本地化框架)\n" +
+            "·EndlessSolitude(临时字串补全)";
 
     private static final String TXT_PART2 =
                         "代码协力:\n" +
@@ -58,12 +61,6 @@ public class AboutScene extends PixelScene {
 
     private static final String TXT_PART3 =
 
-            "额外贴图制作:\n" +
-            "·ConsideredHamster\n" +
-            "·Bgnu-Thun\n" +
-            "·PavelProvotorov\n" +
-            "·JleHuBbluKoT\n" +
-            "·RavenWolf\n" +
             "\n" +
             "原版创作者:\n" +
             "·Watabou & Cube_Code"

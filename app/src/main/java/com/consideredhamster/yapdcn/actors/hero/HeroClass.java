@@ -242,18 +242,18 @@ public enum HeroClass {
         (hero.belongings.armor = new StuddedArmor()).identify().repair().fix();
 
 //        new TomeOfMastery().collect();
-        new Halberd().repair().fix().collect();
-        new Pistole().identify().repair().fix().collect();
-        new Arquebuse().identify().repair().fix().collect();
-        new Bullets().quantity( 300 ).collect();
-        new Explosives.Gunpowder().quantity( 300 ).collect();
-        new WandOfDamnation().repair().fix().collect();
-        new RingOfAccuracy().repair().fix().collect();
-        new WandOfFirebrand().repair().fix().identify().collect();
-        new WandOfIceBarrier().repair().fix().identify().collect();
-        new SplintArmor().inscribe().repair().fix().identify().collect();
-        new PoisonDarts().quantity(100).collect();
-        new ArmorerKit().collect();
+//        new Halberd().repair().fix().collect();
+//        new Pistole().identify().repair().fix().collect();
+//        new Arquebuse().identify().repair().fix().collect();
+//        new Bullets().quantity( 300 ).collect();
+//        new Explosives.Gunpowder().quantity( 300 ).collect();
+//        new WandOfDamnation().repair().fix().collect();
+//        new RingOfAccuracy().repair().fix().collect();
+//        new WandOfFirebrand().repair().fix().identify().collect();
+//        new WandOfIceBarrier().repair().fix().identify().collect();
+//        new SplintArmor().inscribe().repair().fix().identify().collect();
+//        new PoisonDarts().quantity(100).collect();
+//        new ArmorerKit().collect();
 
     }
 

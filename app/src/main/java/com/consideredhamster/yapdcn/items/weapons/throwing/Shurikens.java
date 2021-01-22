@@ -46,7 +46,6 @@ public class Shurikens extends ThrowingWeaponLight {
 	@Override
 	public String desc() {
 		return 
-			"Star-shaped pieces of metal with razor-sharp blades do significant damage " +
-			"when they hit unaware targets.";
+			"锋利的星形金属刃片，非常轻便。可对非警觉敌人造成可观伤害。";
 	}
 }

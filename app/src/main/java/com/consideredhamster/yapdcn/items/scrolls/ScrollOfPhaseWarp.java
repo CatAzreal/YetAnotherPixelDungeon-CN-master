@@ -35,10 +35,10 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 public class ScrollOfPhaseWarp extends Scroll {
 
 	public static final String TXT_TELEPORTED_VISITED =
-		"In a blink of an eye you were teleported to somewhere else. You feel deja vu.";
+		"一瞬之间你被传送到了其他地方，你总觉得自己来过这里。";
 
     public static final String TXT_TELEPORTED_UNKNOWN =
-        "In a blink of an eye you were teleported to somewhere else. You can't remember this place.";
+        "一瞬之间你被传送到了其他地方，你对这片区域毫无印象。";
 	
 	public static final String TXT_NO_TELEPORT = 
 		"传送失败！";

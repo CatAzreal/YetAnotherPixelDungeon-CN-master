@@ -54,7 +54,7 @@ public class RingOfVitality extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "戴上这么戒指可以提高佩戴者的恢复机能，强化所有来源的治疗效果，并强化其对毒素，虚弱等负面效果的抗性。"
 //            "Donning this ring will increase regenerative properties of the wearer's body, " +
 //            "strengthening effects of any sources of healing, and increasing his or her resistance " +
 //            "to negative effects such as poison or withering."

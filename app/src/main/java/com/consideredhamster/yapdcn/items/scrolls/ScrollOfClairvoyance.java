@@ -29,7 +29,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 
 public class ScrollOfClairvoyance extends Scroll {
 
-	private static final String TXT_LAYOUT = "The layout of current floor is revealed to you!";
+	private static final String TXT_LAYOUT = "你获知了本层的地形布局！";
 	
 	{
 		name = "探地卷轴";

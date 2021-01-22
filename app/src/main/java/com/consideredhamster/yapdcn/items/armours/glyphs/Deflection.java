@@ -49,7 +49,7 @@ public class Deflection extends Armour.Glyph {
 
     @Override
     protected String desc_p() {
-        return "将非物理伤害反射回攻击者，并提高魔法伤害抗性";
+        return "将非物理伤害反射回攻击者，并提高魔法属性伤害抗性";
     }
 
     @Override

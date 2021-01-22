@@ -40,6 +40,6 @@ public class Spear extends MeleeWeaponLightTH {
 	
 	@Override
 	public String desc() {
-		return "A slender wooden rod tipped with sharpened iron.";
+		return "这是一根装着锋锐铁刺的细长木杆。";
 	}
 }

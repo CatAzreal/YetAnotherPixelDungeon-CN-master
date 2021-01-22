@@ -41,7 +41,7 @@ public class FirebloomHerb extends Herb {
         image = ItemSpriteSheet.HERB_FIREBLOOM;
 
         cooking = SpicyMeat.class;
-        message = "That herb tasted quite spicy.";
+        message = "好辣！";
 
         mainPotion = PotionOfLiquidFlame.class;
 
@@ -69,7 +69,9 @@ public class FirebloomHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼液火/祝圣/狂怒药剂，直接食用可移除燃烧效果获得火焰抗性(短)";
+        return "曾有江湖骗子利用焰花草来表演“烈火丛中过，片焰不沾身”的技巧，用于博人眼球，但如今这种把戏已经人尽皆知。\n\n"+
+                "焰花草能炼制_液火_、_神祝_、_狂怒_药剂。直接服用则解除_燃烧_效果并获得短暂的_火焰属性_抗性。";
+//        return "[临时字串]可精炼液火/祝圣/狂怒药剂，直接食用可移除燃烧效果获得火焰抗性(短)";
 //        return "Charlatans sometimes used Firebloom herbs to impress crowds by being allegedly " +
 //                "unaffected by lighted candles or hot coals. Now it is a pretty known trick." +
 //                "\n\n" +
@@ -82,7 +84,7 @@ public class FirebloomHerb extends Herb {
         {
             name = "火辣炖肉";
             spiceGlow = ORANGE;
-            message = "That meat tasted quite spicy.";
+            message = "好辣！";
         }
 
         @Override
@@ -93,7 +95,8 @@ public class FirebloomHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]直接食用可移除燃烧效果获得火焰抗性(长)";
+            return "一块与_焰花草_一同煮熟的肉，闻起来相当辣。食用后可解除_燃烧_状态并获得较长的_火焰属性_抗性。";
+ //           return "[临时字串]直接食用可移除燃烧效果获得火焰抗性(长)";
 //            return "This meat was stewed in a pot with a _Firebloom_ herb. It smells pretty spicy. " +
 //                    "Consuming it will remove _burning_ and grant a long buff to your _fire_ resistance.";
         }

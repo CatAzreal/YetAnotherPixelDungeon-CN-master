@@ -51,7 +51,7 @@ public class AcidWard extends Armour.Glyph {
 
     @Override
     protected String desc_p() {
-        return "被击中时使敌人身上附着腐蚀淤泥，同时降低酸蚀伤害";
+        return "被击中时使敌人身上附着腐蚀淤泥，同时获得酸蚀属性抗性";
     }
 
     @Override

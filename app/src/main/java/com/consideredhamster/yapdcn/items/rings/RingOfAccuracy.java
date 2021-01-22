@@ -46,7 +46,7 @@ public class RingOfAccuracy extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "据传这枚戒指中寄宿着无数被历史遗忘的猎手与战士的灵魂，它们的加持能够让佩戴者更加熟练地运用各类远程和近战武器。"
 //            "It is said that such rings were imbued with spirits of long-forgotten hunters and " +
 //            "warriors, which allows them to grant the wearer greater skill with all manners of " +
 //            "melee and ranged weapons."

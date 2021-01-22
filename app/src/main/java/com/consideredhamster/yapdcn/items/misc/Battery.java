@@ -140,7 +140,8 @@ public class Battery extends Item {
 	
 	@Override
 	public String info() {
-        return "[临时字串]可对法杖进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"充能";
+        return "一块材质不明的细长坚硬黑石，你可以使用它对任何法杖充能，并稍稍修复其磨损。\n这块奥术晶石还能使用"+( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次" ) ;
+//        return "[临时字串]可对法杖进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"充能";
 //			"This is a narrow piece of some dark, very hard stone. Using it, you can partially recharge core of any magic wand, " +
 //            "restoring its condition to a better level." +
 //            "\nThis battery can be used " + ( value > 2 ? "three times" : value < 2 ? "only one time" : "two times" ) + " more.";

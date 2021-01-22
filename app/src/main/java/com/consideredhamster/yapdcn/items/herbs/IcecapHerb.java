@@ -37,11 +37,11 @@ public class IcecapHerb extends Herb {
     private static final ItemSprite.Glowing BLUE = new ItemSprite.Glowing( 0x2244FF );
 
     {
-        name = "冰罩草";
+        name = "冰冠草";
         image = ItemSpriteSheet.HERB_ICECAP;
 
         cooking = MintyMeat.class;
-        message = "That herb tasted fresh like mint.";
+        message = "吃起来像薄荷一样清新。";
 
         mainPotion = PotionOfFrigidVapours.class;
 
@@ -69,7 +69,9 @@ public class IcecapHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼冰雾/隐形/幻气药剂，直接食用可移除冻伤状态并获得寒冷抗性(短)";
+        return "冰冠草摸起来有些冷，有镇痛的功效。一些北方部落偶尔会服用冰冠草以防冻伤。\n\n"+
+                "冰冠草可以炼制_冰雾_、_隐形_、_幻气_药剂。直接服用则会解除_冻伤_状态并获得短时间的_冰寒属性_抗性。";
+ //       return "[临时字串]可精炼冰雾/隐形/幻气药剂，直接食用可移除冻伤状态并获得寒冷抗性(短)";
 //        return "Icecap herbs feel cold to touch and have some numbing capabilities. Northern " +
 //                "tribes sometimes use Icecap herbs as a food to keep themselves from frigid " +
 //                "climate of their lands." +
@@ -83,7 +85,7 @@ public class IcecapHerb extends Herb {
         {
             name = "清爽炖肉";
             spiceGlow = BLUE;
-            message = "That meat tasted fresh like mint.";
+            message = "薄荷口味的炖肉，真棒！";
         }
 
         @Override
@@ -94,7 +96,8 @@ public class IcecapHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]直接食用可移除冻伤状态并获得寒冷抗性(长)";
+            return "一块与_冰冠草_一同煮熟的肉，闻起来有点薄荷味。食用后可解除_冻伤_状态并获得较长的_冰寒属性_抗性。";
+//            return "[临时字串]直接食用可移除冻伤状态并获得寒冷抗性(长)";
 //            return "This meat was stewed in a pot with an _Icecap_ herb. It smells somewhat minty. " +
 //                    "Consuming it will remove _chilling_ and grant a long buff to your _cold_ resistance.";
         }

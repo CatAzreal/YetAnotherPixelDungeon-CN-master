@@ -147,7 +147,7 @@ public abstract class BodyArmor extends Armour {
             } else if (itemStr < heroStr) {
                 info.append(
                         "因为你的强健体格，穿戴该护甲" + ( penalty > 0 ? "_将仅导致你的潜行和敏捷降低" + penalty + "%_" : "_不会受到惩罚_" ) +
-                        "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点护甲等级。" );
+                        "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点护甲等级。_" );
             } else {
                 info.append(
                         "穿戴该护甲" + ( penalty > 0 ? "将导致你的潜行和敏捷_降低" + penalty + "%_，" +
@@ -204,7 +204,7 @@ public abstract class BodyArmor extends Armour {
         info.append( s );
 
         if( isEnchantKnown() && glyph != null ) {
-            info.append( "" + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) + "，它携带着_" + glyph.desc(this) + "附魔_." );
+            info.append( "" + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) + "，它携带着_" + glyph.desc(this) + "的附魔_." );
         }
 
         info.append( "这是一件稀有度为_" + lootChapterAsString() +"_的护甲。" );

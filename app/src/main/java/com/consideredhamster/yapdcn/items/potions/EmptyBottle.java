@@ -56,10 +56,10 @@ public class EmptyBottle extends Potion {
         actions.remove( AC_DRINK );
         return actions;
     }
-
 	@Override
 	public String info() {
-	    return "[临时字串]精炼药剂必需材料";
+	    return "每位炼金师都明白炼制任何药剂都需要手头有一个气密容器，因为绝大部分原料接触空气后会迅速变质，甚至会发生剧烈反应乃至引发危险。不过要注意，这些瓶子是一次性的。";
+//	    return "[临时字串]精炼药剂必需材料";
 //		return "Any alchemist knows that proper potion brewing requires having an airtight " +
 //            "container at hand, as most resulting chemicals either quickly lose their potence " +
 //            "when exposed to air or, even worse, react violently to it. These bottles can be " +

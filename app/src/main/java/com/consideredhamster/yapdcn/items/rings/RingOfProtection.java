@@ -50,7 +50,7 @@ public class RingOfProtection extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "这枚戒指能够强化佩戴者的体格，引导其身体内力化为坚实的防御。它还能同时强化佩戴者对各类法术与元素威胁的抗性。"
 //            "This ring makes the wearer's own body to become sturdier, effectively channeling his " +
 //            "or her physical strength into additional armor. It also greatly increases resistances " +
 //            "to various magical and elemental threats."

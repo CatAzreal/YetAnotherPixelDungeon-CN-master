@@ -44,7 +44,8 @@ public class PotionOfFrigidVapours extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：投掷；效果：冰冻生物";
+	    return "这瓶药剂接触空气时会立即挥发并在周围凝结一片冷气，任何被冷气包裹的角色都会被冻结在原地动弹不得。";
+//        return "[临时字串]使用方式：投掷；效果：冰冻生物";
 //			"Upon exposure to open air, this chemical will evaporate into a freezing cloud, causing " +
 //			"any creature that touches it to be frozen in place, unable to act or move.";
 	}

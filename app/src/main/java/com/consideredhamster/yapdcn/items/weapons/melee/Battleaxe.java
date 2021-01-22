@@ -45,6 +45,6 @@ public class Battleaxe extends MeleeWeaponHeavyTH {
 	
 	@Override
 	public String desc() {
-		return "The enormous steel head of this battle axe puts considerable heft behind each stroke.";
+		return "这把有着硕大钢制头部的战斧能将庞大的力量倾注在每次挥舞之中。";
 	}
 }

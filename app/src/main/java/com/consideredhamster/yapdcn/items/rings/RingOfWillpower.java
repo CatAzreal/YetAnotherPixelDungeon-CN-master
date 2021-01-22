@@ -54,7 +54,7 @@ public class RingOfWillpower extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "通过强化佩戴者的精神意志力，这枚戒指同样提高了佩戴者的魔能。同时，它还能使佩戴者更快地从各类精神负面状态中恢复过来。"
 //            "By increasing wearer's willpower, this ring indirectly increases their magical " +
 //            "abilities. Also, it offers additional benefit of making it easier to " +
 //            "shrug off all kinds of mental debuffs."

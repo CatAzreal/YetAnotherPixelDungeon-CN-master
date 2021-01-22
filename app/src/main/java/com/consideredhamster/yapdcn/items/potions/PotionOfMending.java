@@ -52,7 +52,8 @@ public class PotionOfMending extends Potion {
 
 	@Override
 	public String desc() {
-		return "[临时字串]使用方式：饮用；效果：提高治疗速度，解除负面物理状态";
+		return "饮下这瓶药剂后，充满魔力的药液会大幅提高饮用者的自然恢复速度，并解除躯体的异常状态。";
+//		return "[临时字串]使用方式：饮用；效果：提高治疗速度，解除负面物理状态";
 //			"When imbibed, this elixir will vastly improve imbiber's natural regeneration and cure " +
 //            "any physical ailments as well.";
 	}

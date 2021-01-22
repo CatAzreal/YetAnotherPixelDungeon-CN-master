@@ -47,7 +47,6 @@ public class Pistole extends RangedWeaponFlintlock {
 	
 	@Override
 	public String desc() {
-		return "A lighter variety of flintlock weapons, this simple firearm is still capable of " +
-                "tearing through target's armor with ease.";
+		return "一件相对轻便的燧发武器，尽管构造简单但它仍能轻松打穿目标的护甲。";
 	}
 }

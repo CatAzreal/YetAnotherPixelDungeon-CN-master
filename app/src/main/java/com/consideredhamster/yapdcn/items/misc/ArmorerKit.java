@@ -164,7 +164,10 @@ public class ArmorerKit extends Item {
 	
 	@Override
 	public String info() {
-		return "[临时字串]可对非布制护甲进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维修";
+        return
+                "这件精巧的工具可以让任何人随时修复非布制护甲或是盾牌。\n使用工具不需要任何裁缝、皮匠或是铁匠技能，但剩余材料仅能进行" +
+                        ( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次")  + "维修。";
+//		return "[临时字串]可对非布制护甲进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维修";
 //            "Using this kit of small tools and materials anybody can repair any armors (except cloth " +
 //            "armors) or shields in a quite short amount of time.\n" +
 //            "No skills in tailoring, leatherworking or blacksmithing are required, but it has enough materials for only " +

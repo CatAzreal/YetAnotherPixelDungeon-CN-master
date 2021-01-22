@@ -40,6 +40,6 @@ public class Glaive extends MeleeWeaponLightTH {
 	
 	@Override
 	public String desc() {
-		return "A polearm consisting of a sword blade on the end of a pole. Deadly and graceful.";
+		return "一支在末端装有剑刃的重型长柄武器。优雅且致命。";
 	}
 }

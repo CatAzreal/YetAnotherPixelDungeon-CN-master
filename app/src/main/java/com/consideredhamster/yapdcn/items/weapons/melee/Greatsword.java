@@ -40,6 +40,6 @@ public class Greatsword extends MeleeWeaponHeavyTH {
 	
 	@Override
 	public String desc() {
-		return "This towering blade inflicts heavy damage by investing its heft into every cut.";
+		return "这把大剑进行的每次沉重挥舞都能造成大量伤害。";
 	}
 }

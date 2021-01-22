@@ -49,8 +49,8 @@ public class OilLantern extends Item {
 
 	public static final String AC_LIGHT	= "点亮";
     public static final String AC_SNUFF    = "熄灭";
-    public static final String AC_REFILL   = "加油";
-    public static final String AC_BURN 	= "起火";
+    public static final String AC_REFILL   = "灌油";
+    public static final String AC_BURN 	= "点火";
 
 	private static final float TIME_TO_USE = 1f;
 	private static final int MAX_CHARGE = 100;
@@ -62,7 +62,7 @@ public class OilLantern extends Item {
 
 	private static final String TXT_DEACTIVATE = "你的油灯突然闪烁着昏暗的火光，随后熄灭了！";
 
-    private static final String TXT_REFILL = "你将燃料添加至油灯中。";
+    private static final String TXT_REFILL = "你将燃料灌入油灯中。";
 
     private static final String TXT_LIGHT = "你点燃了油灯。";
 

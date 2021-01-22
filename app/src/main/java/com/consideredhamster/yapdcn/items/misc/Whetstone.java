@@ -140,7 +140,10 @@ public class Whetstone extends Item {
 	
 	@Override
 	public String info() {
-		return "[临时字串]可对近战武器进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维护";
+        return
+                "你可以用磨刀石打磨刀枪剑戟，使武器重回巅峰。" +
+                        "\n磨刀石还能使用" + ( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次" ) + "。";
+//		return "[临时字串]可对近战武器进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维护";
 //			"Using a whetstone, you can repair your melee weapons, bringing them back to their former glory." +
 //            "\nThis whetstone can be used " + ( value > 2 ? "three times" : value < 2 ? "only one time" : "two times" ) + " more.";
 	}

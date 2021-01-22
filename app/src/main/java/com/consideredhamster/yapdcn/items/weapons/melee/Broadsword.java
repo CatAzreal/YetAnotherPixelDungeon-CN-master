@@ -35,7 +35,7 @@ public class Broadsword extends MeleeWeaponHeavyOH {
 	
 	@Override
 	public String desc() {
-		return "The razor-sharp length of steel blade shines reassuringly.";
+		return "这柄剑的厚长利刃闪烁着令人宽心的寒光";
 	}
 
 	@Override

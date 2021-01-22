@@ -47,8 +47,6 @@ public class Handcannon extends RangedWeaponFlintlock {
 	
 	@Override
 	public String desc() {
-		return "While initially flintlock weapons were a human invention, dwarves quickly adapted " +
-                "and improved the concept. Handcannons are heavy and require lots of gunpowder to " +
-                "use, but they are far more deadly than any other firearm.";
+		return "尽管最初燧发武器是人类的造物，矮人们迅速适应了这个全新概念并在其上加以改进。铳炮本身非常沉重，并且需要大量火药用于装填，但它的杀伤力冠绝所有其他火器。";
 	}
 }

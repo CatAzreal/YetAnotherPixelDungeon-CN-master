@@ -71,7 +71,8 @@ public class PotionOfStrength extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：饮用；效果：增加力量和魔能，回复所有生命，增加生命上限";
+	    return "这瓶强力的药剂会洗刷你的肌肉，永久强化你的力量与魔能，并恢复所有的生命值。";
+//        return "[临时字串]使用方式：饮用；效果：增加力量和魔能，回复所有生命，增加生命上限";
 //			"This powerful liquid will course through your muscles, permanently increasing your " +
 //            "physical and magical powers, as well as fully restoring your health.";
 	}

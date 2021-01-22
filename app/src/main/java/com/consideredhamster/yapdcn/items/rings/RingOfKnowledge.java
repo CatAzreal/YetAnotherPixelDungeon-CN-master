@@ -44,7 +44,7 @@ public class RingOfKnowledge extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "这种戒指尤其受学者与其生徒们的欢迎，因为它能够提高佩戴者的认知能力，在更短的时间内学习记忆更多知识。"
 //            "Both scholars and their pupils appreciate such rings, because they increase cognitive " +
 //            "capacity of their wearer, allowing to learn more things in a shorter amount of time."
         );

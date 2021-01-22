@@ -41,7 +41,8 @@ public class PotionOfInvisibility extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：饮用；效果：隐形。攻击，敌前使用法杖/卷轴破除效果";
+	    return "饮用这瓶药剂会使你呈现暂时的隐身状态。敌人无法看到隐身的你，但它们并非束手无策。在敌人发起视野内攻击、施放法杖或是阅读卷轴会导致你立刻暴露。";
+	    //        return "[临时字串]使用方式：饮用；效果：隐形。攻击，敌前使用法杖/卷轴破除效果";
 //			"Drinking this potion will render you temporarily invisible. While invisible, " +
 //			"enemies will be unable to see you, but they can try to find you nevertheless. " +
 //            "Attacking an enemy, as well as using a wand or a scroll before enemy's eyes, " +

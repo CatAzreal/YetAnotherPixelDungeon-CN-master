@@ -38,17 +38,17 @@ public class Durability extends Armour.Glyph {
 
     @Override
     protected String name_n() {
-        return "易碎之%s";
+        return "易损之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "降低受损速度并提供额外的防护能力";
+        return "减缓受损并提供额外的防护能力";
     }
 
     @Override
     protected String desc_n() {
-        return "加速防具受损并减少护甲的防护能力";
+        return "加速受损并弱化防具的防护能力";
     }
 
     @Override

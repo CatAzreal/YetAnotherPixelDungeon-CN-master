@@ -40,6 +40,6 @@ public class Halberd extends MeleeWeaponLightTH {
 	
 	@Override
 	public String desc() {
-		return "Some day, someone had a brilliant idea about combining reach of the spear with brutality of an axe.";
+		return "一日有人突发奇想，将长矛的范围和战斧的杀伤力结合了起来，造就了如今的这件武器。";
 	}
 }

@@ -43,7 +43,7 @@ public class DreamfoilHerb extends Herb {
         image = ItemSpriteSheet.HERB_DREAMFOIL;
 
         cooking = SweetMeat.class;
-        message = "That herb tasted sweet like dreams.";
+        message = "甜美如梦，神清气爽。";
 
         mainPotion = PotionOfMindVision.class;
 
@@ -74,7 +74,9 @@ public class DreamfoilHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼灵识/幻气/盛怒药剂，食用移除精神负面状态，精神状态抗性(短)";
+        return "梦叶草因其特殊的功效而时常有人种植，哪怕不惜违反法令。依据使用方法的不同，梦叶草会以不同的方式干扰使用者的精神。\n\n"+
+                "梦叶草可炼制_灵视_、_幻气_、_狂怒_药剂。直接服用则能解除_精神属性负面状态_并获得短暂的_精神属性_抗性。";
+  //      return "[临时字串]可精炼灵识/幻气/盛怒药剂，食用移除精神负面状态，精神状态抗性(短)";
 //        return "Dreamfoil herbs are often intentionally cultivated because of their curious " +
 //                "effects... Sometimes even illegally. Still, depending on how they are used, they " +
 //                "can affect one's mind in a variety of ways." +
@@ -89,7 +91,7 @@ public class DreamfoilHerb extends Herb {
         {
             name = "香甜炖肉";
             spiceGlow = PURPLE;
-            message = "That meat tasted sweet like dreams.";
+            message = "梦境般的甜美味道。";
         }
 
         @Override
@@ -100,7 +102,8 @@ public class DreamfoilHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]移除精神负面状态，精神状态抗性(长)";
+            return "一块与_梦叶草_一同煮熟的肉，闻起来相当甜美。食用后可解除_精神属性负面状态_并获得较长的_精神属性_抗性。";
+//            return "[临时字串]移除精神负面状态，精神状态抗性(长)";
 //            return "This meat was stewed in a pot with a _Dreamfoil_ herb. It smells pretty sweet. " +
 //                "Consuming it will remove _mind debuffs_ and grant a long buff to your _mind_ resistance.";
         }

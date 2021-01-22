@@ -41,7 +41,8 @@ public class PotionOfRage extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：饮用；效果：提高伤害，击杀敌人以延长效果";
+	    return "饮下这瓶药剂会激发饮用者内心的怒火，使其进入狂暴并在短时间内造成远超平时的伤害。击杀敌人会延长这种嗜血的状态。";
+//        return "[临时字串]使用方式：饮用；效果：提高伤害，击杀敌人以延长效果";
 //			"Drinking this potion will induce a berserker state, significantly " +
 //			"increasing strength of your blows for a limited time. "+
 //			"Killing an enemy in this state will extend this bloodthirsty state.";

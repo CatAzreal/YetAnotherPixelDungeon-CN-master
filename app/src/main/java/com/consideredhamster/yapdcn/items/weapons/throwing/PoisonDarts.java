@@ -54,7 +54,6 @@ public class PoisonDarts extends ThrowingWeaponSpecial {
 	@Override
 	public String desc() {
 		return 
-			"Stings of these vicious little darts are covered in some kind of toxin, " +
-			"poisoning their targets with some kind of deadly venom.";
+			"这些飞镖上涂抹着毒药，使被命中的目标进入中毒状态。";
 	}
 }

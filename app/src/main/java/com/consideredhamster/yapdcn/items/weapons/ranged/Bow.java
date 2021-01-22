@@ -47,6 +47,6 @@ public class Bow extends RangedWeaponMissile {
 
 	@Override
 	public String desc() {
-		return "In the hands of a skilled archer, this weapon can be extremely effective.";
+		return "在熟练的弓手面前，这件武器能发挥出难以想象的效力。";
 	}
 }

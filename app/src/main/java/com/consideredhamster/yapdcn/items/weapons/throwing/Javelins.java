@@ -60,8 +60,7 @@ public class Javelins extends ThrowingWeaponHeavy {
 	@Override
 	public String desc() {
 		return 
-			"This length of metal is weighted to keep the spear at its tip foremost as it sails " +
-            "through the air. Good hit with this weapon can even knock its target back.";
+			"这根金属武器的独特设计使其在抛出后在空中也能一直保持尖头朝前。若命中位置得当甚至可以击退目标。";
 	}
 	
 

@@ -266,15 +266,15 @@ public class Satiety extends Buff {
     @Override
     public String toString() {
         if ( remaining <= STARVING_FULL ) {
-            return "Starving (unbearable)";
+            return "极度饥饿(致死)";
         } else if ( remaining <= STARVING_HALF ) {
-            return "Starving (harsh)";
+            return "极度饥饿(严重)";
         } else if ( remaining <= STARVING ) {
-            return "Starving (mild)";
+            return "极度饥饿";
         } else if ( remaining <= PARTIAL ) {
-            return "Hungry";
+            return "饥饿";
         } else if ( remaining > DEFAULT ) {
-            return "Satiated";
+            return "饱食";
         } else {
             return "";
         }
@@ -283,20 +283,16 @@ public class Satiety extends Buff {
     @Override
     public String description() {
         if ( remaining <= STARVING_FULL ) {
-            return "You desperately crave for food! Your health is drained even faster, and it will " +
-                    "eventually kill you if you don't eat something. Even herbs will do.";
+            return "你急切地想要任何能塞进嘴里地东西！你的生命值开始以极快的速度流失，你要再不吃点什么的话真的会死。就算是药草你也吃得下肚。";
         } else if ( remaining <= STARVING_HALF ) {
-            return "Starvation got worse! You slowly lose your health and if you will not find any " +
+            return "你已经饿的无可忍受了！生命值开始缓慢下跌，如果你再不立刻找点吃的，饥饿状态将达到致死级别。" +
                     "food soon, starvation will become unbearable.";
         } else if ( remaining <= STARVING ) {
-            return "You are starving! Your health regeneration is stopped completely and soon it " +
-                    "will start to become painful if you will not find something to eat.";
+            return "你现在非常饿！生命自然回复彻底停止，而且你要不赶紧再找些吃的，饥饿带来的痛苦还会继续加重。";
         } else if ( remaining <= PARTIAL ) {
-            return "You are hungry, which decreases your health regeneration rate by half. Better " +
-                    "stop to have some quick snack if you have any.";
+            return "你的肚子饿的咕咕叫，导致生命自然回复速率减半。你最好找点吃的填填肚子。";
         } else if ( remaining > DEFAULT ) {
-            return "Your stomach is full! This makes you feel good, and increases your health " +
-                    "regeneration rate by half.";
+            return "你吃的很饱！这样的状态不仅使你心情良好，还提高了你50%的生命自然回复速率。";
         } else {
             return "";
         }

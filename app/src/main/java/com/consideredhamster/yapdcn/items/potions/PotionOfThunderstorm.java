@@ -58,7 +58,8 @@ public class PotionOfThunderstorm extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：投掷；效果：生成雷云，下雨并打雷，可使植被增长";
+	    return "这瓶药剂在接触空气后会制造一片雨云，形成降雨并打起闪电。这瓶药剂主要用于促进植被生长，但你完全可以利用闪电将敌人烧焦。使用时务必注意避雷！";
+ //       return "[临时字串]使用方式：投掷；效果：生成雷云，下雨并打雷，可使植被增长";
 //			"Upon exposure to open air, the liquid in this flask will start a localized rainfall, " +
 //            "complete with storm clouds and lightning. While the main use of this potion is to " +
 //            "water crops, nothing stops you from using it to fry your enemies with occasional " +

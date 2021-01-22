@@ -46,7 +46,7 @@ public class RingOfEvasion extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "这种戒指能强化佩戴者的反应和行动速度，使其更难被命中——尤其是正在移动之时。"
 //            "Rings of this kind serve to improve reflexes and speed of their wearer, making them " +
 //            "harder to be hit - especially when they are on the move."
         );

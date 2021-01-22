@@ -167,7 +167,7 @@ public class Hero extends Char {
     private static final String TXT_WAIT = "...";
     private static final String TXT_SEARCH = "搜查";
 
-    public static final int STARTING_STR = 16;
+    public static final int STARTING_STR = 10;
 
     private static final float TIME_TO_REST = 1f;
     private static final float TIME_TO_PICKUP = 1f;
@@ -212,7 +212,7 @@ public class Hero extends Char {
         super();
         name = "you";
 
-        HP = HT = 250;
+        HP = HT = 25;
         STR = STARTING_STR;
 
         belongings = new Belongings( this );

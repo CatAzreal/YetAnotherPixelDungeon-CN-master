@@ -129,7 +129,7 @@ public abstract class BuffActive extends Buff {
 
     }
 
-    private static final String DURATION	= "剩余时长";
+    private static final String DURATION	= "duration";
 
     @Override
     public void storeInBundle( Bundle bundle ) {

@@ -46,7 +46,7 @@ public class RingOfSatiety extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "饱食之戒能够优化佩戴者体内的代谢机能，使他们能够在不进食的情况下活动更久，并提高食物本身能被利用的营养价值，既可以用于免受饥饿折磨，亦可用于节约用餐。[介绍文本暂无]"
 //            "Rings of satiety optimize digestive mechanisms of wearer's body, making it possible " +
 //            "to go without food longer and increasing nutriety of consumed meals, both helping in " +
 //            "the times of hunger and helping to prolong times of excess."

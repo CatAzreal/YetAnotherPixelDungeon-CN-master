@@ -119,7 +119,8 @@ public class WandOfIceBarrier extends WandUtility {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]创建冰墙并伤害冻伤墙壁周边敌人，冰墙耐久取决于长度";
+                "这根被寒霜覆盖着的法杖能使施法者凭空创造一道两点间的冰墙。冰墙的耐久度取决于法杖单次所召唤的冰" +
+                "墙数量，若想在同一处点击两次仅召唤一块冰墙也同样可以实现。冰墙产生的碎片也能同时伤害并冻伤周遭敌人。";
 //			"This rime-covered wand allows its user to create a wall of ice between any two points. " +
 //            "Durability of this wall is heavily dependent on amount of tiles affected, but it can be " +
 //            "used on the same spot if its user desires. Ice shards created by this wand also may harm " +

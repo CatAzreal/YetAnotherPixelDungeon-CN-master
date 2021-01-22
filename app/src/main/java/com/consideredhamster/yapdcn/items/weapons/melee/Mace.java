@@ -40,6 +40,6 @@ public class Mace extends MeleeWeaponHeavyOH {
 	
 	@Override
 	public String desc() {
-		return "The iron head of this weapon inflicts substantial damage.";
+		return "这把武器前端的大型铁头能够造成可观的伤害。";
 	}
 }

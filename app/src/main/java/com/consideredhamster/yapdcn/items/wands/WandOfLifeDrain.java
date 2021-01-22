@@ -121,7 +121,7 @@ public class WandOfLifeDrain extends WandUtility {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]对生物施放->吸血，对非生物释放->仅造成伤害，对非警戒状态敌人造成额外伤害。";
+                "这根法杖允许你从生物身上窃取生命力并恢复自身。对非生物敌人施法只会造成伤害，不过它在对睡眠中或未察觉危险的敌人来说尤为有效。";
 //			"This wand will allow you to steal life energy from living creatures to restore your " +
 //            "own health. Using it against non-living creatures will just harm them, but it is " +
 //            "especially effective against targets which are sleeping or otherwise unaware of danger.";

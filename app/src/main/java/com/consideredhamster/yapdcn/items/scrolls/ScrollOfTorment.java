@@ -95,7 +95,9 @@ public class ScrollOfTorment extends Scroll {
 	@Override
 	public String desc() {
 		return
-                "对自己视野内敌人造成伤害和恐惧效果，自己承受部分卷轴效果，高魔能可弱化负面效果。伤害和恐惧效果取决于使用者魔能和目标当前生命值";
+                "阅读这张羊皮纸将会对可视范围内的所有生物造成足以撕裂其神志的苦痛，造成伤害并迫使它们逃离你。" +
+                "不过卷轴的阅读者也会承受到部分反噬，更强的魔能可以进一步降低反噬的效果。\n\n" +
+                "卷轴可造成的伤害取决于阅读者的魔能和伤害对象的当前生命值。";
 //			"Upon reading this parchment, mind-tearing flash of pain will affect all the " +
 //            "present creatures in the field of view, harming them and making them flee. " +
 //            "The user of this scroll is only partially affected by this effect, and higher " +

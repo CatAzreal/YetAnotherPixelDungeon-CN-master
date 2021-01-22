@@ -114,7 +114,7 @@ public class WandOfSmiting extends WandCombat {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]有概率对目标和周边单位造成目盲，对秘法生物造成更高伤害";
+                "这根闪耀着光辉的法杖可以让使用者传导并迸射出光明之力，对范围内的敌人造成伤害，甚至可能导致其目盲。其效果在对抗不死和秘法生物时尤其有效。";
 //			"This gilded piece of wood allows its user to channel and release bursts of hallowed " +
 //            "energy, harming and sometimes even blinding any wrongdoer caught in its area of " +
 //            "effect. Its effects are even stronger against undead or magical foes.";

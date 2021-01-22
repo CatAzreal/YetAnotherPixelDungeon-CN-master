@@ -47,7 +47,6 @@ public class Arbalest extends RangedWeaponMissile {
 	
 	@Override
 	public String desc() {
-		return "This devious mechanism allows shooting quarrels with ridiculous force, but " +
-                "requires a trained body to reload it afterwards.";
+		return "这件诡秘的器械允许使用者以鬼神之力射出弩箭，但只有训练有素的强壮身躯才能将弦再度拉起。";
 	}
 }

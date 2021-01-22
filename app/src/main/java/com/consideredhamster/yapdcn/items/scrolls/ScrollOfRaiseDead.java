@@ -60,7 +60,7 @@ public class ScrollOfRaiseDead extends Scroll {
 
 	@Override
 	public String desc() {
-		return "[临时字串]召唤死灵，一段时间内为友，时间过后为敌，控制时长取决于使用者魔能";
+		return "卷轴下埋藏的恶毒法术允许阅读者与不可述之物交流，赋予其召唤冥界恶灵的能力。不过小心，它迟早会将獠牙对向自己的主人！\n\n控制恶灵的时长取决于阅读者的魔能。";
 //                "Malicious magics hidden within this scroll allow its reader to commune with unspeakable, " +
 //                "giving him or her an ability to summon a lost soul from the underworld. Be careful, " +
 //                "as it will eventually turn on its master!" +

@@ -185,7 +185,8 @@ public class ScrollOfEnchantment extends InventoryScroll {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]附魔武器或护甲，若已附魔则升级，若被诅咒则尝试转换诅咒，几率将诅咒转为其对应正向附魔";
+                "这张卷轴可以为未附魔武器护甲灌注一个随机附魔，或升级已经被附魔的物品。若使用在被诅咒的物品上，卷" +
+                "轴之力则会试图扭转其上的诅咒，成功则将其转为正面效果。将其使用在无法被进一步强化的物品上可能会出现...不可预知的后果。";
 //			"This scroll is able to imbue unenchanted weapon or armor with random enchantment, or " +
 //            "even upgrade already enchanted item. Wands and rings count as enchanted items by default. " +
 //            "If used on a cursed item, it will try to dispel the curse and will even turn its " +

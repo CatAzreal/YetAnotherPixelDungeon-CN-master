@@ -52,8 +52,6 @@ public class Bolas extends ThrowingWeaponSpecial {
 	@Override
 	public String desc() {
 		return 
-			"Bolas are mostly used for hunting and they usually don't do much damage but " +
-            "they can ensnare the target. Such bolas are often made from spider's silk to " +
-            "enhance their ensnaring capabilities.";
+			"套绳球通常用于狩猎，其无法造成大量伤害，但能够捆绑住目标。这类物品通常都以蜘蛛丝制作，以确保其绳索的坚韧程度。";
 	}
 }
