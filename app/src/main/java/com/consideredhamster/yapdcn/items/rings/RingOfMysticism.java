@@ -46,7 +46,7 @@ public class RingOfMysticism extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "这枚戒指上带有强化佩戴者魔能感知的附魔。因其提供的调谐能力，这类戒指通常被各类法术业者使用。"
 //            "This ring was enchanted to increase magical sensitivity of it's wearer. Rings of " +
 //            "this kind are often used by spellcasters of all kinds, since having greater " +
 //            "attunement with magical currents really helps in their line of work."

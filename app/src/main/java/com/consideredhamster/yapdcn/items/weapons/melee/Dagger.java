@@ -45,7 +45,6 @@ public class Dagger extends MeleeWeaponLightOH {
 
 	@Override
 	public String desc() {
-		return "A simple iron dagger with a well worn wooden handle. It is ideal for backstabbing, "+
-				"dealing doubled damage to unsuspecting or ambushed targets.";
+		return "木柄被磨损的简易铁质匕首。杀人越货的理想选择。伏击或进攻非警觉敌人时造成双倍伤害。";
 	}
 }

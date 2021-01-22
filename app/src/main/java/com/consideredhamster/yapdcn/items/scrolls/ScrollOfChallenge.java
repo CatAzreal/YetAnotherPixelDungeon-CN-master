@@ -37,7 +37,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 
 public class ScrollOfChallenge extends Scroll {
 
-    private static final String TXT_MESSAGE	= "The scroll emits a challenging roar that echoes throughout the dungeon!";
+    private static final String TXT_MESSAGE	= "这张卷轴之中释放出了响彻地牢的战斗怒吼！";
 
 	{
 		name = "挑战卷轴";
@@ -96,7 +96,7 @@ public class ScrollOfChallenge extends Scroll {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]强化伤害/惊醒并将所在位置暴露给敌人";
+                "大声阅读其上的符文，这张卷轴将赐予你一股充斥着黑暗的怒火，短时间内大幅提高你的伤害。不过如此做也会激怒所有本层生物，并使你的所在位置暴露无遗。";
 //			"When read aloud, this scroll will bless you with an unholy wrath, significantly " +
 //            "increasing strength of your blows for a limited time. However, it will also aggravate " +
 //            "all creatures on the level and reveal your position to them.";

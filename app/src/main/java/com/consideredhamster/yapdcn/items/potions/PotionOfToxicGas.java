@@ -44,7 +44,8 @@ public class PotionOfToxicGas extends Potion {
 	
 	@Override
 	public String desc() {
-		return "[临时字串]使用方式：投掷；效果：生成毒气";
+		return "打开或是摔碎这瓶高压液体会使药液立即爆炸为一团极易燃烧的致命毒气，吸入微量即可引起中毒。你最好将其丢向远处的敌人而不是亲手打开它。";
+//		return "[临时字串]使用方式：投掷；效果：生成毒气";
 //			"Uncorking or shattering this pressurized glass will cause its contents to explode " +
 //            "into a deadly cloud of highly flammable toxic gas, which will poison whoever happen to inhale it. " +
 //            "You might choose to fling this potion at distant enemies instead of uncorking it by hand.";

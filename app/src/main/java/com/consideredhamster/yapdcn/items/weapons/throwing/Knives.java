@@ -46,8 +46,7 @@ public class Knives extends ThrowingWeaponLight {
 	@Override
 	public String desc() {
 		return 
-			"These simple metal blades are weighted to fly true and sting their prey " +
-            "with a flick of the wrist, dealing increased damage on sneak attacks.";
+			"这些轻巧的金属刀片只需手腕轻抖就会精准地飞向目标，在伏击时可造成额外伤害。";
 	}
 	
 

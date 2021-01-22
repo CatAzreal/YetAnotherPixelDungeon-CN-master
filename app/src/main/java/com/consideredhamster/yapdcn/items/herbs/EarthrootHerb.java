@@ -40,7 +40,7 @@ public class EarthrootHerb extends Herb {
         image = ItemSpriteSheet.HERB_EARTHROOT;
 
         cooking = ChewyMeat.class;
-        message = "That herb was very hard to chew.";
+        message = "韧性十足，难以咀嚼。";
 
         //these herbs cannot be brewed with themselves
         mainPotion = UnstablePotion.class;
@@ -70,7 +70,9 @@ public class EarthrootHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼护盾/织网/力量药剂，直接食用可获得物理伤害抗性(短)";
+        return "一些部落将地缚根用作仪祭中的食物，据说吃下它会变得更为坚强。然而采集一些地缚根绝非易事，因为它们多生长在幽深的洞窟中。\n\n"+
+                "地缚根可与其它草药共炼_护盾_、_结网_、_力量_药剂，但无法炼制两株地缚根。直接服用则会获取短时间的_物理_抗性。";
+        //return "[临时字串]可精炼护盾/织网/力量药剂，直接食用可获得物理伤害抗性(短)";
 //        return "Certain tribes use these roots as food in their rituals, as it is believed that " +
 //                "consuming them improves fortitude. Actually finding one of these roots is " +
 //                "usually a feat in itself, given that they usually grow in deep caverns." +
@@ -85,7 +87,7 @@ public class EarthrootHerb extends Herb {
         {
             name = "筋道炖肉";
             spiceGlow = BROWN;
-            message = "That meat was very hard to chew.";
+            message = "一块嚼劲十足的炖肉。";
         }
 
         @Override
@@ -96,7 +98,8 @@ public class EarthrootHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]可获得物理伤害抗性(长)";
+              return "一块与_地缚根_一同煮熟的肉，看起来硬邦邦的。食用后可获得较长时间的_物理_抗性。";
+    //        return "[临时字串]可获得物理伤害抗性(长)";
 //            return "This meat was stewed in a pot with an _Earthroot_ herb. It feels to be rough. " +
 //                "Consuming it will grant a long buff to your _physical_ resistance.";
         }

@@ -35,11 +35,11 @@ public class WhirlvineHerb extends Herb {
     private static final ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF );
 
     {
-        name = "暴风藤";
+        name = "风暴藤";
         image = ItemSpriteSheet.HERB_WHIRLVINE;
 
         cooking = SourMeat.class;
-        message = "That herb tasted sour, but edible.";
+        message = "不知为何有点酸。";
 
         mainPotion = PotionOfThunderstorm.class;
 
@@ -67,7 +67,9 @@ public class WhirlvineHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼雷暴/浮空/毒气药剂，直接食用可获得电击抗性";
+        return "众所周知风暴藤可以准确预测风暴天气，也与雷电、风暴有密切的联系。\n\n"+
+                "冰冠草可以炼制_雷暴_、_浮空_、_毒气_药剂。直接服用则会获得短时间的_电击属性_抗性。";
+ //       return "[临时字串]可精炼雷暴/浮空/毒气药剂，直接食用可获得电击抗性";
 //        return "It is a pretty well-known fact that stalks of Whirlvines can be used to predict " +
 //                "stormy weather, and they are often associated with winds and lightning." +
 //                "\n\n" +
@@ -80,7 +82,7 @@ public class WhirlvineHerb extends Herb {
         {
             name = "酸涩炖肉";
             spiceGlow = WHITE;
-            message = "That meat tasted sour, but edible.";
+            message = "酸涩难吃，真差劲。";
         }
 
         @Override
@@ -91,7 +93,8 @@ public class WhirlvineHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]直接食用可获得电击抗性";
+            return "一块与_风暴藤_一同煮熟的肉，闻起来有股浓烈的酸味。食用后可获得较长的_电击属性_抗性。";
+//            return "[临时字串]直接食用可获得电击抗性";
 //            return "This meat was stewed in a pot with a _Whirlvine_ herb. It smells pretty sour. " +
 //                    "Consuming it will grant a long buff to your _shock_ resistance.";
         }

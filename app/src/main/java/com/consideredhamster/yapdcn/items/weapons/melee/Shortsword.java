@@ -46,6 +46,6 @@ public class Shortsword extends MeleeWeaponLightOH {
 	@Override
 	public String desc() {
 		return 
-			"It is indeed quite short, just a few inches longer, than a dagger.";
+			"它确实相当短，只比一把匕首长出几厘米。";
 	}
 }

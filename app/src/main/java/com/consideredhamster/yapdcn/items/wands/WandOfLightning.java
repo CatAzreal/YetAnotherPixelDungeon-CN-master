@@ -185,7 +185,7 @@ public class WandOfLightning extends WandCombat {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]电击伤害，可通过水面传导伤害至目标周边";
+                "这根法杖能够迸发出致命的电弧，通过高压电击烤焦其目标。电击效果会通过水面传导，因此使用它时需要小心——不要和敌人站在同一滩水上！";
 //			"This wand conjures forth deadly arcs of electricity, roasting its target with a high " +
 //            "voltage zap. Effects of this wand can be transmitted by water, so it should be used " +
 //            "with a certain amount of care - mind to not stand in the same pool as your enemy!";

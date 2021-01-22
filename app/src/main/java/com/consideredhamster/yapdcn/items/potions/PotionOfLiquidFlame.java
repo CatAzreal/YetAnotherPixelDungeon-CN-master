@@ -53,7 +53,8 @@ public class PotionOfLiquidFlame extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：投掷；效果：生成火焰";
+	    return "玻璃瓶中盛有极不稳定的药液，在接触空气的瞬间便会爆裂为一团火焰。";
+ //       return "[临时字串]使用方式：投掷；效果：生成火焰";
 //			"This flask contains an unstable compound which will burst " +
 //			"violently into flame upon exposure to open air.";
 	}

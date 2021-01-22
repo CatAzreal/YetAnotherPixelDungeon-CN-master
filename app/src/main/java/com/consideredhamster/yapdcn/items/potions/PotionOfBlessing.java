@@ -45,12 +45,12 @@ public class PotionOfBlessing extends Potion {
     public static final float MODIFIER	= 1.0f;
 
     private static final String TXT_PROCCED	=
-            "A cleansing light shines from above, and all malevolent magic nearby is weakened.";
+            "一片净化的光芒从上方洒下，附近的邪恶能量正在退却！";
     private static final String TXT_NOT_PROCCED	=
-            "A cleansing light shines from above, but nothing happens.";
+            "一片净化的光芒从上方洒下，但什么也没有发生。";
 	
 	{
-		name = "祝圣药剂";
+		name = "神祝药剂";
         shortName = "Bl";
         harmful = true;
 	}
@@ -114,7 +114,8 @@ public class PotionOfBlessing extends Potion {
 
     @Override
 	public String desc() {
-		return "[临时字串]使用方式：投掷；效果：移除诅咒/伤害秘法生物";
+	    return "这瓶药剂中浓缩了净化的能量。打碎这瓶药剂将会在落点周围洒下一片净化圣光，驱散诅咒并伤害所有的魔法属性造物。";
+//		return "[临时字串]使用方式：投掷；效果：移除诅咒/伤害秘法生物";
 //			"This potion is imbued with great disruptive energy. Shattering it will bathe " +
 //            "everything near the point of impact in a cleansing light, removing curses and " +
 //            "harming creatures of purely magical origin.";

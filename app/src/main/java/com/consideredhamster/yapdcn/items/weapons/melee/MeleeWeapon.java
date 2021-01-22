@@ -42,11 +42,11 @@ public abstract class MeleeWeapon extends Weapon {
 
 	}
 
-    private static final String TXT_NOTEQUIPPED = "You have to equip this weapon first!";
-    private static final String TXT_CANNOTGUARD = "You can guard only with shields and melee weapons!";
+    private static final String TXT_NOTEQUIPPED = "你需要先装备这件武器！";
+    private static final String TXT_CANNOTGUARD = "你只能使用近战武器或盾牌进行防御！";
     private static final String TXT_GUARD = "guard";
 
-    private static final String AC_GUARD = "GUARD";
+    private static final String AC_GUARD = "格挡";
 
     @Override
     public String equipAction() {

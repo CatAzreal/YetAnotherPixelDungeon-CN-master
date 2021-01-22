@@ -53,7 +53,7 @@ public class FrostWard extends Armour.Glyph {
 
     @Override
     protected String desc_p() {
-        return "冰冻击中你的敌人，并降低冻伤带来的影响";
+        return "冰冻击中你的敌人，并获得冰寒属性抗性";
     }
 
     @Override

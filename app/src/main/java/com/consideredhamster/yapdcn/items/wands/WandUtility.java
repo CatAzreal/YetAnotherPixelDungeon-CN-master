@@ -148,8 +148,7 @@ public abstract class WandUtility extends Wand {
 
             info.append(
                     "这根法杖_" + ( isCursedKnown() && bonus < 0 ? "受到了诅咒" : "未被鉴定" ) +
-                            "_, 不过它现在_状态为" + stateToString( state ) + "_。多数情况下这根法杖应该只有_" + maxCharges( 0 ) + " charges_ and will probably " +
-                            "点充能，并且使用时有_" + chance + "%的几率施法失败。"
+                            "_, 不过它现在_状态为" + stateToString( state ) + "_。多数情况下这根法杖应该只有_" + maxCharges( 0 ) + "点充能，并且使用时大概有_" + chance + "%的几率施法失败。"
             );
 
             info.append( p );

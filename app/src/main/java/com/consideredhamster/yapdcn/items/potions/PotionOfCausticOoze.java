@@ -67,7 +67,8 @@ public class PotionOfCausticOoze extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：投掷；效果：生成腐蚀淤泥";
+	    return "打开或打碎这瓶高压液体会导致药液爆炸成一团致命的云雾，将周围所有的东西用强腐蚀性的污泥覆盖。";
+ //       return "[临时字串]使用方式：投掷；效果：生成腐蚀淤泥";
 //			"Uncorking or shattering this pressurized glass will cause its contents to explode " +
 //            "into a deadly vapours, which will cover everything around in a highly caustic ooze.";
 	}

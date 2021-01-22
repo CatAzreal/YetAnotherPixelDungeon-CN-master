@@ -144,7 +144,7 @@ public class WandOfBlastWave extends WandUtility {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]向墙壁释放->造成崩塌，向敌人释放->击退并伤害目标";
+                "这根法杖能够释放出一阵可掀飞敌人的强力冲击波，使它们撞向墙壁或者其他生物之中。如果冲击波撞上了墙壁或其他实体，将在原地触发一阵石块塌方，伤害并眩晕区域范围内的所有生物。";
 //			"Wand will release a wave of force so strong that it may send your target flying back, " +
 //            "slamming into walls or someone else. If this wave hits a wall or other solid object, " +
 //            "it will cause an avalanche of stones, damaging and stunning everyone in the nearby area.";

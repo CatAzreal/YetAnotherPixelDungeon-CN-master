@@ -41,10 +41,10 @@ import com.watabou.utils.Random;
 
 public class ScrollOfBanishment extends Scroll {
 
-	private static final String TXT_PROCCED	=
-		"You are engulfed in a cleansing light, and all malevolent magic in your proximity is weakened.";
-	private static final String TXT_NOT_PROCCED	= 
-		"You are engulfed in a cleansing light, but nothing happens.";
+    private static final String TXT_PROCCED	=
+            "你周身沐浴在一片净化的光芒之中，周边的邪恶能量正在退散！";
+    private static final String TXT_NOT_PROCCED	=
+            "你周身沐浴在一片净化的光芒之中，但什么也没有发生。";
 	
 	{
 		name = "放逐卷轴";
@@ -98,7 +98,7 @@ public class ScrollOfBanishment extends Scroll {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]驱除诅咒/对秘法敌人造成伤害，魔能属性决定效果";
+                "撰写在这张卷轴上的咒文能够驱除使用者周边的所有邪恶魔法，弱化身上物品的诅咒，驱散周围的秘法造物，甚至驱散一些邪恶魔法产生的效果。\n\n驱散生物产生的效果时长取决于阅读者的魔能属性。";
 //			"The incantation on this scroll will attempt to banish any evil magics that might " +
 //            "happen to exist near the reader, weakening curses on carried items, banishing " +
 //            "nearby creatures of magical origin and even dispelling some malicious effects." +

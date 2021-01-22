@@ -32,14 +32,13 @@ import com.consideredhamster.yapdcn.visuals.windows.WndOptions;
 
 public abstract class MeleeWeaponLightOH extends MeleeWeapon {
 
-    private static final String TXT_EQUIP_TITLE = "Equipping secondary weapon";
+    private static final String TXT_EQUIP_TITLE = "装备副手武器";
     private static final String TXT_EQUIP_MESSAGE =
-            "Because this is a light one-handed weapon, you can equip it as your off-hand weapon. " +
-            "It will require additional strength to be properly wielded, and may decrease your " +
-            "combat proficiency. Do you want to equip it as a main weapon or as an off-hand weapon?";
+            "因为这是一个轻型单手武器，你可以将它当作自己的副手武器。" +
+            "但如此做需要额外的力量，并且可能降低你的战斗效能。你想要将它作为主武器还是副手武器来装备呢？";
 
-    private static final String TXT_EQUIP_PRIMARY = "main hand";
-    private static final String TXT_EQUIP_SECONDARY = "offhand";
+    private static final String TXT_EQUIP_PRIMARY = "主手武器";
+    private static final String TXT_EQUIP_SECONDARY = "副手武器";
 
     public MeleeWeaponLightOH(int tier) {
 

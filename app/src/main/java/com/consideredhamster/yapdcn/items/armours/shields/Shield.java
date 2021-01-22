@@ -46,10 +46,10 @@ public abstract class Shield extends Armour {
 
     }
 
-    private static final String TXT_NOTEQUIPPED = "You have to equip this shield first.";
+    private static final String TXT_NOTEQUIPPED = "你需要先装备盾牌以举盾。";
     private static final String TXT_GUARD = "guard";
 
-    private static final String AC_GUARD = "GUARD";
+    private static final String AC_GUARD = "举盾";
 
     @Override
     public String equipAction() {
@@ -233,7 +233,7 @@ public abstract class Shield extends Armour {
         info.append( p );
 
         if (isIdentified()) {
-            info.append( "这个_" + tier + "阶盾牌_需要 shield_" + itemStr + "点力量_才能发挥其原有效能" + ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
+            info.append( "这个_" + tier + "阶盾牌_需要_" + itemStr + "点力量_才能发挥其原有效能" + ( isRepairable() ? "，以其_" + stateToString( state ) + "的状态_，" : "" ) +
                     "有概率为你提供_" + armor + "点护甲等级加成_。");
 
             info.append( p );
@@ -241,11 +241,11 @@ public abstract class Shield extends Armour {
 
             if (itemStr > heroStr) {
                 info.append(
-                        "因为你的力量不足，装备该盾牌将导致你的潜行和敏捷_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的移动速度。" );
+                        "因为你的力量不足，装备该盾牌将导致你的潜行和敏捷_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的移动速度_。" );
             } else if (itemStr < heroStr) {
                 info.append(
                         "因为你的强健体格，装备该盾牌" + ( penalty > 0 ? "_将仅导致你的潜行和敏捷降低" + penalty + "%_" : "_不会受到惩罚_" ) +
-                                "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点护甲等级。" );
+                                "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点_护甲等级。" );
             } else {
                 info.append(
                         "装备该盾牌" + ( penalty > 0 ? "将导致你的潜行和敏捷_降低" + penalty + "%_，" +
@@ -260,11 +260,11 @@ public abstract class Shield extends Armour {
 
             if (itemStr > heroStr) {
                 info.append(
-                        "因为你的力量不足，装备该盾牌大概将导致你的潜行和敏捷_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的移动速度。" );
+                        "因为你的力量不足，装备该盾牌大概将导致你的潜行和敏捷_降低" + penalty + "%_的同时减少_" + (int)(100 - 10000 / (100 + penalty)) + "%的移动速度_。" );
             } else if (itemStr < heroStr) {
                 info.append(
                         "因为你的强健体格，装备该盾牌大概" + ( penalty > 0 ? "_会导致你的潜行和敏捷降低" + penalty + "%_" : "_不会受到惩罚_" ) +
-                                "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点护甲等级。" );
+                                "，并且获得额外的_" + ((float)(heroStr - itemStr) / 2) + "点_护甲等级。" );
             } else {
                 info.append(
                         "装备该盾牌大概" + ( penalty > 0 ? "会导致你的潜行和敏捷_降低" + penalty + "%_，" +
@@ -302,7 +302,7 @@ public abstract class Shield extends Armour {
         info.append( s );
 
         if( isEnchantKnown() && glyph != null ) {
-            info.append( "" + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) + "，它携带着_" + glyph.desc(this) + "附魔_." );
+            info.append( "" + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) + "，它携带着_" + glyph.desc(this) + "的附魔_。" );
         }
 
         info.append( "这是一件稀有度为_" + lootChapterAsString() +"_的盾牌。" );

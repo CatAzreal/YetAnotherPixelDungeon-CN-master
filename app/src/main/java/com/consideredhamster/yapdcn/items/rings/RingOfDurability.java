@@ -46,7 +46,7 @@ public class RingOfDurability extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "不论是三军阵前还是匠人桌旁，耐久之戒都是珍奇之物，它可以使手上的器具长久使用且更易维护。"
 //            "Rings of Durability are valued by men of crafts and warfare alike, due to their ability " +
 //            "to make tools of their trade to serve longer and be repaired with greater ease."
         );

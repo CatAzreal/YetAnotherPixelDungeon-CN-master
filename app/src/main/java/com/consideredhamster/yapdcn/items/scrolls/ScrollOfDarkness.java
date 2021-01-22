@@ -31,7 +31,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 
 public class ScrollOfDarkness extends Scroll {
 
-    private static final String TXT_MESSAGE	= "You are suddenly engulfed by a clouds of impenetrable shadow.";
+    private static final String TXT_MESSAGE	= "你被一团暗无止境的阴影吞噬了！";
 
 	{
 		name = "黑暗卷轴";
@@ -57,7 +57,7 @@ public class ScrollOfDarkness extends Scroll {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]释放阻挡视线的黑雾，持续效果取决于魔能";
+                "这张平淡无奇的纸张，一旦念出其上的文字就会唤出无底深渊之中的诡秘黑暗。这股黑暗深不可测，非利用法术不可看穿。\n\n效果持续时长取决于阅读者的魔能。";
 //			"Unnatural darkness from the deepest abysses is summoned by the call of this otherwise " +
 //            "unremarkable sheet of paper. This darkness is so thick that it nothing can see through it " +
 //            "without magical means." +

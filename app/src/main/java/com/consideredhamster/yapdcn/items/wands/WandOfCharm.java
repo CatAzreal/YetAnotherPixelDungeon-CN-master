@@ -82,7 +82,8 @@ public class WandOfCharm extends WandUtility {
 	@Override
 	public String desc() {
 		return
-				"[临时字串]正常生物->魅惑，秘法生物->伤害并使目标陷入混乱";
+				"这根法杖上散发的紫色光芒能够催眠目标，迫使其狂暴地攻击敌人以保护施法者。法杖无法魅惑秘法生物，" +
+				"但会伤害并阻碍其感知，使其错乱并被暴露在攻击之下。";
 //			"The purple light from this wand will hypnotize the target, forcing it to violently " +
 //            "protect you against other enemies for a while. It cannot charm magical enemies, but " +
 //            "will instead harm and disrupt their senses, causing them to be confused and vulnerable.";

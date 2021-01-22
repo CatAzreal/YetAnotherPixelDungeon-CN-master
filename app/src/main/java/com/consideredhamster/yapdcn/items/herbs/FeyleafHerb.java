@@ -40,7 +40,7 @@ public class FeyleafHerb extends Herb {
         image = ItemSpriteSheet.HERB_FEYLEAF;
 
         cooking = TenderMeat.class;
-        message = "That herb had a very delicate taste.";
+        message = "吃起来有一种淡淡的清香。";
 
         //these herbs cannot be brewed with themselves
         mainPotion = UnstablePotion.class;
@@ -69,7 +69,9 @@ public class FeyleafHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼隐形/浮空/智慧药剂，直接食用可获得魔法抗性(短)";
+        return "传说记载绯叶草曾是一种蝴蝶，在神的影响下化为了这种药草。这种药草通常生长在偏僻而隐蔽的地方，是多种稀有药水的基础原料。\n\n"+
+                "绯叶草可与其它草药共炼_隐形_、_浮空_、_智慧_药剂，但无法炼制两株绯叶草。直接服用则会获得短暂的_魔法属性_抗性。";
+  //      return "[临时字串]可精炼隐形/浮空/智慧药剂，直接食用可获得魔法抗性(短)";
 //        return "Stories tell that the original Feyleaf was once a dryad, given a new form by the " +
 //                "twin gods either as a reward or punishment. These herbs usually grow in secluded " +
 //                "and secretive places and are essential for brewing some of the more curious potions." +
@@ -84,7 +86,7 @@ public class FeyleafHerb extends Herb {
         {
             name = "水嫩炖肉";
             spiceGlow = CYAN;
-            message = "That meat had a very delicate taste.";
+            message = "吃起来有一种淡淡的清香。";
         }
 
         @Override
@@ -95,7 +97,8 @@ public class FeyleafHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]直接食用可获得魔法抗性(长)";
+            return "一块与_绯叶草_一同煮熟的肉，闻起来相当甜美。食用后可获得较长的_魔法属性_抗性。";
+ //           return "[临时字串]直接食用可获得魔法抗性(长)";
 //            return "This meat was stewed in a pot with a _Feyleaf_ herb. It smells pretty good. " +
 //                "Consuming it will grant a long buff to your _magical_ resistance.";
         }

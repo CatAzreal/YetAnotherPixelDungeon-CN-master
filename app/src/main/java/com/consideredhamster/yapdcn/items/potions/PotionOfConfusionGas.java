@@ -44,7 +44,8 @@ public class PotionOfConfusionGas extends Potion {
 	
 	@Override
 	public String desc() {
-		return "[临时字串]使用方式：投掷；效果：生成可造成迷惑状态的气体";
+		return "这瓶药剂接触空气时会立即汽化为一团迷惑性的彩色气雾，任何吸入气体的角色都会立刻失去方向感。";
+//		return "[临时字串]使用方式：投掷；效果：生成可造成迷惑状态的气体";
 //				"Upon exposure to open air, the liquid in this flask will vaporize " +
 //            "into a confusing chromatic haze. Anyone who inhales the cloud will be disoriented " +
 //            "instantly.";

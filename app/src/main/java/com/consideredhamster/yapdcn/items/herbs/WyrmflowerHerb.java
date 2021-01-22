@@ -41,7 +41,7 @@ public class WyrmflowerHerb extends Herb {
         image = ItemSpriteSheet.HERB_WYRMFLOWER;
 
         cooking = PotentMeat.class;
-        message = "That herb had a very potent taste.";
+        message = "很浓的味道。";
 
         //these herbs cannot be brewed with themselves
         mainPotion = UnstablePotion.class;
@@ -52,7 +52,7 @@ public class WyrmflowerHerb extends Herb {
 
     private static void onConsume( Hero hero, int hpBonus ) {
         hero.HP = hero.HT += hpBonus;
-        hero.sprite.showStatus( CharSprite.POSITIVE, "+%d hp", hpBonus );
+        hero.sprite.showStatus( CharSprite.POSITIVE, "+%d 最大生命", hpBonus );
     }
 
     @Override
@@ -68,7 +68,9 @@ public class WyrmflowerHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼智慧/力量药剂，该药草无法同时精炼两株，食用后最大生命+2";
+        return "一种稀有的药草，其强大的药性使无数炼金术士为止着迷。龙藤花是几种最强大的药剂的关键原料，其价值不可小视。\n\n"+
+                "龙藤花可与其它草药共炼_智慧_、_力量_药剂，但无法炼制两株龙藤花。直接服用则会使你的最大生命增加_2_点。";
+ //       return "[临时字串]可精炼智慧/力量药剂，该药草无法同时精炼两株，食用后最大生命+2";
 //        return "A very rare herb, it is often sought by alchemists for its powerful alchemical " +
 //                "properties. Being a key ingredient for the most potent of potions, such valuable " +
 //                "find cannot be underappreciated." +
@@ -83,7 +85,7 @@ public class WyrmflowerHerb extends Herb {
         {
             name = "盈能炖肉";
             spiceGlow = RED;
-            message = "That meat had a very potent taste.";
+            message = "很浓的药草味。";
         }
 
         @Override
@@ -94,7 +96,8 @@ public class WyrmflowerHerb extends Herb {
 
         @Override
         public String desc() {
-            return "食用后+4最大生命";
+            return "一块与_龙藤花_一同煮熟的肉，闻起来有股浓重的药草味。食用后可使你的最大生命增加_4_点。";
+ //           return "食用后+4最大生命";
 //            return "This meat was stewed in a pot with a _Wyrmflower_ herb. It smells pretty potent. " +
 //                    "Consuming it will increase your maximum health by _4_ points.";
         }

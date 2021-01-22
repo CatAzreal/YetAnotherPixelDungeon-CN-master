@@ -161,7 +161,8 @@ public class WandOfAcidSpray extends WandCombat {
 	
 	@Override
 	public String desc() {
-		return "[临时字串]酸蚀法杖在近战范围可造成150%有效伤害，但在对抗远处敌人时会受到50%的伤害惩罚";
+		return "这根诡异木杖之上的恶毒法力能够使其迸射出一团致命酸液。因为其不精准的特性，这根法杖只有在抵近使用" +
+                "时才能达到最佳效果，不过将大批敌人覆盖在腐蚀淤泥之中也不失为一个可行策略。";
 //			"The vile power of this twisted bit of wood will release a torrent of a deadly blight. " +
 //            "Due to its unfocused nature, this wand is most effective when used at point blank range, " +
 //            "but can also be used to cover entire groups of enemies in this corrosive sludge.";

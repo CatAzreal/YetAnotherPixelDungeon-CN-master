@@ -569,7 +569,7 @@ public abstract class Weapon extends EquipableItem {
 
         if( isEnchantKnown() && enchantment != null ) {
             info.append( " " + ( isIdentified() && bonus != 0 ? "同时" : "不过" ) +
-                    "，它携带着_" + enchantment.desc(this) + "附魔_。" );
+                    "，它携带着_" + enchantment.desc(this) + "的附魔_。" );
         }
 
         info.append( "这是一件稀有度为_" + lootChapterAsString() +"_的武器。" );

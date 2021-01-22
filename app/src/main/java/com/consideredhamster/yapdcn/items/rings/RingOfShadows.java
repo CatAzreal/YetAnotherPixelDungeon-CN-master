@@ -46,7 +46,7 @@ public class RingOfShadows extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "这枚戒指上奇特的附魔控制着环绕在佩戴者周围的暗影，帮助他们更有效的隐藏在各类环境之中。对于那些涉及到暗杀和潜行工作的人这属于必备之物。"
 //            "The curious enchantment on this ring controls the shadows around its wearer, helping " +
 //            "him or her to blend with their surroundings. Such rings are indispensable for those " +
 //            "whose job revolves around espionage or assassinations."

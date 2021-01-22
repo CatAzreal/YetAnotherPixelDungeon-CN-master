@@ -57,7 +57,7 @@ public class Revival extends Armour.Glyph {
 
     @Override
     protected String desc_p() {
-        return "一定几率使你起死回生，并提高对邪恶伤害的抗性";
+        return "一定几率使你起死回生，并提高对邪恶属性伤害的抗性";
     }
 
     @Override

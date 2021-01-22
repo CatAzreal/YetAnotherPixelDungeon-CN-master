@@ -49,7 +49,7 @@ public class Tenacity extends Armour.Glyph {
 
     @Override
     protected String desc_p() {
-        return "低生命值时获得额外防护能力，并提高精神状态抗性";
+        return "低生命值时获得额外防护能力，并提高精神属性抗性";
     }
 
     @Override

@@ -36,7 +36,7 @@ import com.consideredhamster.yapdcn.visuals.windows.WndChooseWay;
 
 public class TomeOfMastery extends Item {
 
-	private static final String TXT_BLINDED	= "You can't read while blinded";
+	private static final String TXT_BLINDED	= "你无法在失明时阅读书籍。";
 	
 	public static final float TIME_TO_READ = 10;
 	

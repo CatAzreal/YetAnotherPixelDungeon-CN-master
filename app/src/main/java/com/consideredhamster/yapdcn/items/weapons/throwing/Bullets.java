@@ -47,6 +47,6 @@ public class Bullets extends ThrowingWeaponAmmo {
 	@Override
 	public String desc() {
 		return 
-			"These small bullets are made of lead and are perfect ammunition for slings.";
+			"这些小巧的铅制弹药非常适合用于投索或火器弹药。";
 	}
 }

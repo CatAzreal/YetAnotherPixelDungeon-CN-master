@@ -139,7 +139,10 @@ public class CraftingKit extends Item {
 	
 	@Override
 	public String info() {
-        return "[临时字串]可对远程武器和布甲进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维护";
+        return
+                "工具箱里的工具与材料虽无法修复刀枪剑戟与厚重盔甲，但可以修理很多其它装备，比如弓弩、弹弓、燧发武器与布制护甲。" +
+                        "\n工具箱的材料还能进行" + ( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次" ) + "修复。";
+ //       return "[临时字串]可对远程武器和布甲进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维护";
 //            "The instruments and materials in this toolkit cannot be used to repair a battle axe or a mail armor. " +
 //            "However, they can be used to fix some other things, like bows, slings, flintlock weapons or cloth armors. " +
 //            "Currently, it has enough materials for only " + ( value > 2 ? "three usages" : value < 2 ? "only one usage" : "two usages" ) + ".";

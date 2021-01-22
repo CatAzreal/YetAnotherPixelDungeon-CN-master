@@ -31,7 +31,7 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 
 public class ScrollOfSunlight extends Scroll {
 
-    private static final String TXT_MESSAGE	= "The whole area is suddenly illuminated with rays of warm light.";
+    private static final String TXT_MESSAGE	= "整片区域一瞬间沐浴在温暖的阳光之中。";
 
 	{
 		name = "圣光卷轴";
@@ -57,7 +57,9 @@ public class ScrollOfSunlight extends Scroll {
 	@Override
 	public String desc() {
 		return
-				"照亮区域，正常生物回复生命值，秘法生物受到阻滞";
+				"阅读这张卷轴将使整片区域被阳光照耀。而在深不见底的地牢中，日光所代表的不仅仅是光源。所有被阳光" +
+				"普照的寻常生物能够在极短时间内迅速恢复活力。而那些非自然的造物，则会受到阻滞并降低其战斗能力。\n\n" +
+				"效果持续时长取决于阅读者的魔能属性。";
 //			"Reading this scroll will light the area with a bright sunlight. Here deep in the " +
 //            "dungeon, sunlight can mean much more than simple illumination. Everything that lives " +
 //            "which is touched by this light, will be rejuvenated in mere moments. Everything " +

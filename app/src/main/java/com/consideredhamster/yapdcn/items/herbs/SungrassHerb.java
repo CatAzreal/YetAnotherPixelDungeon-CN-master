@@ -44,7 +44,7 @@ public class SungrassHerb extends Herb {
         image = ItemSpriteSheet.HERB_SUNGRASS;
 
         cooking = SavoryMeat.class;
-        message = "That herb tasted quite savory.";
+        message = "吃起来不错！";
 
         mainPotion = PotionOfMending.class;
 
@@ -75,7 +75,9 @@ public class SungrassHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼愈合/祝圣/护盾药剂，直接食用移除物理减益效果，并获得物理减益抗性(短)";
+        return "阳春草具有强大的恢复功效，动物经常吞食阳春草解毒。即使在阳光极少照到的阴暗角落，阳春草仍能破土而出。\n\n"+
+                "阳春草可以炼制_愈合_、_神祝_、_护盾_药剂。直接服用则会解除_体质属性负面效果_并获得短时间的_体质属性_抗性。";
+//        return "[临时字串]可精炼愈合/祝圣/护盾药剂，直接食用移除物理减益效果，并获得物理减益抗性(短)";
 //        return "Wild animals often eat Sungrass herbs to purge their body of toxins. Sprouts of " +
 //                "this herb are pretty common in places where sunlight is scarse, but still present." +
 //                "\n\n" +
@@ -88,7 +90,7 @@ public class SungrassHerb extends Herb {
         {
             name = "风味炖肉";
             spiceGlow = YELLOW;
-            message = "That meat tasted quite savory.";
+            message = "五味俱全的美食！";
         }
 
         @Override
@@ -99,7 +101,8 @@ public class SungrassHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]直接食用移除物理减益效果，并获得物理减益抗性(长)";
+            return "一块与_阳春草_一同煮熟的肉，闻起来相当美味。食用后可解除_体质属性负面效果_并获得较长时间的_体质属性_抗性。";
+ //           return "[临时字串]直接食用移除物理减益效果，并获得物理减益抗性(长)";
 //            return "This meat was stewed in a pot with a _Sungrass_ herb. It smells pretty tasty. " +
 //                    "Consuming it will remove _body debuffs_ and grant a long buff to your _body_ resistance.";
         }

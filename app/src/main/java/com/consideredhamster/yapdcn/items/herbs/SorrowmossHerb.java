@@ -41,7 +41,7 @@ public class SorrowmossHerb extends Herb {
         image = ItemSpriteSheet.HERB_SORROWMOSS;
 
         cooking = BitterMeat.class;
-        message = "That herb tasted bitter like defeat.";
+        message = "良药苦口利于病。";
 
         mainPotion = PotionOfCausticOoze.class;
 
@@ -67,7 +67,9 @@ public class SorrowmossHerb extends Herb {
 
     @Override
     public String desc() {
-        return "[临时字串]可精炼毒气/蚀泥/幻气药剂，直接食用可移除淤泥状态，并获得酸蚀抗性(短)";
+        return "据说苦苔草常在悲剧发生过的地方生长。尽管苦苔草的来历与用法都有些骇人，实际上它是安全可食用的。\n\n"+
+                "苦苔草可以炼制_毒气_、_蚀泥_、_幻气_药剂。直接服用则会解除_腐蚀_状态并获得短时间的_酸蚀属性_抗性。";
+    //    return "[临时字串]可精炼毒气/蚀泥/幻气药剂，直接食用可移除淤泥状态，并获得酸蚀抗性(短)";
 //        return "It is said that Sorrowmoss usually grows in places where a great tragedy took " +
 //                "place. Despite its reputation and applications, it is actually completely safe to eat." +
 //                "\n\n" +
@@ -80,7 +82,7 @@ public class SorrowmossHerb extends Herb {
         {
             name = "焦苦炖肉";
             spiceGlow = GREEN;
-            message = "That meat tasted bitter like defeat.";
+            message = "像磨难一样煎熬，像失败一样苦涩。";
         }
 
         @Override
@@ -91,7 +93,8 @@ public class SorrowmossHerb extends Herb {
 
         @Override
         public String desc() {
-            return "[临时字串]可移除淤泥状态，并获得酸蚀抗性(短)";
+            return "一块与_苦苔草_一同煮熟的肉，闻起来有股浓重的苦味。食用后可解除_腐蚀_状态并获得较长的_酸蚀属性_抗性";
+//            return "[临时字串]可移除淤泥状态，并获得酸蚀抗性(短)";
 //            return "This meat was stewed in a pot with a _Sorrowmoss_ herb. It smells pretty bitter. " +
 //                    "Consuming it will remove _corrosion_ and grant a long buff to your _acid_ resistance.";
         }

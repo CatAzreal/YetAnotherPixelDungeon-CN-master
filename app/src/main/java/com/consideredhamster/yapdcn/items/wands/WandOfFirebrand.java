@@ -122,7 +122,8 @@ public class WandOfFirebrand extends WandCombat {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]可喷射火焰伤害敌人，可释放符文，触发符文将引发伤害更高的爆炸。";
+                "用寻常方式使用这根法杖只能喷射出一阵烈焰。但对准地表使用时这根法杖将在地面上蚀刻一个临时性的火" +
+                        "焰纹章，在被其他物体触发时产生爆炸。对已有火纹施法能够进一步加强纹章的效力，持续时长和爆炸范围。";
 //			"Using this wand will release a single blast of flame. Using it on the ground, however, " +
 //            "creates a temporary fiery rune, which will explode when triggered by another object. " +
 //            "Repeated castings will enhance this rune, increasing its power, duration and area of effect.";

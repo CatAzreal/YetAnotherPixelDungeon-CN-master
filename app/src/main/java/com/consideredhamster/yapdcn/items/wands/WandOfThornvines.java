@@ -105,7 +105,8 @@ public class WandOfThornvines extends WandUtility {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]召唤棘藤攻击敌人，植被地格上生成的棘藤更强。";
+                "这根法杖上寄宿着能唤出林地之力的神秘力量，允许其在地牢之中召唤棘藤。这些植物会猛烈进攻任何试图" +
+                "穿过附近的敌人，在植被覆盖的地格上生成的棘藤会更加强大。";
 //			"This wand possesses the mystical force of summoning forces of the very earth to the " +
 //            "wielder's command, allowing him or her to spawn thornvines from the floor. These " +
 //            "plants will fiercely lash out at any enemy passing through, and are especially strong " +

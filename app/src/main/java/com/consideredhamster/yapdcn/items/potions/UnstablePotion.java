@@ -71,7 +71,8 @@ public class UnstablePotion extends Potion {
 
     @Override
 	public String desc() {
-        return "[临时字串]使用方式：？；效果：？";
+	    return "瓶中盛有分层的奇怪药液，看上去很不稳定。没人确保饮用或是投掷会产生什么效果。";
+ //       return "[临时字串]使用方式：？；效果：？";
 //            "This flask contains odd layered liquid and is obviously unstable. " +
 //            "Its effects will be completely unpredictable whether drunk or thrown.";
 	}

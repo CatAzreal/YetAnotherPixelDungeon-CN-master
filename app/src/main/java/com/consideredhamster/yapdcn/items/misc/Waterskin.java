@@ -374,7 +374,7 @@ public class Waterskin extends Item {
         }
         @Override
         public String prompt() {
-            return "选择洒水的地格";
+            return "选择周围的地格洒水";
         }
     };
 }

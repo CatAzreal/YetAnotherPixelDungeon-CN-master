@@ -47,6 +47,6 @@ public class Quarrels extends ThrowingWeaponAmmo {
 	@Override
 	public String desc() {
 		return 
-			"This kind of ammunition is designed to be used with arbalests.";
+			"专门为十字弓量身定做的弹药。";
 	}
 }

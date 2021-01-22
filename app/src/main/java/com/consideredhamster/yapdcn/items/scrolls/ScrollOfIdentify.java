@@ -87,7 +87,7 @@ public class ScrollOfIdentify extends InventoryScroll {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]顾名思义，不在此赘述";
+                "蚀刻在这张卷轴上的符文能够赋予阅读者看穿事物的本质，揭露其用途和质量。不过卷轴的效力十分短暂，你只能在有限的时间里鉴定出一个道具。";
 //			"Incantation etched on this scroll can bestow its reader with ability to perceive the " +
 //            "very nature of things, revealing their purposes and qualities. However, duration of " +
 //            "this spell is really short, so it is possible to assess only a single item with its help.";

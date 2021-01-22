@@ -96,8 +96,6 @@ public class Harpoons extends ThrowingWeaponHeavy {
 	@Override
 	public String desc() {
 		return 
-			"Most of the harpoon's weight is due to the chain which is attached to it. Those rare " +
-            "throwing weapons that can be used to pull your some targets towards you. If target is " +
-            "too heavy to be pulled, harpoon will drop on the ground instead.";
+			"鱼叉的重量主要来源于其尾部衔接的链条。这种罕见的投掷武器可以将目标拉扯到自己身旁。若目标无法被拉扯，则命中的鱼叉会掉落在地。";
 	}
 }

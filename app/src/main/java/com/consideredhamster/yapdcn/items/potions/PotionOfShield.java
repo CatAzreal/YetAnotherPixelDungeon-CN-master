@@ -42,7 +42,8 @@ public class PotionOfShield extends Potion {
 
     @Override
 	public String desc() {
-        return "[临时字串]使用方式：饮用；效果：提高物理及魔法伤害抗性";
+	    return "这瓶药剂浓缩了防护魔法，饮用这瓶药剂会在身旁凝结一层力场护盾，增强你对物理伤害与大部分来源的属性伤害的抵抗力。";
+//        return "[临时字串]使用方式：饮用；效果：提高物理及魔法伤害抗性";
 //			"This potion is imbued with a powerful protective magic. Consuming it will temporarily " +
 //            "create a kind of force field around you, giving you both improved physical protection " +
 //            "and resistance to most sources of magical damage.";

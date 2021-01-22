@@ -210,7 +210,7 @@ public class WandOfDisintegration extends WandCombat {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]发射可通过墙壁反射的解离射线，穿透并伤害路径上的所有敌人";
+                "这根法杖能够放射出毁灭性的射线，穿透其路径上的所有生物并可在墙壁间反射，因此施法者可在无人角落中释放并命中敌人。";
 //			"This wand emits a beam of destructive energy, which pierces all creatures in its way " +
 //            "and bounce from solid obstacles, allowing its user to sohot them around the corners.";
 	}

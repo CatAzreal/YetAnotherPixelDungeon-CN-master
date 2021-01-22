@@ -44,7 +44,7 @@ public class RingOfFortune extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "第一眼看到这枚戒指时，多数人都会认为它毫无作用，但长期佩戴它后你可能会发现自己如被幸运女神眷顾般获得比原先更多的财富。"
 //            "First impression is that this ring affects nothing at all, but when using it for an " +
 //            "extended amount of time you may find your wealth to be increased substantially due to " +
 //            "being blessing with greater luck."

@@ -46,7 +46,7 @@ public class RingOfAwareness extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "[介绍文本暂无]"
+                "这枚戒指可以增强佩戴者的感知力，使其对周遭威胁更加敏锐，并可在反击时造成更致命的伤害。"
 //            "These rings improve wearer's perception, making him or her to be more aware " +
 //            "of different threats as well as allowing for a much deadlier counterattacks."
         );

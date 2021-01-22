@@ -44,17 +44,17 @@ public class Featherfall extends Armour.Glyph {
 
     @Override
     protected String name_n() {
-        return "笨重之%s";
+        return "沉重之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "护甲更轻且降低所受坠落伤害";
+        return "防具更轻且降低所受坠落伤害";
     }
 
     @Override
     protected String desc_n() {
-        return "进一步提高护甲重量";
+        return "进一步提高防具重量";
     }
 
     @Override

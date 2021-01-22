@@ -89,7 +89,7 @@ public class WandOfDamnation extends WandUtility {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]使目标在一定回合数后死亡，所需时长取决于目标生命值。";
+                "这根法杖以骸骨和黑曜石拼接而成，其造型让你不禁想起了死神所持的大镰。这个邪恶造物能够使受害者被一层不洁瘴气诅咒，在一定时间后面临其不可避免地死亡。";
 //			"This wand is crafted from bones and obsidian, its shape reminding you of a sickle. " +
 //            "A creation of the dark arts, it can infuse its victims with unholy miasma, dooming " +
 //            "them to an inevitable death after a certain amount of time.";

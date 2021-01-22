@@ -52,7 +52,7 @@ public class Retribution extends Armour.Glyph {
 
     @Override
     protected String desc_p() {
-        return "将所受近战伤害返还给攻击者，并提高物理状态抗性";
+        return "将所受近战伤害返还给攻击者，并提高体质属性抗性";
     }
 
     @Override

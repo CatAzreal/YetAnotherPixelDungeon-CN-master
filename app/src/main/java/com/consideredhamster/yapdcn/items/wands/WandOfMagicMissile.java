@@ -67,7 +67,7 @@ public class WandOfMagicMissile extends WandCombat {
 	@Override
 	public String desc() {
 		return
-                "[临时字串]伤害可被护甲阻挡，攻击也有概率失误，但基础伤害高于其他法杖";
+                "这根法杖的效果十分简单，它能够发射纯净的法术能量弹。能量弹效果会受护甲影响，并有几率打偏，但它高额的基础伤害足以弥补上述缺陷。";
 //			"This wand's effect is quite simple, as it just launches bolts of pure magical energy. " +
 //            "These bolts may be affected by the target's armor or miss entirely, but they " +
 //            "partially compensate for this by being quite powerful.";

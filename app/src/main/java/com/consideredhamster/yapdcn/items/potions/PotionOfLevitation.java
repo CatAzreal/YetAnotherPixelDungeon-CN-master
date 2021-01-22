@@ -41,7 +41,9 @@ public class PotionOfLevitation extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：饮用；效果：免疫陷阱/地面效果(不免疫气体和火焰)，提高移动速度和潜行能力";
+	    return "饮用这瓶神奇的药剂后你会漂浮在低空中，可以更快更隐蔽地移动。漂浮状态下你会直接飞越陷阱与裂缝，且视野不再被高草阻挡"+
+                "然而，漂浮无法躲过火焰或气体这类充满整个空间的东西。";
+//        return "[临时字串]使用方式：饮用；效果：免疫陷阱/地面效果(不免疫气体和火焰)，提高移动速度和潜行能力";
 //			"Drinking this curious liquid will cause you to hover in the air, moving faster and stealthier. " +
 //			"This state also allows drifting over traps or chasms and seeing over the high grass. Flames and gases " +
 //			"fill the air, however, and cannot be bypassed while airborne.";

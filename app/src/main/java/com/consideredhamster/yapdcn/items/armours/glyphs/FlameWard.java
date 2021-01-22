@@ -46,17 +46,17 @@ public class FlameWard extends Armour.Glyph {
 
     @Override
     protected String name_n() {
-        return "爆燃之%s";
+        return "易燃之%s";
     }
 
     @Override
     protected String desc_p() {
-        return "燃烧击中你的敌人，并减少所受火焰伤害";
+        return "燃烧击中你的敌人，并减少所受火焰属性伤害";
     }
 
     @Override
     protected String desc_n() {
-        return "被击中时燃烧自己";
+        return "被击中时点燃自己";
     }
 
 	@Override

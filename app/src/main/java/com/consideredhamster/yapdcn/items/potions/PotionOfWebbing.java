@@ -34,7 +34,7 @@ public class PotionOfWebbing extends Potion {
     public static final int BASE_DURATION = 10;
 
 	{
-		name = "Potion of Webbing";
+		name = "结网药剂";
         shortName = "We";
         harmful = true;
 	}
@@ -68,7 +68,8 @@ public class PotionOfWebbing extends Potion {
 	
 	@Override
 	public String desc() {
-        return "[临时字串]使用方式：投掷；效果：束缚范围内所有单位";
+	    return "这瓶混合制剂与空气接触后会立刻向四周喷射大量粘稠细丝结成的厚网，任何被粘住的角色在短时间内寸步难行。";
+        //       return "[临时字串]使用方式：投掷；效果：移除诅咒/伤害秘法生物";
 //			"Upon exposure to open air, this wondrous concoction will splash its surroundings " +
 //			"with sticky filaments of thick web. Anyone caught in this web will be ensnared " +
 //            "for a short period of time.";

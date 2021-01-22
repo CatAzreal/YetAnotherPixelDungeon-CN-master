@@ -38,6 +38,6 @@ public class ScaleArmor extends BodyArmorLight {
 	@Override
 	public String desc() {
         return
-			"这套护甲在具有重型护甲的保护能力的同时保留了轻型护甲的轻便性。真正的名匠之作。";
+			"这套护甲巧妙结合了重型护甲的防御能力与轻型护甲的轻便灵活。真正的名匠之作。";
 	}
 }
