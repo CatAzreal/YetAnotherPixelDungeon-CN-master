@@ -29,7 +29,7 @@ import com.consideredhamster.yapdcn.visuals.sprites.CharSprite;
 
 public class Combo extends BuffReactive {
 	
-	private static String TXT_COMBO = "combo %dx!";
+	private static String TXT_COMBO = "%dx连击！";
 	
 	public int count = 0;
 

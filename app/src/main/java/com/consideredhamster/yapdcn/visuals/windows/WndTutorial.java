@@ -23,6 +23,7 @@ package com.consideredhamster.yapdcn.visuals.windows;
 import com.consideredhamster.yapdcn.visuals.Assets;
 import com.consideredhamster.yapdcn.YetAnotherPixelDungeon;
 import com.consideredhamster.yapdcn.scenes.PixelScene;
+import com.consideredhamster.yapdcn.visuals.ui.RenderedTextMultiline;
 import com.consideredhamster.yapdcn.visuals.ui.ScrollPane;
 import com.consideredhamster.yapdcn.visuals.ui.Window;
 import com.watabou.gltextures.SmartTexture;
@@ -30,6 +31,7 @@ import com.watabou.gltextures.TextureCache;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Image;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.ui.Component;
 
@@ -44,18 +46,18 @@ public class WndTutorial extends WndTabbed {
     private static SmartTexture icons;
     private static TextureFilm film;
 
-	private static final String TXT_TITLE	= "Tutorial";
+	private static final String TXT_TITLE	= "游戏教程";
 
 	private static final String[] TXT_LABELS = {
         "I", "II", "III", "IV", "V",
     };
 
     private static final String[] TXT_TITLES = {
-        "Tutorial - Interface",
-		"Tutorial - Mechanics",
-		"Tutorial - Equipment",
-		"Tutorial - Consumables",
-		"Tutorial - Denizens",
+        "教程-基本界面",
+		"教程-游戏机制",
+		"教程-装备介绍",
+		"教程-消耗物品",
+		"教程-地牢住民",
     };
 
     private static final String[][] TXT_POINTS = {
@@ -131,7 +133,7 @@ public class WndTutorial extends WndTabbed {
 		},
     };
 
-	private BitmapText txtTitle;
+	private RenderedText txtTitle;
 	private ScrollPane list;
 
     private enum Tabs {
@@ -161,9 +163,9 @@ public class WndTutorial extends WndTabbed {
 			resize( WIDTH_P, HEIGHT_P );
 		}
 		
-		txtTitle = PixelScene.createText( TXT_TITLE, 9 );
+		txtTitle = PixelScene.renderText( TXT_TITLE, 8 );
 		txtTitle.hardlight( Window.TITLE_COLOR );
-		txtTitle.measure();
+		PixelScene.align(txtTitle);
 		add( txtTitle );
 		
 		list = new ScrollPane( new Component() );
@@ -241,7 +243,7 @@ public class WndTutorial extends WndTabbed {
 	private void updateList( String title ) {
 
 		txtTitle.text( title );
-		txtTitle.measure();
+		PixelScene.align(txtTitle);
 		txtTitle.x = PixelScene.align( PixelScene.uiCamera, (width - txtTitle.width()) / 2 );
 		
 //		items.clear();
@@ -331,7 +333,7 @@ public class WndTutorial extends WndTabbed {
 
         private final int GAP = 4;
         private Image icon;
-		private BitmapTextMultiline label;
+		private RenderedTextMultiline label;
 		
 		public TutorialItem( String text, int index, int width ) {
 			super();
@@ -339,8 +341,8 @@ public class WndTutorial extends WndTabbed {
             icon.frame( film.get( index ) );
 
             label.text( text );
-            label.maxWidth = width - (int)icon.width() - GAP;
-            label.measure();
+            label.maxWidth(width - (int)icon.width() - GAP);
+            PixelScene.align(label);
 
             height = Math.max( icon.height(), label.height() ) + GAP;
 		}
@@ -351,16 +353,18 @@ public class WndTutorial extends WndTabbed {
             icon = new Image( icons );
             add( icon );
 			
-			label = PixelScene.createMultiline( 6 );
+			label = PixelScene.renderMultiline( 5 );
 			add( label );
 		}
 		
 		@Override
 		protected void layout() {
 			icon.y = PixelScene.align( y );
-			
-			label.x = icon.x + icon.width;
-			label.y = PixelScene.align( y );
+
+
+			float x1 = icon.x + icon.width;
+			float y1 = PixelScene.align( y );
+            label.setPos(x1,y1);
 		}
 	}
 }

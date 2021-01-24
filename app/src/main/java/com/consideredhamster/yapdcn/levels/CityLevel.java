@@ -102,9 +102,9 @@ public class CityLevel extends RegularLevel {
 	public static String tileNames( int tile ) {
 		switch (tile) {
 		case Terrain.WATER:
-			return "Suspiciously colored water";
+			return "异色水潭";
 		case Terrain.HIGH_GRASS:
-			return "High blooming flowers";
+			return "茂盛花朵";
 		default:
 			return Level.tileNames(tile);
 		}
@@ -114,21 +114,21 @@ public class CityLevel extends RegularLevel {
 	public static String tileDescs(int tile) {
 		switch (tile) {
 		case Terrain.ENTRANCE:
-			return "A ramp leads up to the upper depth.";
+			return "通向下层的斜坡。";
 		case Terrain.EXIT:
-			return "A ramp leads down to the lower depth.";
+			return "通向上层的斜坡。";
 		case Terrain.WALL_DECO:
 		case Terrain.EMPTY_DECO:
-			return "Several tiles are missing here.";
+			return "这里缺了一些地砖。";
 		case Terrain.EMPTY_SP:
-			return "Thick carpet covers the floor.";
+			return "厚实的地毯覆盖其上。";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "The statue depicts some dwarf standing in a heroic stance.";
+			return "这座雕像刻画出了一位摆出英勇姿态的矮人。";
 		case Terrain.BOOKSHELF:
-            return "The rows of books on different disciplines fill the bookshelf. Maybe, there would be something useful in here?";
+            return "科目不同的书籍填满了整个书架。里面会不会藏着些用得上的东西？";
         case Terrain.SHELF_EMPTY:
-            return "The rows of books on different disciplines fill the bookshelf.";
+            return "科目不同的书籍填满了整个书架。";
 		default:
 			return Level.tileDescs(tile);
 		}

@@ -41,8 +41,8 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 
 public class Elemental extends MobPrecise {
 
-    private static String TXT_ENSNARED = "Elemental burns its snares!";
-    private static String TXT_FROZEN = "Freezing hurts elemental!";
+    private static String TXT_ENSNARED = "束缚火焰元素的东西被点着了！";
+    private static String TXT_FROZEN = "霜冻伤害了火焰元素！";
 
     public Elemental() {
 
@@ -199,8 +199,7 @@ public class Elemental extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"Wandering fire elementals are a byproduct of summoning greater entities. " +
-			"They are too chaotic in their nature to be controlled by even the most powerful demonologist.";
+			"火焰元素是一种召唤强大存在时出现的副产物，它们本性过于混沌，即使是最强大的恶魔召唤师也无法控制。";
 	}
 
 }

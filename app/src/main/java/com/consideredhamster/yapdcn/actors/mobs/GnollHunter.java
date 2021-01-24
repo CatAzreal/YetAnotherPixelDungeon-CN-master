@@ -109,19 +109,19 @@ public class GnollHunter extends MobRanged {
 	@Override
 	public String description() {
 
-        return "Gnolls are hyena-like humanoids. "
+        return "豺狼人是有着土狼模样的人形生物。"
 
                 + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                "This one seems to be a hunter or something like. It is not like their sharped sticks gonna be a problem to you." : "" )
+                "这一只豺狼人看起来像是猎人之类的，它使用的锋利的棍子看起来对你来说构不成威胁。" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                "Curiously, they are very rarely observed so close to a human settlements, preferring to dwell somewhere in wilderness." : "" )
+                "说来奇怪，它们很少被发现有如此接近人类居住点的行为，而更喜欢到荒郊野外栖身。" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                "And that's probably everything there is to know about them. Who cares, anyway?" : "" )
+                "这可能就是关于这个物种的一切了，不管怎样，谁在乎呢？" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                "They seem to be in alliance with wild beasts and other denizens of these depths. Maybe, even... leading them?" : "" )
+                "它们似乎在与野兽和地下的居民们结盟，也许，甚至是...领导它们？" : "" )
 
                 ;
 	}

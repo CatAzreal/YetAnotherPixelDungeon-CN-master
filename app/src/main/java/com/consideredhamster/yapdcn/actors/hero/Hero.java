@@ -55,6 +55,7 @@ import com.consideredhamster.yapdcn.items.weapons.throwing.Bullets;
 import com.consideredhamster.yapdcn.items.weapons.throwing.ThrowingWeapon;
 import com.consideredhamster.yapdcn.levels.features.Bookshelf;
 import com.consideredhamster.yapdcn.levels.traps.Trap;
+import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.visuals.windows.WndAlchemy;
 import com.consideredhamster.yapdcn.visuals.windows.WndOptions;
 import com.watabou.noosa.Camera;
@@ -126,7 +127,6 @@ import com.consideredhamster.yapdcn.levels.Terrain;
 import com.consideredhamster.yapdcn.levels.features.Chasm;
 import com.consideredhamster.yapdcn.levels.features.Sign;
 import com.consideredhamster.yapdcn.scenes.GameScene;
-import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.scenes.SurfaceScene;
 import com.consideredhamster.yapdcn.visuals.sprites.CharSprite;
 import com.consideredhamster.yapdcn.visuals.ui.TagAttack;
@@ -144,7 +144,7 @@ public class Hero extends Char {
     private static final String TXT_LEAVE = "没有人会如此轻易放弃像素地牢的征程。";
     private static final String TXT_LEAVE_WARRIOR = "逃跑毫无荣誉可言，我必须前进。";
     private static final String TXT_LEAVE_SCHOLAR = "不论我所做的决定有多么愚蠢，这个地步彻底放弃只会让事情变得更糟。";
-    private static final String TXT_LEAVE_BRIGAND = "这不是我要走的方向。\n我必须下去，而非往回走。";
+    private static final String TXT_LEAVE_BRIGAND = "这不是我要走的方向。\n必须向下，我已无后路。";
     private static final String TXT_LEAVE_ACOLYTE = "我不能回去，这世间已经危如累卵。现在逃开也只是在拖延不可避免的宿命罢了！";
 
     private static final String TXT_EXP = "%+dEXP";

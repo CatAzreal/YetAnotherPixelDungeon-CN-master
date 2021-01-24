@@ -81,9 +81,7 @@ public class Yog extends Mob {
     private final static int FIST_RESPAWN_MAX = 30;
 
 	private static final String TXT_DESC =
-		"Yog-Dzewa is an Old God, a powerful entity from the realms of chaos. A century ago, the ancient dwarves " +
-		"barely won the war against its army of demons, but were unable to kill the god itself. Instead, they then " +
-		"imprisoned it in the halls below their city, believing it to be too weak to rise ever again.";
+		"Yog-Dzewa是一位上古之神，来自混沌位面的强大存在。一个世纪前，古代矮人在同恶魔大军的战争中惨胜，却无法杀死这名神祇。他们只得将这名存在封印在都城下的厅堂之中，希望这位力量被削弱的神祇永无重见天日之时。";
 
     @Override
     public float awareness(){
@@ -167,7 +165,7 @@ public class Yog extends Mob {
 		super.notice();
 
         if( enemySeen ) {
-            yell( "Greetings, mortal. Are you ready to die?" );
+            yell( "你好，凡人。准备好受死了吗？" );
         }
 	}
 	
@@ -424,11 +422,11 @@ public class Yog extends Mob {
                     fist.sprite.parent.add(new AlphaTweener(fist.sprite, 1, 0.5f));
                     fist.sprite.emitter().burst(FlameParticle.FACTORY, 15);
 
-                    GLog.w("Burning fist was resurrected!");
+                    GLog.w("燃烧之拳复活了！");
                     super.detach();
                 } else {
                     warned=true;
-                    GLog.w( "Burning fist will be resurrected soon!" );
+                    GLog.w( "燃烧之拳很快就会复活！" );
                     spend( Random.IntRange( FIST_RESPAWN_MIN, FIST_RESPAWN_MAX ) );
 
                 }
@@ -486,11 +484,11 @@ public class Yog extends Mob {
                     fist.sprite.emitter().burst(Speck.factory(Speck.TOXIC), 15);
 
 
-                    GLog.w("Rotting fist was resurrected!");
+                    GLog.w("腐烂之拳复活了！");
                     super.detach();
                 } else {
                     warned=true;
-                    GLog.w("Rotting fist will be resurrected soon!");
+                    GLog.w("腐烂之拳很快就会复活！");
                     spend(Random.IntRange(FIST_RESPAWN_MIN, FIST_RESPAWN_MAX));
 
                 }

@@ -40,7 +40,7 @@ public class WndBadge extends Window {
 		icon.scale.set( 2 );
 		add( icon );
 		
-		RenderedTextMultiline info = PixelScene.renderMultiline( badge.description, 7 );
+		RenderedTextMultiline info = PixelScene.renderMultiline( badge.description, 6 );
 		info.maxWidth(WIDTH - MARGIN * 2);
 
 		
@@ -52,6 +52,7 @@ public class WndBadge extends Window {
 		float pos = icon.y + icon.height() + MARGIN;
 		info.setPos((w - info.width()) / 2 ,pos);
 		add(info);
+		pos += info.height();
 		PixelScene.align(info);
 
 

@@ -45,8 +45,8 @@ public class Imp extends MobEvasive {
 
     private static final String ITEM = "item";
 
-    protected static final String TXT_STOLE	= "%s stole %s from you!";
-	protected static final String TXT_CARRY	= "\n\nThis imp is carrying a _%s_, stolen from you.";
+    protected static final String TXT_STOLE	= "%s 从你的身上偷走了 %s !";
+	protected static final String TXT_CARRY	= "\n\n这只小恶魔正携带着从你身上偷走的 _%s_ 。";
 
     public Imp() {
 
@@ -233,8 +233,7 @@ public class Imp extends MobEvasive {
 	@Override
     public String description() {
         return
-            "Imps are lesser demons. They are notable neither for their strength nor their magic talent, but for their cruelty " +
-            "and greed. However, some of them are actually quite nice and sociable. Certainly not this one, though... " +
+            "小恶魔是恶魔中的下等生物，它们不以力量和魔法天赋著称，而是残忍和贪婪。不过它们中的一部分实际上是好心和善于社交的..." +
             ( item != null ? Utils.format( TXT_CARRY, item.name() ) : "" );
     }
 

@@ -125,7 +125,7 @@ public class DM300 extends MobHealthy {
 			sprite.emitter().burst( ElmoParticle.FACTORY, 5 );
 			
 			if (Dungeon.visible[step] && Dungeon.hero.isAlive()) {
-				GLog.n( "DM-300 repairs itself!" );
+				GLog.n( "DM-300修复了自己！" );
 			}
 		}
 
@@ -138,7 +138,7 @@ public class DM300 extends MobHealthy {
 
         if( buff instanceof Enraged ) {
             sprite.showStatus( CharSprite.NEUTRAL, "..." );
-            GLog.i("DM-300 is not enraged anymore.");
+            GLog.i("DM-300已不再愤怒。");
         }
 
         super.remove(buff);
@@ -155,7 +155,7 @@ public class DM300 extends MobHealthy {
 
             if (Dungeon.visible[pos]) {
 //                sprite.showStatus( CharSprite.NEGATIVE, "enraged!" );
-                GLog.n( "DM-300 is enraged!" );
+                GLog.n( "DM-300被激怒了！" );
             }
 
             sprite.idle();
@@ -171,7 +171,7 @@ public class DM300 extends MobHealthy {
 	@Override
 	public void die( Object cause, Element dmg ) {
 
-        yell( "Mission failed. Shutting down." );
+        yell( "任务失败，系统关闭。" );
 
         super.die( cause, dmg );
 
@@ -186,16 +186,14 @@ public class DM300 extends MobHealthy {
 	public void notice() {
 		super.notice();
         if( enemySeen && HP == HT && breaks == 0 ) {
-            yell("Unauthorised personnel detected.");
+            yell("检测到未经授权的人员。");
         }
 	}
 	
 	@Override
 	public String description() {
 		return
-			"This machine was created by the Dwarves several centuries ago. Later, Dwarves started to replace machines with " +
-			"golems, elementals and even demons. Eventually it led their civilization to the decline. The DM-300 and similar " +
-			"machines were typically used for construction and mining, and in some cases, for city defense.";
+			"数个世纪前矮人们制造了这个机器。但此后，矮人们开始使用魔像、元素生物甚至是恶魔来替换机器，最终导致其文明的衰败。DM-300及类似的机器通常用于建设和挖掘，某些情况下，也可以用于城防。";
 	}
 
     public void dropBoulders( int pos, int power ) {

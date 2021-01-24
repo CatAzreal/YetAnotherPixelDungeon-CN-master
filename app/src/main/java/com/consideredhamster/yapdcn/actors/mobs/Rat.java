@@ -65,21 +65,19 @@ public class Rat extends MobEvasive {
 	
 	@Override
 	public String description() {
-		return "This vermin inhabited the City for almost as long as these sewers had existed. " +
-                "But recently there appeared rumours about these rats attacking pets, toddlers and " +
-                "even adults sometimes. "
+		return "这种老鼠在这座城市居住的时间几乎和下水道存在的时间相当，不久前有传言称这些老鼠会攻击宠物，幼儿，有时甚至是成年人。"
 
                     + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                    "They are hardly can be considered a worthy opponent for you, but they can be dangerous in large numbers." : "" )
+                    "它们并不配做你的对手，然而在数量众多时仍然非常危险。" : "" )
 
                     + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                    "Undoubtedly, these creatures are not the main threat down there, but their unnatural aggressiveness can be unnerving." : "" )
+                    "毫无疑问，这些生物并不是这里的主要威胁，但它们不自然的攻击性可能令人不安。" : "" )
 
                     + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                    "Why, just why it did have to be rats?.." : "" )
+                    "为什么，为什么就一定要是老鼠呢……？" : "" )
 
                     + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                    "The malicious intent which twisted minds of these little creatures is just a sign of the things to come." : "" )
+                    "某种邪恶的存在扭曲了这些小动物的思想，预示着一些事情即将到来。" : "" )
 
                 ;
 	}

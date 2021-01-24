@@ -151,7 +151,7 @@ public class SewerLevel extends RegularLevel {
 	public static String tileNames( int tile ) {
 		switch (tile) {
 		case Terrain.WATER:
-			return "Murky water";
+			return "浑浊水潭";
 		default:
 			return Level.tileNames(tile);
 		}
@@ -161,11 +161,11 @@ public class SewerLevel extends RegularLevel {
 	public static String tileDescs(int tile) {
 		switch (tile) {
 		case Terrain.EMPTY_DECO:
-			return "Wet yellowish moss covers the floor.";
+			return "潮湿且发黄的苔藓覆盖其上。";
 		case Terrain.BOOKSHELF:
-			return "The bookshelf is packed with some mouldy books. Maybe there would be something useful in here?";
+			return "这个书架上尽是些脏污的书籍。里面会不会藏着些用得上的东西？";
         case Terrain.SHELF_EMPTY:
-            return "The bookshelf is packed with some mouldy books.";
+            return "这个书架上尽是些脏污的书籍。";
 		default:
 			return Level.tileDescs(tile);
 		}

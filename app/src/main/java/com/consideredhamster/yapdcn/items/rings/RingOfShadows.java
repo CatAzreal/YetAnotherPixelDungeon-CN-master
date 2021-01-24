@@ -59,7 +59,7 @@ public class RingOfShadows extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的潜行能力_，并且_提高"+sideEffect+"%伏击所造成的伤害_。"
+                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的潜行能力_，并且_提高"+sideEffect+"%伏击所造成的伤害_。"
         );
 
         return desc.toString();

@@ -30,7 +30,7 @@ public class Exposed extends BuffReactive {
     private static final String OBJECT	= "object";
 
     @Override
-    public String statusMessage() { return "exposed"; }
+    public String statusMessage() { return "被弹反"; }
 
     @Override
     public void storeInBundle( Bundle bundle ) {

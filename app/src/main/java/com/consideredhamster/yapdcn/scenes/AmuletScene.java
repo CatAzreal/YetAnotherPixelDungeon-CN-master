@@ -34,8 +34,8 @@ import com.watabou.utils.Random;
 
 public class AmuletScene extends PixelScene {
 
-	private static final String TXT_EXIT	= "Take me back home!";
-	private static final String TXT_STAY	= "I am not done yet";
+	private static final String TXT_EXIT	= "带我回去！";
+	private static final String TXT_STAY	= "我还没打算用它";
 	
 	private static final int WIDTH			= 120;
 	private static final int BTN_HEIGHT		= 18;
@@ -43,14 +43,14 @@ public class AmuletScene extends PixelScene {
 	private static final float LARGE_GAP	= 8;
 	
 	private static final String TXT = 
-		"The fabled Amulet of Yendor. After all of the hardships you've passed through, you finally hold it in your hands.\n\n" +
-        "It makes you feel omnipotent. Using its power you can make any wish come true... However, it will work only once.\n\n" +
-        "So, you can use it to bring yourself back to the surface, forever leaving this nightmarish dungeon in the past.\n\n" +
-        "Or you can try to get out of the dungeon by yourself, and keep the miraculous powers of the Amulet for later.\n\n" +
-        "What will be your decision?";
+		"传说中的Yendor护符。经过了重重磨难，你终于将它握在了自己的手中。\n\n" +
+        "你能感受到源自护符的强大能量。利用它的力量，你的任何愿望都能成真...不过它只能使用一次。\n\n" +
+        "那么，现在你可以立刻使用护符的力量，将自己带回地面，将这个噩梦般的地牢永远抛在身后。\n\n" +
+        "或者你可以尝试以自己的力量离开地牢，将Yendor护符的奇迹之力留作他用。\n\n" +
+        "你的决定是？";
 
     private static final String TXT_SHORT =
-            "So, what will be your decision?";
+            "那么，你的决定是？";
 	
 	public static boolean noText = false;
 	

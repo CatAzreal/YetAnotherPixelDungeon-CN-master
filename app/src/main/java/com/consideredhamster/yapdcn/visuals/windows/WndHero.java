@@ -284,7 +284,8 @@ public class WndHero extends WndTabbed {
 
             super( content );
 
-            pos = GAP_Y;
+            //Due to unknown reasons(I'm just too lazy to check), the bufftab seems always couple pixels lower than expected, so I lowered it manually.
+            pos = GAP_Y - 4;
 
             for (Buff buff : Dungeon.hero.buffs()) {
                 buffSlot( buff );

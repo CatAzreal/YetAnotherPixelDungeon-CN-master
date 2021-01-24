@@ -76,19 +76,19 @@ public class SewerCrab extends MobHealthy {
 //			"They are extremely fast and their thick exoskeleton can withstand " +
 //			"heavy blows.";
 
-        return "These huge crabs are at the top of the food chain in the sewers. "
+        return "这些巨大的螃蟹位于下水道食物链的顶端。"
 
                 + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                "Despite the thickness of their carapaces, they can move very fast if they want to." : "" )
+                "尽管它们的甲壳很厚，但只要愿意，它们可以快速的移动。" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                "Old stories hypothetize that they may form entire colonies under a city if not taken care of." : "" )
+                "有前人假设，如果不加以照顾，它们可能会在一座城市下形成庞大的群体" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                "Better be careful around them if you don't want to keep all of your limbs in place." : "" )
+                "如果你不想缺胳膊断腿的话，最好悠着点。" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                "Their claws can punch through metal armor. Their carapaces appear to be impenetrable. And their beady eyestalks see you as their next prey." : "" )
+                "它们的巨螯能击穿金属盔甲，甲壳似乎坚不可摧，机灵的眼珠正将你当做下一个猎物。" : "" )
 
                 ;
 	}

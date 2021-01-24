@@ -22,6 +22,7 @@ package com.consideredhamster.yapdcn.levels.features;
 
 import com.consideredhamster.yapdcn.actors.buffs.BuffActive;
 import com.consideredhamster.yapdcn.actors.hero.HeroClass;
+import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
@@ -39,7 +40,6 @@ import com.consideredhamster.yapdcn.items.potions.PotionOfLevitation;
 import com.consideredhamster.yapdcn.levels.RegularLevel;
 import com.consideredhamster.yapdcn.levels.Room;
 import com.consideredhamster.yapdcn.scenes.GameScene;
-import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.visuals.sprites.MobSprite;
 import com.consideredhamster.yapdcn.misc.utils.GLog;
 import com.consideredhamster.yapdcn.visuals.windows.WndOptions;
@@ -68,6 +68,7 @@ public class Chasm {
 		GameScene.show(
 
             ( Potion.getKnown().contains(PotionOfLevitation.class) && hero.belongings.getItem(PotionOfLevitation.class) != null ?
+
 
                 new WndOptions(TXT_CHASM, TXT_JUMP, TXT_YES, TXT_POTION, TXT_NO) {
 

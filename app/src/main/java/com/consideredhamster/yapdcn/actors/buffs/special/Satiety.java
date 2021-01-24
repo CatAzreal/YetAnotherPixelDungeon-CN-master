@@ -285,8 +285,7 @@ public class Satiety extends Buff {
         if ( remaining <= STARVING_FULL ) {
             return "你急切地想要任何能塞进嘴里地东西！你的生命值开始以极快的速度流失，你要再不吃点什么的话真的会死。就算是药草你也吃得下肚。";
         } else if ( remaining <= STARVING_HALF ) {
-            return "你已经饿的无可忍受了！生命值开始缓慢下跌，如果你再不立刻找点吃的，饥饿状态将达到致死级别。" +
-                    "food soon, starvation will become unbearable.";
+            return "你已经饿的无可忍受了！生命值开始缓慢下跌，如果你再不立刻找点吃的，饥饿状态将达到致死级别。";
         } else if ( remaining <= STARVING ) {
             return "你现在非常饿！生命自然回复彻底停止，而且你要不赶紧再找些吃的，饥饿带来的痛苦还会继续加重。";
         } else if ( remaining <= PARTIAL ) {

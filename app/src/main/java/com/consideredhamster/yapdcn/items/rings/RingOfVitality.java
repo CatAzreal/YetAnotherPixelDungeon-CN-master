@@ -67,7 +67,7 @@ public class RingOfVitality extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高所有治疗行为_" + mainEffect + "%_" + "的效力(包含自然恢复)_，并且_提高"+sideEffect+"%负面物理状态抗性_。"
+                "佩戴这枚戒指将提高所有治疗行为_" + mainEffect + "%" + "的效力(包含自然恢复)_，并且_提高"+sideEffect+"%负面物理状态抗性_。"
         );
 
         return desc.toString();

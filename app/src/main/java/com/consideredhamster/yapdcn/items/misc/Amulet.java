@@ -92,6 +92,6 @@ public class Amulet extends Item {
 	@Override
 	public String info() {
 		return 
-			"Yendor护身符是世间公认的最强神器，曾经属于巫师Yendor。据传护符能够实现持有者的任何一个愿望，但仅能生效一次。";
+			"Yendor护符是世间公认的最强神器，曾经属于巫师Yendor。据传护符能够实现持有者的任何一个愿望，但仅能生效一次。";
 	}
 }

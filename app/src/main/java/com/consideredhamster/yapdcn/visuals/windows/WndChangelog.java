@@ -31,12 +31,12 @@ import com.watabou.noosa.ui.Component;
 public class WndChangelog extends Window {
 
 	private static final int WIDTH_P	= 128;
-	private static final int HEIGHT_P	= 210;
+	private static final int HEIGHT_P	= 160;
 
-	private static final int WIDTH_L	= 210;
+	private static final int WIDTH_L	= 160;
 	private static final int HEIGHT_L	= 128;
 
-	private static final String TXT_TITLE	= "另类地牢中文版Beta5.0";
+	private static final String TXT_TITLE	= "另类地牢中文版Beta5.1";
 
     private static final String TXT_DESCR =
 
@@ -44,17 +44,8 @@ public class WndChangelog extends Window {
         "不认识我？没关系，只需要知道我是汉化版本的作者即可。_汉化基于版本0.3.2a，已获得作者ConsideredHamster许可。_\n" +
                 "\n" +
                 "当前汉化进度(若有遗漏字串欢迎截图，协助我查漏补缺)：\n" +
-                "Actors: 除详细怪物描述外全部汉化\n" +
-                "Items: 全部汉化\n" +
-                "Levels: 除详细地格描述外全部汉化\n" +
-                "Scenes: 除排行榜死因和徽章外全部汉化\n" +
-                "Windows: 全部汉化\n" +
+                "除了教程和书架额外彩蛋外全部汉化，由于后面速度加快，部分字串翻译可能会有缺漏，极少数可能存在错译，欢迎各位玩家指正\n" +
                 "Q&A\n" +
-                "Q：为什么还没汉化完就发出来？\n" +
-                "A：YAPD采用的是5年前Watabou开发的原版代码，而本次汉化采用的是Evan已经修补更迭数年的SPD基础引擎，" +
-                "两者间有许多不兼容处，因此需要交由各位玩家协助debug，目前阶段源码修改和字符串翻译全部由我一人进行，" +
-                "专门自测汉化只会拖长开发时间。\n" +
-                "\n" +
                 "Q：为什么不能像SPD一样将源文本发到平台，将翻译分包给其他志愿者？\n" +
                 "A：实际上是可以实现的，但工作量非常庞大，因为YAPD的字符串全部内置在代码层，若要外置则需要提取所有字符串" +
                 "并为其挨个命名。\n" +

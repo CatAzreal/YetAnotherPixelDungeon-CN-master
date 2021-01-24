@@ -54,12 +54,12 @@ public class WndCatalogus extends WndTabbed {
 	
 	private static final int ITEM_HEIGHT	= 18;
 	
-	private static final String TXT_TITLE	= "Journal";
-	private static final String TXT_NOTES	= "Notes";
-	private static final String TXT_PHARM	= "Potions";
-	private static final String TXT_RUNES	= "Scrolls";
-	private static final String TXT_WANDS	= "Wands";
-	private static final String TXT_RINGS	= "Rings";
+	private static final String TXT_TITLE	= "日志";
+	private static final String TXT_NOTES	= "笔记";
+	private static final String TXT_PHARM	= "药剂";
+	private static final String TXT_RUNES	= "卷轴";
+	private static final String TXT_WANDS	= "法杖";
+	private static final String TXT_RINGS	= "戒指";
 	
 	private RenderedText txtTitle;
 	private ScrollPane list;

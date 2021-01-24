@@ -59,7 +59,7 @@ public class RingOfSatiety extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将降低_" + mainEffect + "%_" + "的饱食度流失速率_，并且_提高"+sideEffect+"%食物效果_。"
+                "佩戴这枚戒指将降低_" + mainEffect + "%" + "的饱食度流失速率_，并且_提高"+sideEffect+"%食物效果_。"
         );
 
         return desc.toString();

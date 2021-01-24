@@ -1184,30 +1184,30 @@ public abstract class Level implements Bundlable {
         case Terrain.WALL:
         case Terrain.WALL_DECO:
         case Terrain.DOOR_ILLUSORY:
-            return "Just a wall, nothing special. Mind that fighting in close spaces restricts ability to dodge.";
+            return "就是一堵墙，没什么特别的。但需要注意的是在狭窄地形下战斗会影响到闪避能力。";
 		case Terrain.CHASM:
-			return "You can't see the bottom. Fighting near chasms limits movement, restricting ability to dodge (unless you are flying).";
+			return "一眼无法看见其底部。在深渊附近战斗会限制你的移动范围，从而影响你的闪避能力(飞行时不受影响)。";
 		case Terrain.WATER:
-			return "Step in the water to extinguish fire. However, don't forget that walking in the water is noisy and may attract unwanted attention!";
+			return "进入水潭中可熄灭身上的火焰。不过，千万别忘记在水面上行走会产生噪声并可能吸引不必要的注意！";
 		case Terrain.ENTRANCE:
-			return "Stairs lead up to the upper depth.";
+			return "通向上一层的台阶。";
 		case Terrain.EXIT:
 		case Terrain.UNLOCKED_EXIT:
-			return "Stairs lead down to the lower depth.";
+			return "通向下一层的台阶。";
 		case Terrain.EMBERS:
-			return "Embers cover the floor.";
+			return "地上散落着燃尽的余灰。";
 		case Terrain.HIGH_GRASS:
-			return "Dense vegetation blocks the view and hushes your steps, making it easier to move undetected through it.";
+			return "茂密的植被遮挡了你的视线并可减轻你的脚步声，使你能更轻松地潜行通过。";
 		case Terrain.LOCKED_DOOR:
-			return "This door is locked, you need a matching key to unlock it.";
+			return "这扇门锁着，而你需要匹配的钥匙才能打开它。";
 		case Terrain.LOCKED_EXIT:
-			return "Heavy bars block the stairs leading down.";
+			return "沉重的铁栏杆封锁住了通往下一层的楼梯。";
 		case Terrain.BARRICADE:
-			return "The wooden barricade is firmly set but has dried over the years. Might it burn?";
+			return "木栅栏依然坚固，但早已风干多年。烧了怎么样？";
 		case Terrain.SIGN:
-			return "Somebody placed a sign here..";
+			return "有人在这里放了个告示牌...";
 		case Terrain.WALL_SIGN:
-			return "There is something written on this wall.";
+			return "这面墙上记录着些什么。";
 		case Terrain.TOXIC_TRAP:
 		case Terrain.FIRE_TRAP:
 		case Terrain.BOULDER_TRAP:
@@ -1216,16 +1216,16 @@ public abstract class Level implements Bundlable {
 		case Terrain.LIGHTNING_TRAP:
 		case Terrain.BLADE_TRAP:
 		case Terrain.SUMMONING_TRAP:
-			return "Stepping onto a hidden pressure plate will activate the trap.";
+			return "踩下其上的隐藏压力板就会触发陷阱。";
 		case Terrain.INACTIVE_TRAP:
-			return "The trap has been triggered before and it's not dangerous anymore.";
+			return "这个陷阱已经被触发过了，现在一点也不危险。";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "Someone wanted to adorn this place, but failed, obviously.";
+			return "曾有人想装饰一下这个地方，不过很显然，他们失败了。";
 		case Terrain.ALCHEMY:
-			return "Drop some herbs here to cook a potion.";
+			return "可在此处放些草药以精炼药剂。";
 		case Terrain.EMPTY_WELL:
-			return "The well has run dry.";
+			return "这是一口枯井。";
 		default:
 			if (tile >= Terrain.WATER_TILES) {
 				return tileDescs( Terrain.WATER );
