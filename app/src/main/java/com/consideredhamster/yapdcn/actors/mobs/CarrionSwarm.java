@@ -66,8 +66,7 @@ public class CarrionSwarm extends MobEvasive {
     @Override
     public String description() {
         return
-                "The deadly swarm of flies buzzes angrily. These unclean foes " +
-                "have uncanny sense of smell when it comes to anything edible.";
+                "致命的蝇群愤怒地嗡嗡作响，这些不洁的敌人的嗅觉对任何能吃的东西都异常敏感 ";
     }
 
     @Override

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 import com.consideredhamster.yapdcn.items.Item;
 import com.consideredhamster.yapdcn.items.scrolls.ScrollOfPhaseWarp;
+import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.consideredhamster.yapdcn.visuals.Assets;
@@ -31,7 +32,6 @@ import com.consideredhamster.yapdcn.Dungeon;
 import com.consideredhamster.yapdcn.actors.Actor;
 import com.consideredhamster.yapdcn.actors.hero.Hero;
 import com.consideredhamster.yapdcn.levels.Level;
-import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.visuals.sprites.ItemSprite.Glowing;
 import com.consideredhamster.yapdcn.misc.utils.GLog;
 import com.consideredhamster.yapdcn.misc.utils.Utils;

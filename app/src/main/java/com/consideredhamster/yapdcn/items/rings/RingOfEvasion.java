@@ -58,7 +58,7 @@ public class RingOfEvasion extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指在站定不动时提供_" + mainEffect + "%_" + "的闪避能力_，而移动中时提高_"+sideEffect+"%的闪避能力_。"
+                "佩戴这枚戒指在站定不动时提供_" + mainEffect + "%" + "的闪避能力_，而移动中时提高_"+sideEffect+"%的闪避能力_。"
         );
 
         return desc.toString();

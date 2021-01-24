@@ -32,7 +32,7 @@ import com.watabou.utils.Random;
 
 public class Shocked extends Debuff {
 
-    private static final String TXT_DISARMED = "Sudden shock have made you drop your %s on the ground!";
+    private static final String TXT_DISARMED = "突如其来的电击使你不由得将手中的%s松开，使其掉落在地！";
 
     @Override
     public Element buffType() {

@@ -118,14 +118,14 @@ public class HallsLevel extends RegularLevel {
 	public static String tileNames( int tile ) {
 		switch (tile) {
 		case Terrain.WATER:
-			return "Suspiciously colored liquid";
+			return "异色液体";
 		case Terrain.GRASS:
-			return "Embermoss";
+			return "余烬地苔";
 		case Terrain.HIGH_GRASS:
-			return "Emberfungi";
+			return "余烬菌菇";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "Pillar";
+			return "梁柱";
 		default:
 			return Level.tileNames(tile);
 		}
@@ -134,14 +134,14 @@ public class HallsLevel extends RegularLevel {
 	public static String tileDescs(int tile) {
 		switch (tile) {
 		case Terrain.WATER:
-			return "It looks like tomato juice, but it smells metallic.";
+			return "它看起来像是番茄汁，但却泛出一股源于金属的锈蚀味道。";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "The pillar is made of real humanoid skulls. Awesome."; 
+			return "这个柱子由类人生物头骨垒成。酷毙了。";
 		case Terrain.BOOKSHELF:
-			return "Books in ancient languages smoulder in the bookshelf. May it contain something useful?";
+			return "用远古语言写就的书籍堆积在书架里。里面究竟埋藏着何种秘密？";
         case Terrain.SHELF_EMPTY:
-            return "Books in ancient languages smoulder in the bookshelf.";
+            return "用远古语言写就的书籍堆积在书架里。";
 		default:
 			return Level.tileDescs(tile);
 		}

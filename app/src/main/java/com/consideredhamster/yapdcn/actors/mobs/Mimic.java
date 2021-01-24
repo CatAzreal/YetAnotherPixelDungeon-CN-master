@@ -142,7 +142,7 @@ public class Mimic extends MobHealthy {
             devour(item);
 
             if (Dungeon.visible[pos]) {
-                GLog.w("Mimic swallows %s lying on the floor!", item.toString());
+                GLog.w("宝箱怪正躺在地板上模仿着 %s ！", item.toString());
             }
 
             spend( TIME_TO_DEVOUR );
@@ -218,9 +218,7 @@ public class Mimic extends MobHealthy {
 	@Override
 	public String description() {
 		return
-			"Mimics are magical creatures which can take any shape they wish. In dungeons they almost always " +
-			"choose a shape of a treasure chest, because they know how to beckon an adventurer, but are too slow " +
-            "to catch them otherwise.";
+			"模仿者是一种可以随心所欲变成任何形状的魔法生物，因为它们知道如何勾引冒险者前来，然而自己速度太慢逮不到他们，所以在地牢里它们总是会变成一种宝箱的样子。";
 	}
 	
 	public static Mimic spawnAt( int hp, int pos, List<Item> items ) {

@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yapdcn.visuals.windows;
 
+import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.Game;
 import com.consideredhamster.yapdcn.Element;
@@ -28,7 +29,6 @@ import com.consideredhamster.yapdcn.Rankings;
 import com.consideredhamster.yapdcn.Statistics;
 import com.consideredhamster.yapdcn.actors.hero.Hero;
 import com.consideredhamster.yapdcn.items.misc.Ankh;
-import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.scenes.PixelScene;
 import com.consideredhamster.yapdcn.visuals.sprites.ItemSprite;
 import com.consideredhamster.yapdcn.visuals.ui.RedButton;

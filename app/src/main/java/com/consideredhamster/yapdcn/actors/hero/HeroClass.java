@@ -97,7 +97,7 @@ public enum HeroClass {
 //            "You only need to brace yourself and make your first step. Your search has ended here. And here, it has only began.",
 
             "学者精通于法杖的运用之道。绝佳的魔能调谐能力允许他以更高的速率填充法杖充能，并且在法术领域无人能出其右。常年封闭于研究室的生活钝化了他的五感，降低他的命中和感知能力，迫使他必须依赖法杖深入地牢。",
-            "不过以同僚的标准来看，他仍然算得上强壮且行动敏捷。武器的低适应性和对法杖的极度依赖使得这名角色更需要技巧游玩，因此该职业仅推荐老手游玩",
+            "不过以同僚的标准来看，他仍然算得上强壮且行动敏捷。武器的低适应性和对法杖的极度依赖使得这名角色更需要技巧游玩，因此该职业仅推荐熟练者游玩。",
     };
 
     public static final String[] HUN_ABOUT = {

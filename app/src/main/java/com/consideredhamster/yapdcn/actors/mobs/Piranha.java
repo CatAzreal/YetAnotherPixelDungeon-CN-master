@@ -121,9 +121,7 @@ public class Piranha extends MobEvasive {
 	@Override
 	public String description() {
 		return
-			"These carnivorous fish are sometimes born in these underground pools. " +
-			"Other times, they are bred specifically to protect flooded treasure vaults. " +
-            "Regardless of origin, they all share the same ferocity and thirst for blood.";
+			"这些肉食性鱼类不是地下水池中的天然生物。它们被专门培育用来保护被水淹没的储藏室。不管出身如何，它们都同样凶残和嗜血。";
 	}
 
 }

@@ -59,7 +59,7 @@ public class RingOfMysticism extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的调谐能力_，并且_护甲和武器的附魔触发几率提高"+sideEffect+"%_。"
+                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的调谐能力_，并且_护甲和武器的附魔触发几率提高"+sideEffect+"%_。"
         );
 
         return desc.toString();

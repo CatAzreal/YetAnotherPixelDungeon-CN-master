@@ -137,7 +137,6 @@ public class WellWater extends Blob {
     @Override
     public String tileDesc() {
         return
-                "The water in this well looks clean and fresh. " +
-                        "Looks like you can refill your water supplies here.";
+                "井中之水看起来清冽爽口。你或许可以在此灌满自己的水袋。";
     }
 }

@@ -184,9 +184,7 @@ public abstract class Goo extends MobEvasive {
 	@Override
 	public String description() {
 		return
-			"Little is known about The Goo. It's quite possible that it is not even a creature, but rather a " +
-			"conglomerate of substances from the sewers that gained some kind of rudimentary, but very evil " +
-            "sentience.";
+			"我们对粘咕所知甚少。它甚至很有可能不是一个生物，而是下水道表面聚集的邪恶物质得到基本智能而产生的实体。";
 	}
 
     public static class Mother extends Goo {
@@ -241,8 +239,8 @@ public abstract class Goo extends MobEvasive {
 
                 if( HP >= HT ) {
                     beckon( Dungeon.hero.pos );
-                    Dungeon.hero.interrupt( "You were awoken by a bad feeling." );
-                    GLog.i("Goo awakens!");
+                    Dungeon.hero.interrupt( "你被一种不好的感觉惊醒。" );
+                    GLog.i("黏咕苏醒了!");
                 }
             }
 
@@ -303,8 +301,8 @@ public abstract class Goo extends MobEvasive {
                     }
 
                     if (Dungeon.visible[pos]) {
-                        sprite.showStatus(CharSprite.DEFAULT, "sleeping...");
-                        GLog.i("Goo is exhausted!");
+                        sprite.showStatus(CharSprite.DEFAULT, "ZZZzzz...");
+                        GLog.i("黏咕已筋疲力尽！");
                     }
 
                     sprite.idle();
@@ -337,7 +335,7 @@ public abstract class Goo extends MobEvasive {
 
                 if (Dungeon.visible[pos]) {
 //                    sprite.showStatus( CharSprite.NEGATIVE, "enraged!" );
-                    GLog.n("Goo starts releasing deadly miasma!");
+                    GLog.n("黏咕开始释放致命瘴气！");
                 }
 
                 sprite.idle();
@@ -352,7 +350,7 @@ public abstract class Goo extends MobEvasive {
         @Override
         public void die( Object cause, Element dmg ) {
 
-            yell( "glurp... glurp..." );
+            yell( "咕……咕……" );
 
             super.die(cause, dmg);
 
@@ -379,7 +377,7 @@ public abstract class Goo extends MobEvasive {
         public void notice() {
             super.notice();
             if( enemySeen ) {
-                yell("GLURP-GLURP!");
+                yell("咕————！");
             }
         }
 
@@ -431,8 +429,8 @@ public abstract class Goo extends MobEvasive {
                 sprite.parent.add( new AlphaTweener( sprite, 0.0f, 0.1f ) );
 
                 if( Dungeon.visible[ pos ] ) {
-                    mother.sprite.showStatus( CharSprite.NEGATIVE, "absorbed" );
-                    GLog.n( "Goo absorbs entranced spawn, healing itself!" );
+                    mother.sprite.showStatus( CharSprite.NEGATIVE, "吸收" );
+                    GLog.n( "黏咕吸收了分裂体，发生了自愈！" );
                 }
 
                 return true;
@@ -448,8 +446,8 @@ public abstract class Goo extends MobEvasive {
                 sprite.idle();
 
                 if( Dungeon.visible[ pos ] ){
-                    sprite.showStatus( CharSprite.WARNING, "entranced" );
-                    GLog.n( "A spawn of Goo became entranced - do not let them stand in the water!" );
+                    sprite.showStatus( CharSprite.WARNING, "吸引" );
+                    GLog.n( "一个黏咕分裂体正在变得活跃——不要让它待在水里！" );
                 }
 
                 spend( TICK );

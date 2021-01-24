@@ -58,7 +58,7 @@ public class RingOfAwareness extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的感知能力_，并且_提高"+sideEffect+"%反击所造成的伤害_。"
+                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的感知能力_，并且_提高"+sideEffect+"%反击所造成的伤害_。"
         );
 
         return desc.toString();

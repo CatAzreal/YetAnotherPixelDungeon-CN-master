@@ -95,10 +95,7 @@ public class Golem extends MobHealthy {
 	@Override
 	public String description() {
 		return
-			"The Dwarves tried to combine their knowledge of mechanisms with their newfound power of elemental binding. " +
-			"They used spirits of earth as the \"soul\" for the mechanical bodies of golems, which were believed to be " +
-			"most controllable of all. Despite this, the tiniest mistake in the ritual could cause an outbreak. Their " +
-            "metallic bodies can become less durable under high temperatures.";
+			"矮人们尝试将他们的机械知识与新发现的元素力量结合起来，他们用大地之灵作为\"灵魂\"，以机械作为身躯，造出了这个魔像。人们认为它是最可控的，尽管这么说，在仪式中发生哪怕最微小的错误都可能发生爆炸。魔像的金属身躯在高温下会变得没那么耐用。";
 	}
 
 }

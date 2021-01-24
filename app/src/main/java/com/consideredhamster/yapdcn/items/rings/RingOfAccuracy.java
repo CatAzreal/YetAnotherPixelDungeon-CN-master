@@ -59,7 +59,7 @@ public class RingOfAccuracy extends Ring {
         desc.append( " " );
 
         desc.append(
-            "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的命中能力_，并且_提高"+sideEffect+"%连击所造成的伤害_。"
+            "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的命中能力_，并且_提高"+sideEffect+"%连击所造成的伤害_。"
         );
 
         return desc.toString();

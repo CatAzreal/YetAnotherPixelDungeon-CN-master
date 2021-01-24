@@ -23,6 +23,7 @@ package com.consideredhamster.yapdcn.visuals.windows;
 import java.io.IOException;
 
 import com.consideredhamster.yapdcn.Difficulties;
+import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.scenes.PixelScene;
 import com.consideredhamster.yapdcn.misc.utils.Utils;
 import com.consideredhamster.yapdcn.visuals.ui.RenderedTextMultiline;
@@ -30,7 +31,6 @@ import com.watabou.noosa.Game;
 import com.consideredhamster.yapdcn.Dungeon;
 import com.consideredhamster.yapdcn.YetAnotherPixelDungeon;
 import com.consideredhamster.yapdcn.scenes.GameScene;
-import com.consideredhamster.yapdcn.scenes.InterlevelScene;
 import com.consideredhamster.yapdcn.scenes.TitleScene;
 import com.consideredhamster.yapdcn.visuals.ui.Icons;
 import com.consideredhamster.yapdcn.visuals.ui.RedButton;

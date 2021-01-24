@@ -147,7 +147,7 @@ public class Tengu extends MobRanged {
 
         if( buff instanceof Enraged ) {
             sprite.showStatus( CharSprite.NEUTRAL, "..." );
-            GLog.i( "Tengu is not enraged anymore." );
+            GLog.i( "天狗已不再愤怒。" );
         }
 
         super.remove(buff);
@@ -164,7 +164,7 @@ public class Tengu extends MobRanged {
 
             if (Dungeon.visible[pos]) {
 //                sprite.showStatus( CharSprite.NEGATIVE, "enraged!" );
-                GLog.n( "Tengu is enraged!" );
+                GLog.n( "天狗被激怒了！" );
             }
 
             sprite.idle();
@@ -240,7 +240,7 @@ public class Tengu extends MobRanged {
     @Override
     public void die( Object cause, Element dmg ) {
 
-        yell( "Free at last..." );
+        yell( "终于…解脱了……" );
 
         super.die( cause, dmg );
 
@@ -253,8 +253,7 @@ public class Tengu extends MobRanged {
 	@Override
 	public String description() {
 		return
-			"Tengu are members of the ancient assassins clan, which is also called Tengu. " +
-			"These assassins are noted for extensive use of shurikens and traps.";
+			"天狗是远古刺客组织的成员，组织的名字也叫天狗。这些刺客以大量使用手里剑和陷阱而闻名。";
 	}
 
     private static final String TIME_TO_JUMP	= "timeToJump";

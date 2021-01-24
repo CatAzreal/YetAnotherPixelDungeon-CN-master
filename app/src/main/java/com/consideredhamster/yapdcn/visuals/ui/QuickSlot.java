@@ -40,8 +40,8 @@ import com.watabou.utils.Bundle;
 
 public class QuickSlot extends Button implements WndBag.Listener {
 
-	private static final String TXT_SELECT_ITEM_QUICKSLOT = "Select an item for the quickslot";
-	private static final String TXT_SELECT_ITEM_OFFHAND = "Select an item for the offhand";
+	private static final String TXT_SELECT_ITEM_QUICKSLOT = "选择一个用于快捷栏的物品";
+	private static final String TXT_SELECT_ITEM_OFFHAND = "选择一个装备副手的物品";
 
     public static QuickSlot quickslot0;
     public static QuickSlot quickslot1;

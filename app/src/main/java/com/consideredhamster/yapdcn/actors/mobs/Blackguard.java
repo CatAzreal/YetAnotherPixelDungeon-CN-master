@@ -69,7 +69,7 @@ public class Blackguard extends MobHealthy {
 	@Override
 	public String description() {
 		return
-			"This metallic juggernaut once was a hero like you. Now, his tormented soul is bound within these halls forever.";
+			"这座金属巨像曾经也像你一样，然而现在，他受尽折磨的灵魂被永远束缚在这恶魔大厅里。";
 	}
 
 }

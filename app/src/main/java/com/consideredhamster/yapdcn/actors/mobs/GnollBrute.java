@@ -37,7 +37,7 @@ import com.watabou.utils.Random;
 
 public class GnollBrute extends MobPrecise {
 
-	private static final String TXT_ENRAGED = "%s becomes enraged!";
+	private static final String TXT_ENRAGED = "%s被激怒了！";
 
     public GnollBrute() {
 
@@ -125,7 +125,6 @@ public class GnollBrute extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"Brutes are the largest, strongest and toughest of all gnolls. They are dumb, " +
-            "but very ferocious fighters. They can become temporarily enraged when injured enough.";
+			"豺狼暴徒是豺狼人中体型最庞大，力量最强壮且生命力最顽强的精英。尽管智力不高，但却是非常凶猛的斗士，当豺狼暴徒承受了足够的伤害时，它会狂暴一段时间。";
 	}
 }

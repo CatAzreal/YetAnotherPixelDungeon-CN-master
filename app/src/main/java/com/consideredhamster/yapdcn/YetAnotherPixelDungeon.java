@@ -44,78 +44,78 @@ public class YetAnotherPixelDungeon extends Game {
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.rings.RingOfMysticism.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.rings.RingOfConcentration" );
+                "com.consideredhamster.yapdcn.items.rings.RingOfConcentration" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.rings.RingOfWillpower.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.rings.RingOfSorcery" );
+                "com.consideredhamster.yapdcn.items.rings.RingOfSorcery" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfLifeDrain.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfBlink" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfBlink" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfDamnation.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfFlock" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfFlock" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfSmiting.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfHarm" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfHarm" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfThornvines.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfEntanglement" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfEntanglement" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfIceBarrier.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfFreezing" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfFreezing" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfFirebrand.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfFirebolt" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfFirebolt" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfAcidSpray.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfAvalanche" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfAvalanche" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.wands.WandOfBlastWave.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfPhasing" );
+                "com.consideredhamster.yapdcn.items.wands.WandOfPhasing" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.potions.PotionOfToxicGas.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfCorrosiveGas" );
+                "com.consideredhamster.yapdcn.items.potions.PotionOfCorrosiveGas" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.potions.PotionOfWebbing.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfOvergrowth" );
+                "com.consideredhamster.yapdcn.items.potions.PotionOfOvergrowth" );
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.food.MeatRaw.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.food.MysteryMeat" );
+                "com.consideredhamster.yapdcn.items.food.MysteryMeat" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.food.MeatStewed.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.food.FrozenCarpaccio" );
+                "com.consideredhamster.yapdcn.items.food.FrozenCarpaccio" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.food.MeatBurned.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.food.ChargrilledMeat" );
+                "com.consideredhamster.yapdcn.items.food.ChargrilledMeat" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.food.RationSmall.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.food.OverpricedRation" );
+                "com.consideredhamster.yapdcn.items.food.OverpricedRation" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.food.RationMedium.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.food.Food" );
+                "com.consideredhamster.yapdcn.items.food.Food" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.food.RationLarge.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.food.Pasty" );
+                "com.consideredhamster.yapdcn.items.food.Pasty" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yapdcn.items.herbs.DreamfoilHerb.class,
-                "com.consideredhamster.yetanotherpixeldungeon.items.herbs.DreamweedHerb" );
+                "com.consideredhamster.yapdcn.items.herbs.DreamweedHerb" );
 	}
 	
 	@Override

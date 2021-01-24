@@ -38,15 +38,17 @@ public class AboutScene extends PixelScene {
             "另类地牢中文版";
 
     private static final String TXT_PART1 =
-            " 模组作者\n" +
+            " _模组作者_\n" +
             "·ConsideredHamster\n" +
             "\n" +
-            "中文本地化\n" +
+            "_中文本地化_\n" +
             "·Jinkeloid(冰杖)\n" +
             "\n" +
-            "本地化协力\n" +
-            "·Evan Debenham(SPD本地化框架)\n" +
-            "·EndlessSolitude(临时字串补全)";
+            "_本地化协力_\n" +
+            "·Evan-Debenham(破碎作者-本地化框架)\n" +
+            "·ConsideredHamster(YA作者-字串咨询)\n" +
+            "·Endless-Solitude(红龙-字串补全)\n" +
+            "·Chronie-Lynn(艾酱-字串补全)" ;
 
     private static final String TXT_PART2 =
                         "代码协力:\n" +

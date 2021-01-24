@@ -83,7 +83,7 @@ public class UnholyArmor extends BuffPassive {
 
     @Override
     public String toString() {
-        return "Unholy Armor";
+        return "邪恶护障";
     }
 
     private static final String CONSUMED	= "consumed";

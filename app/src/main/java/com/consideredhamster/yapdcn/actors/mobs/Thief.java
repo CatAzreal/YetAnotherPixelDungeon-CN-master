@@ -95,19 +95,19 @@ public class Thief extends MobPrecise {
     @Override
     public String description(){
 
-        return "The Sewers always been hiding place for all sorts of cutthroats and outlaws. "
+        return "The 下水道一直是各种歹徒和不法分子的藏身之地。"
 
                 + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                "Usually armed with different manners of daggers and knives, these cowards rely on dirty tactics instead of skill and strength." : "" )
+                "这些胆小鬼通常装备各种不同的匕首和小刀，它们依靠的是肮脏的伎俩，而不是技巧和力量。" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                "It would be better to exercise caution when dealing with their kind, as lone old man down there can look like an easy prey through the eyes of greed." : "" )
+                "与他们打交道时最好谨慎一点，在贪婪的眼光下，一个独行的老头子看起来就像个容易干掉的猎物。" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                "Looks like it's the time to show 'ese rookies who's da boss here. After all, their 'ill-begotten gains' can help you on your 'noble quest', isn't it?" : "" )
+                "看来是时候让这些新来的见识一下谁才是这里的老大了，毕竟这些'不义之财'看起来可以帮助你完成你'崇高追求'，不是么？" : "" )
 
                 + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                "What leads them down the path of banditry? Greed, misfortune, or something more sinister? It doesn't really matter now, however." : "" )
+                "是什么让他们选择了强盗之路？贪婪，不幸，抑或更邪恶的东西？不过现在已经不重要了。" : "" )
 
                 ;
     }

@@ -58,7 +58,7 @@ public class RingOfDurability extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高你所用_物品" + mainEffect + "%_" + "的耐久度_，并且修理物品时_"+sideEffect+"%不消耗修理工具_。"
+                "佩戴这枚戒指将提高你所用_物品" + mainEffect + "%" + "的耐久度_，并且修理物品时_"+sideEffect+"%不消耗修理工具_。"
         );
 
         return desc.toString();

@@ -28,7 +28,7 @@ import com.consideredhamster.yapdcn.visuals.windows.WndMessage;
 public class Sign {
 
 	private static final String TXT_DEAD_END = 
-		"What are you doing here?!";
+		"你来这里是要做些什么？";
 	
 	private static final String[] TIPS = {
 
@@ -67,13 +67,13 @@ public class Sign {
 
             "",
 
-            "greetings, mortal" +
-                "\n\nare you ready to die?",
-            "my servants can smell your blood, human",
-            "worship me, and i may yet be merciful" +
-                "\n\nthen again, maybe not",
-            "You have played this game for too long, mortal" +
-                "\n\ni think i shall remove you from the board"
+            "凡人" +
+                "\n\n准备好迎接汝之死期了么？",
+            "汝血肉之味已被吾之奴仆察觉",
+            "向吾顶礼膜拜，吾或饶你一命" +
+                "\n\n亦或许不会",
+            "汝游玩此游时日已久" +
+                "\n\n或许该将汝从这排行榜中移除才是"
 
 //		"Don't overestimate your strength, use weapons and armor you can handle.",
 //		"Not all doors in the dungeon are visible at first sight. If you are stuck, search for hidden doors.",

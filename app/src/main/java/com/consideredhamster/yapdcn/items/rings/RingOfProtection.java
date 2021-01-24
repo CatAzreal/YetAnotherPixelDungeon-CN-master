@@ -63,7 +63,7 @@ public class RingOfProtection extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的护甲等级_，并且_提高"+sideEffect+"%的元素抗性_。"
+                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的护甲等级_，并且_提高"+sideEffect+"%的元素抗性_。"
         );
 
         return desc.toString();

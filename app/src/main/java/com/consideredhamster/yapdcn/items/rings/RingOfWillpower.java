@@ -67,7 +67,7 @@ public class RingOfWillpower extends Ring {
         desc.append( " " );
 
         desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%_" + "的魔能_，并且_提高"+sideEffect+"%的负面精神状态抗性_。"
+                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的魔能_，并且_提高"+sideEffect+"%的负面精神状态抗性_。"
         );
 
         return desc.toString();
