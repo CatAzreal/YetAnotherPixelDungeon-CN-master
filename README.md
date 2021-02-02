@@ -33,6 +33,9 @@ Yet Another Pixel Dungeon uses gradle and is most easily compiled/edited using A
 You can download it on Google Play:
 https://play.google.com/store/apps/details?id=com.consideredhamster.yetanotherpixeldungeon
 
+Source code of YAPD:
+https://github.com/ConsideredHamster/YetAnotherPixelDungeon
+
 Source code of original Pixel Dungeon:
 https://github.com/watabou/pixel-dungeon
 
