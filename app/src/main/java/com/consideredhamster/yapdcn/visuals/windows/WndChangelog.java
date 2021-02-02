@@ -36,26 +36,23 @@ public class WndChangelog extends Window {
 	private static final int WIDTH_L	= 160;
 	private static final int HEIGHT_L	= 128;
 
-	private static final String TXT_TITLE	= "另类地牢中文版Beta5.1";
+	private static final String TXT_TITLE	= "另类地牢中文版";
 
     private static final String TXT_DESCR =
 
-        "大家好！我是冰杖。\n " +
+        "大家好！我是冰杖。\n\n " +
         "不认识我？没关系，只需要知道我是汉化版本的作者即可。_汉化基于版本0.3.2a，已获得作者ConsideredHamster许可。_\n" +
                 "\n" +
-                "当前汉化进度(若有遗漏字串欢迎截图，协助我查漏补缺)：\n" +
-                "除了教程和书架额外彩蛋外全部汉化，由于后面速度加快，部分字串翻译可能会有缺漏，极少数可能存在错译，欢迎各位玩家指正\n" +
-                "Q&A\n" +
-                "Q：为什么不能像SPD一样将源文本发到平台，将翻译分包给其他志愿者？\n" +
-                "A：实际上是可以实现的，但工作量非常庞大，因为YAPD的字符串全部内置在代码层，若要外置则需要提取所有字符串" +
-                "并为其挨个命名。\n" +
+                "目前游戏所有部分都应被汉化，若出现并非人名或游戏名词的英文请截图并联系作者qq377844252进行反馈\n" +
+                "若有明显的误译或意义不明之处，或者闪退情况也欢迎联系\n" +
+                "之后如果有空的话，也许会对这个版本做些QoL改动，不过这些都是后话\n" +
                 "\n" +
-                "Q：只有你一个人，翻译质量如何保障？\n" +
-                "A：我是在Transifex平台的破碎地牢志愿翻译简体中文小组的审核员，同时在其他游戏本地化上也有基本的经验，" +
-                "这样的经验不足以让我涉足翻译行业，但在电子游戏领域的志愿翻译中我的能力完全足够。\n" +
-                "\n" +
-                "Q：MISPD？\n" +
-                "A：肯定会在仓鼠做完YAPD正式多语言本地化前做好0.3beta的，相信我（\n"
+                "鸣谢：\n" +
+                "Alexstrasza和Lynn对汉化后期剩余字串的及时翻译，不然我懒癌一发作这版本大概可以再拖几个月(\n\n" +
+                "Ømicrónrg9提供的YAPDCN图标(没错这个也是我懒得做)\n\n" +
+                "六花和老梁在版本最终版前提供的两段字串翻译\n" +
+                "\n\n\n" +
+                "_如我先前所说，仓鼠做完YAPD正式多语言本地化前MISPD0.3beta一定会出的，相信我！（_\n"
     ;
 
 	private RenderedText txtTitle;

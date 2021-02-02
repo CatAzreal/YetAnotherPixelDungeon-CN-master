@@ -37,10 +37,10 @@ import com.watabou.noosa.ui.Component;
 
 public class WndTutorial extends WndTabbed {
 
-	private static final int WIDTH_P	= 112;
+	private static final int WIDTH_P	= 120;
 	private static final int HEIGHT_P	= 160;
 
-	private static final int WIDTH_L	= 128;
+	private static final int WIDTH_L	= 150;
 	private static final int HEIGHT_L	= 128;
 
     private static SmartTexture icons;
@@ -49,7 +49,7 @@ public class WndTutorial extends WndTabbed {
 	private static final String TXT_TITLE	= "游戏教程";
 
 	private static final String[] TXT_LABELS = {
-        "I", "II", "III", "IV", "V",
+        "壹", "貳", "叁", "肆", "伍",
     };
 
     private static final String[] TXT_TITLES = {
@@ -62,74 +62,74 @@ public class WndTutorial extends WndTabbed {
 
     private static final String[][] TXT_POINTS = {
         {
-            "Almost every action in the game are performed via tapping a desired tile. You tap to move, tap to attack, tap to pick up items and tap to interact with NPCs and dungeon features.",
-			"If you tap the character avatar on the top left of the screen, you'll be able to see the stats and buffs your character currently has. If one of the stats is affected by an unidentified item, its value will be displayed as \"??\".",
-            "You can skip a turn by tapping this button on the bottom left of the screen. Press and hold this button to rest - this allows to skip time much faster and significantly increases your health regeneration.",
-            "Depending on your settings, this button can be tapped or pressed to make your character search nearby tiles, revealing traps and secret doors. Alternatively, it allows you to examine anything you meet in the dungeon to read its description.",
-            "On the bottom right of the screen you can see this button. Tap it to open your inventory (you have probably guessed it by now). Long press it to show your keys available at the moment.",
-            "To the left of the inventory button you can see three quickslots. You can use some items from there without need to open your inventory. You can add items for the quickslots by pressing and holding them.",
-            "There is an offhand quickslot right above the inventory button. Its effect depends on the combination of weapons you have equipped at the moment. For example, it will shoot if wands or ranged weapons are equipped.",
-            "Above the offhand quickslot there are several buttons which are probably hidden at the moment. These are danger indicator, attack button, pickup button and resume button. Danger indicator shows the number of currently visible enemies.",
-			"Selecting the enemy by clicking the danger indicator and tapping the attack button allows you to attack an enemy without tapping the tile. Also, pressing and holding the attack button will show target's description.",
-			"Pickup button is shown only when there are items on the tile on which your character is standing right now. Tapping the pickup button allows you to pick up these items without the need to click on the character.",
-            "Below your character avatar you can see a button which allows you to drink from one of your waterskins without having to open your inventory. Or you can long press this button to pour water from your waterskin instead.",
-            "Also there are another button which allows you to interact with your lantern. It is kinda smart one - tap it to light, snuff or refill your lantern. Long pressing it allows you to use your spare oil flasks to ignite nearby tiles.",
-        },
-		{
-			"Most actions in the game spend one turn when performed, which means that one attack spend just as much time as one tile travelled, and that almost everyone moves with the same speed. Keep in mind that actions take their effect the moment they are performed and make the character wait after that.",
-            "Enemies have a certain chance to notice you. It depends on their Perception value and your Stealth value. It also depends on the distance between you and the mob, but the mobs who are already on the hunt will have 100% chance to notice you if they can see you at all.",
-            "However, as enemy loses sight of you, they can lose track of you and become open to a sneak attack. The chance of this to happen mostly depends on your Stealth. You can (and should) utilize corners, doors or high grass for this tactic. Don't forget that flying creatures can see over high grass.",
-			"When you are attacking or being attacked, the first thing to be determined is whether this attack was a hit or miss. In general, the chance to hit depends on the attacker's Accuracy value and the defender's Dexterity value. Different characters and even mobs have different growth rates for these values.",
-            "Dexterity value of the defender is decreased by 1/16 of its value for every occupied or impassable tile near it. This means that you should lure your enemies to narrow corridors if you want to miss less often, and you'll want to stick to the open areas if you want to dodge more reliably.",
-            "All ranged attacks consider attacker's Accuracy to be decreased by 1/8 of its value for every tile of distance. The only exception for this rule are flintlock weapons. Only wands of Magic Missile can miss, but they use your magic power instead of accuracy to determine your chance to hit.",
-            "For the player character (and some late-game mobs), every consecutive hit after the second one slightly increases damage done by the attack. This is shown by the \"combo\" message over your character and can significantly improve your effectiveness against packs of mobs.",
-            "Your Perception attribute affects your chances to find a trap or a secret door by walking near it, as well as your chance to hear an enemy through the wall. Mind that secrets become more difficult to find as you descend further into the dungeon.",
-			"High grass is extremely useful for setting up ambushes, as it both blocks field of view and makes you stealthier. However, water is noisy and will decrease your stealth when you are standing in it.",
-            "Sleeping is the most readily available source of recovery. While you are sleeping, your regeneration rate is tripled. However, sleeping in the water denies this advantage, but you still can do that to skip turns quickly if needed.",
-            "Searching or lighting your lantern guarantees that all secrets on nearby tiles (such as traps or hidden doors) will be revealed to you. Keep in mind that a lit lantern also makes it guaranteed for enemies to notice you, however.",
-            "Your Attunement very significantly affects wands recharge rate, and also determines chance to prevent equipping cursed item when it is unidentified. Magic skill determines strength of your wands and also affects effectiveness of certain offensive scrolls.",
+        "在游戏中，几乎所有操作都可以通过直接点击目标来完成。这包括但不限于移动，攻击，拾起物品以及与NPC和其他地牢元素的互动。",
+        "通过点击左上角的角色头像来查看你当前拥有的属性和效果。如果其中一个属性正受到未鉴定物品的影响，它的值将显示为\"??\"。",
+        "点击左下角的时钟按钮可以跳过一个回合。长按该按钮可以进行休息——这会让你以更快地速度跳过回合，但也会大幅提高生命回复速度。",
+        "取决于你在游戏中的设置，这个按钮允许你点击两次或长按以进行一次周边搜索，让你发现周边的隐藏暗门或陷阱。当然，你也可以轻点按钮并选中任何地牢中的物品，以阅读它们的描述并获知其当前状态。",
+        "这个按钮位于屏幕右下角。点击它即可查看你的背包(想必你已经知道了)。长按它可以查看你当前持有的各类钥匙。",
+        "背包按钮左侧有三个快捷栏，你可以利用快捷栏省略打开背包的步骤直接使用物品。长按快捷栏以添加或切换物品。",
+        "背包按钮上方有一个副手快捷栏。它的效用取决于你当前使用的副手和主手装备。例如，在装备法杖和远程武器的场合，点击它就会进行一次施法/射击。",
+        "副手快捷栏上方还有数个目前可能尚未显示的按钮。它们分别是危险标记，快速攻击，拾取提示和继续按钮。危险标记上会用数字标识出当前视野内的敌人数量。",
+        "点击危险标记可以选取一名敌人，随后点击快速攻击按钮就可以在不点击屏幕的情况下攻击该名敌人。同时，长按快速攻击按钮也会显示目标的描述和当前状态。",
+        "站在可拾取物品的正上方才会出现拾取提示。点击拾取提示即可在不点击角色所在地格的情况下拾取这些物品。",
+        "角色头像下方的这个按钮可以让你在不打开背包的情况下直接喝下水袋中的水。你也可以长按此按钮，将水从水袋中倾倒出来。",
+        "水袋按钮下方还有一个煤油灯相关的按钮。它的运作方式相对智能——点击它即可完成点亮，熄灭和添加灯油等操作。长按该按钮允许你倾倒煤油并点然周边的地格。",
+},
+        {
+        "游戏中绝大多数动作都只消耗一个回合，这意味着一次攻击和移动一格所花费的时间完全一致，绝大多数生物的移动速度适用此规则。记住，指令一旦下达动作就会执行，你需要在所有动作都结算完成后才能继续行动。",
+        "敌人有一定几率注意到你的存在。该几率取决于它们的感知与你的潜行属性值。同时也取决于你和敌人的距离，不过处于索敌状态的敌人不论如何都会发现视野中的你。",
+        "不过，敌人在失去你视野的时候，它们可能会无法继续追击，并给予你伏击它们的机会。这类情况发生的概率很大程度上取决于你的潜行值。你可以(并且应当)利用墙角，房门或茂密植被来实现这个战术。不过别忘记飞行生物可以看穿茂密植被内的隐蔽。",
+        "执行攻击或受到攻击时，游戏决定的第一件事是该攻击是否命中。通常情况下，命中的概率取决于攻击者命中属性和防御者的敏捷属性。这些属性在不同的职业和怪物间都有着不同的成长速率。",
+        "防御方身侧每拥有一个无法通行的地格，它的敏捷属性就会降低1/16。这意味着如果你想让自己的攻击更易命中，你应当将敌人引用到狭长的走廊上；若想让自己更容易闪躲敌人的攻击，你就应当坚守空旷的区域。",
+        "所有远程攻击的实际命中率都会因每格攻击距离减少1/8。唯一的例外便是燧发枪。在法杖之中只有魔弹法杖的施法可被闪避，但其命中率由魔能属性决定。",
+        "玩家角色(及部分后期怪物)在第二次连续命中后，每次连击都会少量提高造成伤害。该机制会以\"连击\"字样显示在角色上方，并且显著提高你在对抗大群怪物的战斗效能。",
+        "你的感知属性会影响正常行动时发现周遭陷阱或暗门，及隔墙感知到敌人行动的几率。值得注意的是，随着你深入地牢，地牢中埋藏的秘密会变得更加难以发现。",
+        "茂密植被是执行伏击的理想地形，因其既能阻挡视野，也能使你在其中隐蔽身型。而在水潭中行走正好相反，既会产生无用噪音，也会减少你的潜行值。",
+        "睡眠是最佳的回复方式。在你睡眠时，你会以三倍自然回复速率恢复生命值。在水潭上睡眠则不会获得加成，不过你仍可在需要快速跳过回合时执行该操作。",
+        "手动搜索或点亮油灯可确保你对周边地格的秘密(如陷阱和暗门)一览无遗。不过需要记住的是，在地牢中点亮灯光也会让敌人立刻注意到你的存在。",
+        "调谐属性能够显著影响持有法杖的充能速度，并且影响在装备未识别装备时看穿诅咒并终止行动的几率。魔能属性决定了法杖的效果和伤害，同时也会影响部分进攻性卷轴的效果。",
         },
         {
-			"Melee weapons are separated into different categories. The most basic of them is heavy one-handed weapons which do not have any special abilities or penalties and can be used in any combination of weapons without strength penalties.",
-			"Light one-handed weapons can be equipped in your off-hand, but will require additional strength to use them in such way. Dual-wielding increases your attack speed by 50% and allows you to parry as well.",
-			"Light two-handed weapons are basically different kinds of polearms. They are not intended to be dual-wielded and will require additional strength if you want to use them in this way. However, they can be used with shields just fine.",
-			"Heavy two-handed weapons are not intended to be used with shields or other melee  weapons. Throwing weapons and wands do not count as weapons here. Also, mind that if your second hand is empty, you can use your main weapon to parry.",
-            "Throwing weapons can be equipped in your offhand slot. They can't be upgraded, but they allow you to attack from distance while keeping your melee weapon equipped. They never degrade, but they have a chance to break on use (same applies for ammunition as well).",
-            "Ranged weapons require both hands to use - one to hold the weapon and second to hold its ammunition. Without ammunition, you will attack as if you had no weapon at all. Every kind of ranged weapon requires specific kind of ammunition.",
-            "Flintlock weapons require bullets in your offhand to shoot and gunpowder in your inventory to reload. Also, loud noises tend to draw unnecessary attention. However, firearms are equally accurate on any distance and they penetrate target's armor.",
-            "Always have at least some kind of armor equipped. Proper armor will greatly increase your chances of survival, decreasing damage from most sources. It will not protect from non-physical damage though, such as fire, lightning or disintegration.",
-			"Cloth armors offer very little protection but they can enhance one of your secondary attributes - Stealth, Detection or Willpower. This bonus can be increased by upgrading the armor, and can lead to some powerful (but risky) character builds.",
-            "Shields occupy your offhand slot, but they increase your armor class with a 50% chance and are more effective at blocking enemy blows. When blocking or parrying enemy blows, you have a chance to leave your enemy open to a counter attack, which will be a guaranteed hit.",
-            "Wands can be very powerful, but you need to equip them and they have a limited number of charges. Unidentified and cursed wands can miscast occasionally. Some wands spend all of their charges on use, and their effect depends on amount of charges used.",
-            "Rings are rare trinkets which can greatly help you when equipped. They are not really powerful by themselves, but effects of similar rings stack with each other. Cursed rings will hinder your abilities instead.",
+        "近战武器被分为多种类别。其中最基本的类别就是重型单手武器，它们没有任何特殊效果或减益，并且可与任何装备搭配使用而不会触发额外的力量惩罚。",
+        "轻型单手武器可作为副手武器使用，但需要额外的力量属性才能有效使用。双持武器能够增加50%的攻击速度的同时也能格挡攻击。",
+        "轻型双手武器基本上由各类长柄武器组成。这些武器的设计并不适于和其他武器双持使用，并需要额外的力量属性才能有效使用。不过它们仍能和盾牌一起使用。",
+        "重型双手武器不能与盾牌或其他近战武器一起使用。投掷武器和法杖仍能装备于副手。同时，如果副手没有装备物品，你的主武器也可用来格挡。",
+        "投掷武器可以装备为副手武器。它们无法被升级强化，但允许你在装备近战武器的同时拥有远程手段。它们不会因为耐久度受损，却有概率在使用时损毁(远程武器弹药同样适用此条)。",
+        "远程武器需要主副手同时使用——主手装备武器，副手装备弹药。没有弹药的情况下你的攻击与未装备武器无异。每种远程武器都需要特定种类的弹药。",
+        "燧发火器在射击时需要副手装备弹药，并需要背包内拥有足够的火药用于再次装填。同时，巨大的噪音往往会引起不必要的注意。不过火器的命中率不会随着距离的增加而衰减，并且它们能轻松穿透目标的护甲。",
+        "不论何时，务必身着一件护甲。合适的护甲能够大幅提高你的生存几率，减少来自多数来源的伤害。不过护甲无法抵挡非物理伤害，如燃烧，电击，解离射线等。",
+        "布制护甲提供的保护非常有限，不过它能够增强你的一个次要属性——潜行，感知或意志。增强数值会随着护甲升级而进一步提高，并能够形成一些强大（但具有风险）的角色构建。",
+        "盾牌会占用你的副手，但有50%的几率将自身护甲等级计入伤害处理，并在格挡敌人攻击时更加有效。成功格挡或招架敌人攻击时有概率使其被弹反，允许你执行一次必定命中的反击。",
+        "法杖有着非常强大的效果，但你需要装备它们才能使用，并且魔杖内只能存储少量充能。诅咒和未鉴定法杖在使用时有几率施法失败。有些法杖在使用时会消耗所有充能，而它们的效果取决于消耗的充能数。",
+        "戒指是一种稀有的饰品，能够为装备者提供很大的助益。戒指本身并不强大，但它们提供的增益可以相互叠加。受诅咒的戒指反而会削弱你的能力。",
         },
         {
-			"Most equipment can be upgraded. Upgraded items are much more powerful than common ones, they deal more damage, offer better protection, require less strength, have higher amount of charges, recharge faster and are more durable. However, items cannot be upgraded more than three times. Keep that in mind.",
-			"Weapons and armors can be enchanted. Enchantments provide some unique effects such as bonus fire damage or resistance to acid, but chance of them working significantly depends on the upgrade level of your weapon. Also, cursed items reverse the effects of their enchantments, turning them against you.",
-            "Some items may happen to be cursed, which means that you will be unable to unequip them until curse is removed (with help of certain scrolls and potions). Cursed items offer the same damage/protection as non-cursed ones, but they require more strength to be used and break faster. Items which are too good for the current chapter have a much higher chance of being cursed.",
-            "Most equipment has condition level. It slowly decreases as the item is used, but can be restored with the corresponding repair tools or scrolls of Upgrade. Every condition level affects item performance just as much as upgrade level does, but it doesn't affects the strength requirement of the weapon or the number of charges of the wand.",
-			"Your character needs food to survive. There is always at least one ration at every floor; you can also find some food in shops or dropped from certain mobs. Your regeneration rate is increased when your satiety is over 75% and halved when it is 25% or lower. When your satiety hits 0%, it will cause periodical damage from starvation.",
-            "Your most readily available source of healing are your waterskins. When used, waterskin recovers part of your missing health, and can be refilled in occasional water fountains. There is always at least one fountain per chapter.",
-            "In the darkness of the dungeon, ambient lighting is barely noticeable, limiting your field of vision. To counter this, you can use the lantern you start with. It basically nullifies your Stealth though, so use it wisely.",
-            "If you have some spare gunpowder, you can use it to craft makeshift bombs. These bombs can be dismantled back to give you some of the gunpowder spent on them, and they can be combined into even more powerful bomb bundles.",
-            "Scrolls can be very powerful when used correctly. Some of them can lead to your quick demise if used incorrectly. There is no way to know which scroll is which, unless you try to read it or find one in a shop.",
-            "On your quest, you can find randomly colored potions. Some of them are beneficial and some of them are harmful. Beneficial potions buff you when used, and harmful potions are better to be thrown into your enemies.",
-            "Sometimes in the high grass you can find alchemical herbs. You can either eat them to cleanse and prevent certain debuffs, or use them in alchemy pot for brewing potions or cooking raw meat.",
-            "If you find inventory to be too limiting, consider buying bags in the shops. A bag unlocks separate inventories for herbs, potions, scrolls or wands. Additionally, it will protect these items from harmful effects (like fire).",			
+        "多数装备都可升级，升级后的装备会比原先更加强大，武器提高伤害，防具提高保护，力量需求降低，充能上限和速度增加且使用时更不易损坏。不过同一件装备只能升至3级，务必记住这点。",
+        "武器和护甲都可被附魔。附魔可向装备赋予一些独特效果，比如附带火焰伤害或提高酸蚀抗性，但其触发几率很大程度上取决于你的装备等级。同时，受到诅咒的装备会逆转其上的魔法效果，使它们对你造成负面影响",
+        "有些物品可能是被诅咒的，这意味着装备它们时，直到诅咒(通过特定卷轴和药剂的帮助)消除前都无法卸下。诅咒物品与非诅咒物品有着相同的伤害和防护效果，但它们需要更高的力量才能有效使用并且更易受损。稀有度明显高于当前章节的物品有更高的概率受到诅咒",
+        "大多数装备都具有状态等级。会随着道具的使用缓慢降低，但可以借助对应的维修工具或升级卷轴来修复。状态等级对道具的影响和道具等级一样，但不会影响装备的力量需求或法杖的充能上限",
+        "你的角色需要食物才能在地牢生存。每层至少存在一个口粮；你也可以在商店里购买食物，部分怪物有时也会掉落食物。当饱食度超过75%时，自然回复速率会增加；当饱食度低于25%时，自然回复速率减半。当的饱食度达到0%时，就会因饥饿而受到周期性伤害。",
+        "最易于使用且数量充足的治疗方式就是你的水袋了。饮用水袋时，你会基于已损失生命值立即恢复生命值，你也可以在地牢中偶尔出现的水井里补充水袋。每个章节都至少拥有一座水井。",
+        "地牢的无尽黑暗之中，自然光源几乎无法见到，极大地限制了你的视野。你可以点亮油灯来驱散视野上的影响。但如此做基本等同于放弃任何潜行行为，建议慎重考虑。",
+        "如果有一些多余的火药，你可以利用它们制成土质炸药。这些炸药可被拆除并回收包裹其中的一部分火药，你也可以将它们捆绑在一起，组合成更加强力的炸药包。",
+        "在使用得当的场合下，卷轴可以发挥出强大的功用。但使用不当的情况下，少数卷轴甚至会将你引入死亡之中。你没有办法通过观察确认卷轴的种类，除非你试着去读或者在商店里见到一个相同卷轴。",
+        "探索地牢时你会找到各色药剂。药水根据效果不同有益有害。有益药剂能够使你获得增益，而有害药剂通常更适合被扔向敌人。",
+        "有时在茂盛植被中会出现草药。你可以直接吃下它们，净化或防止特定减益状态的效果，也可在炼金釜中精炼药剂或烹饪生肉。",
+        "如果发现背包格太少，可以在商店里购买行囊。不同的药草、药剂、卷轴或魔杖分别可以被收纳在一个专属的行囊中。此外，它还可以保护这些物品免受环境伤害比如火)。",
         },
         {
-			"As you explore this dungeon, you'll meet many adversaries on your path. Defeating your enemies is the main source of experience to level up your character, but you'll need the level of threat of your opponents to be appropriate to see any improvements.",
-			"Dungeon is filled with monsters to the brim, and even as you kill them, it will always spawn more to get you. Some mobs can even drop something useful on death. Be careful not to rely on that too much though. Each time the dungeon spawns another creature, respawn time on the current floor is increased a bit.",
-			"Every denizen of this dungeon possesses some special abilities, but in general all of them can be separated into several categories. Most common enemies like rats and flies usually have higher dexterity and stealth, but their attacks are weaker and they can't take a good hit without, you know, dying horribly.",
-			"A bit less common enemies like muggers, skeletons or brutes usually do not have any significant drawbacks or advantages. Some of them can even try to attack you from short distance, but these attacks are usually weaker and they will always switch to melee when damaged.",
-			"Some enemies possess proper ranged attacks though, and they will use them whenever possible. Even worse is that most of these enemies also deal non-physical damage which ignores your armor class. On the other hand, some of them also need to spend a turn to charge their attack before that.",
-			"There are also some mobs which are a much greater threat than others, being strong, durable, and pretty accurate as well. Their only weakness is their very low dexterity. They are also more susceptible to be ambushed and are much easier to be heard.",
-			"While in general, most enemies belong to certain chapter and will never spawn out of it, some enemies can be encountered in any part of the dungeon. They grow in strength to always represent adequate threat for the current floor. Most of them also have some kind of weakness which makes dealing with them much easier.",
-			"However, bosses take the cake for being the greatest threat in this dungeon. All of them are very powerful, durable and possess unique abilities. Worst of all, you can't evade the fight with them and you have to defeat them to descend deeper into the dungeon. They require preparation and attention to be defeated, but some of them also possess certain tricks to make fight with them easier.",
-			"But keep in mind that not everything in this dungeon wants you dead. Some denizens of this dungeon are quite friendly and can even give you a short quest to complete. Obviously, doing what they ask will net you a proper reward, but they can be simply ignored if you want, it will have almost no effect on your future progress.",
-			"Some of these NPCs do not want anything from you... except for your gold. There will be small shop on every fifth floor where you can sell your surplus items and buy something in return. Assortment and quality of items in these shops depends on the current chapter, but some of the items are guaranteed to be sold.",
-			"Finally, keep in mind that some of the enemies in this dungeon are of magical, unnatural origin, and thus can be immune to some effects which require living flesh and thinking mind to be affected. But this also makes them susceptible to some other effects which do not affect natural, living creatures.",	
-			"Well, that's it for now. If you read this tutorial from the beginning to the end, then you now know everything what you need to start playing this game. Some of details are gonna be explained in loading tips (pay attention to them) and you can learn more about inner workings of the game by reading the YAPD article on the Pixel Dungeon wikia. Good luck, and watch out for mimics!",
+        "探索地牢时，你会遇见诸多敌人。击败敌人是经验的主要来源，可用于提高你的等级，不过只有在敌人拥有足够威胁时你才能从战斗中得到进步。",
+        "地牢里最不缺的就是怪物，即使你杀死了眼前的怪物，更多的怪物会出现并追击你。有些怪物会在死亡时掉落物品，但最好不要对掉落物抱有太高期待。每当地牢中出现一只新生物时，本楼层出现生物的间隔时长就会提高一点。",
+        "地牢中的每只怪物都有一些特别的能力，但通常你可以将它们分类对待。最常见的敌人，比如老鼠和苍蝇，通常具有较高的敏捷和潜行能力，不过它们的攻击能力很弱，并且在承受沉重打击时只会...想必你猜到了，死的很惨。",
+        "一些相对不那么常见的敌人，如窃贼，骷髅或豺狼暴徒通常没有明显的缺陷和优势。有些怪物甚至能从中短距离攻击你，不过这些攻击通常效果不佳，并且受到伤害时它们会立即切换回自己的近战武器。",
+        "不过部分敌人有着更加可靠的远程攻击手段，并且它们不论何时都会尝试这些手段。更糟糕的是该类别下的敌人通常造成的都是无视护甲的非物理伤害。不过，有些敌人在攻击前也需要花费一个回合去充能。",
+        "有些怪物则远比其他敌人具有危险性，它们强壮，结实，并且出手精准。它们唯一的弱点是较低的敏捷属性。同时它们也更容易被伏击，行动时产生的声响也更容易被你听见。",
+        "通常来说，多数敌人都只归属于自己的章节，不会出现在其他章节之中，但有些敌人会出现在地牢的所有角落之中。它们的能力会一直匹配当前层数的标准。不过此类型中绝大多数的敌人也都有某种弱点，使得应对它们时会相对简单一些。",
+        "在地牢之中，boss才是最大的威胁。它们非常强大，扛打，并且拥有独特的能力。最棘手的一点是你无法回避boss战，必须击败它们才能继续深入地牢。击败它们需要你做好充足准备并全神贯注，不过在对抗特定boss时也存在着相应技巧，可以略微降低战斗的难度。",
+        "不过地牢之中的生物并非全部都想置你于死地。地牢中有一些友好住民，甚至有些会请求你完成一个小任务。显然按照它们的要求去做你就会得到一定的奖励，但你也完全可以忽略它们，这不会对你后续的游戏产生任何其他影响。",
+        "有些NPC嘛...对你没有任何要求，除了钱。每隔五层都会出现一个小商店，你可以在那里出售自己获取的多余物品并购置一些补给。商店出售的商品种类和质量取决于当前所处章节，但有些商品必定出现在店里。",
+        "最后请记住，地牢之中的某些敌人是秘法来源，并非自然的造物，因此可以免疫一些需要肉身和生灵才会产生的负面效果。不过这也使一些不对寻常生物起作用的效果使用在它们身上时会产生未知的影响。",
+        "那么，这就是全部了。如果你从头到尾阅读完了这篇教程，那这就意味着你已经具备了游玩本作所需的全部知识。一些更加细节的内容会在加载游戏时出现(记得多看看它们)，你还可以通过阅读像素地牢wiki上YAPD部分的文章(或者莲恩锐意制作中的YAPD功略)(多催催她！)来了解更多游戏的内部机制。祝你好运，千万小心那些宝箱怪！",
 		},
     };
 
