@@ -51,16 +51,18 @@ public class RingOfEvasion extends Ring {
 //            "harder to be hit - especially when they are on the move."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指在站定不动时提供_" + mainEffect + "%" + "的闪避能力_，而移动中时提高_"+sideEffect+"%的闪避能力_。"
-        );
+            desc.append(" ");
 
+            desc.append(
+                    "佩戴这枚戒指在站定不动时提供_" + mainEffect + "%" + "的闪避能力_，而移动中时提高_" + sideEffect + "%的闪避能力_。"
+            );
+        }
         return desc.toString();
 	}
 	

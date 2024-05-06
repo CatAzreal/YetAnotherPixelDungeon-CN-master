@@ -52,15 +52,18 @@ public class RingOfMysticism extends Ring {
 //            "attunement with magical currents really helps in their line of work."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的调谐能力_，并且_护甲和武器的附魔触发几率提高"+sideEffect+"%_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的调谐能力_，并且_护甲和武器的附魔触发几率提高" + sideEffect + "%_。"
+            );
+        }
 
         return desc.toString();
 	}

@@ -28,51 +28,51 @@ import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 
 public class TagAttack extends Tag {
-	
+
 	private static final float ENABLED	= 1.0f;
 	private static final float DISABLED	= 0.3f;
-	
+
 	public static TagAttack instance;
-	
+
 	private CharSprite sprite = null;
-	
+
 	private static Mob lastTarget = null;
 	private ArrayList<Mob> candidates = new ArrayList<>();
-	
+
 	public TagAttack() {
 		super( TagDanger.COLOR );
-		
+
 		instance = this;
-		
+
 		setSize( 24, 24 );
 		visible( false );
 		enable( false );
 	}
-	
+
 	@Override
 	protected void createChildren() {
 		super.createChildren();
 	}
-	
+
 	@Override
 	protected void layout() {
 		super.layout();
-		
+
 		if (sprite != null) {
 			sprite.x = x + (width - sprite.width()) / 2;
 			sprite.y = y + (height - sprite.height()) / 2;
 			PixelScene.align( sprite );
 		}
-	}	
-	
+	}
+
 	@Override
 	public void update() {
 		super.update();
-		
+
 		if (Dungeon.hero.isAlive()) {
 
-            enable( Dungeon.hero.ready );
-			
+			enable( Dungeon.hero.ready );
+
 		} else {
 			visible( false );
 			enable( false );
@@ -85,21 +85,18 @@ public class TagAttack extends Tag {
 
 		candidates.clear();
 
-		int v = Dungeon.hero.visibleEnemies();
-
-		for (int i=0; i < v; i++) {
-			Mob mob = Dungeon.hero.visibleEnemy( i );
+		for (Mob mob : Dungeon.hero.visibleEnemies() ) {
 			if (mob != null) {
 				candidates.add( mob );
 			}
 		}
-		
+
 		if (!candidates.contains( lastTarget )) {
 			if (candidates.isEmpty()) {
 				lastTarget = null;
 			} else {
 				lastTarget = candidates.get(0);
-				updateImage();				
+				updateImage();
 				flash();
 			}
 		} else {
@@ -107,18 +104,18 @@ public class TagAttack extends Tag {
 				flash();
 			}
 		}
-		
+
 		visible( lastTarget != null );
 		enable( Dungeon.hero.ready );
 	}
-	
+
 	private void updateImage() {
-		
+
 		if (sprite != null) {
 			sprite.killAndErase();
 			sprite = null;
 		}
-		
+
 		try {
 			sprite = lastTarget.spriteClass.newInstance();
 			sprite.idle();
@@ -128,11 +125,11 @@ public class TagAttack extends Tag {
 			sprite.x = x + (width - sprite.width()) / 2;
 			sprite.y = y + (height - sprite.height()) / 2;
 			PixelScene.align( sprite );
-			
+
 		} catch (Exception e) {
 		}
 	}
-	
+
 	private boolean enabled = true;
 
 	private void enable( boolean value ) {
@@ -141,14 +138,14 @@ public class TagAttack extends Tag {
 			sprite.alpha( value ? ENABLED : DISABLED );
 		}
 	}
-	
+
 	private void visible( boolean value ) {
 		bg.visible = value;
 		if (sprite != null) {
 			sprite.visible = value;
 		}
 	}
-	
+
 	@Override
 	protected void onClick() {
 		if ( visible && enabled && Dungeon.hero.ready && lastTarget != null ) {
@@ -158,28 +155,28 @@ public class TagAttack extends Tag {
 		}
 	}
 
-    @Override
-    protected boolean onLongClick() {
+	@Override
+	protected boolean onLongClick() {
 
-        if (visible && enabled && Dungeon.hero.ready && lastTarget != null) {
-            Toolbar.examineMob( lastTarget.pos );
-            return true;
-        }
+		if (visible && enabled && Dungeon.hero.ready && lastTarget != null) {
+			Toolbar.examineMob( lastTarget.pos );
+			return true;
+		}
 
-        return false;
-    }
-	
+		return false;
+	}
+
 	public static void target( Mob target ) {
 		lastTarget = target;
 		instance.updateImage();
-		
+
 		HealthIndicator.instance.target( target );
 	}
-	
+
 	public static void updateState() {
 
-        if( instance != null ) {
-            instance.checkEnemies();
-        }
+		if( instance != null ) {
+			instance.checkEnemies();
+		}
 	}
 }

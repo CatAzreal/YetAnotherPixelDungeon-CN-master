@@ -21,7 +21,9 @@
 package com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses;
 
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
+import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.BuffIndicator;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.TagAttack;
 
 public class MindVision extends Bonus {
 
@@ -58,9 +60,21 @@ public class MindVision extends Bonus {
         return "哇哦...你的知觉扩张并投射到了本层的其他生物上。你现在的感知能力获得了增强，并且能清楚了解到其他生物的所在位置。";
     }
 
+    @Override
+    public boolean attachTo( Char target ) {
+        if (super.attachTo(target)) {
+            Dungeon.hero.checkVisibleMobs();
+            TagAttack.updateState();
+            return true;
+        }
+        return false;
+    }
+
 	@Override
 	public void detach() {
 		super.detach();
 		Dungeon.observe();
+        Dungeon.hero.checkVisibleMobs();
+        TagAttack.updateState();
 	}
 }

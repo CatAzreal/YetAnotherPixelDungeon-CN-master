@@ -20,14 +20,39 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.hero;
 
+import com.consideredhamster.yetanotherpixeldungeon.items.armours.body.ScaleArmor;
 import com.consideredhamster.yetanotherpixeldungeon.items.food.RationMedium;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.Explosives;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.OilLantern;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.EmptyBottle;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfInvisibility;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfLevitation;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfMending;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfMindVision;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfStrength;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfWisdom;
 import com.consideredhamster.yetanotherpixeldungeon.items.rings.RingOfShadows;
+import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfClairvoyance;
+import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfDetectMagic;
+import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfPhaseWarp;
+import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfTransmutation;
+import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.consideredhamster.yetanotherpixeldungeon.items.wands.Wand;
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfFirebrand;
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfIceBarrier;
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfLightning;
 import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfMagicMissile;
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfThornvines;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.enchantments.Freezing;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.ranged.Arbalest;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.ranged.Bow;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.ranged.Pistole;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Arrows;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Harpoons;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Quarrels;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.Badges;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.ArmorerKit;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.Battery;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.CraftingKit;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.Waterskin;
@@ -49,14 +74,12 @@ import com.watabou.utils.Bundle;
 
 public enum HeroClass {
 
-	WARRIOR( "warrior","战士" ), BRIGAND( "brigand","盗贼" ), SCHOLAR( "scholar" ,"学者"), ACOLYTE( "acolyte","侍祭" );
+    WARRIOR( "战士" ), BRIGAND( "盗贼" ), SCHOLAR( "学者"), ACOLYTE( "侍祭" );
 
 	private String title;
-	private String hname;
 	
-	private HeroClass( String title, String hname ) {
+	private HeroClass( String title ) {
 		this.title = title;
-		this.hname = hname;
 	}
 
     public static final String[] WAR_ABOUT = {
@@ -180,6 +203,18 @@ public enum HeroClass {
 		new Keyring().collect();
         new RationMedium().collect();
 
+//        new ScrollOfClairvoyance().quantity(30).identify().collect();
+//        new ScrollOfPhaseWarp().quantity(30).identify().collect();
+//        new ScrollOfDetectMagic().quantity(30).identify().collect();
+//        new ScrollOfTransmutation().quantity(30).identify().collect();
+//        new Explosives.BombBundle().quantity(30).identify().collect();
+//        new Explosives.BombStick().quantity(30).identify().collect();
+//        new PotionOfInvisibility().quantity(30).identify().collect();
+//        new PotionOfMindVision().quantity(30).identify().collect();
+//        new PotionOfWisdom().quantity(12).identify().collect();
+//        new PotionOfStrength().quantity(4).identify().collect();
+//        new ScrollOfUpgrade().quantity(4).identify().collect();
+
         new Waterskin().setLimit( 5 ).fill().collect();
         new OilLantern().collect();
 
@@ -292,11 +327,7 @@ public enum HeroClass {
 	public String title() {
 		return title;
 	}
-
-	public String hname(){
-	    return hname;
-    }
-
+	
 	public String spritesheet() {
 		
 		switch (this) {

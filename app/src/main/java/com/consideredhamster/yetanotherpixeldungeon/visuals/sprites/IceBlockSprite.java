@@ -23,6 +23,7 @@ package com.consideredhamster.yetanotherpixeldungeon.visuals.sprites;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.CellEmitter;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.particles.Emitter;

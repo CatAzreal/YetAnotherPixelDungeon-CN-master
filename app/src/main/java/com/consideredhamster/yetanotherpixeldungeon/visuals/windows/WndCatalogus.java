@@ -20,8 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
-import com.watabou.noosa.RenderedText;
-import com.watabou.utils.RectF;
+import android.graphics.RectF;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,14 +53,14 @@ public class WndCatalogus extends WndTabbed {
 	
 	private static final int ITEM_HEIGHT	= 18;
 	
-	private static final String TXT_TITLE	= "日志";
-	private static final String TXT_NOTES	= "笔记";
-	private static final String TXT_PHARM	= "药剂";
-	private static final String TXT_RUNES	= "卷轴";
-	private static final String TXT_WANDS	= "法杖";
-	private static final String TXT_RINGS	= "戒指";
+	private static final String TXT_TITLE	= "Journal";
+	private static final String TXT_NOTES	= "Notes";
+	private static final String TXT_PHARM	= "Potions";
+	private static final String TXT_RUNES	= "Scrolls";
+	private static final String TXT_WANDS	= "Wands";
+	private static final String TXT_RINGS	= "Rings";
 	
-	private RenderedText txtTitle;
+	private BitmapText txtTitle;
 	private ScrollPane list;
 
     private enum Tabs {
@@ -88,9 +87,9 @@ public class WndCatalogus extends WndTabbed {
 			resize( WIDTH_P, HEIGHT_P );
 		}
 		
-		txtTitle = PixelScene.renderText( TXT_TITLE, 9 );
+		txtTitle = PixelScene.createText( TXT_TITLE, 9 );
 		txtTitle.hardlight( Window.TITLE_COLOR );
-		PixelScene.align(txtTitle);
+		txtTitle.measure();
 		add( txtTitle );
 		
 		list = new ScrollPane( new Component() ) {
@@ -181,7 +180,7 @@ public class WndCatalogus extends WndTabbed {
 	private void updateList( String title ) {
 		
 		txtTitle.text( title );
-        PixelScene.align(txtTitle);
+		txtTitle.measure();
 		txtTitle.x = PixelScene.align( PixelScene.uiCamera, (width - txtTitle.width()) / 2 );
 		
 		items.clear();
@@ -307,7 +306,7 @@ public class WndCatalogus extends WndTabbed {
 //		private boolean identified;
 
 		private ItemSprite sprite;
-		private RenderedText label;
+		private BitmapText label;
 
         public ListItem( Class<? extends Item> cl ) {
             super();
@@ -317,6 +316,8 @@ public class WndCatalogus extends WndTabbed {
 
                 if( item instanceof Wand) {
                     ((Wand)item).dud = true;
+                } else if( item instanceof Ring) {
+                    ((Ring)item).dud = true;
                 }
 
 //				if (identified = item.isIdentified()) {
@@ -337,7 +338,7 @@ public class WndCatalogus extends WndTabbed {
 			sprite = new ItemSprite();
 			add( sprite );
 			
-			label = PixelScene.renderText( 8 );
+			label = PixelScene.createText( 8 );
 			add( label );
 		}
 		
@@ -361,7 +362,7 @@ public class WndCatalogus extends WndTabbed {
 
     private static class NoteItem extends Component {
 
-        private RenderedText feature;
+        private BitmapText feature;
         private BitmapText depth;
 
         private Image icon;
@@ -370,7 +371,7 @@ public class WndCatalogus extends WndTabbed {
             super();
 
             feature.text( f.desc );
-            PixelScene.align(feature);
+            feature.measure();
 
             depth.text( Integer.toString( d ) );
             depth.measure();
@@ -383,7 +384,7 @@ public class WndCatalogus extends WndTabbed {
 
         @Override
         protected void createChildren() {
-            feature = PixelScene.renderText( 8 );
+            feature = PixelScene.createText( 9 );
             add( feature );
 
             depth = new BitmapText( PixelScene.font1x );

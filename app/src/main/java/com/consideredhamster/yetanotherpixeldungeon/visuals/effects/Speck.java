@@ -23,9 +23,11 @@ package com.consideredhamster.yetanotherpixeldungeon.visuals.effects;
 import android.annotation.SuppressLint;
 import android.util.SparseArray;
 
+import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.TextureFilm;
+import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.watabou.utils.PointF;
@@ -381,7 +383,7 @@ public class Speck extends Image {
                 break;
 
             case ICESHARD:
-                lifespan = 0.2f;
+                lifespan = 0.5f;
                 speed.polar( Random.Float( 2 * 3.1415926f ), 16 / lifespan );
                 acc.set( 0, 128 );
                 angle = Random.Float( 360 );

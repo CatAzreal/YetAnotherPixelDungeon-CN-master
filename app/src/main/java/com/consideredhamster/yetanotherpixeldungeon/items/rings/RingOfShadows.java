@@ -52,15 +52,18 @@ public class RingOfShadows extends Ring {
 //            "whose job revolves around espionage or assassinations."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的潜行能力_，并且_提高"+sideEffect+"%伏击所造成的伤害_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的潜行能力_，并且_提高" + sideEffect + "%伏击所造成的伤害_。"
+            );
+        }
 
         return desc.toString();
 	}

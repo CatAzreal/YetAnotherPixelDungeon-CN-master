@@ -23,6 +23,7 @@ package com.consideredhamster.yetanotherpixeldungeon.actors.hazards;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
+import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.HazardSprite;
 import com.watabou.utils.Bundle;
 
@@ -35,10 +36,6 @@ public abstract class Hazard extends Actor {
 
     public int pos;
     public int var;
-
-//    public Hazard() {
-//        super();
-//    }
 
     @Override
     protected boolean act(){

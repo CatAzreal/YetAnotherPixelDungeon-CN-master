@@ -52,16 +52,18 @@ public class RingOfSatiety extends Ring {
 //            "the times of hunger and helping to prolong times of excess."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将降低_" + mainEffect + "%" + "的饱食度流失速率_，并且_提高"+sideEffect+"%食物效果_。"
-        );
+            desc.append(" ");
 
+            desc.append(
+                    "佩戴这枚戒指将降低_" + mainEffect + "%" + "的饱食度流失速率_，并且_提高" + sideEffect + "%食物效果_。"
+            );
+        }
         return desc.toString();
 	}
 	

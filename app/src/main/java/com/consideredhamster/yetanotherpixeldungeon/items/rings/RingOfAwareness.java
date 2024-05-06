@@ -46,20 +46,21 @@ public class RingOfAwareness extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "这枚戒指可以增强佩戴者的感知力，使其对周遭威胁更加敏锐，并可在反击时造成更致命的伤害。"
-//            "These rings improve wearer's perception, making him or her to be more aware " +
-//            "of different threats as well as allowing for a much deadlier counterattacks."
+            "这枚戒指可以增强佩戴者的感知力，使其对周遭威胁更加敏锐，并可在反击时造成更致命的伤害。"
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的感知能力_，并且_提高"+sideEffect+"%反击所造成的伤害_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高你_\" + mainEffect + \"%\" + \"的感知能力_，并且_提高\"+sideEffect+\"%反击所造成的伤害_。"
+            );
+        }
 
         return desc.toString();
 

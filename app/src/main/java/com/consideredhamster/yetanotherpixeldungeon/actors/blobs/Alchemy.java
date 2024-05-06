@@ -24,6 +24,8 @@ import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.Journal;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.BlobEmitter;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
+import com.consideredhamster.yetanotherpixeldungeon.items.Heap;
+import com.consideredhamster.yetanotherpixeldungeon.items.Item;
 import com.watabou.utils.Bundle;
 
 public class Alchemy extends Blob {

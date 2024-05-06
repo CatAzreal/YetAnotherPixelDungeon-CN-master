@@ -249,10 +249,10 @@ public abstract class Weapon extends EquipableItem {
         return false;
     }
 
-    @Override
-    public boolean disarmable() {
-        return super.disarmable() && !(enchantment instanceof Heroic);
-    }
+//    @Override
+//    public boolean disarmable() {
+//        return super.disarmable() && !(enchantment instanceof Heroic);
+//    }
 
     public int min( int bonus ) {
         return 0;
@@ -329,6 +329,11 @@ public abstract class Weapon extends EquipableItem {
 	public boolean isEnchanted() {
 		return enchantment != null;
 	}
+
+    @Override
+    public boolean isMagical() {
+        return bonus !=0 || enchantment != null;
+    }
 	
 	@Override
 	public ItemSprite.Glowing glowing() {

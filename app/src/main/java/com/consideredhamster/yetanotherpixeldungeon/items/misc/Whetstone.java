@@ -39,7 +39,7 @@ import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.windows.WndBag;
 
 public class Whetstone extends Item {
-
+	
     private static final String TXT_SELECT_WEAPON = "选择需要维护的武器。";
     private static final String TXT_REPAIR_WEAPON = "你的%s的状态看起来好多了！";
     private static final String TXT_CHARGE_KEEPED = "戒指之力协助你完成了这次维护！";
@@ -118,7 +118,7 @@ public class Whetstone extends Item {
             }
         }
 
-        if( bonus < 0.0f && Random.Float() > -bonus ) {
+        if( bonus < 0.0f && Random.Float() < -bonus ) {
             GLog.n(TXT_CHARGE_WASTED);
         } else {
             weapon.repair(1);
@@ -140,7 +140,7 @@ public class Whetstone extends Item {
 	
 	@Override
 	public String info() {
-        return
+		return
                 "你可以用磨刀石打磨刀枪剑戟，使武器重回巅峰。" +
                         "\n磨刀石还能使用" + ( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次" ) + "。";
 //		return "[临时字串]可对近战武器进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维护";

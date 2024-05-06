@@ -46,21 +46,21 @@ public class RingOfAccuracy extends Ring {
         }
 
         StringBuilder desc = new StringBuilder(
-                "据传这枚戒指中寄宿着无数被历史遗忘的猎手与战士的灵魂，它们的加持能够让佩戴者更加熟练地运用各类远程和近战武器。"
-//            "It is said that such rings were imbued with spirits of long-forgotten hunters and " +
-//            "warriors, which allows them to grant the wearer greater skill with all manners of " +
-//            "melee and ranged weapons."
+            "据传这枚戒指中寄宿着无数被历史遗忘的猎手与战士的灵魂，它们的加持能够让佩戴者更加熟练地运用各类远程和近战武器。"
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-            "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的命中能力_，并且_提高"+sideEffect+"%连击所造成的伤害_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高你_\" + mainEffect + \"%\" + \"的命中能力_，并且_提高\"+sideEffect+\"%连击所造成的伤害_。"
+            );
+        }
 
         return desc.toString();
     }

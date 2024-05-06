@@ -59,12 +59,6 @@ public abstract class ThrowingWeaponAmmo extends ThrowingWeapon {
         return 25 - tier * 5 ;
     }
 
-//    @Override
-//    public Item random() {
-//        quantity = Random.Int(baseAmount(), baseAmount() * 2) * ( 5 + Dungeon.chapter() ) / 10;
-//        return this;
-//    }
-
     @Override
     public int price() {
 

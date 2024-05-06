@@ -22,6 +22,7 @@ package com.consideredhamster.yetanotherpixeldungeon.levels.painters;
 
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.blobs.WellWater;
+import com.consideredhamster.yetanotherpixeldungeon.items.keys.SkeletonKey;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Room;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Terrain;
@@ -34,6 +35,7 @@ public class BossExitPainter extends Painter {
 
 		fill( level, room, Terrain.WALL );
 		fill( level, room, 1, Terrain.EMPTY );
+        fill( level, room.left, room.top - 1, room.width(), 1, Terrain.WALL );
 		
 		for (Room.Door door : room.connected.values()) {
 			door.set( Room.Door.Type.REGULAR );

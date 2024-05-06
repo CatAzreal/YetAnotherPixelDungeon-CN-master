@@ -44,7 +44,7 @@ public class Heroic extends Weapon.Enchantment {
 
     @Override
     protected String desc_p() {
-        return "生命值较低时提高造成伤害，并使该武器无法被击落";
+        return "生命值较低时提高造成伤害";
     }
 
     @Override

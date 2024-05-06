@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.levels.features;
 
+import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.Scroll;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.items.Generator;
@@ -31,14 +32,14 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Random;
 
 public class Bookshelf {
-
-    private static final String TXT_FOUND_SCROLL	= "你找到了一张卷轴！";
-    private static final String TXT_FOUND_NOTHING	= "这里没什么值得注意的。";
-    private static final String TXT_FOUND_READING	= "你找到了%s";
+	private static final String TXT_FOUND_SCROLL	= "你找到了一张卷轴！";
+	private static final String TXT_IDENTIFY_SCROLL	= "你找到了一些关于卷轴符文用途的笔记。";
+	private static final String TXT_FOUND_NOTHING	= "这里没什么值得注意的。";
+	private static final String TXT_FOUND_READING	= "你找到了%s";
 
     private static final String[] BOOKS = {
 
-			// LORE
+            // LORE 
 
 			"一些宗教手稿，其上讲述了一位名为Watabou的神，这位强大却又谜团重重的神创建了这个世界，但随后又弃世离去。",
 
@@ -50,7 +51,7 @@ public class Bookshelf {
 
 			"一本描述强大的Yendor巫师与一名黑暗之神英勇战斗并获胜的古旧书本，不过在故事的最后Yendor付出了生命的代价。",
 
-			// DENIZENS
+			// DENIZENS 
 
 			"一本描述豺狼人一族，及其野蛮祭祀和习性的古书。从书中不难看出，豺狼人认为它们可以吸收所食猎物的精华。",
 
@@ -62,7 +63,7 @@ public class Bookshelf {
 
 			"一个破旧的典籍，似乎讲述了召唤各种秘法生物的仪式-死灵，魔像，元素等等...但它已经破旧不堪，无法读出有用的信息。",
 
-			// CHARACTERS
+			// CHARACTERS 
 
 			"一本历史书，讲述了个性暴躁但勇敢而光荣的极北图勒(Thule)大陆一族的事迹。这片大陆之上的勇武之士和海贸商才冠绝九州。",
 
@@ -72,7 +73,7 @@ public class Bookshelf {
 
 			"一本描述西部住民们简朴却充实生活方式的自传书，他们遵循着其德鲁伊祭司的意志并接受其恩惠。 ",
 
-			// CREDITS
+			// CREDITS 
 
 			"一本讲述烈焰女巫Inevielle的古书。她以天才的词法能力和对珍奇动物的驯兽技巧而出名。",
 
@@ -102,7 +103,7 @@ public class Bookshelf {
 			"一本出自位面旅行者Alexstrasza之手的日志，尽管没有做出创世者般的壮举，他在不同位面中留下的足迹依旧留下了不少影响。",
 			// a diary written by Alexstrasza the planeswalker, though having no deeds as the world creators, he managed to leave his step and influenced many worlds after.
 
-			// CONTEST WINNERS
+            // CONTEST WINNERS
 
 			"一部关于传奇冒险家Connor Johnson的书，凭借着坚持不懈的意志和无与伦比的天赋，那些以常人标准毫无可能的挑战对他而言如同闲庭信步。",
 
@@ -117,7 +118,7 @@ public class Bookshelf {
 			"一则关于大千之Illion的寓言，其上讲述了他寻求全能锤杖而踏上的无止尽征途。",
 
 
-			// MISC
+            // MISC
 
 			"一些由远古哲学家们留下的笔记，其上记述着他们的观念：这个世界仍处在不平衡的状态之中，因其仍未被完成。",
 
@@ -128,12 +129,17 @@ public class Bookshelf {
 	public static void examine( int cell ) {
 
         if (Random.Float() < ( 0.05f + 0.05f * Dungeon.chapter() ) ) {
+            Scroll scroll =  (Scroll)Generator.random( Generator.Category.SCROLL );
 
-            Dungeon.level.drop( Generator.random( Generator.Category.SCROLL ), Dungeon.hero.pos ).sprite.drop();
-            GLog.i( TXT_FOUND_SCROLL );
+            if( !scroll.isTypeKnown() && Random.Int( 2 ) == 0 ){
+                GLog.i( TXT_IDENTIFY_SCROLL );
+                scroll.identify();
+            } else {
+                GLog.i( TXT_FOUND_SCROLL, scroll.name() );
+                Dungeon.level.drop( scroll, Dungeon.hero.pos ).sprite.drop();
+            }
 
-            //slightly increase the chance of obtaining lore pieces so what I wrote may be seen, and they are more likely to occur in later chapters
-        } else if (Random.Float() < 0.03f + 0.06f * Dungeon.chapter() ) {
+        } else if (Random.Float() < 0.05f ) {
 
             GLog.i( TXT_FOUND_READING, BOOKS[ Random.Int( BOOKS.length ) ] );
 

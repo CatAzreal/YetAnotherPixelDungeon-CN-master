@@ -34,6 +34,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.armours.Armour;
 import com.consideredhamster.yetanotherpixeldungeon.items.armours.glyphs.Durability;
 import com.consideredhamster.yetanotherpixeldungeon.items.armours.glyphs.Featherfall;
 import com.consideredhamster.yetanotherpixeldungeon.items.weapons.melee.MeleeWeaponHeavyTH;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.QuickSlot;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 
@@ -278,7 +279,7 @@ public abstract class Shield extends Armour {
 
             info.append( "你正手持着" + name + "。" );
 
-        } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
+        } else if( Dungeon.hero.belongings.backpack.contains(this) ) {
 
             info.append( "这件" + name + "正放在你的背包里。" );
 

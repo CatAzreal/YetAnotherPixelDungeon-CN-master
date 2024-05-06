@@ -51,16 +51,18 @@ public class RingOfDurability extends Ring {
 //            "to make tools of their trade to serve longer and be repaired with greater ease."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高你所用_物品" + mainEffect + "%" + "的耐久度_，并且修理物品时_"+sideEffect+"%不消耗修理工具_。"
-        );
+            desc.append(" ");
 
+            desc.append(
+                    "佩戴这枚戒指将提高你所用_物品" + mainEffect + "%" + "的耐久度_，并且修理物品时_" + sideEffect + "%不消耗修理工具_。"
+            );
+        }
         return desc.toString();
 	}
 	

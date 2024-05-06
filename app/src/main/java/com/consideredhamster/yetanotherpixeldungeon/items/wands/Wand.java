@@ -22,8 +22,10 @@ package com.consideredhamster.yetanotherpixeldungeon.items.wands;
 
 import java.util.HashSet;
 
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Charmed;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.special.Satiety;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
+import com.consideredhamster.yetanotherpixeldungeon.items.weapons.melee.Quarterstaff;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.TagAttack;
 import com.watabou.noosa.audio.Sample;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
@@ -33,6 +35,7 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Invisibility;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Vertigo;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Withered;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.Hero;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.MagicMissile;
 import com.consideredhamster.yetanotherpixeldungeon.items.EquipableItem;
@@ -54,7 +57,7 @@ import com.watabou.utils.Random;
 
 public abstract class Wand extends EquipableItem {
 
-	private static final int USAGES_TO_KNOW	= 1;
+	private static final int USAGES_TO_KNOW	= 5;
 	
 	public static final String AC_ZAP	= "施放";
 	
@@ -362,6 +365,11 @@ public abstract class Wand extends EquipableItem {
         return handler.isKnown( this );
     }
 
+    @Override
+    public boolean isMagical() {
+        return true;
+    }
+
     public void setKnown() {
         if (!isTypeKnown()) {
             handler.know(this);
@@ -477,12 +485,12 @@ public abstract class Wand extends EquipableItem {
                     @Override
                     public void call() {
 
-                        if ( curWand.getCharges() > 0
+                        if ( curWand.getCharges() >= 1.0f
                             && ( curWand.isIdentified() || Random.Float() > curWand.miscastChance() )
-                            || curWand.getCharges() == 0 && Random.Float() < curWand.squeezeChance()
+                            || curWand.getCharges() < 1.0f && Random.Float() < curWand.squeezeChance()
                         ) {
 
-                            if (curWand.curCharges <= 0) {
+                            if ( curWand.curCharges < 1.0f ) {
 
                                 curWand.use(3);
                                 curUser.buff( Satiety.class ).decrease( Satiety.POINT * 2.0f );
@@ -528,11 +536,6 @@ public abstract class Wand extends EquipableItem {
 	};
 
     @Override
-    public int maxDurability() {
-        return 50;
-    }
-
-    @Override
     public float stealingDifficulty() { return 0.75f; }
 
     @Override
@@ -566,7 +569,7 @@ public abstract class Wand extends EquipableItem {
 
             if( isEquipped( Dungeon.hero ) ){
                 info.append( "你正手持着这根法杖。" );
-            } else if( Dungeon.hero.belongings.backpack.items.contains( this ) ){
+            } else if( Dungeon.hero.belongings.backpack.contains( this ) ){
                 info.append( "这根法杖正装在你的背包里。" );
             } else {
                 info.append( "这根法杖在地面上。" );

@@ -22,7 +22,7 @@ package com.consideredhamster.yetanotherpixeldungeon.visuals.effects;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import com.watabou.utils.RectF;
+import android.graphics.RectF;
 import android.opengl.GLES20;
 
 import com.watabou.glwrap.Texture;

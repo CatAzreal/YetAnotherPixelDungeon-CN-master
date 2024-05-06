@@ -47,7 +47,7 @@ import com.watabou.utils.Random;
 public class Blacksmith extends NPC {
 
 	private static final String TXT_GOLD_1 =
-		"嘿，人类！不想当个没用的废物，对吗？拿着那个镐子然后给我挖点_暗金矿，15块_就够了。什么？要我如何报答你？真贪心...\n" +
+		"嘿，人类！不想当个没用的废物，对吗？拿着那个镐子然后给我挖点_暗金矿，5块_就够了。什么？要我如何报答你？真贪心...\n" +
 		"好吧，好吧，我没钱付给你，但我可以给你打打铁。想想你运气有多好吧，我可是这附近唯一的铁匠。";
 	private static final String TXT_BLOOD_1 =
 		"嘿，人类！不想当个没用的废物，对吗？拿着那个镐子然后用它_杀只蝙蝠_，我需要镐头上沾着的血。什么？要我如何报答你？真贪心...\n" +
@@ -55,7 +55,7 @@ public class Blacksmith extends NPC {
 	private static final String TXT2 =
 		"你在逗我？我的镐子呢？！";
 	private static final String TXT3 =
-		"_暗金矿_15块。说真的，有那么难吗？";
+		"_暗金矿_5块。说真的，有那么难吗？";
 	private static final String TXT4 =
 		"我说了我需要镐子沾上蝙蝠血。赶紧！";
 	private static final String TXT_COMPLETED =
@@ -129,7 +129,7 @@ public class Blacksmith extends NPC {
 				DarkGold gold = Dungeon.hero.belongings.getItem( DarkGold.class );
 				if (pick == null) {
 					tell( TXT2 );
-				} else if (gold == null || gold.quantity() < 15) {
+				} else if (gold == null || gold.quantity() < 5) {
 					tell( TXT3 );
 				} else {
 //					if (pick.isEquipped( Dungeon.hero )) {
@@ -162,23 +162,23 @@ public class Blacksmith extends NPC {
 	public static String verify( Item item1, Item item2 ) {
 		
 		if (item1 == item2) {
-			return "选择2个不一样的，不是2次一样的！";
+			return "Select 2 different items, not the same item twice!";
 		}
 		
 		if (item1.getClass() != item2.getClass()) {
-			return "选择2个相同类型的物品！";
+			return "Select 2 items of the same type!";
 		}
 		
 		if (!item1.isIdentified() || !item2.isIdentified()) {
-			return "我得知道我在拿什么干活，先鉴定！";
+			return "I need to know what I'm working with, identify them first!";
 		}
 
         if (item1.bonus < 0 || item2.bonus < 0) {
-			return "我可不碰诅咒的破烂！";
+			return "I don't work with cursed items!";
 		}
 		
 		if (!item1.isUpgradeable() || !item2.isUpgradeable()) {
-			return "我没法再升级里面的物品了。";
+			return "I can't upgrade this items any further.";
 		}
 		
 		return null;
@@ -244,8 +244,8 @@ public class Blacksmith extends NPC {
 	@Override
 	public String description() {
 		return 
-			"这个巨魔看起来和任何其他巨魔一样：又高又瘦，皮肤的色泽和纹理都像是石头。这位巨魔铁匠正在拿着一" +
-			"把与其体形极其不符的小锤子不停地修修补补。";
+			"This troll blacksmith looks like all trolls look: he is tall and lean, and his skin resembles stone " +
+			"in both color and texture. The troll blacksmith is tinkering with unproportionally small tools.";
 	}
 
 	public static class Quest {
@@ -307,7 +307,7 @@ public class Blacksmith extends NPC {
 				
 				Room blacksmith = null;
 				for (Room r : rooms) {
-					if (r.type == Type.STANDARD && r.width() > 4 && r.height() > 4) {
+					if (r.type == Type.STANDARD && r.width() > 3 && r.height() > 3) {
 						blacksmith = r;
 						blacksmith.type = Type.BLACKSMITH;
 						

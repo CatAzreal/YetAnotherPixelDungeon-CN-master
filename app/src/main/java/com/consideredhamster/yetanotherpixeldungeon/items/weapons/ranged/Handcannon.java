@@ -47,6 +47,6 @@ public class Handcannon extends RangedWeaponFlintlock {
 	
 	@Override
 	public String desc() {
-		return "尽管最初燧发武器是人类的造物，矮人们迅速适应了这个全新概念并在其上加以改进。铳炮本身非常沉重，并且需要大量火药用于装填，但它的杀伤力冠绝所有其他火器。";
+		return "尽管最初燧发武器是人类的造物，矮人们迅速适应了这个全新概念并在其上加以改进。铳炮本身非常沉重，并且需要极强的身体力量扛起并承受其后坐力，但它的杀伤力冠绝所有其他火器。";
 	}
 }

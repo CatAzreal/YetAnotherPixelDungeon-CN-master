@@ -21,7 +21,6 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.YetAnotherPixelDungeon;
-import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.items.Heap;
 import com.consideredhamster.yetanotherpixeldungeon.items.Heap.Type;
@@ -34,25 +33,27 @@ import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
 
 public class WndInfoItem extends Window {
 	
-	private static final String TXT_CHEST			= "宝箱";
-	private static final String TXT_LOCKED_CHEST	= "上锁宝箱";
-	private static final String TXT_CRYSTAL_CHEST	= "水晶宝箱";
-	private static final String TXT_TOMB			= "坟墓";
-	private static final String TXT_SKELETON		= "英雄遗骸";
-	private static final String TXT_WONT_KNOW		= "直到开启前你都没法弄清楚里面究竟放着什么东西！";
-	private static final String TXT_NEED_KEY		= TXT_WONT_KNOW + "你需要一把金钥匙来打开它。";
-	private static final String TXT_INSIDE			= "你能看见箱子里的%s，但你需要一把金钥匙来打开它。";
+	private static final String TXT_CHEST			= "Chest";
+	private static final String TXT_LOCKED_CHEST	= "Locked chest";
+	private static final String TXT_CRYSTAL_CHEST	= "Crystal chest";
+	private static final String TXT_TOMB			= "Tomb";
+	private static final String TXT_SKELETON		= "Skeletal remains";
+	private static final String TXT_WONT_KNOW		= "You won't know what's inside until you open it!";
+	private static final String TXT_NEED_KEY		= TXT_WONT_KNOW + " But to open it you need a golden key.";
+	private static final String TXT_INSIDE			= "You can see %s inside, but to open the chest you need a crystal key.";
 	private static final String TXT_OWNER	= 
-		"这处古旧坟墓里可能埋藏着一些有用的东西，但其下埋葬的人必然不希望你如此做。";
+		"This ancient tomb may contain something useful, " +
+		"but its owner will most certainly object to checking.";
 	private static final String TXT_REMAINS	= 
-		"在你之前的先驱者们所能留下的所有东西都在里面了，也许你该看看里面有些什么。";
+		"This is all that's left from one of your predecessors. " +
+		"Maybe it's worth checking for any valuables.";
 	
 	private static final float GAP	= 2;
 
     private static final int WIDTH_P = 120;
     private static final int WIDTH_L = 240;
 
-    private RenderedTextMultiline normal;
+    private BitmapTextMultiline normal;
     private BitmapTextMultiline highlighted;
 	
 	public WndInfoItem( Heap heap ) {
@@ -122,15 +123,28 @@ public class WndInfoItem extends Window {
 		titlebar.setRect( 0, 0, width, 0 );
 		add( titlebar );
 
+        Highlighter hl = new Highlighter( info );
 
-        normal = PixelScene.renderMultiline( info, 6 );
-        normal.maxWidth(width);
-        PixelScene.align(normal);
-        float x = titlebar.left();
-        float y = titlebar.bottom() + GAP;
-        normal.setPos(x,y);
+        normal = PixelScene.createMultiline( hl.text, 6 );
+        normal.maxWidth = width;
+        normal.measure();
+        normal.x = titlebar.left();
+        normal.y = titlebar.bottom() + GAP;
         add( normal );
 
+        if (hl.isHighlighted()) {
+            normal.mask = hl.inverted();
+
+            highlighted = PixelScene.createMultiline( hl.text, 6 );
+            highlighted.maxWidth = normal.maxWidth;
+            highlighted.measure();
+            highlighted.x = normal.x;
+            highlighted.y = normal.y;
+            add( highlighted );
+
+            highlighted.mask = hl.mask;
+            highlighted.hardlight( TITLE_COLOR );
+        }
 		
 //		BitmapTextMultiline txtInfo = PixelScene.createMultiline( info, 6 );
 //		txtInfo.maxWidth = WIDTH;
@@ -140,6 +154,6 @@ public class WndInfoItem extends Window {
 //		add( txtInfo );
 		
 //		resize( WIDTH, (int)(txtInfo.y + txtInfo.height()) );
-        resize( width, (int)(y + normal.height()) );
+        resize( width, (int)(normal.y + normal.height()) );
 	}
 }

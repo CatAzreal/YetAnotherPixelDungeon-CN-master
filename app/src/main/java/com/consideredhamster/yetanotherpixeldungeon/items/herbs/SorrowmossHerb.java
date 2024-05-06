@@ -27,6 +27,7 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Debuff;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.Hero;
 import com.consideredhamster.yetanotherpixeldungeon.items.food.MeatStewed;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfCausticOoze;
+import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfMending;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfToxicGas;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.PotionOfWebbing;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSprite;
@@ -68,7 +69,7 @@ public class SorrowmossHerb extends Herb {
     @Override
     public String desc() {
         return "据说苦苔草常在悲剧发生过的地方生长。尽管苦苔草的来历与用法都有些骇人，实际上它是安全可食用的。\n\n"+
-                "苦苔草可以炼制_毒气_、_蚀泥_、_幻气_药剂。直接服用则会解除_腐蚀_状态并获得短时间的_酸蚀属性_抗性。";
+                "苦苔草可以炼制_毒气_、_蚀泥_、_结网_药剂。直接服用则会解除_腐蚀_状态并获得短时间的_酸蚀属性_抗性。";
     //    return "[临时字串]可精炼毒气/蚀泥/幻气药剂，直接食用可移除淤泥状态，并获得酸蚀抗性(短)";
 //        return "It is said that Sorrowmoss usually grows in places where a great tragedy took " +
 //                "place. Despite its reputation and applications, it is actually completely safe to eat." +

@@ -20,7 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
-import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
+import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.Hero;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.npcs.Wandmaker;
@@ -54,11 +54,10 @@ public class WndWandmaker extends Window {
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
 		
-		RenderedTextMultiline message = PixelScene.renderMultiline( TXT_MESSAGE, 6 );
-		message.maxWidth(WIDTH);
-		PixelScene.align(message);
-		float y = titlebar.bottom() + GAP;
-		message.setPos(0,y);
+		BitmapTextMultiline message = PixelScene.createMultiline( TXT_MESSAGE, 6 );
+		message.maxWidth = WIDTH;
+		message.measure();
+		message.y = titlebar.bottom() + GAP;
 		add( message );
 		
 		RedButton btnBattle = new RedButton( Wandmaker.Quest.wand1.name() ) {
@@ -67,7 +66,7 @@ public class WndWandmaker extends Window {
 				selectReward( wandmaker, item, Wandmaker.Quest.wand1 );
 			}
 		};
-		btnBattle.setRect( 0, y + message.height() + GAP, WIDTH, BTN_HEIGHT );
+		btnBattle.setRect( 0, message.y + message.height() + GAP, WIDTH, BTN_HEIGHT );
 		add( btnBattle );
 		
 		RedButton btnNonBattle = new RedButton( Wandmaker.Quest.wand2.name() ) {

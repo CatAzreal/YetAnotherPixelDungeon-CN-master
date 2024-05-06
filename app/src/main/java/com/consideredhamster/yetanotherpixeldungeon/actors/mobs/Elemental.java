@@ -20,6 +20,8 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
+import java.util.HashSet;
+
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
@@ -33,10 +35,13 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Burning
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Ensnared;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Frozen;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.MagicMissile;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.GameScene;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ElementalSprite;
+import com.watabou.utils.Random;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 
 public class Elemental extends MobPrecise {

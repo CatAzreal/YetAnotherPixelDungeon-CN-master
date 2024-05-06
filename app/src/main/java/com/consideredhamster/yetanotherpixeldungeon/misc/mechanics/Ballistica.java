@@ -22,6 +22,7 @@ package com.consideredhamster.yetanotherpixeldungeon.misc.mechanics;
 
 import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
+import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 
 public final class Ballistica {
 
@@ -110,27 +111,31 @@ public final class Ballistica {
 
         int cell = from;
 
-        while ( !hit || goThrough ) {
+        while ( ( !hit || goThrough ) && distance < trace.length - 1 ) {
 
             cell += stepA;
 
             err += dB;
 
-            if ( err >= dA ) {
+            if (err >= dA) {
                 err = err - dA;
                 cell = cell + stepB;
             }
 
-            if ( cell == to ) {
+            if (cell == to) {
                 hit = true;
             }
 
             distance++;
-            trace[ distance ] = cell;
+            trace[distance] = cell;
 //            trace[ distance + 1 ] = 0;
 
-            if ( Level.solid[ cell ] || ( hitChars && Actor.findChar( cell ) != null ) ) {
-                return trace[ distance ];
+            if ( cell > 0 && cell < Level.solid.length ) {
+                if (Level.solid[cell] || ( hitChars && Actor.findChar(cell) != null ) ) {
+                    return trace[distance];
+                }
+//            } else {
+//                return trace[ distance - 1 ];
             }
 
             /*// basically if current cell is not a wall

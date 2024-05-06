@@ -39,7 +39,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.windows.WndBag;
 import java.util.ArrayList;
 
 public class Battery extends Item {
-
+	
     private static final String TXT_SELECT_WAND = "选择需要充能的法杖。";
     private static final String TXT_REPAIR_WAND = "你的%s的状态看起来好多了！";
     private static final String TXT_CHARGE_KEEPED = "戒指之力协助你完成了这次充能！";
@@ -118,7 +118,7 @@ public class Battery extends Item {
             }
         }
 
-        if( bonus < 0.0f && Random.Float() > -bonus ) {
+        if( bonus < 0.0f && Random.Float() < -bonus ) {
             GLog.n(TXT_CHARGE_WASTED);
         } else {
             wand.repair(1);

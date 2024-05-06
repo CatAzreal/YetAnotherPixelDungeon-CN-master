@@ -180,7 +180,7 @@ public abstract class BodyArmor extends Armour {
 
             info.append( "你正装备着" + name + "。" );
 
-        } else if( Dungeon.hero.belongings.backpack.items.contains(this) ) {
+        } else if( Dungeon.hero.belongings.backpack.contains(this) ) {
 
             info.append( "这件" + name + "正装在你的背包里。" );
 

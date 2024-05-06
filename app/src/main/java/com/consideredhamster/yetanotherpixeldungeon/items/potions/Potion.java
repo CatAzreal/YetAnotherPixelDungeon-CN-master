@@ -52,6 +52,8 @@ public abstract class Potion extends Item {
 		"你确定要喝掉它吗？通常来讲这瓶药剂应当被扔向敌人而非直接饮用。";
 	private static final String TXT_R_U_SURE_THROW = 
 		"你确定要扔出它吗？通常来说这瓶药剂应当被使用者直接饮用。";
+
+	private static final String TXT_IDENTIFIED	= "你现在知道\"%s\"药剂拥有%s的效果!";
 	
 	private static final float TIME_TO_DRINK = 1f;
 	
@@ -265,8 +267,12 @@ public abstract class Potion extends Item {
 	public void setKnown() {
 		if ( !isTypeKnown() && !dud ) {
 			handler.know( this );
+
+			if( Dungeon.hero.isAlive() ){
+                GLog.i( TXT_IDENTIFIED, color, name() );
+            }
 		}
-		
+
 		Badges.validateAllPotionsIdentified();
 	}
 	

@@ -49,16 +49,18 @@ public class RingOfKnowledge extends Ring {
 //            "capacity of their wearer, allowing to learn more things in a shorter amount of time."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-            "佩戴这枚戒指能够_提高" + mainEffect + "%的经验获取和道具鉴定速率。"
-        );
+            desc.append(" ");
 
+            desc.append(
+                    "佩戴这枚戒指能够_提高" + mainEffect + "%的经验获取和道具鉴定速率。"
+            );
+        }
         return desc.toString();
 	}
 	

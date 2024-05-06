@@ -56,15 +56,18 @@ public class RingOfProtection extends Ring {
 //            "to various magical and elemental threats."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的护甲等级_，并且_提高"+sideEffect+"%的元素抗性_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的护甲等级_，并且_提高" + sideEffect + "%的元素抗性_。"
+            );
+        }
 
         return desc.toString();
 	}

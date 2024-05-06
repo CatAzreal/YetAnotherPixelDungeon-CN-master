@@ -93,13 +93,13 @@ public class ArmorerKit extends Item {
 	
 	@Override
 	public void execute( Hero hero, String action ) {
-		if (action == AC_APPLY) {
+        if (action == AC_APPLY) {
 
-			curUser = hero;
-			curItem = this;
-			GameScene.selectItem( itemSelector, WndBag.Mode.ARMORERS_KIT, TXT_SELECT_ARMOUR);
-			
-		} else {
+            curUser = hero;
+            curItem = this;
+            GameScene.selectItem( itemSelector, WndBag.Mode.ARMORERS_KIT, TXT_SELECT_ARMOUR);
+
+        } else {
 			
 			super.execute( hero, action );
 			
@@ -110,8 +110,8 @@ public class ArmorerKit extends Item {
     public int price() {
         return 20 + 10 * value;
     }
-	
-	private void repair(Armour armor) {
+
+    private void repair(Armour armor) {
 
         float bonus = Dungeon.hero.ringBuffsBaseZero( RingOfDurability.Durability.class ) * 0.5f;
 
@@ -123,11 +123,11 @@ public class ArmorerKit extends Item {
             }
         }
 
-        if( bonus < 0.0f && Random.Float() > -bonus ) {
+        if( bonus < 0.0f && Random.Float() < -bonus ) {
             GLog.n(TXT_CHARGE_WASTED);
         } else {
             armor.repair(1);
-            GLog.p(TXT_REPAIR_ARMOUR, armor.name());
+            GLog.i(TXT_REPAIR_ARMOUR, armor.name());
         }
 
         curUser.sprite.operate(curUser.pos);
@@ -136,35 +136,11 @@ public class ArmorerKit extends Item {
         curUser.sprite.centerEmitter().start(Speck.factory(Speck.KIT), 0.05f, 10);
         curUser.spend( TIME_TO_APPLY );
         curUser.busy();
+    }
 
-//		detach( curUser.belongings.backpack );
-//
-//		curUser.sprite.centerEmitter().start( Speck.factory( Speck.KIT ), 0.05f, 10 );
-//		curUser.spend(TIME_TO_APPLY);
-//		curUser.busy();
-//
-//		GLog.w(TXT_REPAIR_ARMOUR, armor.name() );
-//
-//		ClassArmor classArmor = ClassArmor.upgrade( curUser, armor );
-//		if (curUser.belongings.armor == armor) {
-//
-//			curUser.belongings.armor = classArmor;
-//			((HeroSprite)curUser.sprite).updateArmor();
-//
-//		} else {
-//
-//			armor.detach( curUser.belongings.backpack );
-//			classArmor.collect( curUser.belongings.backpack );
-//
-//		}
-//
-//		curUser.sprite.operate( curUser.pos );
-//		Sample.INSTANCE.play( Assets.SND_EVOKE );
-	}
-	
 	@Override
 	public String info() {
-        return
+		return
                 "这件精巧的工具可以让任何人随时修复非布制护甲或是盾牌。\n使用工具不需要任何裁缝、皮匠或是铁匠技能，但剩余材料仅能进行" +
                         ( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次")  + "维修。";
 //		return "[临时字串]可对非布制护甲进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维修";
@@ -183,13 +159,13 @@ public class ArmorerKit extends Item {
     public String toString() {
         return super.toString() + " (" + status() +  ")" ;
     }
-	
-	private final WndBag.Listener itemSelector = new WndBag.Listener() {
-		@Override
-		public void onSelect( Item item ) {
-			if (item != null) {
-				ArmorerKit.this.repair((Armour) item);
-			}
-		}
-	};
+
+    private final WndBag.Listener itemSelector = new WndBag.Listener() {
+        @Override
+        public void onSelect( Item item ) {
+            if (item != null) {
+                ArmorerKit.this.repair((Armour) item);
+            }
+        }
+    };
 }

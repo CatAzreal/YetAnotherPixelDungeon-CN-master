@@ -20,10 +20,11 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.items.weapons.enchantments;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
+import com.consideredhamster.yetanotherpixeldungeon.actors.blobs.Thunderstorm;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Lightning;
 import com.consideredhamster.yetanotherpixeldungeon.items.wands.Wand;
 import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfLightning;
@@ -32,11 +33,6 @@ import com.watabou.utils.Random;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSprite;
 
 public class Shocking extends Weapon.Enchantment {
-
-    private ArrayList<Char> affected = new ArrayList<Char>();
-
-    private int[] points = new int[20];
-    private int nPoints;
 
     @Override
     public ItemSprite.Glowing glowing() {
@@ -71,7 +67,18 @@ public class Shocking extends Weapon.Enchantment {
     @Override
     protected boolean proc_p( Char attacker, Char defender, int damage ) {
 
-        defender.damage( Random.IntRange(damage / 3, damage / 2), this, Element.SHOCK );
+        HashSet<Char> affected = Thunderstorm.spreadFrom( defender.pos );
+
+        if( affected != null && !affected.isEmpty() ) {
+            for( Char ch : affected ) {
+
+                int power = Random.IntRange( damage / 3, damage / 2 ) ;
+
+                ch.damage( ch == defender ? power : power / 2, this, Element.SHOCK );
+
+            }
+        }
+
         defender.sprite.parent.add( new Lightning( defender.pos, defender.pos ) );
 
         return true;
@@ -80,7 +87,14 @@ public class Shocking extends Weapon.Enchantment {
     @Override
     protected boolean proc_n( Char attacker, Char defender, int damage ) {
 
-        attacker.damage(damage, this, Element.SHOCK);
+        HashSet<Char> affected = Thunderstorm.spreadFrom( attacker.pos );
+
+        if( affected != null && !affected.isEmpty() ) {
+            for( Char ch : affected ) {
+                ch.damage( ch == attacker ? damage : damage / 2, this, Element.SHOCK );
+            }
+        }
+
         attacker.sprite.parent.add( new Lightning( attacker.pos, attacker.pos ) );
 
         return true;

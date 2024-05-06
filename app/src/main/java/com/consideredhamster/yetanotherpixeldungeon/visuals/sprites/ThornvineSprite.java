@@ -21,6 +21,7 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.sprites;
 
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Splash;
 import com.watabou.noosa.TextureFilm;
 
 public class ThornvineSprite extends MobSprite {

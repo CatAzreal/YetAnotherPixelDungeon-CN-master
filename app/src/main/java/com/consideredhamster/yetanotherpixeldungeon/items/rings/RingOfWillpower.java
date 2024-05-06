@@ -60,15 +60,18 @@ public class RingOfWillpower extends Ring {
 //            "shrug off all kinds of mental debuffs."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的魔能_，并且_提高"+sideEffect+"%的负面精神状态抗性_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高你_" + mainEffect + "%" + "的魔能_，并且_提高" + sideEffect + "%的负面精神状态抗性_。"
+            );
+        }
 
         return desc.toString();
     }

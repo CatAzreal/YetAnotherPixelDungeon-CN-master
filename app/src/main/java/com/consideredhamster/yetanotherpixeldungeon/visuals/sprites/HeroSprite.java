@@ -20,8 +20,9 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.sprites;
 
-import com.watabou.utils.RectF;
+import android.graphics.RectF;
 
+import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.noosa.Camera;

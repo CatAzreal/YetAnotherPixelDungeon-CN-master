@@ -20,14 +20,20 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
-import com.watabou.noosa.RenderedText;
+import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
+import com.consideredhamster.yetanotherpixeldungeon.Element;
+import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.ui.Component;
+import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Bestiary;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.PixelScene;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.BuffIndicator;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.HealthBar;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class WndInfoMob extends WndTitledMessage {
 
@@ -39,14 +45,95 @@ public class WndInfoMob extends WndTitledMessage {
 	
 	private static String desc( Mob mob ) {
 		
-		StringBuilder builder = new StringBuilder( mob.description() );
+		StringBuilder builder = new StringBuilder( ( mob.friendly || mob.hostile ? "\n\n" + stats( mob ) : "" ) );
+		
+		builder.append( "\n" + mob.description() );
+		builder.append( "\n\n" + ( Bestiary.isBoss( mob ) ? "The " : "This " ) + mob.name + " is " + mob.state.status() + "." );
 
-		if (!mob.state.status().equals("和平")){
-		builder.append( "\n\n" + "这个" + mob.name + "正在" + mob.state.status() + "。" );}
-		else {
-			builder.append("\n\n" + "这个" + mob.name + "是" + mob.state.status() + "的。" );
-		}
 		return builder.toString();
+	}
+
+	private static String stats( Mob mob ) {
+
+		StringBuilder stats = new StringBuilder();
+
+		int mobAccuracy = mob.accuracy() * 2;
+		int hitChance = ( mobAccuracy * 100 / ( mobAccuracy + Dungeon.hero.dexterity() ) );
+
+		int heroAccuracy = Dungeon.hero.accuracy() * 2;
+		int dodgeChance = 100 - ( heroAccuracy * 100 / ( heroAccuracy + mob.dexterity() ) );
+
+		stats.append( "Mob health: _" + mob.HP + "/" + mob.HT + " HP (" + mob.armorClass() + " AC)_\n" );
+		stats.append( "Base damage: _" + mob.minDamage() + "-" + mob.maxDamage() + " (" +
+				( ( mob.minDamage() + mob.maxDamage() ) / 2 ) + " on avg.)_\n" );
+
+//        stats.append( "\n" );
+
+		stats.append( "Accuracy: _" + mob.accuracy() + " ("+ hitChance +"% to hit)_\n" );
+		stats.append( "Dexterity: _" + mob.dexterity() + " ("+ dodgeChance +"% to dodge)_\n" );
+
+//        stats.append( "\n" );
+
+//        stats.append( "Att speed: _" + (int)(attackSpeed() * 100) + "%_\n" );
+//        stats.append( "Mov speed: _" + (int)(attackSpeed() * 100) + "%_\n" );
+//
+//        stats.append( "\n" );
+
+		ArrayList<String> immunity = new ArrayList<>();
+		ArrayList<String> resistant = new ArrayList<>();
+		ArrayList<String> vulnerable = new ArrayList<>();
+
+		for( Map.Entry<Class<? extends Element>, Float> entry : mob.resistances().entrySet() ) {
+			if( entry.getValue() == Element.Resist.IMMUNE ) {
+				immunity.add( entry.getKey().getSimpleName() );
+			} else if( entry.getValue() == Element.Resist.PARTIAL ) {
+				resistant.add( entry.getKey().getSimpleName() );
+			} else if( entry.getValue() == Element.Resist.VULNERABLE ) {
+				vulnerable.add( entry.getKey().getSimpleName() );
+			}
+		}
+
+		if( !immunity.isEmpty() ){
+
+			StringBuilder imm = new StringBuilder(  );
+			imm.append( immunity.remove(0));
+
+			for( String s : immunity ) {
+				imm.append( ", ");
+				imm.append( s );
+			}
+
+			stats.append( "Immune to: _" + imm.toString() + "_\n" );
+		}
+		if( !resistant.isEmpty() ){
+
+			StringBuilder res = new StringBuilder(  );
+			res.append( resistant.remove(0));
+
+			for( String s : resistant ) {
+				res.append( ", ");
+				res.append( s );
+			}
+
+			stats.append( "Resistant to: _" + res.toString() + "_\n" );
+		}
+
+		if( !vulnerable.isEmpty() ){
+
+			StringBuilder vul = new StringBuilder(  );
+			vul.append( vulnerable.remove(0));
+
+			for( String s : vulnerable ) {
+				vul.append( ", ");
+				vul.append( s );
+			}
+
+			stats.append( "Vulnerable to: _" + vul.toString() + "_\n" );
+		}
+
+		stats.append( "Special: _" + mob.info + "_\n" );
+
+		return stats.toString();
 	}
 	
 	private static class MobTitle extends Component {
@@ -54,15 +141,18 @@ public class WndInfoMob extends WndTitledMessage {
 		private static final int GAP	= 2;
 		
 		private CharSprite image;
-		private RenderedText name;
+		private BitmapText name;
 		private HealthBar health;
 		private BuffIndicator buffs;
 		
 		public MobTitle( Mob mob ) {
 			
-			name = PixelScene.renderText( Utils.capitalize( mob.name ), 9 );
+			name = PixelScene.createText(
+                Utils.capitalize( mob.name ), 9
+            );
+
 			name.hardlight( TITLE_COLOR );
-			PixelScene.align(name);
+			name.measure();	
 			add( name );
 			
 			image = mob.sprite();

@@ -21,7 +21,8 @@
 package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.YetAnotherPixelDungeon;
-import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
+import com.consideredhamster.yetanotherpixeldungeon.actors.hazards.Hazard;
+import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Image;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.DungeonTilemap;
@@ -38,7 +39,7 @@ public class WndInfoCell extends Window {
     private static final int WIDTH_P = 120;
     private static final int WIDTH_L = 240;
 
-	private static final String TXT_NOTHING	= "这里没有什么值得特别留意的地方";
+	private static final String TXT_NOTHING	= "There is nothing here.";
 	
 	public WndInfoCell( int cell ) {
 		
@@ -65,12 +66,13 @@ public class WndInfoCell extends Window {
 		titlebar.setRect( 0, 0, width, 0 );
 		add( titlebar );
 		
-		RenderedTextMultiline info = PixelScene.renderMultiline( 6 );
+		BitmapTextMultiline info = PixelScene.createMultiline( 6 );
 		add( info );
 		
 		StringBuilder desc = new StringBuilder( Dungeon.level.tileDesc( tile ) );
 		
 		final char newLine = '\n';
+
 		for (Blob blob:Dungeon.level.blobs.values()) {
 			if (blob.cur[cell] > 0 && blob.tileDesc() != null) {
 				if (desc.length() > 0) {
@@ -80,14 +82,23 @@ public class WndInfoCell extends Window {
 				desc.append( blob.tileDesc() );
 			}
 		}
+
+		for (Hazard hazard : Hazard.findHazards( cell )) {
+			if ( hazard.desc() != null ) {
+				if (desc.length() > 0) {
+					desc.append( newLine );
+					desc.append( newLine );
+				}
+				desc.append( hazard.desc() );
+			}
+		}
 		
 		info.text( desc.length() > 0 ? desc.toString() : TXT_NOTHING );
-		info.maxWidth(width);
-		float x = titlebar.left();
-		float y = titlebar.bottom() + GAP;
-		info.setPos(x,y);
-		PixelScene.align(info);
+		info.maxWidth = width;
+		info.measure();
+		info.x = titlebar.left();
+		info.y = titlebar.bottom() + GAP;
 		
-		resize( width, (int)(y + info.height()) );
+		resize( width, (int)(info.y + info.height()) );
 	}
 }

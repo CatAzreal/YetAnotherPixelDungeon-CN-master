@@ -24,6 +24,7 @@ import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Crippled;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Tormented;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.npcs.NPC;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
@@ -31,6 +32,7 @@ import com.consideredhamster.yetanotherpixeldungeon.levels.Terrain;
 import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.CellEmitter;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.AcidParticle;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.LeafParticle;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSheet;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ThornvineSprite;
@@ -173,29 +175,26 @@ public class WandOfThornvines extends WandUtility {
         @Override
         public void interact(){
 
-            Dungeon.hero.sprite.operate( pos );
-
             if( Dungeon.hero.belongings.weap2 instanceof WandOfThornvines ) {
 
                 // we restore at least one charge less than what was spent on the vine
-                ((WandOfThornvines)Dungeon.hero.belongings.weap2).addCharges(
-                        ( ( HP - 1 ) * charges / HT )
-                );
-
+                ((WandOfThornvines)Dungeon.hero.belongings.weap2).addCharges( ( ( HP - 1 ) * charges / HT ) );
                 GLog.i( "你将棘藤回收至法杖之中" );
-                Sample.INSTANCE.play( Assets.SND_PLANT );
 
             } else {
 
                 GLog.i( "你中断了棘藤的召唤" );
-                Sample.INSTANCE.play( Assets.SND_PLANT );
 
             }
+
+            Dungeon.hero.sprite.pickup( pos );
+            Sample.INSTANCE.play( Assets.SND_MELD );
 
             Dungeon.hero.spend( TICK );
             Dungeon.hero.busy();
 
             die( this );
+
         }
 
         @Override
@@ -306,10 +305,10 @@ public class WandOfThornvines extends WandUtility {
         @Override
         public String description() {
             return
-                    "[临时字串]棘藤弱火，并会快速消亡";
-//                "Thornvines are kind of semisentient plants which are very territorial and will " +
-//                "attack anything which comes near. Their sharp thorns can inflict grievous wounds, " +
-//                "but they are very vulnerable to fire and will quickly wither as time passes.";
+                "[TN]Thornvines are kind of semisentient plants which are very territorial and will " +
+                "attack anything which comes near. Their sharp thorns can inflict grievous wounds, " +
+                "but they are very vulnerable to fire and will quickly wither as time passes. " +
+                "You can unsummon it by interacting with it while holding your wand.";
         }
 
         private static final String STATS	= "stats";

@@ -22,14 +22,18 @@ package com.consideredhamster.yetanotherpixeldungeon.visuals.windows;
 
 import com.consideredhamster.yetanotherpixeldungeon.items.EquipableItem;
 import com.consideredhamster.yetanotherpixeldungeon.items.armours.body.BodyArmorCloth;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.ArmorerKit;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.Battery;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.CraftingKit;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.OilLantern;
+import com.consideredhamster.yetanotherpixeldungeon.items.misc.Whetstone;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSprite;
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.input.Touchscreen;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Image;
-import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.TouchArea;
 import com.watabou.noosa.audio.Sample;
@@ -64,6 +68,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Icons;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.ItemSlot;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.QuickSlot;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+import com.watabou.noosa.ui.Button;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -71,27 +76,32 @@ import java.util.Iterator;
 public class WndBag extends WndTabbed {
 
 
-    private static final String TXT_SELECT_TITLE = "选择快捷栏";
-    private static final String TXT_SELECT_CANCEL = "算了";
+    private static final String TXT_SELECT_TITLE = "Select quickslot";
+    private static final String TXT_SELECT_CANCEL = "Nevermind";
     private static final String TXT_SELECT_MESSAGE =
-            "你打算将此道具设置在哪个快捷栏上？";
+            "Which quickslot do you want to set for this item?";
 
 	public static enum Mode {
 		ALL,
+
 		UNIDENTIFED,
-		UPGRADEABLE,
-		REPAIRABLE,
+        TRANSMUTABLE,
+        REPAIRABLE,
+
+        ENCHANTABLE,
+        UPGRADEABLE,
+        CURSED,
+
 		QUICKSLOT,
 		OFFHAND,
-		FOR_SALE,
-		WEAPON,
+        WEAPON,
+        FOR_SALE,
+
         WHETSTONE,
         CRAFTING_KIT,
         ARMORERS_KIT,
         ARCANE_BATTERY,
-		ENCHANTABLE,
-		TRANSMUTABLE,
-		CURSED,
+
 		WAND,
         HERB,
         KEYS
@@ -204,9 +214,9 @@ public class WndBag extends WndTabbed {
 
         float pos = 0;
 
-        RenderedText txtTitle = PixelScene.renderText( title != null ? title : Utils.capitalize( bag.name() ), 9 );
+        BitmapText txtTitle = PixelScene.createText( title != null ? title : Utils.capitalize( bag.name() ), 9 );
         txtTitle.hardlight( TITLE_COLOR );
-        PixelScene.align(txtTitle);
+        txtTitle.measure();
         txtTitle.x = 1;
 //        txtTitle.x = (int)(slotsWidth - txtTitle.width()) / 2;
         txtTitle.y = (int)(TITLE_HEIGHT - txtTitle.height()) / 2;
@@ -569,10 +579,10 @@ public class WndBag extends WndTabbed {
 						mode == Mode.REPAIRABLE && item.isRepairable() && item.state < 3 ||
 						mode == Mode.UNIDENTIFED && !item.isIdentified() ||
 						mode == Mode.WEAPON && item instanceof Weapon && item.isRepairable() && item.state < 3 ||
-						mode == Mode.WHETSTONE && (item instanceof MeleeWeapon && item.state < 3) ||
-						mode == Mode.CRAFTING_KIT && ((item instanceof RangedWeapon || item instanceof BodyArmorCloth)&& item.state < 3) ||
-						mode == Mode.ARMORERS_KIT && (item instanceof Armour && !(item instanceof BodyArmorCloth) && item.state < 3) ||
-						mode == Mode.ARCANE_BATTERY && (item instanceof Wand && item.state < 3) ||
+						mode == Mode.WHETSTONE && (item instanceof MeleeWeapon && ( item.state < 3 || item.durability < item.maxDurability() )) ||
+						mode == Mode.CRAFTING_KIT && ((item instanceof RangedWeapon || item instanceof BodyArmorCloth) && ( item.state < 3 || item.durability < item.maxDurability() ) ) ||
+						mode == Mode.ARMORERS_KIT && (item instanceof Armour && !(item instanceof BodyArmorCloth) && ( item.state < 3 || item.durability < item.maxDurability() ) ) ||
+						mode == Mode.ARCANE_BATTERY && (item instanceof Wand && ( item.state < 3 || item.durability < item.maxDurability() ) ) ||
 						mode == Mode.TRANSMUTABLE && item instanceof EquipableItem ||
 						mode == Mode.WAND && (item instanceof Wand) ||
 						mode == Mode.HERB && (item instanceof Herb) ||

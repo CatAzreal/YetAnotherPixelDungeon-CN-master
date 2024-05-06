@@ -29,6 +29,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfBlastWave;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Music;
@@ -41,6 +42,18 @@ public class YetAnotherPixelDungeon extends Game {
 	
 	public YetAnotherPixelDungeon() {
 		super( TitleScene.class );
+
+		com.watabou.utils.Bundle.addAlias(
+				com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Magus.class,
+				"com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Fiend" );
+
+		com.watabou.utils.Bundle.addAlias(
+				com.consideredhamster.yetanotherpixeldungeon.actors.mobs.FireDrake.class,
+				"com.consideredhamster.yetanotherpixeldungeon.actors.mobs.FireElemental" );
+		
+		com.watabou.utils.Bundle.addAlias(
+				com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfDetectMagic.class,
+				"com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfIdentify" );
 
         com.watabou.utils.Bundle.addAlias(
                 com.consideredhamster.yetanotherpixeldungeon.items.rings.RingOfMysticism.class,

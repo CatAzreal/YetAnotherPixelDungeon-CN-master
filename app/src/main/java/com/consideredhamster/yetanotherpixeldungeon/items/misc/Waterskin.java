@@ -31,7 +31,6 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.Buff;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Invisibility;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Burning;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Corrosion;
-import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Elemental;
 import com.consideredhamster.yetanotherpixeldungeon.items.Generator;
 import com.consideredhamster.yetanotherpixeldungeon.items.Heap;
 import com.consideredhamster.yetanotherpixeldungeon.items.Item;
@@ -345,12 +344,8 @@ public class Waterskin extends Item {
                 Char ch = Actor.findChar( cell );
 
                 if (ch != null) {
-                    if( ch instanceof Elemental ) {
-                        ch.damage( Random.IntRange( 1, (int)Math.sqrt( ch.HT / 2 + 1 ) ), this, null );
-                    } else {
-                        Buff.detach(ch, Burning.class);
-                        Buff.detach(ch, Corrosion.class);
-                    }
+					Buff.detach(ch, Burning.class);
+					Buff.detach(ch, Corrosion.class);
                 }
 
                 ((Waterskin)curItem).value--;

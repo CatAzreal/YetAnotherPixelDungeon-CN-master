@@ -60,15 +60,18 @@ public class RingOfVitality extends Ring {
 //            "to negative effects such as poison or withering."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-                "佩戴这枚戒指将提高所有治疗行为_" + mainEffect + "%" + "的效力(包含自然恢复)_，并且_提高"+sideEffect+"%负面物理状态抗性_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指将提高所有治疗行为_" + mainEffect + "%" + "的效力(包含自然恢复)_，并且_提高" + sideEffect + "%负面物理状态抗性_。"
+            );
+        }
 
         return desc.toString();
 	}

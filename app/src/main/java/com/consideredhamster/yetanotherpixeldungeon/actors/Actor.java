@@ -33,6 +33,7 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffReactive;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hazards.Hazard;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
+import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 

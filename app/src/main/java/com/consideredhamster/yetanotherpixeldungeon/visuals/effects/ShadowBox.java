@@ -30,10 +30,8 @@ public class ShadowBox extends NinePatch {
 	
 	public ShadowBox() {
 		super( Assets.SHADOW, 1 );
-
-		//If this is the first time the texture is generated, set the filtering
-		if (texture.id == -1)
-			texture.filter( SmartTexture.LINEAR, SmartTexture.LINEAR );
+		
+		texture.filter( SmartTexture.LINEAR, SmartTexture.LINEAR );
 		
 		scale.set( SIZE, SIZE );
 	}

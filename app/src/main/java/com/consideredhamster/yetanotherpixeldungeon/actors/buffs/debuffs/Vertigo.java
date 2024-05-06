@@ -21,6 +21,9 @@
 package com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs;
 
 import com.consideredhamster.yetanotherpixeldungeon.Element;
+import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
+import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Bestiary;
+import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.BuffIndicator;
 
@@ -60,5 +63,23 @@ public class Vertigo extends Debuff {
     @Override
     public String description() {
         return "整个世界都绕着你转起来了！你很难移动到目标地点，并且无法击中注意，在此期间敏捷和感知属性都会受到惩罚。";
+    }
+
+    @Override
+    public boolean attachTo( Char target ) {
+        if (super.attachTo( target )) {
+
+            if( target instanceof Mob ) {
+                Mob mob =(Mob)target;
+
+                if( mob.state == mob.HUNTING ) {
+                    mob.state = mob.WANDERING;
+                }
+            }
+
+            return true;
+        } else {
+            return false;
+        }
     }
 }

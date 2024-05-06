@@ -22,6 +22,7 @@ package com.consideredhamster.yetanotherpixeldungeon.actors.hero;
 
 import java.util.Iterator;
 
+import com.consideredhamster.yetanotherpixeldungeon.Badges;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.items.EquipableItem;
 import com.consideredhamster.yetanotherpixeldungeon.items.Item;
@@ -31,6 +32,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.bags.Bag;
 import com.consideredhamster.yetanotherpixeldungeon.items.keys.IronKey;
 import com.consideredhamster.yetanotherpixeldungeon.items.keys.Key;
 import com.consideredhamster.yetanotherpixeldungeon.items.rings.Ring;
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.Wand;
 import com.consideredhamster.yetanotherpixeldungeon.items.weapons.Weapon;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

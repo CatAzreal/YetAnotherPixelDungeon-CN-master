@@ -48,6 +48,8 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.windows.WndTradeItem
 
 public class Toolbar extends Component {
 
+    protected String bagTitle = "Select an item to use";
+
 	private Tool btnWait;
 	private Tool btnSearch;
 	private Tool btnInventory;
@@ -73,9 +75,6 @@ public class Toolbar extends Component {
 	
 	@Override
 	protected void createChildren() {
-
-
-
 
         add( btnWait = new Tool( 0, 0, 20, 24 ) {
             @Override
@@ -168,7 +167,20 @@ public class Toolbar extends Component {
 
 			}
 			protected boolean onLongClick() {
-                GameScene.show( new WndBag( Dungeon.hero.belongings.getItem( Keyring.class ), null, WndBag.Mode.ALL, null ) );
+
+//                GameScene.show( new WndBag( Dungeon.hero.belongings.getItem( Keyring.class ), null, WndBag.Mode.ALL, null ) );
+
+                GameScene.selectItem( new WndBag.Listener() {
+
+                    @Override
+                    public void onSelect( Item item ) {
+                        if (item != null) {
+                            item.execute( Dungeon.hero );
+                        }
+                    }
+
+                }, WndBag.Mode.QUICKSLOT, bagTitle );
+
 				return true;
 			};
 
@@ -268,7 +280,7 @@ public class Toolbar extends Component {
     public static boolean examineMob( int pos ) {
 
         Mob mob = (Mob) Actor.findChar( pos );
-        if (mob != null && Dungeon.visible[ pos ]) {
+        if (mob != null && Dungeon.hero.canSeeTarget( mob ) ) {
             GameScene.show(new WndInfoMob(mob));
             return true;
         }

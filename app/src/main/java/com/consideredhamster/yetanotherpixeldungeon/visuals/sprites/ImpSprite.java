@@ -20,6 +20,7 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.visuals.sprites;
 
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Shield;
 import com.watabou.noosa.TextureFilm;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 
@@ -41,9 +42,6 @@ public class ImpSprite extends MobSprite {
         attack = new Animation( 15, false );
         attack.frames( frames, 8, 9, 10, 11, 12 );
 
-//        cast = new Animation( 15, false );
-//        cast.frames( frames, 8, 9, 10, 11, 12 );
-
         cast = new Animation( 10, false );
         cast.frames( frames, 13, 14, 15, 0 );
 
@@ -51,5 +49,10 @@ public class ImpSprite extends MobSprite {
         die.frames( frames, 16, 17, 18, 19, 20, 21 );
 		
 		play( idle );
+	}
+	
+	@Override
+	public int blood() {
+		return 0x8800ff00;
 	}
 }

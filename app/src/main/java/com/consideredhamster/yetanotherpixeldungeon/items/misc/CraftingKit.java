@@ -39,19 +39,19 @@ import java.util.ArrayList;
 
 public class CraftingKit extends Item {
 
-    private static final String TXT_SELECT_RANGED = "选择需要维护的武器。";
-    private static final String TXT_REPAIR_RANGED = "你的%s的状态看起来好多了！";
-    private static final String TXT_CHARGE_KEEPED = "戒指之力协助你完成了这次维护！";
-    private static final String TXT_CHARGE_WASTED = "戒指之力的介入妨碍了这次维护！";
+    private static final String TXT_SELECT_RANGED = "Select an item to repair";
+    private static final String TXT_REPAIR_RANGED = "Your %s looks much better now!";
+    private static final String TXT_CHARGE_KEEPED = "Your ring helped you with repair!";
+    private static final String TXT_CHARGE_WASTED = "Your ring prevented proper repair.";
 
     private static final float TIME_TO_APPLY = 3f;
 
-    private static final String AC_APPLY = "维护";
+    private static final String AC_APPLY = "APPLY";
 
     private static final String TXT_STATUS	= "%d/%d";
 
     {
-        name = "便携工具箱";
+        name = "crafting kit";
         image = ItemSpriteSheet.CRAFTING_KIT;
     }
 
@@ -122,7 +122,7 @@ public class CraftingKit extends Item {
             }
         }
 
-        if( bonus < 0.0f && Random.Float() > -bonus ) {
+        if( bonus < 0.0f && Random.Float() < -bonus ) {
             GLog.n(TXT_CHARGE_WASTED);
         } else {
             ranged.repair(1);
@@ -139,13 +139,10 @@ public class CraftingKit extends Item {
 	
 	@Override
 	public String info() {
-        return
-                "工具箱里的工具与材料虽无法修复刀枪剑戟与厚重盔甲，但可以修理很多其它装备，比如弓弩、弹弓、燧发武器与布制护甲。" +
-                        "\n工具箱的材料还能进行" + ( value > 2 ? "三次" : value < 2 ? "最后一次" : "两次" ) + "修复。";
- //       return "[临时字串]可对远程武器和布甲进行"+( value > 2 ? "三次" : value < 2 ? "一次" : "两次" )+"维护";
-//            "The instruments and materials in this toolkit cannot be used to repair a battle axe or a mail armor. " +
-//            "However, they can be used to fix some other things, like bows, slings, flintlock weapons or cloth armors. " +
-//            "Currently, it has enough materials for only " + ( value > 2 ? "three usages" : value < 2 ? "only one usage" : "two usages" ) + ".";
+		return
+            "The instruments and materials in this toolkit cannot be used to repair a battle axe or a mail armor. " +
+            "However, they can be used to fix some other things, like bows, slings, flintlock weapons or cloth armors. " +
+            "Currently, it has enough materials for only " + ( value > 2 ? "three usages" : value < 2 ? "only one usage" : "two usages" ) + ".";
 	}
 
     @Override

@@ -50,15 +50,18 @@ public class RingOfFortune extends Ring {
 //            "being blessing with greater luck."
         );
 
-        desc.append( "\n\n" );
+        if( !dud ) {
 
-        desc.append( super.desc() );
+            desc.append("\n\n");
 
-        desc.append( " " );
+            desc.append(super.desc());
 
-        desc.append(
-            "佩戴这枚戒指能够提高_" + mainEffect + "%的金币获取和物品掉落_。"
-        );
+            desc.append(" ");
+
+            desc.append(
+                    "佩戴这枚戒指能够提高_" + mainEffect + "%的金币获取和物品掉落_。"
+            );
+        }
 
         return desc.toString();
 	}

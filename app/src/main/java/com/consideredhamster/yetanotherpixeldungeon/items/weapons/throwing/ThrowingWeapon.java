@@ -20,8 +20,10 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing;
 
+import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.special.Satiety;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
+import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.npcs.NPC;
 import com.consideredhamster.yetanotherpixeldungeon.items.rings.RingOfDurability;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.TagAttack;
@@ -47,6 +49,8 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.ItemSpriteSh
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.MissileSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.QuickSlot;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
+
+import java.util.HashSet;
 
 public abstract class ThrowingWeapon extends Weapon {
 
@@ -83,10 +87,10 @@ public abstract class ThrowingWeapon extends Weapon {
         return isEquipped( Dungeon.hero ) ? AC_UNEQUIP : AC_EQUIP;
     }
 
-    @Override
-    public boolean isEquipped( Hero hero ) {
-        return hero.belongings.weap2 != null && getClass().equals(hero.belongings.weap2.getClass());
-    }
+//    @Override
+//    public boolean isEquipped( Hero hero ) {
+//        return hero.belongings.weap2 != null && getClass().equals(hero.belongings.weap2.getClass());
+//    }
 
     @Override
     public int penaltyBase(Hero hero, int str) {
@@ -108,7 +112,6 @@ public abstract class ThrowingWeapon extends Weapon {
         return ( lootChapter() - 1 ) * 6 + 6 * quantity / baseAmount();
     }
 
-
     public int baseAmount() {
         return 1;
     }
@@ -119,12 +122,8 @@ public abstract class ThrowingWeapon extends Weapon {
     @Override
     public Item random() {
 
-        quantity = baseAmount();
-
-        quantity += Random.Int( quantity + 1 );
-
+        quantity = Random.Int( baseAmount(), baseAmount() * 2 );
         quantity = quantity * ( 4 + Dungeon.chapter() - lootChapter() ) / 4;
-
         quantity = Math.max( 1, quantity );
 
         return this;
@@ -347,17 +346,9 @@ public abstract class ThrowingWeapon extends Weapon {
                 final Char ch = Actor.findChar( cell );
 
                 if( ch != null && curUser != ch && Dungeon.visible[ cell ] ) {
-
-//                    if ( curUser.isCharmedBy( ch ) ) {
-//                        GLog.i( TXT_TARGET_CHARMED );
-//                        return;
-//                    }
-
                     QuickSlot.target(curItem, ch);
                     TagAttack.target( (Mob)ch );
                 }
-
-
 
                 curUser.sprite.cast(cell, new Callback() {
                     @Override
@@ -366,7 +357,9 @@ public abstract class ThrowingWeapon extends Weapon {
                     curUser.busy();
 
                     if (curWeap instanceof Harpoons) {
-                        curUser.sprite.parent.add(new Chains(curUser.pos, cell, ch != null && ch.isHeavy()));
+//                        curUser.sprite.parent.add(new Chains(curUser.pos, cell, ch != null && ch.isHeavy()));
+                        // draw chains going from the user to the target
+                        curUser.sprite.parent.add(new Chains( curUser.pos, cell, false ));
                     }
 
                     ((MissileSprite) curUser.sprite.parent.recycle(MissileSprite.class)).
@@ -405,10 +398,20 @@ public abstract class ThrowingWeapon extends Weapon {
 
         } else if( enemy == null || !curUser.shoot(enemy, weapon) ) {
 
-            if (returnsWhenThrown()) {
+            if ( returnsWhenThrown() ) {
 
-                ((MissileSprite)curUser.sprite.parent.recycle( MissileSprite.class )).
-                        reset(cell, curUser.pos, this instanceof Harpoons ? ItemSpriteSheet.HARPOON_RETURN : curItem.imageAlt(), null);
+                if ( this instanceof Harpoons ) {
+
+                    curUser.sprite.parent.add(new Chains( curUser.pos, cell, true ));
+                    ((MissileSprite) curUser.sprite.parent.recycle(MissileSprite.class)).
+                            reset(cell, curUser.pos, ItemSpriteSheet.HARPOON_RETURN, null);
+
+                } else {
+
+                    ((MissileSprite) curUser.sprite.parent.recycle(MissileSprite.class)).
+                            reset(cell, curUser.pos, curItem.imageAlt(), null);
+
+                }
 
                 curUser.belongings.weap2 = this;
 
@@ -418,18 +421,18 @@ public abstract class ThrowingWeapon extends Weapon {
 
         } else if( Random.Float() > weapon.breakingRateWhenShot() ) {
 
-            if (returnsWhenThrown()) {
+            if ( returnsWhenThrown() ) {
 
                 curUser.belongings.weap2 = this;
                 if (this instanceof Chakrams && ((Chakrams)this).bounce(cell) ) {
                     return;
                 }
 
-                if ((!(this instanceof Harpoons) || !enemy.isHeavy())) {
-
+                if ( this instanceof Harpoons ) {
+                    curUser.sprite.parent.add(new Chains( curUser.pos, cell, true ));
+                } else {
                     ((MissileSprite) curUser.sprite.parent.recycle(MissileSprite.class)).
-                            reset(cell, curUser.pos, this instanceof Harpoons ? ItemSpriteSheet.HARPOON_RETURN : curItem.imageAlt(), null);
-
+                            reset(cell, curUser.pos, curItem.imageAlt(), null);
                 }
 
             } else {
@@ -439,6 +442,10 @@ public abstract class ThrowingWeapon extends Weapon {
         } else {
 
             enemy.sprite.showStatus( CharSprite.DEFAULT, "弹药损耗" );
+
+            if ( this instanceof Harpoons ) {
+                curUser.sprite.parent.add(new Chains( curUser.pos, cell, true ));
+            }
 
             if (quantity == 1) {
 
