@@ -89,9 +89,11 @@ public class GameScene extends PixelScene {
 	private static final String TXT_WATER	= "水花的冲刷声围绕着本层。";
 	private static final String TXT_GRASS	= "空气中弥漫着浓郁的植物清香。";
 	private static final String TXT_TRAPS	= "本层的气氛似乎暗示着其下隐藏的众多秘密。";
-	private static final String TXT_HAUNT	= "诡异的气息顺着脊梁传遍你的全身。";
+	private static final String TXT_ASHES   = "A smell of ashes fills your mouth. Not a good smell.";
+	private static final String TXT_SWARM	= "By the sound of it, this floor is heavily guarded. Better be careful.";
+	private static final String TXT_BOOKS	= "Dust is floating in the air. This floor seems to be a warehouse.";
 
-//	private static final String TXT_SECRETS	= "The atmosphere hints that this floor hides many secrets.";
+	private static final String TXT_BAMBOOZLE	= "It looks like you somehow ended up on the same floor!";
 	
 	static GameScene scene;
 	
@@ -239,9 +241,6 @@ public class GameScene extends PixelScene {
 			Sample.INSTANCE.play( Assets.SND_DESCEND );
 		}
 		switch (Dungeon.level.feeling) {
-//		case CHASM:
-//			GLog.w( TXT_CHASM );
-//			break;
 		case WATER:
 			GLog.w( TXT_WATER );
 			break;
@@ -251,20 +250,17 @@ public class GameScene extends PixelScene {
         case TRAPS:
             GLog.w( TXT_TRAPS );
             break;
-        case HAUNT:
-            GLog.w( TXT_HAUNT );
+		case ASHES:
+			GLog.w( TXT_ASHES );
+			break;
+		case SWARM:
+			GLog.w( TXT_SWARM );
+			break;
+		case BOOKS:
+			GLog.w( TXT_BOOKS );
             break;
 		default:
 		}
-
-//		if (Dungeon.bonus instanceof RegularLevel &&
-//			((RegularLevel)Dungeon.bonus).secretDoors > Random.IntRange( 3, 4 )) {
-//			GLog.w( TXT_SECRETS );
-//		}
-
-//		if (Dungeon.nightMode && !Dungeon.bossLevel()) {
-//			GLog.w( TXT_NIGHT_MODE );
-//		}
 		
 		busy = new BusyIndicator();
 		busy.camera = uiCamera;
@@ -283,6 +279,9 @@ public class GameScene extends PixelScene {
 			break;
 		case FALL:
 			Chasm.heroLand();
+			if( Dungeon.depth > 25 ){
+				GLog.w( TXT_BAMBOOZLE );
+			}
 			break;
 		case DESCEND:
 			switch (Dungeon.depth) {
@@ -302,9 +301,6 @@ public class GameScene extends PixelScene {
 				WndStory.showChapter( WndStory.ID_HALLS );
 				break;
 			}
-//			if (Dungeon.hero.isAlive() && Dungeon.depth != 25) {
-//				Badges.validateNoKilling();
-//			}
 			break;
 		default:
 		}
@@ -427,7 +423,7 @@ public class GameScene extends PixelScene {
 
     public void addMobSprite( Mob mob ) {
         CharSprite sprite = mob.sprite();
-        sprite.visible = Dungeon.visible[mob.pos];
+		sprite.visible = Dungeon.hero.canSeeTarget( mob );
         mobs.add( sprite );
         sprite.link( mob );
         mob.updateSpriteState();
@@ -620,7 +616,7 @@ public class GameScene extends PixelScene {
 			scene.fog.updateVisibility( Dungeon.visible, Dungeon.level.visited, Dungeon.level.mapped );
 			
 			for (Mob mob : Dungeon.level.mobs) {
-                if( mob.sprite.visible = Dungeon.visible[mob.pos] ){
+				if( mob.sprite.visible = Dungeon.hero.canSeeTarget( mob ) ){
                     if( Dungeon.level.map[ mob.pos ] == Terrain.DOOR_ILLUSORY ){
                         Door.discover( mob.pos );
                     }

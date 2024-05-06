@@ -57,6 +57,10 @@ public enum HeroClass {
 		this.title = title;
 	}
 
+    public String hname(){
+        return title;
+    }
+
     public static final String[] WAR_ABOUT = {
 //            "Your ancestors were many a man. Mad warlords and ruthless mercenaries, some. Noble knights and pious crusaders, others. Cowards? None of them.",
 //            "Now, your family is broken and ruined, but blood of your fathers still flows strong in your veins. There is a way to remind all the world about your clan's former glory!",

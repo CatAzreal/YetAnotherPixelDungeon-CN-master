@@ -21,6 +21,7 @@
 package com.consideredhamster.yapdcn.visuals.windows;
 
 import com.consideredhamster.yapdcn.actors.buffs.bonuses.Invisibility;
+import com.consideredhamster.yapdcn.visuals.ui.RenderedTextMultiline;
 import com.watabou.noosa.BitmapTextMultiline;
 import com.consideredhamster.yapdcn.Dungeon;
 import com.consideredhamster.yapdcn.actors.hero.Hero;
@@ -43,24 +44,24 @@ public class WndTradeItem extends Window {
 	private static final float GAP		= 2;
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 16;
-	
-	private static final String TXT_SALE		= "FOR SALE: %s - %dg";
-	private static final String TXT_BUY			= "Buy for %dg";
-	private static final String TXT_SELL		= "Sell for %dg";
-	private static final String TXT_SELL_1		= "Sell 1 for %dg";
-	private static final String TXT_SELL_ALL	= "Sell all for %dg";
-	private static final String TXT_CANCEL		= "Never mind";
 
-    private static final String TXT_BOUGHT	= "You've bought %s for %dg";
-    private static final String TXT_SOLD	= "You've sold your %s for %dg";
+	private static final String TXT_SALE		= "出售：%s - %dg";
+	private static final String TXT_BUY			= "以%dg价格购买";
+	private static final String TXT_SELL		= "以%dg价格出售";
+	private static final String TXT_SELL_1		= "以%dg价格出售一个";
+	private static final String TXT_SELL_ALL	= "以%dg价格出售全部";
+	private static final String TXT_CANCEL		= "算了";
 
-    private static final String TXT_STEAL	    = "Steal (%d%% chance)";
-    private static final String TXT_STOLEN	    = "You successfully steal %s!";
-    private static final String TXT_CAUGHT	    = "You fail to steal %s.";
+	private static final String TXT_BOUGHT	= "你买下了%s，花费%dg";
+	private static final String TXT_SOLD	= "你卖出了%s，获得%dg";
+
+	private static final String TXT_STEAL	    = "偷窃(%d%%几率)";
+	private static final String TXT_STOLEN	    = "你成功窃取了%s！";
+	private static final String TXT_CAUGHT	    = "你没能窃取到%s。";
 
 	private WndBag owner;
 
-    private BitmapTextMultiline normal;
+    private RenderedTextMultiline normal;
     private BitmapTextMultiline highlighted;
 	
 	public WndTradeItem( final Item item, WndBag owner ) {
@@ -208,29 +209,15 @@ public class WndTradeItem extends Window {
 			titlebar.color( ItemSlot.DEGRADED );	
 		}
 
-        Highlighter hl = new Highlighter( item.info() );
+		normal = PixelScene.renderMultiline( item.info(), 6 );
+		normal.maxWidth(WIDTH);
+		PixelScene.align(normal);
+		float x = titlebar.left();
+		float y = titlebar.bottom() + GAP;
+		normal.setPos(x,y);
+		add( normal );
 
-        normal = PixelScene.createMultiline( hl.text, 6 );
-        normal.maxWidth = WIDTH;
-        normal.measure();
-        normal.x = titlebar.left();
-        normal.y = titlebar.bottom() + GAP;
-        add( normal );
 
-        if (hl.isHighlighted()) {
-            normal.mask = hl.inverted();
-
-            highlighted = PixelScene.createMultiline( hl.text, 6 );
-            highlighted.maxWidth = normal.maxWidth;
-            highlighted.measure();
-            highlighted.x = normal.x;
-            highlighted.y = normal.y;
-            add( highlighted );
-
-            highlighted.mask = hl.mask;
-            highlighted.hardlight( TITLE_COLOR );
-        }
-		
 //		BitmapTextMultiline info = PixelScene.createMultiline( item.info(), 6 );
 //		info.maxWidth = WIDTH;
 //		info.measure();
@@ -239,7 +226,7 @@ public class WndTradeItem extends Window {
 //		add( info );
 //
 //		return info.y + info.height();
-		return normal.y + normal.height();
+		return y + normal.height();
 	}
 	
 	private void sell( Item item ) {

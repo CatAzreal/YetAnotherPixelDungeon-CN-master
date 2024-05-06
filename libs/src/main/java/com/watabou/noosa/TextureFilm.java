@@ -17,12 +17,12 @@
 
 package com.watabou.noosa;
 
+import com.watabou.utils.RectF;
+
 import java.util.HashMap;
 
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
-
-import com.watabou.utils.RectF;
 
 public class TextureFilm {
 	

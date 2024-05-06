@@ -51,7 +51,7 @@ public class RenderedText extends Image {
 	
 	private static final int GC_TRIGGER = 1250;
 	private static final int GC_TARGET = 1000;
-	
+
 	private static void runGC(){
 		Iterator<Map.Entry<String, CachedText>> it = textCache.entrySet().iterator();
 		while (cachedChars > GC_TARGET && it.hasNext()){
@@ -226,9 +226,8 @@ public class RenderedText extends Image {
 		}
 	}
 
-	public static void setFont(String asset){
-		if (asset == null) font = null;
-		else font = Typeface.createFromAsset(Game.instance.getAssets(), asset);
+	public static void setFont(){
+		font = Typeface.createFromAsset(Game.instance.getAssets(), "Founder.ttf");
 		clearCache();
 	}
 

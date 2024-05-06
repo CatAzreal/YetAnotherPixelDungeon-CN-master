@@ -23,6 +23,7 @@ package com.consideredhamster.yapdcn.visuals.windows;
 import com.consideredhamster.yapdcn.Dungeon;
 import com.consideredhamster.yapdcn.Element;
 import com.watabou.noosa.BitmapText;
+import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.ui.Component;
 import com.consideredhamster.yapdcn.actors.mobs.Bestiary;
 import com.consideredhamster.yapdcn.actors.mobs.Mob;
@@ -141,18 +142,15 @@ public class WndInfoMob extends WndTitledMessage {
 		private static final int GAP	= 2;
 		
 		private CharSprite image;
-		private BitmapText name;
+		private RenderedText name;
 		private HealthBar health;
 		private BuffIndicator buffs;
-		
-		public MobTitle( Mob mob ) {
-			
-			name = PixelScene.createText(
-                Utils.capitalize( mob.name ), 9
-            );
 
+		public MobTitle( Mob mob ) {
+
+			name = PixelScene.renderText( Utils.capitalize( mob.name ), 9 );
 			name.hardlight( TITLE_COLOR );
-			name.measure();	
+			PixelScene.align(name);
 			add( name );
 			
 			image = mob.sprite();

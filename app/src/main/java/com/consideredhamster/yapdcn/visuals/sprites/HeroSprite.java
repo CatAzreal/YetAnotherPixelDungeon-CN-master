@@ -20,7 +20,7 @@
  */
 package com.consideredhamster.yapdcn.visuals.sprites;
 
-import android.graphics.RectF;
+import com.watabou.utils.RectF;
 
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;

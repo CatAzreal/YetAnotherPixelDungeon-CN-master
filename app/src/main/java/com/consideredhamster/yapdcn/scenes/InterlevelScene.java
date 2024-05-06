@@ -109,7 +109,6 @@ public class InterlevelScene extends PixelScene {
 
             "使用超重武器会降低你的攻击速度",
             "强力武器通常会进一步降低你的命中和潜行属性",
-            "触电可以使你手中的武器强制掉落",
 
             "使用超重护甲或盾牌会降低你的移动速度",
             "强力护甲或盾牌通常会进一步降低你的敏捷和潜行属性",
@@ -122,11 +121,8 @@ public class InterlevelScene extends PixelScene {
             "你可以通过长时间使用武器，护甲，法杖和戒指来自然鉴定其性质",
             "睡眠时你不会承受来自装备的潜行减益",
 
-            "强力燧发武器需要耗费更多的火药进行装填",
             "燧发武器无视攻击距离造成的命中减益并能够穿透目标护甲造成伤害",
 
-            "你可以耗费火药来制作土制炸药",
-            "你能够将多枚土质炸药打包成捆，进一步增加其破坏力",
             "你能够拆解土制炸药和炸药包以回收部分材料",
 
             // WANDS & RINGS
@@ -211,8 +207,8 @@ public class InterlevelScene extends PixelScene {
             "每个区域通常只有二张升级卷轴，不过有小概率额外获取",
             "使用升级卷轴驱散一件已有附魔的物品的诅咒能使你保留这个附魔",
 
-            "明智的规划鉴定卷轴能节约你很多时间",
-            "在每个商店中总会，也仅会提供一张鉴定卷轴",
+            "明智的规划探魔卷轴能节约你很多时间",
+            "在每个商店中总会，也仅会提供一张探魔卷轴",
 
             "嬗变卷轴不会转化出与原道具相同的物品",
             "嬗变卷轴亦可对投掷物及弹药使用",
@@ -269,11 +265,11 @@ public class InterlevelScene extends PixelScene {
             "需要注意的是，粘咕释放的瘴气极度易燃",
             "粘咕有一些手段治疗自己，但是这些伎俩都可以被规避",
 
-            "当遭受威胁时，天狗的传送会更平凡",
-            "天狗在被束缚和致盲时不会进行传送",
+            "当遭受伤害时，天狗的传送会更频繁",
+            "天狗在被束缚时不会进行传送",
 
             "DM-300既不是有机物也不是魔法造物",
-            "DM-300的行动速度在每次激怒后都会稍微加快",
+            "DM-300在每次激怒后都会更频繁地使用自己的特殊攻击",
 
             "矮人国王在仪式进行时完全刀枪不入",
             "然而这个仪式似乎可以使用某种咒语打断...",
@@ -545,10 +541,16 @@ public class InterlevelScene extends PixelScene {
         }
 
         Level level;
-        if (Dungeon.depth >= Statistics.deepestFloor) {
-            level = Dungeon.newLevel();
+        if( Dungeon.depth <= 25 ){
+
+            if( Dungeon.depth >= Statistics.deepestFloor ){
+                level = Dungeon.newLevel();
+            } else {
+                Dungeon.depth++;
+                level = Dungeon.loadLevel( Dungeon.hero.heroClass );
+            }
         } else {
-            Dungeon.depth++;
+            // You hear distant a sound of  malicious laughter.
             level = Dungeon.loadLevel( Dungeon.hero.heroClass );
         }
         Dungeon.switchLevel( level, level.entrance );
