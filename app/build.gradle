@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
     buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "com.consideredhamster.yapdcn"
-        minSdkVersion 9
-        targetSdkVersion 28
+        minSdkVersion 14
+        targetSdkVersion 33
         versionCode 342
-        versionName '0.3.2-cn1.0'
+        versionName '0.3.2-cn1.1'
         archivesBaseName = "yapdcn-$versionName"
     }
 
@@ -24,5 +24,5 @@ android {
 }
 
 dependencies {
-    compile project(':libs')
+    implementation project(':libs')
 }

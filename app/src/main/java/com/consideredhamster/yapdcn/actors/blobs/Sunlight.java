@@ -105,7 +105,8 @@ public class Sunlight extends Blob {
                     Char ch = Actor.findChar(i);
 
                     if( ch != null ){
-                        BuffActive.add( ch, ch.isMagical() ? Disrupted.class : Rejuvenation.class, TICK );
+                        Class buffClass = ch.isMagical() ? Disrupted.class : Rejuvenation.class;
+                        BuffActive.add( ch, buffClass, TICK );
                     }
                 }
             }
