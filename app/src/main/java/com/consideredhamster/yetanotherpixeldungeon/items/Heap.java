@@ -20,15 +20,20 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.items;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 
 import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
+import com.consideredhamster.yetanotherpixeldungeon.items.food.Food;
 import com.consideredhamster.yetanotherpixeldungeon.items.food.MeatStewed;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.Dewdrop;
 import com.watabou.noosa.audio.Sample;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
+import com.consideredhamster.yetanotherpixeldungeon.Badges;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
+import com.consideredhamster.yetanotherpixeldungeon.Statistics;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.Buff;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Burning;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Frozen;
@@ -36,6 +41,7 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mimic;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Wraith;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.CellEmitter;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Splash;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.BlastParticle;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.ElmoParticle;
 import com.consideredhamster.yetanotherpixeldungeon.items.food.MeatBurned;
