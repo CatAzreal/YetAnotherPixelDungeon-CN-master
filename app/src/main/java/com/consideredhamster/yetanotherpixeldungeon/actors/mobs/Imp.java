@@ -20,6 +20,8 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Invisibility;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Callback;
@@ -38,6 +40,8 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.MissileSprit
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
 import com.watabou.utils.Random;
+
+import java.util.HashSet;
 
 public class Imp extends MobEvasive {
 
@@ -67,7 +71,8 @@ public class Imp extends MobEvasive {
 
          */
 
-        name = "小恶魔";
+        name = "malicious imp";
+        info = "Magical, Flying, Stealing, Invisibility";
         spriteClass = ImpSprite.class;
 
         flying = true;
@@ -91,49 +96,39 @@ public class Imp extends MobEvasive {
         return Element.ENERGY;
     }
 
-    @Override
-    public void storeInBundle( Bundle bundle ) {
-        super.storeInBundle(bundle);
-        bundle.put( ITEM, item );
-    }
-
-    @Override
-    public void restoreFromBundle( Bundle bundle ) {
-        super.restoreFromBundle( bundle );
-        item = (Item)bundle.get( ITEM );
-    }
-
-    @Override
-    protected boolean getFurther( int target ) {
-
-        if( enemySeen ) {
-
-            int newPos = Dungeon.level.randomRespawnCell( true, false );
-
-            if (newPos != -1) {
-
-                CellEmitter.get(pos).start(ElmoParticle.FACTORY, 0.03f, 2 + Level.distance(pos, newPos));
-
-                Actor.moveToCell( this, newPos );
-                pos = newPos;
-
-                sprite.place(pos);
-                sprite.visible = Dungeon.visible[pos];
-
-                return true;
-
-            } else {
-
-                return false;
-
-            }
-
-        } else {
-
-            return super.getFurther( target );
-
-        }
-    }
+//    @Override
+//    protected boolean getFurther( int target ) {
+//
+//        if( enemySeen ) {
+//
+//            int newPos = Dungeon.level.randomRespawnCell( true, false );
+//
+//            if (newPos != -1) {
+//
+//                if( Dungeon.visible[ pos ] ) {
+//                    CellEmitter.get(pos).start(ElmoParticle.FACTORY, 0.03f, 2 + Level.distance(pos, newPos));
+//                }
+//
+//                Actor.moveToCell( this, newPos );
+//                pos = newPos;
+//
+//                sprite.place(pos);
+//                sprite.visible = Dungeon.visible[pos];
+//
+//                return true;
+//
+//            } else {
+//
+//                return false;
+//
+//            }
+//
+//        } else {
+//
+//            return super.getFurther( target );
+//
+//        }
+//    }
 
     @Override
     public void die( Object cause, Element dmg ) {
@@ -146,10 +141,36 @@ public class Imp extends MobEvasive {
     }
 
     @Override
+    protected boolean act() {
+
+        if(
+            HP >= HT && state == HUNTING && enemy != null && item == null
+            && !Level.adjacent( pos, enemy.pos ) && invisible == 0
+        ) {
+
+            sprite.cast(enemy.pos, new Callback() {
+                @Override
+                public void call() {
+                    vanish();
+                    sprite.idle();
+//                    next();
+                }
+            });
+
+            spend( TICK );
+            return true;
+
+        }
+
+        return super.act();
+    }
+
+    @Override
     protected boolean doAttack( Char enemy ) {
 
-        if ( HP >= HT && item == null && enemy instanceof Hero && ((Hero)enemy).belongings.backpack.countVisibleItems() > 0 ) {
+        if ( invisible > 0 && item == null && enemy instanceof Hero && ((Hero)enemy).belongings.backpack.countVisibleItems() > 0 ) {
 
+            Invisibility.dispel( this );
             final int enemyPos = enemy.pos;
 
             boolean visible = Level.fieldOfView[pos] || Level.fieldOfView[enemyPos];
@@ -230,11 +251,31 @@ public class Imp extends MobEvasive {
         }
     }
 
+    public void vanish() {
+        BuffActive.add(this, Invisibility.class, Random.Float( 10.0f, 15.0f ) );
+        if (Dungeon.visible[pos]) {
+            GLog.i( name + " vanishes from sight!");
+        }
+    }
+
 	@Override
     public String description() {
         return
-            "小恶魔是恶魔中的下等生物，它们不以力量和魔法天赋著称，而是残忍和贪婪。不过它们中的一部分实际上是好心和善于社交的..." +
+            "Imps are lesser demons. They are notable neither for their strength nor their magic talent, but for their cruelty " +
+            "and greed. However, some of them are actually quite nice and sociable. Certainly not this one, though... " +
             ( item != null ? Utils.format( TXT_CARRY, item.name() ) : "" );
+    }
+
+    @Override
+    public void storeInBundle( Bundle bundle ) {
+        super.storeInBundle(bundle);
+        bundle.put( ITEM, item );
+    }
+
+    @Override
+    public void restoreFromBundle( Bundle bundle ) {
+        super.restoreFromBundle( bundle );
+        item = (Item)bundle.get( ITEM );
     }
 
 }

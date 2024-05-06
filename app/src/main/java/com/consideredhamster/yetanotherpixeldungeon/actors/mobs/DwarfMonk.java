@@ -49,7 +49,8 @@ public class DwarfMonk extends MobEvasive {
 
          */
 
-        name = "矮人武僧";
+        name = "dwarf monk";
+        info = "Fast attack, Combo attacks";
 
         spriteClass = MonkSprite.class;
 
@@ -101,6 +102,7 @@ public class DwarfMonk extends MobEvasive {
 	@Override
 	public String description() {
 		return
-			"这些僧侣皆是狂热的信徒，倾其所能保护城市的秘密不受入侵者的袭扰。他们既不披甲亦不执械，仅仅依靠自己的徒手格斗技巧退敌。";
+			"These monks are fanatics, who devoted themselves to protecting their city's secrets from all intruders. " +
+			"They don't use any armor or weapons, relying solely on the art of hand-to-hand combat.";
 	}
 }

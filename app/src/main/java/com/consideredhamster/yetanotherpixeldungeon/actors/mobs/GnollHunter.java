@@ -31,6 +31,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Bulle
 import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Javelins;
 import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Quarrels;
 import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.GnollSprite;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.MissileSprite;
 
@@ -38,7 +39,7 @@ public class GnollHunter extends MobRanged {
 
     public GnollHunter() {
 
-        super( 3 );
+        super( Dungeon.chapter() * 5 - 2 );
 
         /*
 
@@ -55,7 +56,9 @@ public class GnollHunter extends MobRanged {
 
          */
 
-		name = "豺狼猎手";
+		name = "gnoll hunter";
+		info = "Spear throw";
+
 		spriteClass = GnollSprite.class;
 
         resistances.put( Element.Dispel.class, Element.Resist.IMMUNE );
@@ -78,8 +81,6 @@ public class GnollHunter extends MobRanged {
                 lootChance = 0.5f;
                 break;
         }
-
-
 	}
 
     @Override
@@ -109,21 +110,8 @@ public class GnollHunter extends MobRanged {
 	@Override
 	public String description() {
 
-        return "豺狼人是有着土狼模样的人形生物。"
-
-                + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                "这一只豺狼人看起来像是猎人之类的，它使用的锋利的棍子看起来对你来说构不成威胁。" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                "说来奇怪，它们很少被发现有如此接近人类居住点的行为，而更喜欢到荒郊野外栖身。" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                "这可能就是关于这个物种的一切了，不管怎样，谁在乎呢？" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                "它们似乎在与野兽和地下的居民们结盟，也许，甚至是...领导它们？" : "" )
-
-                ;
+        return "Gnolls are hyena-like humanoids. Curiously, they are very rarely observed so " +
+                "close to a human settlements, preferring to dwell somewhere in wilderness.";
 	}
 
 }

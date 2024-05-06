@@ -21,8 +21,16 @@
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
 import com.consideredhamster.yetanotherpixeldungeon.Element;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Enraged;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Invisibility;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Crippled;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Tormented;
+import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
+import com.consideredhamster.yetanotherpixeldungeon.misc.utils.Utils;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.TagAttack;
+import com.watabou.utils.Callback;
 import com.watabou.utils.Random;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
@@ -36,7 +44,9 @@ public class Piranha extends MobEvasive {
 
 		super( Dungeon.depth + 1 );
 
-        name = "巨型食人鱼";
+        name = "giant piranha";
+        info = "Crippling attack, Invisibility, Aquatic";
+
         spriteClass = PiranhaSprite.class;
 
         baseSpeed = 2f;
@@ -56,11 +66,33 @@ public class Piranha extends MobEvasive {
 	
 	@Override
 	protected boolean act() {
+
 		if (!Level.water[pos]) {
+
 			die( null );
 			return true;
-		} else {
-			return super.act();
+
+		} else if( state == HUNTING && enemy != null && !Level.adjacent( pos, enemy.pos ) && invisible == 0 ) {
+
+			sprite.cast(enemy.pos, new Callback() {
+				@Override
+				public void call() {
+				submerge();
+				sprite.idle();
+				}
+			});
+
+			spend( TICK );
+			return true;
+		}
+
+		return super.act();
+	}
+
+	public void submerge() {
+		BuffActive.add(this, Invisibility.class, Random.Float( 15.0f, 20.0f ) );
+		if (Dungeon.visible[pos]) {
+			GLog.i( name + " dives deeper into the water!");
 		}
 	}
 	
@@ -121,7 +153,9 @@ public class Piranha extends MobEvasive {
 	@Override
 	public String description() {
 		return
-			"这些肉食性鱼类不是地下水池中的天然生物。它们被专门培育用来保护被水淹没的储藏室。不管出身如何，它们都同样凶残和嗜血。";
+			"These carnivorous fish are sometimes born in these underground pools. " +
+			"Other times, they are bred specifically to protect flooded treasure vaults. " +
+            "Regardless of origin, they all share the same ferocity and thirst for blood.";
 	}
 
 }

@@ -24,6 +24,7 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
 import com.consideredhamster.yetanotherpixeldungeon.items.scrolls.ScrollOfPhaseWarp;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
+import com.watabou.utils.Random;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
@@ -31,14 +32,17 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Charmed;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.MagicMissile;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
+import com.consideredhamster.yetanotherpixeldungeon.items.wands.WandOfLifeDrain;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.SuccubusSprite;
 
+import java.util.ArrayList;
+
 public class Succubus extends MobPrecise {
 	
-	private static final int BLINK_DELAY = 6;
-	
+	private static final int BLINK_DELAY = 16;
+
 	private int delay = 0;
 
     public Succubus() {
@@ -60,7 +64,9 @@ public class Succubus extends MobPrecise {
 
          */
 
-        name = "魅魔";
+        name = "succubus";
+        info = "Magical, Life drain, Charm, Teleport";
+
         spriteClass = SuccubusSprite.class;
 
         armorClass /= 3;
@@ -79,8 +85,8 @@ public class Succubus extends MobPrecise {
     @Override
     protected boolean canAttack( Char enemy ) {
         return ( super.canAttack( enemy ) ||
-            Ballistica.cast(pos, enemy.pos, false, true) == enemy.pos
-            && enemy.buff( Charmed.class) != null );
+            enemy.buff( Charmed.class ) == null ) &&
+            Ballistica.cast(pos, enemy.pos, false, true) == enemy.pos;
     }
 
     @Override
@@ -96,7 +102,7 @@ public class Succubus extends MobPrecise {
 
         Sample.INSTANCE.play(Assets.SND_ZAP);
 
-        onCastComplete();
+//        onCastComplete();
 
         super.onRangedAttack( cell );
     }
@@ -141,20 +147,16 @@ public class Succubus extends MobPrecise {
 
         return damage;
     }
-
-//    public void onZapComplete() {
-//        zap();
-//        next();
-//    }
 	
 	@Override
 	protected boolean getCloser( int target ) {
 		if (delay <= 0 && enemySeen && enemy != null && Level.fieldOfView[target]
             && Level.distance( pos, target ) > 1 && enemy.buff( Charmed.class ) != null
-            && Ballistica.cast( pos, enemy.pos, false, true ) == enemy.pos ) {
+            && Ballistica.cast( pos, enemy.pos, false, true ) == enemy.pos
+            && Level.mob_passable[ Ballistica.trace[ Ballistica.distance - 1 ] ]  ) {
 
 			blink( target );
-			spend( -2 / moveSpeed() );
+			spend( -1 / moveSpeed() );
 			return true;
 
 		} else {
@@ -164,23 +166,25 @@ public class Succubus extends MobPrecise {
 
 		}
 	}
-	
+
 	private void blink( int target ) {
-		
+
 		int cell = Ballistica.cast( pos, target, false, true );
-		
+
 		if (Actor.findChar( cell ) != null && Ballistica.distance > 1) {
 			cell = Ballistica.trace[Ballistica.distance - 1];
 		}
 
         ScrollOfPhaseWarp.appear( this, cell );
-		
+
 		delay = BLINK_DELAY;
 	}
 	
 	@Override
 	public String description() {
 		return
-			"魅魔是一种看上去就很吸引人（以一种略带哥特式的打扮）的恶魔生物，恶魔的魅力能让它们诱惑凡人，使他们没法直接伤害正折磨他们的人，并更容易受到魅魔的伤害。";
+			"The succubi are demons that look like seductive (in a slightly gothic way) girls. Demonic charms allow " +
+			"them to mesmerize mortals, making them unable to inflict any direct harm against their tormentor and " +
+            "leaving them vulnerable to succubus' life-draining touch.";
 	}
 }

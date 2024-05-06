@@ -20,8 +20,13 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.levels;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
+import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
+import com.consideredhamster.yetanotherpixeldungeon.actors.blobs.WellWater;
 import com.watabou.noosa.Scene;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.Bones;
@@ -30,6 +35,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.Heap;
 import com.consideredhamster.yetanotherpixeldungeon.items.Item;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Room.Type;
 import com.watabou.utils.Graph;
+import com.watabou.utils.Point;
 import com.watabou.utils.Random;
 
 public class LastShopLevel extends RegularLevel {
@@ -58,6 +64,7 @@ public class LastShopLevel extends RegularLevel {
 		
 		initRooms();
 
+        blobs.clear();
         heaps.clear();
         mobs.clear();
 		
@@ -92,7 +99,7 @@ public class LastShopLevel extends RegularLevel {
 		} while (distance < minDistance);
 		
 		roomEntrance.type = Type.ENTRANCE;
-		roomExit.type = Type.BOSS_EXIT;
+		roomExit.type = Type.EXIT;
 		
 		Graph.buildDistanceMap( rooms, roomExit );
 		List<Room> path = Graph.buildPath( rooms, roomEntrance, roomExit );
@@ -148,6 +155,8 @@ public class LastShopLevel extends RegularLevel {
 
 		paint();
 
+//        placeSign( roomEntrance );
+
         Room n = (Room)roomExit.connected.keySet().toArray()[0];
         if ( roomExit.connected.get( n ) == null || roomExit.connected.get( n ).y == roomExit.top ) {
             return false;
@@ -182,7 +191,7 @@ public class LastShopLevel extends RegularLevel {
 //            while (true) {
 //                int pos = roomEntrance.random_top();
 //                if (map[pos] == Terrain.WALL) {
-//                    map[pos] = Terrain.SIGN;
+//                    map[pos] = Terrain.WALL_SIGN;
 //                    break;
 //                }
 //            }
@@ -233,9 +242,10 @@ public class LastShopLevel extends RegularLevel {
 	protected boolean[] grass() {
 		return Patch.generate( 0.30f, 3 );
 	}
-	
+
 	@Override
 	public void addVisuals( Scene scene ) {
+        super.addVisuals( scene );
 		CityLevel.addVisuals( this, scene );
 	}
 

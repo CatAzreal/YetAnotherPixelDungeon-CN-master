@@ -14,7 +14,9 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.HazardSprite
 import com.watabou.noosa.Game;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.tweeners.AlphaTweener;
+import com.watabou.noosa.tweeners.ScaleTweener;
 import com.watabou.utils.Bundle;
+import com.watabou.utils.PointF;
 
 /*
  * Pixel Dungeon
@@ -51,6 +53,11 @@ public class CausticOoze extends Hazard {
         var = 0;
 
     }
+
+    @Override
+    public String desc() {
+        return "There is a pool of corrosive liquid here.";
+    };
 
     public void setValues( int pos, int duration ) {
 

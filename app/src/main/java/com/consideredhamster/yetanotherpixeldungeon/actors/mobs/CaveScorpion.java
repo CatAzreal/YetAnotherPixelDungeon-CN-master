@@ -49,7 +49,9 @@ public class CaveScorpion extends MobHealthy {
 
          */
 
-		name = "洞窟毒蝎";
+		name = "cave scorpion";
+		info = "Corrosive attack, Acidic blood";
+
 		spriteClass = ScorpionSprite.class;
 
         resistances.put( Element.Acid.class, Element.Resist.PARTIAL );
@@ -82,7 +84,8 @@ public class CaveScorpion extends MobHealthy {
 	@Override
 	public String description() {
 		return
-			"这种巨大的蛛蝎类生物由于能够通过尾刺注入酸液，而对冒险者们构成巨大威胁。";
+			"These huge arachnid-like creatures pose a significant threat to any adventurer " +
+            "due to a ability to inject acid with their tails.";
 	}
 
 }

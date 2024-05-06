@@ -20,10 +20,13 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
+import java.util.HashSet;
+
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.Enraged;
 import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.watabou.utils.Callback;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
@@ -58,7 +61,9 @@ public class GnollBrute extends MobPrecise {
 
          */
 
-		name = "豺狼暴徒";
+		name = "gnoll brute";
+		info = "Enrage, Tomahawk throw";
+
 		spriteClass = BruteSprite.class;
 		
 		loot = Gold.class;
@@ -74,6 +79,11 @@ public class GnollBrute extends MobPrecise {
 
         return armorClass;
 
+    }
+
+    @Override
+    public float awareness(){
+        return buff( Enraged.class ) != null ? super.awareness() * 0.5f : super.awareness() ;
     }
 
     @Override
@@ -117,7 +127,6 @@ public class GnollBrute extends MobPrecise {
 
             if (Dungeon.visible[pos]) {
                 GLog.w( TXT_ENRAGED, name );
-//                sprite.showStatus( CharSprite.NEGATIVE, "enraged" );
             }
         }
 	}
@@ -125,6 +134,7 @@ public class GnollBrute extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"豺狼暴徒是豺狼人中体型最庞大，力量最强壮且生命力最顽强的精英。尽管智力不高，但却是非常凶猛的斗士，当豺狼暴徒承受了足够的伤害时，它会狂暴一段时间。";
+			"Brutes are the largest, strongest and toughest of all gnolls. They are dumb, " +
+            "but very ferocious fighters. They can become temporarily enraged when injured enough.";
 	}
 }

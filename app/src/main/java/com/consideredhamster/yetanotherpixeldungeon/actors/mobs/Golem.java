@@ -20,10 +20,21 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
+import java.util.HashSet;
+
+import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
+import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
+import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
 import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Burning;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Withered;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.npcs.AmbitiousImp;
+import com.consideredhamster.yetanotherpixeldungeon.actors.special.Pushing;
+import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.GolemSprite;
+import com.watabou.utils.Callback;
+import com.watabou.utils.Random;
 
 public class Golem extends MobHealthy {
 
@@ -46,9 +57,10 @@ public class Golem extends MobHealthy {
 
          */
 
-		name = "石造魔像";
-		spriteClass = GolemSprite.class;
+		name = "stone golem";
+		info = "Magical, Slow, Knockback";
 
+		spriteClass = GolemSprite.class;
         dexterity /= 2;
 
         resistances.put( Element.Flame.class, Element.Resist.PARTIAL );
@@ -69,11 +81,6 @@ public class Golem extends MobHealthy {
     public boolean isMagical() {
         return true;
     }
-
-    @Override
-    public int armourAC() {
-        return buffs( Burning.class ) == null ? super.armourAC() : 0 ;
-    }
 	
 	@Override
 	public float attackSpeed() {
@@ -83,6 +90,16 @@ public class Golem extends MobHealthy {
     @Override
     public float moveSpeed() {
         return 0.75f;
+    }
+
+    @Override
+    public int attackProc( final Char enemy, int damage, boolean blocked ) {
+
+        if( Random.Int( 10 ) < tier ) {
+            Pushing.knockback( enemy, pos, 1, damage / 2 );
+        }
+
+        return damage;
     }
 	
 	@Override
@@ -95,7 +112,10 @@ public class Golem extends MobHealthy {
 	@Override
 	public String description() {
 		return
-			"矮人们尝试将他们的机械知识与新发现的元素力量结合起来，他们用大地之灵作为\"灵魂\"，以机械作为身躯，造出了这个魔像。人们认为它是最可控的，尽管这么说，在仪式中发生哪怕最微小的错误都可能发生爆炸。魔像的金属身躯在高温下会变得没那么耐用。";
+			"The Dwarves tried to combine their knowledge of mechanisms with their newfound power of elemental binding. " +
+			"They used spirits of earth as the \"soul\" for the mechanical bodies of golems, which were believed to be " +
+			"most controllable of all. Despite this, the tiniest mistake in the ritual could cause an outbreak. But it " +
+            "is still worth it, as golem's fists can knock away even the sturdiest foes.";
 	}
 
 }

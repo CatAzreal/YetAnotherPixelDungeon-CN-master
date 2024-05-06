@@ -305,7 +305,7 @@ public class WandOfThornvines extends WandUtility {
         @Override
         public String description() {
             return
-                "[TN]Thornvines are kind of semisentient plants which are very territorial and will " +
+                "Thornvines are kind of semisentient plants which are very territorial and will " +
                 "attack anything which comes near. Their sharp thorns can inflict grievous wounds, " +
                 "but they are very vulnerable to fire and will quickly wither as time passes. " +
                 "You can unsummon it by interacting with it while holding your wand.";

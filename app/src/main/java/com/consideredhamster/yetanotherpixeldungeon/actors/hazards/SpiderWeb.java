@@ -7,6 +7,7 @@ import com.consideredhamster.yetanotherpixeldungeon.scenes.GameScene;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.CellEmitter;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.WebParticle;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.HazardSprite;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.tweeners.AlphaTweener;
@@ -49,6 +50,11 @@ public class SpiderWeb extends Hazard {
         var = Random.Int( 4 );
 
     }
+
+    @Override
+    public String desc() {
+        return "There is a bunch of webs covering this tile.";
+    };
 
     public void setValues( int pos, int duration ) {
 

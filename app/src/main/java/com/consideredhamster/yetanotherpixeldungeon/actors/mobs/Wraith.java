@@ -22,7 +22,10 @@ package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
 import java.util.ArrayList;
 
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.BuffActive;
+import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.debuffs.Withered;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.tweeners.AlphaTweener;
 import com.watabou.utils.Callback;
@@ -38,6 +41,7 @@ import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
 import com.consideredhamster.yetanotherpixeldungeon.scenes.GameScene;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.WraithSprite;
+import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
 public class Wraith extends MobRanged {
@@ -47,14 +51,15 @@ public class Wraith extends MobRanged {
 	private static final float BLINK_CHANCE	= 0.125f;
 
     public Wraith() {
-        this( Dungeon.depth );;
+        this( Dungeon.depth );
     }
 
     public Wraith( int depth ) {
 
         super( depth / 6 + 1, depth + 1, false );
 
-        name = "恶灵";
+        name = "wraith";
+        info = "Magical, Flying, Teleport, Life drain, Unholy bolt";
         spriteClass = WraithSprite.class;
 
         minDamage += tier;
@@ -139,7 +144,9 @@ public class Wraith extends MobRanged {
 	@Override
 	public String description() {
 		return
-			"怨灵是来自于墓穴中渴望复仇的罪人之魂。作为飘渺的非实体，攻击能穿透任何盔甲，而且基本对正常武器免疫。";
+			"A wraith is a vengeful spirit of a sinner, whose grave or tomb was disturbed. Being " +
+            "an ethereal entity it bypasses any armor with its attacks while being partially " +
+            "immune to conventional weapons itself.";
 	}
 
 

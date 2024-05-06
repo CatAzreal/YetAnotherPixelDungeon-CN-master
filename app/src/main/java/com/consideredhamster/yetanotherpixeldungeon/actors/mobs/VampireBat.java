@@ -21,11 +21,13 @@
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
 import com.consideredhamster.yetanotherpixeldungeon.Element;
+import com.watabou.utils.Random;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.Speck;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.BatSprite;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.CharSprite;
 
 public class VampireBat extends MobEvasive {
 
@@ -48,7 +50,9 @@ public class VampireBat extends MobEvasive {
 
          */
 
-        name = "吸血蝙蝠";
+        name = "vampire bat";
+        info = "Flying, Fast movement, Life drain";
+
         spriteClass = BatSprite.class;
 
         flying = true;
@@ -97,6 +101,7 @@ public class VampireBat extends MobEvasive {
 	@Override
 	public String description() {
 		return
-			"这些迅捷而顽强的洞穴生物能击败更强大的对手，每一次成功的攻击都会补充它的生命。";
+			"These brisk and tenacious inhabitants of cave domes may defeat much larger opponents by " +
+			"replenishing their health with each successful attack.";
 	}
 }

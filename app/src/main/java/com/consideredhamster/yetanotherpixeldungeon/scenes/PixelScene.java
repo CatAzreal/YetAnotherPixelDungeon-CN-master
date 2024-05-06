@@ -24,7 +24,6 @@ import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLES20;
 
-import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.RenderedTextMultiline;
 import com.watabou.input.Touchscreen;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.BitmapText.Font;
@@ -32,14 +31,12 @@ import com.watabou.noosa.BitmapTextMultiline;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Game;
-import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.Visual;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.Badges;
 import com.consideredhamster.yetanotherpixeldungeon.YetAnotherPixelDungeon;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.BadgeBanner;
-import com.watabou.noosa.ui.Component;
 import com.watabou.utils.BitmapCache;
 
 public class PixelScene extends Scene {
@@ -109,31 +106,31 @@ public class PixelScene extends Scene {
 		if (font1x == null) {
 			
 			// 3x5 (6)
-			font1x = Font.colorMarked(
+			font1x = Font.colorMarked( 
 				BitmapCache.get( Assets.FONTS1X ), 0x00000000, BitmapText.Font.LATIN_FULL );
 			font1x.baseLine = 6;
 			font1x.tracking = -1;
-
+			
 			// 5x8 (10)
-			font15x = Font.colorMarked(
+			font15x = Font.colorMarked( 
 					BitmapCache.get( Assets.FONTS15X ), 12, 0x00000000, BitmapText.Font.LATIN_FULL );
 			font15x.baseLine = 9;
 			font15x.tracking = -1;
-
+			
 			// 6x10 (12)
-			font2x = Font.colorMarked(
+			font2x = Font.colorMarked( 
 				BitmapCache.get( Assets.FONTS2X ), 14, 0x00000000, BitmapText.Font.LATIN_FULL );
 			font2x.baseLine = 11;
 			font2x.tracking = -1;
-
+			
 			// 7x12 (15)
-			font25x = Font.colorMarked(
+			font25x = Font.colorMarked( 
 				BitmapCache.get( Assets.FONTS25X ), 17, 0x00000000, BitmapText.Font.LATIN_FULL );
 			font25x.baseLine = 13;
 			font25x.tracking = -1;
-
+			
 			// 9x15 (18)
-			font3x = Font.colorMarked(
+			font3x = Font.colorMarked( 
 				BitmapCache.get( Assets.FONTS3X ), 22, 0x00000000, BitmapText.Font.LATIN_FULL );
 			font3x.baseLine = 17;
 			font3x.tracking = -2;
@@ -238,44 +235,21 @@ public class PixelScene extends Scene {
 		
 		return result;
 	}
-
-	public static RenderedText renderText(int size ) {
-		return renderText("", size);
-	}
-
-	public static RenderedText renderText( String text, int size ) {
-		RenderedText result = new RenderedText( text, (int)(size*defaultZoom));
-		result.scale.set(1/(float)defaultZoom);
-		return result;
-	}
-
-	public static RenderedTextMultiline renderMultiline(int size ){
-		return renderMultiline("", size);
-	}
-
-	public static RenderedTextMultiline renderMultiline( String text, int size ){
-		RenderedTextMultiline result = new RenderedTextMultiline( text, (int)(size*defaultZoom));
-		result.zoom(1/(float)defaultZoom);
-		return result;
-	}
-
-	public static float align( float pos ) {
-		return Math.round(pos * defaultZoom) / (float)defaultZoom;
-	}
-
+	
 	public static float align( Camera camera, float pos ) {
-		return Math.round(pos * camera.zoom) / camera.zoom;
+		return ((int)(pos * camera.zoom)) / camera.zoom;
 	}
-
+	
+	// This one should be used for UI elements
+	public static float align( float pos ) {
+		return ((int)(pos * defaultZoom)) / defaultZoom;
+	}
+	
 	public static void align( Visual v ) {
-		v.x = align( v.x );
-		v.y = align( v.y );
+		Camera c = v.camera();
+		v.x = align( c, v.x );
+		v.y = align( c, v.y );
 	}
-
-	public static void align( Component c ){
-		c.setPos(align(c.left()), align(c.top()));
-	}
-
 	
 	public static boolean noFade = false;
 	protected void fadeIn() {

@@ -25,6 +25,7 @@ import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.Char;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.HeroClass;
+import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.npcs.Ghost;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.Gold;
 import com.consideredhamster.yetanotherpixeldungeon.items.weapons.throwing.Knives;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
@@ -53,7 +54,8 @@ public class Thief extends MobPrecise {
 
          */
 
-        name = "窃贼";
+        name = "mugger";
+        info = "Knife throwing";
         spriteClass = ThiefSprite.class;
 
         loot = Gold.class;
@@ -95,20 +97,8 @@ public class Thief extends MobPrecise {
     @Override
     public String description(){
 
-        return "The 下水道一直是各种歹徒和不法分子的藏身之地。"
-
-                + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                "这些胆小鬼通常装备各种不同的匕首和小刀，它们依靠的是肮脏的伎俩，而不是技巧和力量。" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                "与他们打交道时最好谨慎一点，在贪婪的眼光下，一个独行的老头子看起来就像个容易干掉的猎物。" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                "看来是时候让这些新来的见识一下谁才是这里的老大了，毕竟这些'不义之财'看起来可以帮助你完成你'崇高追求'，不是么？" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                "是什么让他们选择了强盗之路？贪婪，不幸，抑或更邪恶的东西？不过现在已经不重要了。" : "" )
-
-                ;
+        return "The Sewers always been hiding place for all sorts of cutthroats and outlaws. " +
+                "Usually armed with different manners of daggers and knives, these ruffians " +
+                "prefer to rely on dirty tactics instead of skill and strength.";
     }
 }

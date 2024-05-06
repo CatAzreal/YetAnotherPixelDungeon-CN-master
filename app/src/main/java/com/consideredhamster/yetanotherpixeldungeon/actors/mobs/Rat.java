@@ -23,6 +23,7 @@ package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
 import com.consideredhamster.yetanotherpixeldungeon.actors.hero.HeroClass;
+import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.npcs.Ghost;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.RatSprite;
 
 public class Rat extends MobEvasive {
@@ -46,7 +47,9 @@ public class Rat extends MobEvasive {
 
          */
 
-        name = "噬齿小鼠";
+        name = "marsupial rat";
+        info = "Nothing";
+
         spriteClass = RatSprite.class;
 
         minDamage += 1;
@@ -65,20 +68,8 @@ public class Rat extends MobEvasive {
 	
 	@Override
 	public String description() {
-		return "这种老鼠在这座城市居住的时间几乎和下水道存在的时间相当，不久前有传言称这些老鼠会攻击宠物，幼儿，有时甚至是成年人。"
-
-                    + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                    "它们并不配做你的对手，然而在数量众多时仍然非常危险。" : "" )
-
-                    + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                    "毫无疑问，这些生物并不是这里的主要威胁，但它们不自然的攻击性可能令人不安。" : "" )
-
-                    + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                    "为什么，为什么就一定要是老鼠呢……？" : "" )
-
-                    + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                    "某种邪恶的存在扭曲了这些小动物的思想，预示着一些事情即将到来。" : "" )
-
-                ;
+		return "This vermin inhabited the City for almost as long as these sewers had existed. " +
+                "But recently there appeared rumours about these rats attacking pets, toddlers and " +
+                "even adults sometimes.";
 	}
 }

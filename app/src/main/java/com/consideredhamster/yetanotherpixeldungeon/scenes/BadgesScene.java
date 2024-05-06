@@ -20,9 +20,9 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.scenes;
 
+import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.NinePatch;
-import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Music;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.Chrome;
@@ -35,7 +35,7 @@ import com.consideredhamster.yetanotherpixeldungeon.visuals.ui.Window;
 
 public class BadgesScene extends PixelScene {
 	
-	private static final String TXT_TITLE = "你的徽章";
+	private static final String TXT_TITLE = "Your Badges";
 	
 	private static final int MAX_PANE_WIDTH	= 160;
 	
@@ -64,20 +64,13 @@ public class BadgesScene extends PixelScene {
 		panel.x = (w - pw) / 2;
 		panel.y = (h - ph) / 2;
 		add( panel );
-
-		RenderedText title = renderText(TXT_TITLE, 9);
-		title.hardlight(Window.TITLE_COLOR);
-		add(title);
+		
+		BitmapText title = PixelScene.createText( TXT_TITLE, 9 );
+		title.hardlight( Window.TITLE_COLOR );
+		title.measure();
 		title.x = align( (w - title.width()) / 2 );
 		title.y = align( (panel.y - title.baseLine()) / 2 );
-		align(title);
-
-//		BitmapText title = PixelScene.createText( TXT_TITLE, 9 );
-//		title.hardlight( Window.TITLE_COLOR );
-//		title.measure();
-//		title.x = align( (w - title.width()) / 2 );
-//		title.y = align( (panel.y - title.baseLine()) / 2 );
-//		add( title );
+		add( title );
 
 		ScrollPane list = new BadgesList( true );
 		add( list );

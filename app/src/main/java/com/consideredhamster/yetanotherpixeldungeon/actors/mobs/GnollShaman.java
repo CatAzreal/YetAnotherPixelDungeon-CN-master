@@ -42,7 +42,7 @@ public class GnollShaman extends MobRanged {
 
     public GnollShaman() {
 
-        super( 8 );
+        super( 2 + Dungeon.chapter() * 6 );
 
         /*
 
@@ -59,7 +59,8 @@ public class GnollShaman extends MobRanged {
 
          */
 
-		name = "豺狼萨满";
+		name = "gnoll shaman";
+		info = "Magic missile";
 		spriteClass = ShamanSprite.class;
 
         resistances.put( Element.Dispel.class, Element.Resist.IMMUNE );
@@ -147,7 +148,9 @@ public class GnollShaman extends MobRanged {
     @Override
     public String description() {
         return
-                "最有智慧的豺狼精通萨满魔法，这些豺狼萨满在战斗时更喜欢使用魔法以弥补力量的不足，并对那些在自己部落地位有质疑的人毫不犹豫地重拳出击。";
+                "The most intelligent gnolls can master shamanistic magic. Gnoll shamans prefer " +
+                        "battle spells to compensate for lack of might, not hesitating to use them " +
+                        "on those who question their status in a tribe.";
     }
 
     @Override

@@ -20,6 +20,8 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
+import java.util.HashSet;
+
 import com.watabou.utils.Random;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
@@ -33,7 +35,9 @@ public class Statue extends MobPrecise {
 
         super( Dungeon.depth + 1 );
 
-        name = "活化石像";
+        name = "animated statue";
+        info = "Magical";
+
         spriteClass = StatueSprite.class;
 
         minDamage += tier;
@@ -85,6 +89,11 @@ public class Statue extends MobPrecise {
         // do nothing
 	}
 
+    @Override
+    public float awareness(){
+        return super.awareness() * 0.5f;
+    }
+
 
     @Override
     protected boolean act() {
@@ -119,6 +128,9 @@ public class Statue extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"你以为这只是地牢里的另一个丑陋雕像，但它发出红光的眼睛让你放弃了刚才的想法。它通常不会行动，一旦被激怒，这些石像几乎势不可挡，对物理和魔法伤害有很强的抗性。这些活化石像不但是非常可靠的守护者，还可以作为很棒的花园装饰。";
+			"You would think that it's just another ugly statue of this dungeon, but its red glowing eyes give itself away. " +
+            "Usually passive, these stony juggernauts are almost unstoppable once provoked, being very resistant to both " +
+            "physical and magical damage. Besides being extremely reliable guardians, these automatons also may serve as a " +
+            "pretty cool garden decorations.";
 	}
 }

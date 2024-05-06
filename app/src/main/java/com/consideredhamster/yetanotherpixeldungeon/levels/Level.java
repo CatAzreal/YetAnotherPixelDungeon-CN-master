@@ -30,6 +30,7 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.hazards.Hazard;
 import com.consideredhamster.yetanotherpixeldungeon.items.food.RationMedium;
 import com.consideredhamster.yetanotherpixeldungeon.items.potions.EmptyBottle;
 import com.consideredhamster.yetanotherpixeldungeon.items.misc.OilLantern;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.HallsParticle;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.audio.Sample;
@@ -47,7 +48,6 @@ import com.consideredhamster.yetanotherpixeldungeon.actors.buffs.bonuses.MindVis
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Bestiary;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Mob;
 import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Statue;
-import com.consideredhamster.yetanotherpixeldungeon.actors.mobs.Wraith;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.CellEmitter;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.FlowParticle;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.LeafParticle;
@@ -82,8 +82,9 @@ public abstract class Level implements Bundlable {
 
 	public static enum Feeling {
 		NONE,
-		CHASM,
-		HAUNT,
+        SWARM,
+		BOOKS,
+        ASHES,
 		TRAPS,
 		WATER,
 		GRASS
@@ -93,7 +94,6 @@ public abstract class Level implements Bundlable {
 	public static final int HEIGHT = 32;
 	public static final int LENGTH = WIDTH * HEIGHT;
 
-	public static final int[] NEIGHBOURS1 = {0};
 	public static final int[] NEIGHBOURS4 = {-WIDTH, +1, +WIDTH, -1};
 	public static final int[] NEIGHBOURS5 = {0, -WIDTH, +1, +WIDTH, -1};
 	public static final int[] NEIGHBOURSX = {0, -WIDTH-1, -WIDTH+1, +WIDTH-1, +WIDTH+1};
@@ -262,57 +262,53 @@ public abstract class Level implements Bundlable {
                 Dungeon.torches++;
             }
 
-            if (Dungeon.depth % 6 != 1 && Dungeon.depth < 24 ) {
+            int chapter = Dungeon.chapter();
 
-                int chapter = Dungeon.chapter();
+            if ( Dungeon.depth % 6 != 1 && chapter < 5 && Random.Int( 2 ) == 0 ) {
 
-                switch ( Random.Int( 12 ) ) {
-                    case 0:
-                        if( chapter == 1 ) {
-                            feeling = Feeling.WATER;
-                        } else {
-                            feeling = Feeling.HAUNT;
-                        }
-
-                        break;
+                switch(chapter) {
                     case 1:
-                        if( chapter == 2 ) {
-                            feeling = Feeling.HAUNT;
-                        } else {
-                            feeling = Feeling.GRASS;
-                        }
-
+                        feeling = Random.oneOf( Feeling.WATER, Feeling.TRAPS, Feeling.BOOKS );
                         break;
                     case 2:
-                        if( chapter == 3 ) {
-                            feeling = Feeling.GRASS;
-                        } else {
-                            feeling = Feeling.TRAPS;
-                        }
-
+                        feeling = Random.oneOf( Feeling.ASHES, Feeling.GRASS, Feeling.BOOKS );
                         break;
                     case 3:
-                        if( chapter == 4 ) {
-                            feeling = Feeling.TRAPS;
-                        } else {
-                            feeling = Feeling.WATER;
-                        }
-
+                        feeling = Random.oneOf( Feeling.WATER, Feeling.GRASS, Feeling.SWARM );
                         break;
+                    case 4:
+                        feeling = Random.oneOf( Feeling.TRAPS, Feeling.ASHES, Feeling.SWARM );
+                        break;
+
                 }
             }
+
+//			feeling = Feeling.WATER;
         }
 
-		boolean pitNeeded = Dungeon.depth > 1 && weakFloorCreated;
-
 		do {
-			Arrays.fill( map, Terrain.WALL );
-//			Arrays.fill( map, feeling == Feeling.CHASM ? Terrain.CHASM : Terrain.WALL );
 
-			pitRoomNeeded = pitNeeded;
-			weakFloorCreated = false;
+            Arrays.fill( map, Terrain.WALL );
+
+            if( Dungeon.chapter() == 3 && !Dungeon.bossLevel() ){
+
+                CavesLevel.pregenerate( this );
+
+            } else if( Dungeon.chapter() == 4 && !Dungeon.bossLevel() ){
+
+                CityLevel.pregenerate( this );
+
+            } else if( Dungeon.chapter() == 5 && !Dungeon.bossLevel() ){
+
+                Arrays.fill( map, Terrain.CHASM );
+
+                if( Dungeon.depth > 25 ){
+                    HallsLevel.pregenerate( this );
+                }
+            }
 
 		} while (!build());
+
 		decorate();
 
 		buildFlagMaps();
@@ -418,8 +414,8 @@ public abstract class Level implements Bundlable {
 	}
 
 	public int tunnelTile() {
-		return Terrain.EMPTY;
-//		return feeling == Feeling.CHASM ? Terrain.EMPTY_SP : Terrain.EMPTY;
+//		return Terrain.EMPTY;
+		return Dungeon.chapter() == 4 || Dungeon.chapter() == 5 ? Terrain.EMPTY_SP : Terrain.EMPTY;
 	}
 
 	private void adjustMapSize() {
@@ -498,7 +494,13 @@ public abstract class Level implements Bundlable {
 	public void addVisuals( Scene scene ) {
 		for (int i=0; i < LENGTH; i++) {
 			if (chasm[i]) {
-				scene.add( new WindParticle.Wind( i ) );
+
+                if( this instanceof HallsLevel ){
+                    scene.add( new HallsParticle.Halls( i ) );
+                } else {
+                    scene.add( new WindParticle.Wind( i ) );
+                }
+
 				if (i >= WIDTH && water[i-WIDTH]) {
 					scene.add( new FlowParticle.Flow( i - WIDTH ) );
 				}
@@ -546,8 +548,8 @@ public abstract class Level implements Bundlable {
 
 				if (mobs.size() < nMobs()) {
 
-                    Mob mob  = (feeling == Feeling.HAUNT && Random.Int(5) == 0 ?
-                                new Wraith() : Bestiary.mob(Dungeon.depth));
+//                    Mob mob = (feeling == Feeling.HAUNT && Random.Int(5) == 0 ? new Wraith() : Bestiary.mob(Dungeon.depth));
+                    Mob mob = Bestiary.mob( Dungeon.depth );
 
                     mob.state = mob.WANDERING;
 
@@ -562,7 +564,7 @@ public abstract class Level implements Bundlable {
 					}
 				}
 
-				spend( ( TIME_TO_RESPAWN - Dungeon.chapter() * 5 - ( feeling == Feeling.TRAPS ? 10 : 0 ) + mobsSpawned) );
+				spend( ( TIME_TO_RESPAWN - Dungeon.chapter() * 5 + mobsSpawned * 5 ) );
 				return true;
 			}
 		};
@@ -692,12 +694,23 @@ public abstract class Level implements Bundlable {
 		int lastRow = LENGTH - WIDTH;
 
 		for (int i=0; i < WIDTH; i++) {
+
             passable[i] = mob_passable[i] = avoid[i] = false;
+            solid[i] = true;
+
 			passable[lastRow + i] = mob_passable[lastRow + i] = avoid[lastRow + i] = false;
+			solid[lastRow + i] = true;
+
 		}
+
 		for (int i=WIDTH; i < lastRow; i += WIDTH) {
+
 			passable[i] = mob_passable[i] = avoid[i] = false;
+			solid[i] = true;
+
 			passable[i + WIDTH-1] = mob_passable[i + WIDTH-1] = avoid[i + WIDTH-1] = false;
+			solid[i + WIDTH-1] = true;
+
 		}
 
 		for (int i=WIDTH; i < LENGTH - WIDTH; i++) {
@@ -736,7 +749,7 @@ public abstract class Level implements Bundlable {
 
 			for (int j=0; j < NEIGHBOURS9.length; j++) {
 				int n = i + NEIGHBOURS9[j];
-				if (n >= 0 && n < LENGTH && map[n] != Terrain.WALL && map[n] != Terrain.WALL_DECO && map[n] != Terrain.WALL_SIGN) {
+				if (n >= 0 && n < LENGTH && !Arrays.asList( Terrain.WALLS ).contains( map[n] ) ) {
 					d = true;
 					break;
 				}
@@ -1099,7 +1112,7 @@ public abstract class Level implements Bundlable {
 
 		switch (tile) {
 		case Terrain.CHASM:
-			return "深渊";
+			return "Chasm";
 		case Terrain.EMPTY:
 		case Terrain.EMPTY_SP:
 		case Terrain.EMPTY_DECO:
@@ -1109,70 +1122,77 @@ public abstract class Level implements Bundlable {
 		case Terrain.SECRET_POISON_TRAP:
 		case Terrain.SECRET_ALARM_TRAP:
 		case Terrain.SECRET_LIGHTNING_TRAP:
-			return "地面";
+			return "Floor";
 		case Terrain.GRASS:
-			return "植被";
+			return "Grass";
 		case Terrain.WATER:
-			return "水潭";
+			return "Water";
 		case Terrain.WALL:
 		case Terrain.WALL_DECO:
+		case Terrain.WALL_DECO1:
+		case Terrain.WALL_DECO2:
+		case Terrain.WALL_DECO3:
+		case Terrain.WALL_DECO4:
+		case Terrain.WALL_DECO5:
 		case Terrain.DOOR_ILLUSORY:
-			return "墙壁";
+			return "Wall";
 		case Terrain.DOOR_CLOSED:
-			return "关闭的门";
+			return "Closed door";
 		case Terrain.OPEN_DOOR:
-			return "开启的门";
+			return "Open door";
 		case Terrain.ENTRANCE:
-			return "上层楼梯";
+			return "Depth entrance";
 		case Terrain.EXIT:
-			return "下层楼梯";
+			return "Depth exit";
 		case Terrain.EMBERS:
-			return "余烬";
+			return "Embers";
 		case Terrain.LOCKED_DOOR:
-			return "上锁房门";
+			return "Locked door";
 		case Terrain.PEDESTAL:
-			return "底座";
+			return "Pedestal";
 		case Terrain.BARRICADE:
-			return "路障";
+			return "Barricade";
 		case Terrain.HIGH_GRASS:
-			return "茂密植被";
+			return "High grass";
 		case Terrain.LOCKED_EXIT:
-			return "上锁出口";
-		case Terrain.UNLOCKED_EXIT:
-			return "解锁出口";
+			return "Locked depth exit";
+        case Terrain.UNLOCKED_EXIT:
+            return "Unlocked depth exit";
+        case Terrain.GRATE:
+            return "Iron grate";
 		case Terrain.WALL_SIGN:
 		case Terrain.SIGN:
-			return "告示牌";
+			return "Sign";
 		case Terrain.WELL:
-			return "水井";
+			return "Well";
 		case Terrain.EMPTY_WELL:
-			return "空井";
+			return "Empty well";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "石像";
+			return "Statue";
 		case Terrain.TOXIC_TRAP:
-			return "毒气陷阱";
+			return "Toxic gas trap";
 		case Terrain.FIRE_TRAP:
-			return "烈焰陷阱";
+			return "Fire trap";
 		case Terrain.BOULDER_TRAP:
-			return "落石陷阱";
+			return "Boulder trap";
 		case Terrain.POISON_TRAP:
-			return "幻气陷阱";
+			return "Confusion gas trap";
 		case Terrain.ALARM_TRAP:
-			return "警报陷阱";
+			return "Alarm trap";
 		case Terrain.LIGHTNING_TRAP:
-			return "电击陷阱";
+			return "Lightning trap";
 		case Terrain.BLADE_TRAP:
-			return "尖刺陷阱";
+			return "Blade trap";
 		case Terrain.SUMMONING_TRAP:
-			return "召唤陷阱";
+			return "Summoning trap";
 		case Terrain.INACTIVE_TRAP:
-			return "失效陷阱";
+			return "Triggered trap";
 		case Terrain.BOOKSHELF:
 		case Terrain.SHELF_EMPTY:
-			return "书架";
+			return "Bookshelf";
 		case Terrain.ALCHEMY:
-			return "炼金釜";
+			return "Alchemy pot";
 		default:
 			return "???";
 		}
@@ -1183,31 +1203,38 @@ public abstract class Level implements Bundlable {
 		switch (tile) {
         case Terrain.WALL:
         case Terrain.WALL_DECO:
+        case Terrain.WALL_DECO1:
+        case Terrain.WALL_DECO2:
+        case Terrain.WALL_DECO3:
+        case Terrain.WALL_DECO4:
+        case Terrain.WALL_DECO5:
         case Terrain.DOOR_ILLUSORY:
-            return "就是一堵墙，没什么特别的。但需要注意的是在狭窄地形下战斗会影响到闪避能力。";
+            return "Just a wall, nothing special. Mind that fighting in close spaces restricts ability to dodge.";
 		case Terrain.CHASM:
-			return "一眼无法看见其底部。在深渊附近战斗会限制你的移动范围，从而影响你的闪避能力(飞行时不受影响)。";
+			return "You can't see the bottom. Fighting near chasms limits movement, restricting ability to dodge (unless you are flying).";
 		case Terrain.WATER:
-			return "进入水潭中可熄灭身上的火焰。不过，千万别忘记在水面上行走会产生噪声并可能吸引不必要的注意！";
+			return "Step in the water to extinguish fire. However, don't forget that walking in the water is noisy and may attract unwanted attention!";
 		case Terrain.ENTRANCE:
-			return "通向上一层的台阶。";
+			return "Stairs lead up to the upper depth.";
 		case Terrain.EXIT:
 		case Terrain.UNLOCKED_EXIT:
-			return "通向下一层的台阶。";
+			return "Stairs lead down to the lower depth.";
 		case Terrain.EMBERS:
-			return "地上散落着燃尽的余灰。";
+			return "Embers cover the floor.";
 		case Terrain.HIGH_GRASS:
-			return "茂密的植被遮挡了你的视线并可减轻你的脚步声，使你能更轻松地潜行通过。";
+			return "Dense vegetation blocks the view and hushes your steps, making it easier to move undetected through it.";
 		case Terrain.LOCKED_DOOR:
-			return "这扇门锁着，而你需要匹配的钥匙才能打开它。";
-		case Terrain.LOCKED_EXIT:
-			return "沉重的铁栏杆封锁住了通往下一层的楼梯。";
+			return "This door is locked, you need a matching key to unlock it.";
+        case Terrain.LOCKED_EXIT:
+            return "Heavy bars block the stairs leading down.";
+        case Terrain.GRATE:
+            return "Heavy bars block your way.";
 		case Terrain.BARRICADE:
-			return "木栅栏依然坚固，但早已风干多年。烧了怎么样？";
+			return "The wooden barricade is firmly set but has dried over the years. Might it burn?";
 		case Terrain.SIGN:
-			return "有人在这里放了个告示牌...";
+			return "Somebody placed a sign here..";
 		case Terrain.WALL_SIGN:
-			return "这面墙上记录着些什么。";
+			return "There is something written on this wall.";
 		case Terrain.TOXIC_TRAP:
 		case Terrain.FIRE_TRAP:
 		case Terrain.BOULDER_TRAP:
@@ -1216,16 +1243,16 @@ public abstract class Level implements Bundlable {
 		case Terrain.LIGHTNING_TRAP:
 		case Terrain.BLADE_TRAP:
 		case Terrain.SUMMONING_TRAP:
-			return "踩下其上的隐藏压力板就会触发陷阱。";
+			return "Stepping onto a hidden pressure plate will activate the trap.";
 		case Terrain.INACTIVE_TRAP:
-			return "这个陷阱已经被触发过了，现在一点也不危险。";
+			return "The trap has been triggered before and it's not dangerous anymore.";
 		case Terrain.STATUE:
 		case Terrain.STATUE_SP:
-			return "曾有人想装饰一下这个地方，不过很显然，他们失败了。";
+			return "Someone wanted to adorn this place, but failed, obviously.";
 		case Terrain.ALCHEMY:
-			return "可在此处放些草药以精炼药剂。";
+			return "Drop some herbs here to cook a potion.";
 		case Terrain.EMPTY_WELL:
-			return "这是一口枯井。";
+			return "The well has run dry.";
 		default:
 			if (tile >= Terrain.WATER_TILES) {
 				return tileDescs( Terrain.WATER );

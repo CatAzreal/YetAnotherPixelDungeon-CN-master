@@ -47,11 +47,13 @@ public class SewerCrab extends MobHealthy {
 
          */
 
-        name = "水道巨蟹";
+        name = "sewer crab";
+        info = "Fast movement";
+
         spriteClass = CrabSprite.class;
 		
 		loot = new MeatRaw();
-		lootChance = 0.25f;
+		lootChance = 0.125f;
 
         resistances.put( Element.Dispel.class, Element.Resist.IMMUNE );
         resistances.put( Element.Knockback.class, Element.Resist.PARTIAL );
@@ -76,20 +78,7 @@ public class SewerCrab extends MobHealthy {
 //			"They are extremely fast and their thick exoskeleton can withstand " +
 //			"heavy blows.";
 
-        return "这些巨大的螃蟹位于下水道食物链的顶端。"
-
-                + ( Dungeon.hero.heroClass == HeroClass.WARRIOR ?
-                "尽管它们的甲壳很厚，但只要愿意，它们可以快速的移动。" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.SCHOLAR ?
-                "有前人假设，如果不加以照顾，它们可能会在一座城市下形成庞大的群体" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.BRIGAND ?
-                "如果你不想缺胳膊断腿的话，最好悠着点。" : "" )
-
-                + ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ?
-                "它们的巨螯能击穿金属盔甲，甲壳似乎坚不可摧，机灵的眼珠正将你当做下一个猎物。" : "" )
-
-                ;
+        return "These huge crabs are at the top of the food chain in the sewers. Despite the " +
+                "thickness of their carapaces, they can move very fast if they want to.";
 	}
 }

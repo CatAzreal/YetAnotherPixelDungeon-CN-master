@@ -58,7 +58,9 @@ import com.consideredhamster.yetanotherpixeldungeon.misc.utils.GLog;
 public class Yog extends Mob {
 	
 	{
-		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "Yog-Dzewa之回响";
+		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "echo of Yog-Dzewa";
+		info = "Boss enemy!";
+
 		spriteClass = YogSprite.class;
 		
 		HP = HT = 500;
@@ -74,6 +76,7 @@ public class Yog extends Mob {
 
         resistances.put( Element.Mind.class, Element.Resist.IMMUNE );
         resistances.put( Element.Knockback.class, Element.Resist.IMMUNE );
+        resistances.put( Element.Ensnaring.class, Element.Resist.IMMUNE );
 
 	}
 
@@ -81,7 +84,9 @@ public class Yog extends Mob {
     private final static int FIST_RESPAWN_MAX = 30;
 
 	private static final String TXT_DESC =
-		"Yog-Dzewa是一位上古之神，来自混沌位面的强大存在。一个世纪前，古代矮人在同恶魔大军的战争中惨胜，却无法杀死这名神祇。他们只得将这名存在封印在都城下的厅堂之中，希望这位力量被削弱的神祇永无重见天日之时。";
+		"Yog-Dzewa is an Old God, a powerful entity from the realms of chaos. A century ago, the ancient dwarves " +
+		"barely won the war against its army of demons, but were unable to kill the god itself. Instead, they then " +
+		"imprisoned it in the halls below their city, believing it to be too weak to rise ever again.";
 
     @Override
     public float awareness(){
@@ -161,15 +166,6 @@ public class Yog extends Mob {
 	}
 	
 	@Override
-	public void notice() {
-		super.notice();
-
-        if( enemySeen ) {
-            yell( "你好，凡人。准备好受死了吗？" );
-        }
-	}
-	
-	@Override
 	public String description() {
 		return TXT_DESC;
 			
@@ -197,7 +193,8 @@ public class Yog extends Mob {
         public RottingFist() {
 
             super( 5, 25, true );
-			name = "腐烂之拳";
+			name = "rotting fist";
+			info = "Corrosive attack, Acidic blood, Acidic healing, Respawn";
 			spriteClass = RottingFistSprite.class;
 
 			EXP = 0;
@@ -288,12 +285,16 @@ public class Yog extends Mob {
         public BurningFist() {
 
             super( 5, 25, true );
-			name = "燃烧之拳";
+			name = "burning fist";
+			info = "Fire bolt, Always Burning";
 			spriteClass = BurningFistSprite.class;
 			
 			EXP = 0;
 			
 			state = WANDERING;
+
+			minDamage /= 2;
+			maxDamage /= 2;
 
             resistances.put( Element.Knockback.class, Element.Resist.PARTIAL );
             resistances.put( Element.Dispel.class, Element.Resist.PARTIAL );
@@ -355,7 +356,7 @@ public class Yog extends Mob {
 
             if (hit( this, enemy, true, true )) {
 
-                enemy.damage( damageRoll() / 2, this, Element.FLAME );
+                enemy.damage( damageRoll(), this, Element.FLAME );
 
             } else {
 

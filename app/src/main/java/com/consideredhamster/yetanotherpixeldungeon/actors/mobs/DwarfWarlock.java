@@ -20,6 +20,15 @@
  */
 package com.consideredhamster.yetanotherpixeldungeon.actors.mobs;
 
+import java.util.HashSet;
+
+import com.consideredhamster.yetanotherpixeldungeon.actors.Actor;
+import com.consideredhamster.yetanotherpixeldungeon.actors.blobs.Thunderstorm;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.Assets;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.CellEmitter;
+import com.consideredhamster.yetanotherpixeldungeon.visuals.effects.particles.SparkParticle;
+import com.watabou.noosa.Camera;
+import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.consideredhamster.yetanotherpixeldungeon.Element;
 import com.consideredhamster.yetanotherpixeldungeon.Dungeon;
@@ -30,6 +39,7 @@ import com.consideredhamster.yetanotherpixeldungeon.items.misc.Gold;
 import com.consideredhamster.yetanotherpixeldungeon.levels.Level;
 import com.consideredhamster.yetanotherpixeldungeon.misc.mechanics.Ballistica;
 import com.consideredhamster.yetanotherpixeldungeon.visuals.sprites.WarlockSprite;
+import com.watabou.utils.Random;
 
 public class DwarfWarlock extends MobRanged {
 
@@ -56,7 +66,8 @@ public class DwarfWarlock extends MobRanged {
 
          */
 
-		name = "矮人术士";
+		name = "dwarf warlock";
+		info = "Lightning bolt";
 		spriteClass = WarlockSprite.class;
 		
 		loot = Gold.class;
@@ -85,7 +96,7 @@ public class DwarfWarlock extends MobRanged {
             charged = true;
 
             if( Dungeon.visible[ pos ] ) {
-                sprite.centerEmitter().burst(EnergyParticle.FACTORY_BLUE, 20);
+                sprite.centerEmitter().burst(EnergyParticle.FACTORY_BLUE, 10);
             }
 
             spend( attackDelay() );
@@ -109,6 +120,7 @@ public class DwarfWarlock extends MobRanged {
     protected void onRangedAttack( int cell ) {
 
         sprite.parent.add( new Lightning( pos, cell ) );
+        CellEmitter.center( cell ).burst( SparkParticle.FACTORY, Random.IntRange( 3, 5 ) );
 
         onCastComplete();
 
@@ -119,33 +131,30 @@ public class DwarfWarlock extends MobRanged {
     @Override
 	public boolean cast( Char enemy ) {
 
-//        if ( hit( this, enemy, false, true ) ) {
+        HashSet<Char> affected = Thunderstorm.spreadFrom( enemy.pos );
 
-            enemy.damage( damageRoll() + damageRoll(), this, Element.SHOCK);
+        if( affected != null && !affected.isEmpty() ) {
+            for( Char ch : affected ) {
 
-            return true;
+                int power = damageRoll() + ( ch == enemy ? damageRoll() : 0 ) ;
 
-//        } else {
-//            enemy.missed();
-//        }
-//
-//        return false;
+                ch.damage( power, this, Element.SHOCK );
+
+                if( Dungeon.hero == ch ) {
+                    Camera.main.shake( 1, 0.1f );
+                }
+            }
+        }
+
+        return true;
 	}
-	
-//	public void onZapComplete() {
-//		cast();
-//		next();
-//	}
-	
-//	@Override
-//	public void call() {
-//		next();
-//	}
-	
+
 	@Override
 	public String description() {
 		return
-			"当矮人的兴趣从工程建设转向奥秘学术时，术士们开始在城市中掌权。它们从元素魔法起步，但很快就开始研究恶魔学和死灵术。";
+			"When dwarves' interests have shifted from engineering to arcane arts, " +
+			"warlocks have come to power in the city. They started with elemental magic, " +
+			"but soon switched to demonology and necromancy.";
 	}
 
     @Override
