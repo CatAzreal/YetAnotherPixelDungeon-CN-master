@@ -62,7 +62,7 @@ public class Ghost extends NPC {
 		"它对我来说非常重要...应该是被什么怪物从我的遗体旁夺走了...";
 	
 	private static final String TXT_ROSE2	=
-		"Please... Help me... Find the rose...";
+		"请帮帮我...找到那...玫瑰...";
 	
 	private static final String TXT_RAT1	=
 		"你好，冒险者...曾经我像你一样——既强大又自信...然后死在了这里...可还我不能离开这个地方...直到我完成我的复仇…杀死_腐臭老鼠_，就是它夺走了我的生命...";

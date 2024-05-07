@@ -20,7 +20,7 @@
  */
 package com.consideredhamster.yapdcn.visuals.windows;
 
-import com.watabou.noosa.BitmapTextMultiline;
+import com.consideredhamster.yapdcn.visuals.ui.RenderedTextMultiline;
 import com.consideredhamster.yapdcn.Dungeon;
 import com.consideredhamster.yapdcn.actors.hero.Hero;
 import com.consideredhamster.yapdcn.actors.mobs.npcs.Wandmaker;
@@ -53,11 +53,12 @@ public class WndWandmaker extends Window {
 		titlebar.label( Utils.capitalize( item.name() ) );
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
-		
-		BitmapTextMultiline message = PixelScene.createMultiline( TXT_MESSAGE, 6 );
-		message.maxWidth = WIDTH;
-		message.measure();
-		message.y = titlebar.bottom() + GAP;
+
+		RenderedTextMultiline message = PixelScene.renderMultiline( TXT_MESSAGE, 6 );
+		message.maxWidth(WIDTH);
+		PixelScene.align(message);
+		float y = titlebar.bottom() + GAP;
+		message.setPos(0,y);
 		add( message );
 		
 		RedButton btnBattle = new RedButton( Wandmaker.Quest.wand1.name() ) {
@@ -66,7 +67,7 @@ public class WndWandmaker extends Window {
 				selectReward( wandmaker, item, Wandmaker.Quest.wand1 );
 			}
 		};
-		btnBattle.setRect( 0, message.y + message.height() + GAP, WIDTH, BTN_HEIGHT );
+		btnBattle.setRect( 0, y + message.height() + GAP, WIDTH, BTN_HEIGHT );
 		add( btnBattle );
 		
 		RedButton btnNonBattle = new RedButton( Wandmaker.Quest.wand2.name() ) {
