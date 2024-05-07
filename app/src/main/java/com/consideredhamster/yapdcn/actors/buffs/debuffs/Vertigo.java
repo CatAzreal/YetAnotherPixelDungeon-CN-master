@@ -61,7 +61,7 @@ public class Vertigo extends Debuff {
 
     @Override
     public String description() {
-        return "整个世界都绕着你转起来了！你很难移动到目标地点，并且无法击中注意，在此期间敏捷和感知属性都会受到惩罚。";
+        return "整个世界都绕着你转起来了！你很难移动到目标地点，并且无法集中注意，在此期间敏捷和感知属性都会受到惩罚。";
     }
 
     @Override

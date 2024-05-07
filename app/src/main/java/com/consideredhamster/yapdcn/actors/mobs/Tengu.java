@@ -66,63 +66,63 @@ public class Tengu extends MobRanged {
     private final static String[][] LINES = {
 
             {
-                    "Welcome to my humble abode! Haha!",
-                    "Welcome! Do you want to play?",
-                    "Oh, you're finally here! Let's play!",
+                    "哈哈！欢迎来到敝舍！",
+                    "欢迎欢迎！你是来找乐子的吗？",
+                    "哦，你总算是来了！快让好戏开场吧！",
             },
             {
-                    "Let's get a bit closer...",
-                    "Hello there!",
-                    "Now you're it!",
-                    "Haha! Got you!",
-                    "BOO!.. Hahaha!",
+                    "来，我们靠近一点...",
+                    "嗨！你好啊！",
+                    "碰到了！你输啦！",
+                    "哈哈！找到你了！",
+                    "嗷呜!..吓到了吗？哈哈哈！",
             },
             {
-                    "Let's put a little distance...",
-                    "Here is a little present for you!",
-                    "Don't stand there! Come here!",
-                    "Oops, didn't catch me! Haha!",
-                    "Here, catch! Hahaha!",
+                    "我们还是保持一点距离的好...",
+                    "嘿，这是给你准备的小礼物！",
+                    "别在那傻站着！快过来抓我啊！",
+                    "哈哈，抓不到我！",
+                    "来，接住这个！哈哈哈哈哈！",
             },
             {
-                    "Well, I need to rest a little. Have fun!",
-                    "I am afraid I'll have to leave you with these guys for now.",
-                    "Wow, you're tough! Here, play with these guys for a while.",
-                    "Here is your company for now! Enjoy!",
-                    "What fun! I just need to rest for a while.",
+                    "好吧，给我点时间歇歇。祝你玩的开心！",
+                    "看来我得暂时把你交给这些家伙了。",
+                    "哇哦，你还是个硬茬啊！来来来，陪我的弟兄们玩玩。",
+                    "我给你找了些新朋友！不客气！",
+                    "玩的真开心啊！该进入中场时间了。",
             },
             {
-                    "Oh! You found me! How wonderful!",
-                    "Wow! Are you so eager to continue our little game?",
-                    "Hey! I haven't finished catching my breath!",
+                    "哦！被你找到了！真厉害啊！",
+                    "天哪！你这么急着要陪我继续玩吗？",
+                    "嘿！我还没休息够呢。",
             },
             {
-                    "Hey, guess what? I'm back!",
-                    "Hello again! Hope you weren't bored!",
-                    "Here and back again! Shall we continue?",
-                    "I'm here! What took you so long?",
-                    "Heeeeere's Tengu! Hahaha!",
+                    "嘿，猜猜是谁？我又回来了！",
+                    "又见面了！希望你没闲着！",
+                    "回来了！我们继续？",
+                    "这边这边！你怎么动作这么慢？",
+                    "天狗参上！哈哈哈哈！",
             },
             {
-                    "Well... That... Was fun...",
-                    "I think... Our game has ended...",
-                    "Well played, seeker... Well played.",
-                    "I think I am done... Thank you, seeker.",
-                    "Huh? It seems that I've lost... Oh well.",
+                    "嘿嘿...玩的...挺开心的...",
+                    "看来...我们的小游戏...要结束了...",
+                    "你玩的很棒...探求者...玩的很棒...",
+                    "看起来我终于解脱了...谢谢你，探求者。",
+                    "哦？看起来我输了...那就这样吧。",
             },
             {
-                    "Where are you?",
-                    "Are you here? Or here?",
-                    "Why are you hiding from me?",
-                    "Hey, stop hiding! That's my thing!",
-                    "Show yourself! Stop ruining the fun!",
+                    "你跑哪里去了？",
+                    "你在这里吗？还是...这里？",
+                    "你为什么躲着我？",
+                    "嘿，别躲了！躲猫猫可是我的专利！",
+                    "快出来吧！不然这场游戏可玩不下去了！",
             },
             {
-                    "Hey! Found you!",
-                    "A-ha! Here you are!",
-                    "That was a nice try!",
-                    "Can't hide forever from me!",
-                    "You are not really good at hiding.",
+                    "嘿！找到你了！",
+                    "啊哈！原来你在这！",
+                    "躲得还不错嘛！",
+                    "你可没法在我这一直躲下去的！",
+                    "嘿，你这躲得可不怎么样啊。",
             }
     };
 
@@ -133,8 +133,8 @@ public class Tengu extends MobRanged {
 
         super( 3, 15, true );
 
-        name = Dungeon.depth == Statistics.deepestFloor ? "Tengu" : "memory of Tengu";
-        info = "Boss enemy!";
+        name = Dungeon.depth == Statistics.deepestFloor ? "天狗" : "天狗之残影";
+        info = "头目!";
 
         spriteClass = TenguSprite.class;
 
@@ -467,8 +467,7 @@ public class Tengu extends MobRanged {
 	@Override
 	public String description() {
 		return
-			"Tengu are members of the ancient assassins clan, which is also called Tengu. " +
-			"These assassins are noted for extensive use of martial arts and shadow magic.";
+			"天狗是远古刺客组织的成员，组织的名字也叫天狗。这些刺客以多样的武术和暗影魔法而闻名。";
 	}
 
     private static final String TIME_TO_JUMP	= "timeToJump";

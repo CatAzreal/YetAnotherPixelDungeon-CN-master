@@ -303,10 +303,7 @@ public class WandOfThornvines extends WandUtility {
         @Override
         public String description() {
             return
-                "Thornvines are kind of semisentient plants which are very territorial and will " +
-                "attack anything which comes near. Their sharp thorns can inflict grievous wounds, " +
-                "but they are very vulnerable to fire and will quickly wither as time passes. " +
-                "You can unsummon it by interacting with it while holding your wand.";
+                "棘藤是一种有一定自我意识且对其领土范围极为敏感的植物，它会攻击任何临近的单位.其尖锐的棘刺能造成严重的伤势，但及其弱火，并且会随时间流逝快速消亡。在装备法杖的状态下与其交互可以直接驱散棘藤。";
         }
 
         private static final String STATS	= "stats";

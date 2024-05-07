@@ -51,8 +51,8 @@ public class Thief extends MobPrecise {
 
          */
 
-        name = "mugger";
-        info = "Knife throwing";
+        name = "窃贼";
+        info = "飞刀投掷";
         spriteClass = ThiefSprite.class;
 
         loot = Gold.class;
@@ -94,8 +94,6 @@ public class Thief extends MobPrecise {
     @Override
     public String description(){
 
-        return "The Sewers always been hiding place for all sorts of cutthroats and outlaws. " +
-                "Usually armed with different manners of daggers and knives, these ruffians " +
-                "prefer to rely on dirty tactics instead of skill and strength.";
+        return "下水道一直是各种歹徒和不法分子的藏身之地。这些胆小鬼通常装备各种不同的匕首和小刀，它们依靠的是肮脏的伎俩，而不是技巧和力量。";
     }
 }

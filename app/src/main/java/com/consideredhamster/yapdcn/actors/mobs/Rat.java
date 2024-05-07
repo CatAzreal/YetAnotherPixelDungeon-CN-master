@@ -44,8 +44,8 @@ public class Rat extends MobEvasive {
 
          */
 
-        name = "marsupial rat";
-        info = "Nothing";
+        name = "噬齿小鼠";
+        info = "无";
 
         spriteClass = RatSprite.class;
 
@@ -65,8 +65,6 @@ public class Rat extends MobEvasive {
 	
 	@Override
 	public String description() {
-		return "This vermin inhabited the City for almost as long as these sewers had existed. " +
-                "But recently there appeared rumours about these rats attacking pets, toddlers and " +
-                "even adults sometimes.";
+		return "这种老鼠在这座城市居住的时间几乎和下水道存在的时间相当，不久前有传言称这些老鼠会攻击宠物，幼儿，有时甚至是成年人。";
 	}
 }

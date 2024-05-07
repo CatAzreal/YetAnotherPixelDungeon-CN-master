@@ -49,24 +49,23 @@ import com.consideredhamster.yapdcn.misc.utils.Utils;
 public abstract class ResultDescriptions {
 
 //    public static final String FAIL	= "%s";
-    public static final String WIN	= "Obtained the Amulet of Yendor";
+public static final String WIN	= "获得Yendor护符";
 
     public static String generateResult( Object killedBy, Element killedWith ) {
 
-        return Utils.capitalize( killedBy == Dungeon.hero ? killedWith( killedBy, killedWith ) +
-                ( Dungeon.hero.heroClass == HeroClass.ACOLYTE ? " herself" : " himself" ) :
-                killedWith( killedBy, killedWith ) + " by " + killedBy( killedBy ) );
+        return Utils.capitalize( killedBy == Dungeon.hero ? "" + killedWith( killedBy, killedWith ) + "了自己" :
+                "被" + killedBy( killedBy ) + killedWith( killedBy, killedWith ) + "");
     }
 
     public static String generateMessage( Object killedBy, Element killedWith ) {
 
-        return ( killedBy == Dungeon.hero ? "You " + killedWith( killedBy, killedWith ) + " yourself" :
-                "You were " + killedWith( killedBy, killedWith ) + " by " + killedBy( killedBy ) ) + "...";
+        return ( killedBy == Dungeon.hero ? "你" + killedWith( killedBy, killedWith ) + "了自己" :
+                "你被" + killedBy( killedBy ) + killedWith( killedBy, killedWith ) + "了") + "...";
     }
 
     private static String killedWith( Object killedBy, Element killedWith ) {
 
-        String result = "killed";
+        String result = "击杀";
 
         if( killedWith == null ) {
 
@@ -76,37 +75,37 @@ public abstract class ResultDescriptions {
 
                 if( Bestiary.isBoss( mob ) || mob instanceof Rat ) {
 
-                    result = "defeated";
+                    result = "击败";
 
                 } else if ( mob instanceof GnollBrute ) {
 
-                    result = "murderized";
+                    result = "屠杀";
 
                 } else if ( mob instanceof DwarfMonk ) {
 
-                    result = "facefisted";
+                    result = "击垮";
 
                 } else if ( mob instanceof Golem ) {
 
-                    result = "squashed flat";
+                    result = "砸扁";
 
                 } else if ( mob instanceof Piranha ) {
 
-                    result = "eaten";
+                    result = "活活吃掉";
 
                 } else if ( mob instanceof Mimic ) {
 
-                    result = "ambushed";
+                    result = "偷袭致死";
 
                 }
 
             } else if( killedBy instanceof Pushing ) {
 
-                result = "crushed";
+                result = "击垮";
 
             } else if( killedBy instanceof BoulderTrap ) {
 
-                result = "crushed";
+                result = "击垮";
 
             }
 
@@ -116,11 +115,11 @@ public abstract class ResultDescriptions {
 //        } else if( killedWith instanceof DamageType.Frost) {
 //            result = "chilled to death";
         } else if( killedWith instanceof Element.Shock) {
-            result = "electrocuted";
+            result = "电击致死";
         } else if( killedWith instanceof Element.Acid) {
-            result = "dissolved";
+            result = "融化致死";
         } else if( killedWith instanceof Element.Explosion) {
-            result = "blown up";
+            result = "爆炸致死";
 //        } else if( killedWith instanceof DamageType.Mind) {
 //            result = "";
 //        } else if( killedWith instanceof DamageType.Body) {
@@ -136,7 +135,7 @@ public abstract class ResultDescriptions {
 
     private static String killedBy( Object killedBy ) {
 
-        String result = "something";
+        String result = "不明原因";
 
         if( killedBy instanceof Mob ) {
             Mob mob = ((Mob)killedBy);
@@ -145,31 +144,31 @@ public abstract class ResultDescriptions {
             Blob blob = ((Blob)killedBy);
             result = Utils.indefinite( blob.name );
         } else if( killedBy instanceof Weapon.Enchantment ) {
-            result = "enchanted weapon";
+            result = "诅咒武器";
         } else if( killedBy instanceof Armour.Glyph ) {
-            result = "enchanted armor";
+            result = "诅咒护甲";
         } else if( killedBy instanceof Buff ) {
             if( killedBy instanceof Crippled ) {
-                result = "excessive bleeding";
+                result = "大量出血";
             } else if( killedBy instanceof Poisoned ) {
-                result = "poison";
+                result = "毒素";
             } else if( killedBy instanceof Satiety ) {
-                result = "starvation";
+                result = "饥饿";
             } else if( killedBy instanceof Burning ) {
-                result = "being burned alive";
+                result = "燃烧";
             } else if( killedBy instanceof Corrosion ) {
-                result = "caustic ooze";
+                result = "腐蚀淤泥";
             }
         } else if( killedBy instanceof Trap ) {
-            result = "a trap";
+            result = "陷阱";
         } else if( killedBy instanceof Chasm ) {
-            result = "gravity";
+            result = "重力";
         } else if( killedBy instanceof Pushing ) {
-            result = "knockback";
+            result = "击退";
         } else if( killedBy instanceof Explosion ) {
-            result = "explosion";
+            result = "爆炸";
         } else if( killedBy instanceof FieryRune) {
-            result = "your own firebrand rune";
+            result = "自己设下的火纹阵法";
         }
 
         return result;

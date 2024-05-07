@@ -57,8 +57,8 @@ public class Goo extends MobEvasive {
 
         super(2, 10, true);
 
-        name = "Goo";
-        info = "Boss enemy!";
+        name = "粘咕";
+        info = "头目！";
 
         spriteClass = GooSprite.class;
 
@@ -259,15 +259,13 @@ public class Goo extends MobEvasive {
     public void notice() {
         super.notice();
         if( enemySeen ) {
-            yell("GLURP-GLURP!");
+            yell("咕-咕！");
         }
     }
 
     @Override
     public String description() {
-        return  "Little is known about The Goo. It's quite possible that it is not even a creature, but rather a " +
-                "conglomerate of substances from the sewers that gained some kind of rudimentary, but very evil " +
-                "sentience.";
+        return  "我们对粘咕所知甚少。它甚至很有可能不是一个生物，而是下水道表面聚集的邪恶物质得到基本智能而产生的实体。";
     }
 
     private static final String PHASE	= "phase";

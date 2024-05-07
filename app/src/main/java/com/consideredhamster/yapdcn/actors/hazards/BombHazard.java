@@ -77,7 +77,7 @@ public class BombHazard extends Hazard {
 
     @Override
     public String desc() {
-        return "There is a bomb lying here, ready to explode.";
+        return "此地放置了一个爆炸物，随时都可以引爆。";
     };
 
     public void setValues( int pos, int var, int strength, int distance ) {

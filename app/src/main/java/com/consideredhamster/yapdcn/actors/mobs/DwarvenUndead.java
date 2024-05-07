@@ -46,8 +46,8 @@
 
 		  super( 5, 12, false );
 
-		  name = "undead dwarf";
-		  info = "Magical, Weakening attack";
+		  name = "死灵矮人";
+		  info = "法术造物, 虚弱攻击";
 		  spriteClass = UndeadSprite.class;
 
 		  armorClass /= 2;
@@ -144,8 +144,7 @@
 	  @Override
 	  public String description() {
 		  return
-				  "These undead dwarves, risen by the will of the King of Dwarves, were members of his court. " +
-						  "They appear as stocky skeletons with unusually tiny skulls.";
+				  "这些依矮人国王之命现身的死灵矮人们，曾是矮人国王的宫廷官僚。它们骨骼矮壮，且头骨小的很不寻常。";
 	  }
 
   }

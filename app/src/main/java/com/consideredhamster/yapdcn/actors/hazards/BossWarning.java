@@ -45,7 +45,7 @@ public class BossWarning extends Hazard {
 
     @Override
     public String desc() {
-        return "DM-300 has targeted this tile for its next attack.";
+        return "DM-300下一次攻击将选取这个地格作为目标之一。";
     };
 
     public void setValues( int pos, int var ) {

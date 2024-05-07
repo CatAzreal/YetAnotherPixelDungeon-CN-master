@@ -58,8 +58,8 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 public class Yog extends Mob {
 	
 	{
-		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "echo of Yog-Dzewa";
-		info = "Boss enemy!";
+		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "Yog-Dzewa之回响";
+		info = "头目!";
 
 		spriteClass = YogSprite.class;
 		
@@ -84,9 +84,7 @@ public class Yog extends Mob {
     private final static int FIST_RESPAWN_MAX = 30;
 
 	private static final String TXT_DESC =
-		"Yog-Dzewa is an Old God, a powerful entity from the realms of chaos. A century ago, the ancient dwarves " +
-		"barely won the war against its army of demons, but were unable to kill the god itself. Instead, they then " +
-		"imprisoned it in the halls below their city, believing it to be too weak to rise ever again.";
+            "Yog-Dzewa是一位上古之神，来自混沌位面的强大存在。一个世纪前，古代矮人在同恶魔大军的战争中惨胜，却无法杀死这名神祇。他们只得将这名存在封印在都城下的厅堂之中，希望这位力量被削弱的神祇永无重见天日之时。";
 
     @Override
     public float awareness(){
@@ -193,8 +191,8 @@ public class Yog extends Mob {
         public RottingFist() {
 
             super( 5, 25, true );
-			name = "rotting fist";
-			info = "Corrosive attack, Acidic blood, Acidic healing, Respawn";
+			name = "腐烂之拳";
+			info = "腐蚀攻击, 酸性血液, 酸液治疗, 可重生";
 			spriteClass = RottingFistSprite.class;
 
 			EXP = 0;
@@ -285,8 +283,8 @@ public class Yog extends Mob {
         public BurningFist() {
 
             super( 5, 25, true );
-			name = "burning fist";
-			info = "Fire bolt, Always Burning";
+			name = "燃烧之拳";
+			info = "火焰魔弹, 持续燃烧, 可重生";
 			spriteClass = BurningFistSprite.class;
 			
 			EXP = 0;

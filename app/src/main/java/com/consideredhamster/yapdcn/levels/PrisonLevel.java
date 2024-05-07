@@ -180,21 +180,22 @@ public class PrisonLevel extends RegularLevel {
 	public static String tileDescs(int tile) {
 		switch (tile) {
             case Terrain.EMPTY_DECO:
-                return "There are old blood stains on the floor.";
+                return "其上仍残留着干涸的血迹。";
             case Terrain.WALL_DECO:
-                return "A torch hangs on the wall, burning dimly. Who even keeps these alight?";
+                return "一根火把固定在墙上，释放出微弱的火光。还有谁会点亮这些东西？";
             case Terrain.WALL_DECO1:
-                return "There is an old iron grate built into this wall. You can't see what is there in the darkness.";
+                return "一个厚实的旧铁栅立在这里，你没法看清暗无边际的另一侧有着什么东西。";
             case Terrain.WALL_DECO2:
-                return "Seems like someone's remains are stored here. Why?";
+                return "看起来什么人的遗骨被顺便埋了进去，为什么要这么做？";
             case Terrain.WALL_DECO3:
             case Terrain.WALL_DECO4:
             case Terrain.WALL_DECO5:
-                return "There is a dried up bloodstain here. Creepy.";
+                return "这上面有片干涸的血迹，怪吓人的。";
             case Terrain.BOOKSHELF:
-                return "This is probably a vestige of a prison library. Maybe there would be something useful in here?";
+                return "这个书架可能是监狱图书馆的遗留物之一。里面会不会藏着些用得上的东西？";
             case Terrain.SHELF_EMPTY:
-                return "This is probably a vestige of a prison library.";
+
+                return "这个书架可能是监狱图书馆的遗留物之一。";
             default:
                 return Level.tileDescs(tile);
 		}

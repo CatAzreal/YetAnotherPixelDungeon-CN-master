@@ -73,8 +73,8 @@ public class Magus extends MobRanged {
 
          */
 
-		name = "magus";
-		info = "Magical, Elemental bolt";
+		name = "魔族法师";
+		info = "法术造物, 元素射击";
 		spriteClass = MagusSprite.class;
 
         resistances.put( Element.Flame.class, Element.Resist.PARTIAL );
@@ -292,10 +292,7 @@ public class Magus extends MobRanged {
     @Override
     public String description() {
         return
-                "Their eyes filled with spite and disdain, magi are technically the highest caste " +
-                "of the demonic society. Being quite frail, they prefer to blast their enemies with " +
-                "an assortment of elemental spells from afar while leaving the dirty work to " +
-                "their subordinates.";
+                "它的双目充斥着恶意和鄙夷，魔族法师理论上讲归属于恶魔社会中的最高阶层。由于身形脆弱，它们通常更倾向于将自己掌握的各类元素法术由远处释放，将剩下接敌交战抛尸之类的脏活交给自己的低阶同族们做。";
     }
 
     @Override

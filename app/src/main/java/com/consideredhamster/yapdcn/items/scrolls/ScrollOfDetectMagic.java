@@ -34,11 +34,11 @@ import com.consideredhamster.yapdcn.misc.utils.GLog;
 public class ScrollOfDetectMagic extends Scroll {
 
 //    private static final String TXT_REVEALED	= "You notice something peculiar!";
-    private static final String TXT_IDENTIFIED	= "Your items are identified!";
-    private static final String TXT_NOTHING 	= "Nothing happens.";
+    private static final String TXT_IDENTIFIED	= "你的物品得到了鉴定！";
+    private static final String TXT_NOTHING 	= "什么都没发生。";
 
 	{
-		name = "Scroll of Detect Magic";
+		name = "探魔卷轴";
         shortName = "DM";
 
 //		inventoryTitle = "Select an item to identify";
@@ -86,9 +86,7 @@ public class ScrollOfDetectMagic extends Scroll {
 	@Override
 	public String desc() {
 		return
-                "The incantation etched in this scroll can bestow the ability to perceive the weaves of magic " +
-                "upon its reader, revealing the items' supernatural qualities. This will allow its user " +
-                "to tell the enchanted and cursed equipment from the mundane but without further details.";
+                "蚀刻在这张卷轴上的符文能够赋予阅读者感应术法波段的能力，揭示携带物品上带有的超自然属性。这能使阅读者区分出所有附魔和诅咒装备，但不会提供这之外的更多信息。";
 	}
 
     public static boolean identify( Item... items ) {

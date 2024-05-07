@@ -60,8 +60,8 @@ public class Succubus extends MobPrecise {
 
          */
 
-        name = "succubus";
-        info = "Magical, Life drain, Charm, Teleport";
+        name = "魅魔";
+        info = "法术造物, 生命吸取, 魅惑, 瞬移";
 
         spriteClass = SuccubusSprite.class;
 
@@ -179,8 +179,6 @@ public class Succubus extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"The succubi are demons that look like seductive (in a slightly gothic way) girls. Demonic charms allow " +
-			"them to mesmerize mortals, making them unable to inflict any direct harm against their tormentor and " +
-            "leaving them vulnerable to succubus' life-draining touch.";
+			"魅魔是一种长相近似人类女性且吸引人（以一种略带哥特式的打扮）的恶魔生物，恶魔的魅力能让它们诱惑凡人，使他们没法直接伤害正折磨他们的人，并更容易受到魅魔的生命吸取。";
 	}
 }

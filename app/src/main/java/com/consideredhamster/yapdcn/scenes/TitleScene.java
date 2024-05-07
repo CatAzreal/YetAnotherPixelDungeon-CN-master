@@ -25,6 +25,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLES20;
 
 import com.consideredhamster.yapdcn.visuals.windows.WndChangelog;
+import com.consideredhamster.yapdcn.visuals.windows.WndTranslateLog;
 import com.watabou.input.Touchscreen;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
@@ -178,6 +179,11 @@ public class TitleScene extends PixelScene {
         version.y = h - version.height();
         add( version );
 
+        final RenderedText txtChangelog = renderText( "翻译声明", 8 );
+        txtChangelog.x = 0;
+        txtChangelog.y = h - txtChangelog.height();
+        add( txtChangelog );
+
         final Emitter emitter = new Emitter();
         emitter.pos( version.x, version.y, version.width(), version.height() );
         add(emitter);
@@ -196,6 +202,14 @@ public class TitleScene extends PixelScene {
         };
         add(changelog);
 
+        TouchArea translateLog = new TouchArea( txtChangelog ) {
+            @Override
+            protected void onClick( Touchscreen.Touch touch ) {
+                parent.add( new WndTranslateLog() );
+            }
+        };
+        add(translateLog);
+
         PrefsButton btnPrefs = new PrefsButton();
         btnPrefs.setPos( 0, 0 );
         add(btnPrefs);
@@ -209,6 +223,7 @@ public class TitleScene extends PixelScene {
         if( YetAnotherPixelDungeon.lastVersion() < Game.versionNum ) {
             YetAnotherPixelDungeon.lastVersion( Game.versionNum );
             add(new WndChangelog());
+            add(new WndTranslateLog());
         }
     }
 

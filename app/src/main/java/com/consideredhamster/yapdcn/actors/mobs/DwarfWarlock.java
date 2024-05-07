@@ -63,8 +63,8 @@ public class DwarfWarlock extends MobRanged {
 
          */
 
-		name = "dwarf warlock";
-		info = "Lightning bolt";
+		name = "矮人术士";
+		info = "闪电魔弹";
 		spriteClass = WarlockSprite.class;
 		
 		loot = Gold.class;
@@ -149,9 +149,7 @@ public class DwarfWarlock extends MobRanged {
 	@Override
 	public String description() {
 		return
-			"When dwarves' interests have shifted from engineering to arcane arts, " +
-			"warlocks have come to power in the city. They started with elemental magic, " +
-			"but soon switched to demonology and necromancy.";
+			"当矮人的兴趣从工程建设转向奥秘学术时，术士们开始在城市中掌权。它们从元素魔法起步，但很快就开始研究恶魔学和死灵术。";
 	}
 
     @Override

@@ -68,12 +68,12 @@
 	  private final static int LINE_EMPOWERED = 5;
 	  //    private final static int LINE_MOVEASIDE = 6;
 	  private final static int LINE_NEARDEATH = 7;
-	
-	  private final static String TXT_ENRAGED = "Dwarven King is enraged!";
-	  private final static String TXT_STOPPED = "Dwarven King stopped the ritual.";
-	  private final static String TXT_CALMDWN = "Dwarven King is not enraged anymore.";
-	  private final static String TXT_SUMMONS = "Dwarven King casts some powerful spell!";
-	  private final static String TXT_CHANNEL = "Dwarven King starts some kind of ritual!";
+
+	  private final static String TXT_ENRAGED = "矮人国王愤怒了！";
+	  private final static String TXT_STOPPED = "矮人国王停止了仪式。";
+	  private final static String TXT_CALMDWN = "矮人国王不再愤怒。";
+	  private final static String TXT_SUMMONS = "矮人国王咏唱了强大的咒术！";
+	  private final static String TXT_CHANNEL = "矮人国王开始了某种仪式...";
 	  
 	  private static final float SPAWN_DELAY = 1f;
 	  private static final float BASE_ENRAGE = 5f;
@@ -83,51 +83,51 @@
 	  private static final String CONSUMED = "consumed";
 	  
 	  private static String[][] LINES = {
-			
+
 			  {
-					  "How dare you!",
-					  "Who dares to disturb my slumber?",
-					  "Human? In MY throne room?",
+					  "大胆！",
+					  "是谁竟敢扰我清梦？",
+					  "人类？在 我 的 王座之间？",
 			  },
 			  {
-					  "Arise, slaves!",
-					  "I command you to fight!",
-					  "Servants! It is time to feast!",
+					  "起来，我的奴隶们！",
+					  "我命令你们战斗！",
+					  "下仆们！开宴之时已至！",
 			  },
 			  {
-					  "You'll pay for that, maggot!",
-					  "Your death will be VERY painful...",
-					  "Time to teach you a lesson, mortal.",
-					  "You are going to be a very powerful slave.",
+					  "区区虫豸...你会付出代价的！",
+					  "你的死法将会非-常-痛-苦...",
+					  "是时候教训你了，凡人。",
+					  "你，会变成一个非常强大的奴隶。",
 			  },
 			  {
-					  "Come to me, my minions!",
-					  "Behold my true power!",
-					  "To me, my vassals!",
-					  "Your king commands you!",
-					  "Raise from your graves!",
+					  "我的随从们，到我身边来！",
+					  "见识一下我真正的力量！",
+					  "向我而来，我的臣民们！",
+					  "你的国王在命令你！",
+					  "从你们的坟墓里起来！",
 			  },
 			  {
-					  "They are as useless in death as they were in life.",
-					  "These sycophants are worthless pile of trash.",
-					  "I always have to do everything by myself.",
+					  "这些死人就像它们活着的时候那样没用。",
+					  "这些谄媚者都是些一文不值的垃圾。",
+					  "到头来什么事都得我自己做。",
 			  },
 			  {
-					  "Time to remove you from the board, mortal.",
-					  "You played this game for too long, mortal.",
-					  "Do you not know your death when you see it? Die now!",
-					  "Your screams will be a symphony for my ears.",
-					  "You'll pay for everything you've done, human.",
+					  "是时候把你从棋盘上抹去了，凡人。",
+					  "你的这场游戏已经超时了，凡人。",
+					  "不见棺材不落泪？去死！",
+					  "你的惨叫将会成为入我耳中的交响乐。",
+					  "你要为你所做的一切付出代价，人类。",
 			  },
 			  {
-					  "Move aside, worm!",
-					  "Don't make me angry, little pest.",
-					  "You will not stop me this way.",
+					  "滚开，虫子！",
+					  "别惹我生气，小不点。",
+					  "你这样可没法阻止我。",
 			  },
 			  {
-					  "You cannot kill me, " + Dungeon.hero.heroClass.title() + "... I am... immortal... ",
-					  "I will return, " + Dungeon.hero.heroClass.title() + "... I will... return...",
-					  "No. NO! How it can be? Killed... by... a mortal...",
+					  "你杀不死我，" + Dungeon.hero.heroClass.title() + "...我是...不朽的... ",
+					  "我会回来的, " + Dungeon.hero.heroClass.title() + "...我会...回...",
+					  "不，不！这怎么可能？！我竟被...凡人...干掉...",
 			  },
 	  };
 	
@@ -135,8 +135,8 @@
 		
 		  super( 5, 25, true );
 		
-		  name = Dungeon.depth == Statistics.deepestFloor ? "King of Dwarves" : "undead King of Dwarves";
-		  info = "Boss enemy!";
+		  name = Dungeon.depth == Statistics.deepestFloor ? "矮人国王" : "不灭的矮人国王";
+		  info = "头目!";
 		  spriteClass = KingSprite.class;
 		
 		  loot = Gold.class;
@@ -448,10 +448,7 @@
 	  @Override
 	  public String description() {
 		  return
-				  "The last king of dwarves was known for a deep understanding of the processes of life " +
-						  "and death. He had persuaded the members of his court to participate in a ritual that " +
-						  "should have granted them eternal youth. In the end, he was the only one who got it, " +
-						  "with an army of undead as a bonus.";
+				  "这名最后的矮人国王以对死灵术式的透彻理解而闻名。他成功说服王国议会的全体成员参加了一场本应让所有参与者获得永生的祭祀仪式。最终成功的只有国王自己——如果不算上他身边那支化为枯骨的死灵大军的话。";
 	  }
 	
 	  public void sacrificeMinion( Mob mob ) {
@@ -465,7 +462,7 @@
 			
 			  if ( sprite.visible || mob.sprite.visible ) {
 				
-				  mob.sprite.showStatus( CharSprite.NEGATIVE, "sacrificed" );
+				  mob.sprite.showStatus( CharSprite.NEGATIVE, "献祭" );
 				  mob.sprite.parent.add( new DrainLife( mob.pos, pos, null ) );
 				  new Flare( 6, 16 ).color( SpellSprite.COLOUR_DARK, true ).show( mob.sprite, 2f );
 				
@@ -599,7 +596,7 @@
 		
 		  @Override
 		  public String tileDesc() {
-			  return "Bones on the bottom of this well are moving. Creepy.";
+			  return "坑底的骸骨仍在活动，令人不寒而栗。";
 		  }
 	  }
   }

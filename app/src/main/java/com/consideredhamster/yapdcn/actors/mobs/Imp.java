@@ -66,8 +66,8 @@ public class Imp extends MobEvasive {
 
          */
 
-        name = "malicious imp";
-        info = "Magical, Flying, Stealing, Invisibility";
+        name = "小恶魔";
+        info = "法术造物, 飞行, 偷窃, 隐形";
         spriteClass = ImpSprite.class;
 
         flying = true;
@@ -256,8 +256,7 @@ public class Imp extends MobEvasive {
 	@Override
     public String description() {
         return
-            "Imps are lesser demons. They are notable neither for their strength nor their magic talent, but for their cruelty " +
-            "and greed. However, some of them are actually quite nice and sociable. Certainly not this one, though... " +
+            "小恶魔是恶魔中的下等生物，它们不以力量和魔法天赋著称，而是残忍和贪婪。不过它们中的一部分实际上是好心和善于社交的，当然，肯定不是这只... " +
             ( item != null ? Utils.format( TXT_CARRY, item.name() ) : "" );
     }
 

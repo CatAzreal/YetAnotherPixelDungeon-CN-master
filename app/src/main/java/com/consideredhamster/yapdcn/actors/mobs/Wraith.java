@@ -54,8 +54,8 @@ public class Wraith extends MobRanged {
 
         super( depth / 6 + 1, depth + 1, false );
 
-        name = "wraith";
-        info = "Magical, Flying, Teleport, Life drain, Unholy bolt";
+        name = "恶灵";
+        info = "法术造物, 飞行, 瞬移, 生命吸取, 邪能魔弹";
         spriteClass = WraithSprite.class;
 
         minDamage += tier;
@@ -140,9 +140,7 @@ public class Wraith extends MobRanged {
 	@Override
 	public String description() {
 		return
-			"A wraith is a vengeful spirit of a sinner, whose grave or tomb was disturbed. Being " +
-            "an ethereal entity it bypasses any armor with its attacks while being partially " +
-            "immune to conventional weapons itself.";
+			"怨灵是来自于墓穴中渴望复仇的罪人之魂。作为飘渺的非实体，攻击能穿透任何盔甲，而且基本对正常武器免疫。";
 	}
 
 

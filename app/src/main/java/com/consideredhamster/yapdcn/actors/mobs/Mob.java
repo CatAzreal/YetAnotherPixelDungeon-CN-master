@@ -920,7 +920,7 @@ public abstract class Mob extends Char {
 		
 		@Override
 		public String status() {
-			return "漫游";
+			return "游荡";
 		}
 	}
 	

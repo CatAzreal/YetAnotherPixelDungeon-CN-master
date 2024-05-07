@@ -214,15 +214,15 @@ public class HallsLevel extends RegularLevel {
 
 	public static String tileNames( int tile ) {
 		switch (tile) {
-		case Terrain.WATER:
-			return "Suspiciously colored liquid";
-		case Terrain.GRASS:
-			return "Embermoss";
-		case Terrain.HIGH_GRASS:
-			return "Emberfungi";
-		case Terrain.STATUE:
-		case Terrain.STATUE_SP:
-			return "Pillar";
+            case Terrain.WATER:
+                return "异色液体";
+            case Terrain.GRASS:
+                return "余烬地苔";
+            case Terrain.HIGH_GRASS:
+                return "余烬菌菇";
+            case Terrain.STATUE:
+            case Terrain.STATUE_SP:
+                return "梁柱";
 		default:
 			return Level.tileNames(tile);
 		}
@@ -231,24 +231,24 @@ public class HallsLevel extends RegularLevel {
 	public static String tileDescs(int tile) {
 		switch (tile) {
             case Terrain.WATER:
-                return "Something tells you that it isn't actually water, but it works the same.";
+                return "不知为何，尽管看起来完全不像，但你认为它基本上就是水。";
             case Terrain.WALL_DECO:
-                return "There is an candle hanging on this wall. It burns with unnatural green flame.";
+                return "这面墙上嵌着一根燃烧的蜡烛，其上闪烁着非自然的绿焰。";
             case Terrain.WALL_DECO1:
-                return "A menacing skull made from stone decorates this wall panel. Spooky!";
+                return "一颗骇人的石制头骨装点着这面墙壁。还怪吓人的！";
             case Terrain.WALL_DECO2:
-                return "A some kind of weird eye is engraved on this wall panel. Weird.";
+                return "墙上雕了某种怪异的眼睛。蛮诡异的。";
             case Terrain.WALL_DECO3:
             case Terrain.WALL_DECO4:
             case Terrain.WALL_DECO5:
-                return "There is a window of stained glass in this wall. It doesn't looks breakable";
+                return "这面墙上有面彩色玻璃，不过看起来没法打碎。";
             case Terrain.STATUE:
             case Terrain.STATUE_SP:
-                return "The pillar is made of real humanoid skulls. Awesome.";
+                return "这个柱子由类人生物头骨垒成。酷毙了。";
             case Terrain.BOOKSHELF:
-                return "Books in ancient languages smoulder in the bookshelf. May it contain something useful?";
+                return "用远古语言写就的书籍堆积在书架里。里面究竟埋藏着何种秘密？";
             case Terrain.SHELF_EMPTY:
-                return "Books in ancient languages smoulder in the bookshelf.";
+                return "用远古语言写就的书籍堆积在书架里。";
             default:
                 return Level.tileDescs(tile);
 		}

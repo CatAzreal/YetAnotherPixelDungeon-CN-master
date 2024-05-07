@@ -27,45 +27,45 @@ import com.consideredhamster.yapdcn.visuals.windows.WndMessage;
 
 public class Sign {
 
-	private static final String TXT_DEAD_END = 
-		"What are you doing here?!";
+	private static final String TXT_DEAD_END =
+			"你来这里是要做些什么？";
 	
 	private static final String[] TIPS = {
 
-            "By the orders of the King, the city's sewers are temporarily closed for the general public due to the recent reports. Enter at your own risk!",
-            "The sewer personnel are recommended to keep their lantern alight at all times. Otherwise, some passages may be difficult to find.",
-            "Due to the increasing numbers of criminal activity and gnoll infestation reports, the personnel is advised to stay armed at all times.",
-            "Addressing the recent requests, the sewer administration have installed sources of clean drinkable water in the sewers. Stay hydrated!",
-            "The sewer management reminds our personnel that any reports of giant hostile crab sightings are completely absurd and obviously false.",
-            "Caution! Further floors are locked by the King's decree. Security systems have been installed to prevent unauthorized access.",
+            "国王敕令，本城下水道因近期状况报告而向公众暂时关闭。进入者后果自负！",
+            "下水道维护人员应时刻照亮自己的油灯。许多线路很难在缺乏光照的状态下找到。",
+            "由于日益增长的犯罪与豺狼人侵入报告，相关人员应时刻携带武装保护自身。",
+            "应近期要求，市政部门在下水道各处安装了净水水源。切记时刻保持身体水分！",
+            "市政部门温馨提示：任何关于下水道处目击巨型螃蟹生物的报告都是虚假且不切实际的",
+            "警告！国王已敕令封锁后续通路。配备的安全系统将阻止任何未授权的访问。",
 
-            "hello there! feel free to visit me anytime.",
-			"don't you think spiders are cute? and giant spiders are even cuter!",
-			"sorry for all the gnolls here, they asked REALLY nicely to let them pass",
-            "you may meet some of my friends here. don't be afraid, they just want to play!",
-            "you're almost there! just a little further... hahaha!",
-            "welcome to my playground! ready to have some fun?",
+            "嗨。你好！欢迎随时下来找我哦。",
+			"你不觉得蜘蛛看起来很可爱吗？巨型蜘蛛更可爱哦！",
+			"这里豺狼人有点多，不好意思哈，它们当初求了我好久我才放进来的",
+            "你可以在这见见我的朋友们，别害怕，他们只是来玩的！",
+            "你就快到了！再往下走一点点就到...哈哈哈哈！",
+            "欢迎来到我的游乐场！准备好找点乐子了吗？",
 
-            "HOOMANZ GO AWAY OR BE FOOD",
-            "EYE SEE U",
-            "HERE BE SKORPOS",
-            "GNOLZ STRONK",
-            "DWORFS GO AWAY GNOLLZ ROOL HEER NOW",
-            "Welcome to the Dwarven Metropolis! Outsiders aren't welcome.",
+            "虾米滚，不滚吃虾米",
+            "俺瞅见你了",
+            "这有蝎汁",
+            "豺囊壮，豺囊强",
+            "矮子滚，这豺囊说了算",
+            "欢迎*来到矮人都城！\n*不欢迎任何外来者。",
 
-            "Upper City",
-            "Marketplace",
-            "Industrial Quarters",
-            "Army Quarters",
-            "Palace Square",
-            "Throne Room",
+            "上城区",
+            "市集",
+            "工坊区",
+            "军备区",
+            "宫殿广场",
+            "王座",
 
-            "Royal Treasury",
+            "皇室宝库",
 
-            "Abandon hope ye who enter here.",
-            "One day, we shall escape.",
-            "Our reign will be glorious.",
-            "Nothing can stop us.",
+            "汝外来者当放弃一切希望",
+            "终有一日吾辈将脱离桎梏",
+            "吾之治下将再现圣世",
+            "吾之威势必无人可挡",
 
             "",
 
@@ -81,7 +81,7 @@ public class Sign {
 	};
 	
 	private static final String TXT_NOMESSAGE =
-		"Whatever was written here is incomprehensible.";
+		"不管这里曾写过什么，上面留下的印记已完全不可解读。";
 	
 //	public static void read( int pos ) {
 	public static void read() {

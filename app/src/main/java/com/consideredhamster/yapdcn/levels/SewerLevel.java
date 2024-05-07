@@ -172,21 +172,21 @@ public class SewerLevel extends RegularLevel {
 //	@Override
 	public static String tileDescs(int tile) {
 		switch (tile) {
-            case Terrain.EMPTY_DECO:
-                return "Wet yellowish moss covers the floor.";
+			case Terrain.EMPTY_DECO:
+				return "潮湿且发黄的苔藓覆盖其上。";
             case Terrain.WALL_DECO:
             case Terrain.WALL_DECO1:
-                return "There is a drain built into this wall. It is too small for you to go through.";
+                return "这面墙上有个排水口，不过很明显它的大小并不允许你钻进去。";
             case Terrain.WALL_DECO2:
-                return "There is a ventilation vent here. Nice to feel some fresh air from time to time.";
+                return "这里有一个通风口，偶尔呼吸到地上的新鲜空气还是挺不错的。";
             case Terrain.WALL_DECO3:
             case Terrain.WALL_DECO4:
             case Terrain.WALL_DECO5:
-                return "Wet greenish moss covers the wall.";
-            case Terrain.BOOKSHELF:
-			return "The bookshelf is packed with some mouldy books. Maybe there would be something useful in here?";
-        case Terrain.SHELF_EMPTY:
-            return "The bookshelf is packed with some mouldy books.";
+                return "潮湿且发绿的苔藓覆盖在墙面上。";
+			case Terrain.BOOKSHELF:
+				return "这个书架上尽是些脏污的书籍。里面会不会藏着些用得上的东西？";
+			case Terrain.SHELF_EMPTY:
+				return "这个书架上尽是些脏污的书籍。";
 		default:
 			return Level.tileDescs(tile);
 		}

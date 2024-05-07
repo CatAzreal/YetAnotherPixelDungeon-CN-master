@@ -45,8 +45,8 @@ public class SewerCrab extends MobHealthy {
 
          */
 
-        name = "sewer crab";
-        info = "Fast movement";
+        name = "水道巨蟹";
+        info = "高速移动";
 
         spriteClass = CrabSprite.class;
 		
@@ -76,7 +76,6 @@ public class SewerCrab extends MobHealthy {
 //			"They are extremely fast and their thick exoskeleton can withstand " +
 //			"heavy blows.";
 
-        return "These huge crabs are at the top of the food chain in the sewers. Despite the " +
-                "thickness of their carapaces, they can move very fast if they want to.";
+        return "这些巨大的螃蟹位于下水道食物链的顶端。尽管身上甲壳很厚，但这并不妨碍它们的灵活和机动性。";
 	}
 }

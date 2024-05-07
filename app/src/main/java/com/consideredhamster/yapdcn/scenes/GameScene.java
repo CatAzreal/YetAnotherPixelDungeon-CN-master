@@ -89,11 +89,11 @@ public class GameScene extends PixelScene {
 	private static final String TXT_WATER	= "水花的冲刷声围绕着本层。";
 	private static final String TXT_GRASS	= "空气中弥漫着浓郁的植物清香。";
 	private static final String TXT_TRAPS	= "本层的气氛似乎暗示着其下隐藏的众多秘密。";
-	private static final String TXT_ASHES   = "A smell of ashes fills your mouth. Not a good smell.";
-	private static final String TXT_SWARM	= "By the sound of it, this floor is heavily guarded. Better be careful.";
-	private static final String TXT_BOOKS	= "Dust is floating in the air. This floor seems to be a warehouse.";
+	private static final String TXT_ASHES   = "余烬的气味涌入了你的口腔，这滋味实在谈不上好受。";
+	private static final String TXT_SWARM	= "这层密集的脚步声意味着其中必有重兵把守，最好多加小心。";
+	private static final String TXT_BOOKS	= "脚步荡起了地面上的积灰，这一层想必是个仓储区。";
 
-	private static final String TXT_BAMBOOZLE	= "It looks like you somehow ended up on the same floor!";
+	private static final String TXT_BAMBOOZLE	= "看起来你跳回了同一层楼！";
 	
 	static GameScene scene;
 	
@@ -424,8 +424,9 @@ public class GameScene extends PixelScene {
     public void addMobSprite( Mob mob ) {
         CharSprite sprite = mob.sprite();
 		sprite.visible = Dungeon.hero.canSeeTarget( mob );
-        mobs.add( sprite );
+		//For whatever reason IDE wants to paint this red because of indentation, had to move it down a line
         sprite.link( mob );
+		mobs.add( sprite );
         mob.updateSpriteState();
     }
 	

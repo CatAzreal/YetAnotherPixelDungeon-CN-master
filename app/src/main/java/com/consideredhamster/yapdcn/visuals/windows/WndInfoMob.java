@@ -22,6 +22,7 @@ package com.consideredhamster.yapdcn.visuals.windows;
 
 import com.consideredhamster.yapdcn.Dungeon;
 import com.consideredhamster.yapdcn.Element;
+import com.consideredhamster.yapdcn.misc.utils.GLog;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.ui.Component;
@@ -49,7 +50,7 @@ public class WndInfoMob extends WndTitledMessage {
 		StringBuilder builder = new StringBuilder( ( mob.friendly || mob.hostile ? "\n\n" + stats( mob ) : "" ) );
 		
 		builder.append( "\n" + mob.description() );
-		builder.append( "\n\n" + ( Bestiary.isBoss( mob ) ? "The " : "This " ) + mob.name + " is " + mob.state.status() + "." );
+		builder.append( "\n\n" + ( "这个" ) + mob.name + "正在" + mob.state.status() + "。" );
 
 		return builder.toString();
 	}
@@ -64,14 +65,14 @@ public class WndInfoMob extends WndTitledMessage {
 		int heroAccuracy = Dungeon.hero.accuracy() * 2;
 		int dodgeChance = 100 - ( heroAccuracy * 100 / ( heroAccuracy + mob.dexterity() ) );
 
-		stats.append( "Mob health: _" + mob.HP + "/" + mob.HT + " HP (" + mob.armorClass() + " AC)_\n" );
-		stats.append( "Base damage: _" + mob.minDamage() + "-" + mob.maxDamage() + " (" +
-				( ( mob.minDamage() + mob.maxDamage() ) / 2 ) + " on avg.)_\n" );
+		stats.append( "生命值: _" + mob.HP + "/" + mob.HT + " HP (护甲等级：" + mob.armorClass() + ")_\n" );
+		stats.append( "基础伤害: _" + mob.minDamage() + "-" + mob.maxDamage() + " (平均值" +
+				( ( mob.minDamage() + mob.maxDamage() ) / 2 ) + ")_\n" );
 
 //        stats.append( "\n" );
 
-		stats.append( "Accuracy: _" + mob.accuracy() + " ("+ hitChance +"% to hit)_\n" );
-		stats.append( "Dexterity: _" + mob.dexterity() + " ("+ dodgeChance +"% to dodge)_\n" );
+		stats.append( "命中: _" + mob.accuracy() + " (命中率"+ hitChance +"%)_\n" );
+		stats.append( "敏捷: _" + mob.dexterity() + " (闪避率"+ dodgeChance +"%)_\n" );
 
 //        stats.append( "\n" );
 
@@ -97,46 +98,82 @@ public class WndInfoMob extends WndTitledMessage {
 		if( !immunity.isEmpty() ){
 
 			StringBuilder imm = new StringBuilder(  );
-			imm.append( immunity.remove(0));
+			imm.append( buffTranslation(immunity.remove(0)));
 
 			for( String s : immunity ) {
 				imm.append( ", ");
-				imm.append( s );
+				imm.append( buffTranslation(s) );
 			}
 
-			stats.append( "Immune to: _" + imm.toString() + "_\n" );
+			stats.append( "免疫: _" + imm + "_\n" );
 		}
 		if( !resistant.isEmpty() ){
 
 			StringBuilder res = new StringBuilder(  );
-			res.append( resistant.remove(0));
+			res.append( buffTranslation(resistant.remove(0)));
 
 			for( String s : resistant ) {
 				res.append( ", ");
-				res.append( s );
+				res.append( buffTranslation(s) );
 			}
 
-			stats.append( "Resistant to: _" + res.toString() + "_\n" );
+			stats.append( "抗性: _" + res + "_\n" );
 		}
 
 		if( !vulnerable.isEmpty() ){
 
 			StringBuilder vul = new StringBuilder(  );
-			vul.append( vulnerable.remove(0));
+			vul.append( buffTranslation(vulnerable.remove(0)));
 
 			for( String s : vulnerable ) {
 				vul.append( ", ");
-				vul.append( s );
+				vul.append( buffTranslation(s) );
 			}
 
-			stats.append( "Vulnerable to: _" + vul.toString() + "_\n" );
+			stats.append( "弱点: _" + vul.toString() + "_\n" );
 		}
 
-		stats.append( "Special: _" + mob.info + "_\n" );
+		stats.append( "特殊信息: _" + mob.info + "_\n" );
 
 		return stats.toString();
 	}
-	
+
+	private static String buffTranslation(String className){
+		String insensitiveString = className.toLowerCase();
+		insensitiveString = insensitiveString.replaceAll("\\s+","");
+		switch (insensitiveString){
+			case "physical":
+				return "物理";
+			case "explosion":
+				return "爆炸";
+			case "knockback":
+				return "击退";
+			case "ensnaring":
+				return "束缚";
+			case "flame":
+				return "火焰";
+			case "acid":
+				return "腐蚀";
+			case "shock":
+				return "电击";
+			case "mind":
+				return "精神";
+			case "body":
+				return "体格";
+			case "dispel":
+				return "驱散";
+			case "frost":
+				return "冰霜";
+			case "energy":
+				return "能量";
+			case "unholy":
+				return "邪恶";
+			case "doom":
+				return "毁灭";
+		}
+		return className;
+	}
+
 	private static class MobTitle extends Component {
 		
 		private static final int GAP	= 2;

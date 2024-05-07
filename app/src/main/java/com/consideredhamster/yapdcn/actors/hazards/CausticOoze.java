@@ -54,7 +54,7 @@ public class CausticOoze extends Hazard {
 
     @Override
     public String desc() {
-        return "There is a pool of corrosive liquid here.";
+        return "此处有一潭腐蚀性极强的液体。";
     };
 
     public void setValues( int pos, int duration ) {

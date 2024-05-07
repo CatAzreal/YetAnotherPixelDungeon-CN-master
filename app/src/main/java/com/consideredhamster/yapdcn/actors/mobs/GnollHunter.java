@@ -54,8 +54,8 @@ public class GnollHunter extends MobRanged {
 
          */
 
-		name = "gnoll hunter";
-		info = "Spear throw";
+		name = "豺狼猎手";
+		info = "标枪投掷";
 
 		spriteClass = GnollSprite.class;
 
@@ -108,8 +108,7 @@ public class GnollHunter extends MobRanged {
 	@Override
 	public String description() {
 
-        return "Gnolls are hyena-like humanoids. Curiously, they are very rarely observed so " +
-                "close to a human settlements, preferring to dwell somewhere in wilderness.";
+        return "豺狼人是有着土狼模样的人形生物。说来奇怪，它们很少被发现有如此接近人类居住点的行为，而更喜欢到荒郊野外栖身。";
 	}
 
 }

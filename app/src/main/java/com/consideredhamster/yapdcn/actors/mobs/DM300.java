@@ -80,7 +80,7 @@ public class DM300 extends MobHealthy {
         armorClass *= 2; // and yes, we multiply it back
 
         name = Dungeon.depth == Statistics.deepestFloor ? "DM-300" : "DM-400";
-        info = "Boss enemy!";
+        info = "头目!";
         spriteClass = DM300Sprite.class;
 
         loot = Gold.class;
@@ -136,9 +136,9 @@ public class DM300 extends MobHealthy {
 
         if( buff instanceof Enraged && isAlive() ) {
 
-            yell( "STATUS: REPAIR REQUIRED" );
-            yell( "REQUESTING ADDITIONAL SUPPORT" );
-            GLog.i("DM-300 is not enraged anymore.");
+            yell( "状态自检: 维修-需要" );
+            yell( "增援-额外-请求中" );
+            GLog.i("DM-300不再处于暴走状态。");
 
             summonAdds();
             clearMarks();
@@ -163,9 +163,9 @@ public class DM300 extends MobHealthy {
             BuffActive.add(this, Enraged.class, Random.Int( 8, 12 ) * 2.0f );
 
             if (Dungeon.visible[pos]) {
-                yell( "TARGET STATUS: STILL ALIVE" );
-                yell( "INITIATING DEMOLITION PROTOCOL" );
-                GLog.n( "DM-300 is enraged!" );
+                yell( "目标状态：仍在-存活" );
+                yell( "协议-毁灭-初始化" );
+                GLog.n( "DM-300进入暴走状态！" );
             }
 
             sprite.idle();
@@ -296,8 +296,8 @@ public class DM300 extends MobHealthy {
                     lastMark = BossWarning.VAR_SHOCK;
                     Dungeon.hero.interrupt();
 
-                    yell( "TARGET STATUS: CLOSE RANGE" );
-                    yell( "INITIATING DISCHARGE PROTOCOL" );
+                    yell( "目标状态：距离-短程" );
+                    yell( "协议-放电-初始化" );
 
                     spend( TICK );
                     return true;
@@ -312,8 +312,8 @@ public class DM300 extends MobHealthy {
                     lastMark = BossWarning.VAR_CHARGE;
                     Dungeon.hero.interrupt();
 
-                    yell( "TARGET STATUS: MEDIUM RANGE" );
-                    yell( "INITIATING TRAMPLING PROTOCOL" );
+                    yell( "目标状态：距离-中程" );
+                    yell( "协议-碾轧-初始化" );
 
                     spend( TICK );
                     return true;
@@ -336,8 +336,8 @@ public class DM300 extends MobHealthy {
                     lastMark = BossWarning.VAR_LASER;
                     Dungeon.hero.interrupt();
 
-                    yell( "TARGET STATUS: DISTANT RANGE" );
-                    yell( "INITIATING BEAMCUTTING PROTOCOL" );
+                    yell( "目标状态：距离-长程" );
+                    yell( "协议-激光切割-初始化" );
 
                     spend( TICK );
                     return true;
@@ -352,8 +352,8 @@ public class DM300 extends MobHealthy {
 	@Override
 	public void die( Object cause, Element dmg ) {
 
-        yell( "StATUs: CRiTIcAL" );
-        yell( "SHuTtiNg downnn..." );
+        yell( "状态辎捡: 危危危急脊辑" );
+        yell( "关关关闭中十丨..." );
 
         clearMarks();
 
@@ -376,17 +376,15 @@ public class DM300 extends MobHealthy {
 	public void notice() {
 		super.notice();
         if( enemySeen && HP == HT && breaks == 0 ) {
-            yell("UNAUTHORIZED PERSONNEL DETECTED");
-            yell("INITIATING DEFENSE PROTOCOL");
+            yell("检测-未授权人员-发现");
+            yell("协议-自卫-初始化");
         }
 	}
 	
 	@Override
 	public String description() {
 		return
-			"This machine was created by the Dwarves several centuries ago. Later, Dwarves started to replace machines with " +
-			"golems, elementals and even demons. Eventually it led their civilization to the decline. The DM-300 and similar " +
-			"machines were typically used for construction and mining, and in some cases, for city defense.";
+                "这些机器是矮人数世纪前的造物。此后，矮人文明逐渐用各类魔像，元素生物乃至恶魔造物取代了这些机器，并由此走向衰败。DM-300以及其类似的型号通常被用于建造或采矿用途，有时也会用于守卫都城。";
 	}
 
     private static final String BREAKS	= "breaks";

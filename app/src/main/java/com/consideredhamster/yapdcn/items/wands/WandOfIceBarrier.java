@@ -118,9 +118,7 @@ public class WandOfIceBarrier extends WandUtility {
 	@Override
 	public String desc() {
 		return 
-			"A single zap from this rime-covered wand will attempt to create a short wall of ice " +
-            "on the targeted spot. If the targeted tiles are occupied by someone,  it will instead " +
-            "chill them to the bones. Effect of this wand is stronger when used on water tiles.";
+			"这根被寒霜覆盖着的法杖能使施法者在指定地块周围凭空创造一面冰墙。如果目标地块有其他单位，则对其造成冰冻伤害。该效果在水面上效果更强。";
 	}
 
 //    private static class SecondaryListener implements CellSelector.Listener {
@@ -296,9 +294,7 @@ public class WandOfIceBarrier extends WandUtility {
 
         @Override
         public String description() {
-            return "This ice block was created by your wand of Ice Barrier. It slowly melts, " +
-                    "and can also be broken if damaged enough. You also can dispel the block " +
-                    "by interacting with it while holding your wand.";
+            return "这块冰墙是由你的冰壁法杖生成的。它正在逐渐融化，也会被攻击破坏。在装备法杖的状态下与其交互可以直接驱散冰墙。";
         }
     }
 }

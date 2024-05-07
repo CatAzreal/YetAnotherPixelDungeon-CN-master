@@ -54,8 +54,8 @@ public class FireDrake extends MobPrecise {
 
          */
 
-        name = "fire drake";
-        info = "Flying, Fire breath, Fiery death";
+        name = "小火龙";
+        info = "飞行, 火焰吐息, 死亡火爆";
 
         spriteClass = FireDrakeSprite.class;
 
@@ -131,9 +131,7 @@ public class FireDrake extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"Drakes of different kinds had roamed the deeper bowels of this world long before " +
-            "dwarves domesticated them. Fire drakes are the most common variety, able to fly and " +
-            "belch fire to protect their bearded masters.";
+			"早在矮人试图训化它们前，各类小型龙种就已经在世界底端四处横行。小火龙是其中最常见地族类，可以飞行的同时还会想敌人喷吐火焰来保护它们留着长须的主子。";
 	}
 
 }

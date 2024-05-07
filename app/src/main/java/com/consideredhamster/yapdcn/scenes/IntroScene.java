@@ -26,12 +26,10 @@ import com.consideredhamster.yapdcn.visuals.windows.WndStory;
 public class IntroScene extends PixelScene {
 
 	private static final String TEXT = 	
-		"Many heroes of all kinds ventured into the Dungeon before you. Some of them have returned with treasures and magical " +
-		"artifacts, most have never been heard of since. But none have succeeded in retrieving the Amulet of Yendor, " +
-		"which is told to be hidden in the depths of the Dungeon.\n\n" +
+		"在你之前，也曾经有很多来自地面的英雄向这个地牢进发，然而多数人却是一去不返。更是从未有人成功取得传说中埋藏在地牢深处的Yendor护符。\n\n" +
 		"" +
-		"You consider yourself ready for the challenge, but most importantly, you feel that fortune smiles on you. " +
-		"It's time to start your own adventure!";
+		"你认为自己准备好了，更重要的是，你认为命运女神在向你微笑。" +
+		"是时候开始你的冒险了！";
 	
 	@Override
 	public void create() {

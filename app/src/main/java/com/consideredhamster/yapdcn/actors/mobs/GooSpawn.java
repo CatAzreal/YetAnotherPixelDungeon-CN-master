@@ -55,8 +55,8 @@ public class GooSpawn extends MobEvasive {
 
         super( 2, 3, false );
 
-        name = "spawn of Goo";
-        info = "Magical, Splitting";
+        name = "粘咕分裂体";
+        info = "法术造物, 自我分裂";
 
         spriteClass = GooSprite.SpawnSprite.class;
 
@@ -141,8 +141,8 @@ public class GooSpawn extends MobEvasive {
             sprite.parent.add( new AlphaTweener( sprite, 0.0f, 0.1f ) );
 
             if( Dungeon.visible[ pos ] ) {
-                mother.sprite.showStatus( CharSprite.NEGATIVE, "absorbed" );
-                GLog.n( "Goo absorbs entranced spawn, healing itself!" );
+                mother.sprite.showStatus( CharSprite.NEGATIVE, "吸收" );
+                GLog.n( "黏咕吸收了分裂体，开始自愈！" );
             }
 
             return true;
@@ -158,8 +158,8 @@ public class GooSpawn extends MobEvasive {
             sprite.idle();
 
             if( Dungeon.visible[ pos ] ){
-                sprite.showStatus( CharSprite.WARNING, "entranced" );
-                GLog.n( "A spawn of Goo became entranced - do not let them stand in the water!" );
+                sprite.showStatus( CharSprite.WARNING, "吸引" );
+                GLog.n( "一个黏咕分裂体正在变得活跃——不要让它待在水里！" );
             }
 
             spend( TICK );
@@ -222,9 +222,7 @@ public class GooSpawn extends MobEvasive {
 
     @Override
     public String description() {
-        return  "Little is known about The Goo. It's quite possible that it is not even a creature, but rather a " +
-                "conglomerate of substances from the sewers that gained some kind of rudimentary, but very evil " +
-                "sentience.";
+        return  "我们对粘咕所知甚少。它甚至很有可能不是一个生物，而是下水道表面聚集的邪恶物质得到基本智能而产生的实体。";
     }
 
     private static final String PHASE	= "phase";

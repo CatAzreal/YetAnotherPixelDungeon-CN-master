@@ -219,15 +219,15 @@ public class CavesLevel extends RegularLevel {
 	public static String tileNames( int tile ) {
 		switch (tile) {
 		case Terrain.GRASS:
-			return "Fluorescent moss";
+			return "荧光地苔";
 		case Terrain.HIGH_GRASS:
-			return "Fluorescent mushrooms";
+			return "荧光菌菇";
         case Terrain.WATER:
-            return "Freezing cold water";
+            return "冰澈水潭";
         case Terrain.STATUE:
-            return "Stalagmite";
+            return "石笋";
         case Terrain.GRATE:
-            return "Rock pile";
+            return "乱石堆";
 		default:
 			return Level.tileNames(tile);
 		}
@@ -237,30 +237,30 @@ public class CavesLevel extends RegularLevel {
 	public static String tileDescs( int tile ) {
 		switch (tile) {
             case Terrain.ENTRANCE:
-                return "The ladder leads up to the upper depth.";
+                return "通往上层的梯子。";
             case Terrain.EXIT:
-                return "The ladder leads down to the lower depth.";
+                return "通往下层的梯子。";
             case Terrain.HIGH_GRASS:
-                return "Huge mushrooms block the view.";
+                return "高耸的菌菇群阻碍了你的视线。";
             case Terrain.WALL_DECO:
-                return "A vein of some ore is visible on the wall. Gold?";
+                return "岩壁上能隐约看见金属矿脉的纹路，难道是金子？";
             case Terrain.WALL_DECO1:
-                return "This wall is adorned by several dwarven skulls.";
+                return "这面墙上嵌有数个矮人头骨装饰。";
             case Terrain.WALL_DECO2:
-                return "There is primitive tribal banner hanging here.";
+                return "这里挂着一面及其原始的部落旗帜。";
             case Terrain.WALL_DECO3:
-                return "You can just barely see a giant fossilized skull in this wall.";
+                return "你能看到墙内隐约嵌着一个大型化石头骨。";
             case Terrain.WALL_DECO4:
             case Terrain.WALL_DECO5:
-                return "These mushrooms can grow even on the walls!";
+                return "这些菌菇竟然能长在墙上！";
             case Terrain.BOOKSHELF:
-                return "Who would need a bookshelf in a cave? Better check it, anyway.";
+                return "到底会有谁需要在洞窟里摆上这么个书架？不论如何，最好去看看。";
             case Terrain.SHELF_EMPTY:
-                return "Who would need a bookshelf in a cave?";
+                return "到底会有谁需要在洞窟里摆上这么个书架？";
             case Terrain.STATUE:
-                return "A stalagmite rises from the floor of a cave.";
+                return "一只石笋从洞窟地表长出。";
             case Terrain.GRATE:
-                return "A huge pile of boulders blocks your way.";
+                return "一大堆石块挡住了你的去路。";
             default:
                 return Level.tileDescs(tile);
 		}

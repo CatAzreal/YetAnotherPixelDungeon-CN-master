@@ -38,7 +38,7 @@ public class DM100 extends MobHealthy {
         super( 4, 9, false );
 
 		name = "DM-100";
-		info = "Fast movement, Repair machine";
+		info = "高速移动, 修复伙伴";
 		spriteClass = DM100Sprite.class;
 
 		maxDamage /= 2;
@@ -122,8 +122,6 @@ public class DM100 extends MobHealthy {
 	@Override
 	public String description() {
 		return
-			"These machines were created by Dwarves several centuries ago. Later, Dwarves started to replace machines with " +
-			"golems, elementals and even demons. Eventually it led their civilization to the decline. The DM-100 and larger " +
-			"machines were typically used for construction and mining, and in some cases, for city defense.";
+				"这些机器是矮人数世纪前的造物。此后，矮人文明逐渐用各类魔像，元素生物乃至恶魔造物取代了这些机器，并由此走向衰败。DM-100以及其更大的型号通常被用于建造或采矿用途，有时也会用于守卫都城。";
 	}
 }

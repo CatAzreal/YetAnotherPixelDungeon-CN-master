@@ -78,7 +78,7 @@ public class FieryRune extends Hazard {
 
     @Override
     public String desc() {
-        return "There is a Firebrand rune placed here.";
+        return "这里刻画着一个火纹阵法。";
     };
 
     public void setValues( int pos, int strength, int duration ) {
@@ -123,7 +123,7 @@ public class FieryRune extends Hazard {
         } else {
 
             this.duration += duration;
-            GLog.w( "This rune seems to have to reached its limit already. Only duration is increased." );
+            GLog.w( "这枚火纹强度已经达到上限，只有维持时长得到了提升。" );
 
         }
 

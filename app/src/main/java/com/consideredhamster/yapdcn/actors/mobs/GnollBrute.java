@@ -58,8 +58,8 @@ public class GnollBrute extends MobPrecise {
 
          */
 
-		name = "gnoll brute";
-		info = "Enrage, Tomahawk throw";
+		name = "豺狼暴徒";
+		info = "暴怒, 飞斧投掷";
 
 		spriteClass = BruteSprite.class;
 		
@@ -131,7 +131,6 @@ public class GnollBrute extends MobPrecise {
 	@Override
 	public String description() {
 		return
-			"Brutes are the largest, strongest and toughest of all gnolls. They are dumb, " +
-            "but very ferocious fighters. They can become temporarily enraged when injured enough.";
+			"豺狼暴徒是豺狼人中体型最庞大，力量最强壮且生命力最顽强的精英。尽管智力不高，但却是非常凶猛的斗士，当豺狼暴徒承受了足够的伤害时，它会狂暴一段时间。";
 	}
 }

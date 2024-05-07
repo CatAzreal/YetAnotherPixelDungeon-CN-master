@@ -48,8 +48,8 @@ public class VampireBat extends MobEvasive {
 
          */
 
-        name = "vampire bat";
-        info = "Flying, Fast movement, Life drain";
+        name = "吸血蝙蝠";
+        info = "飞行, 高速移动, 生命吸取";
 
         spriteClass = BatSprite.class;
 
@@ -99,7 +99,6 @@ public class VampireBat extends MobEvasive {
 	@Override
 	public String description() {
 		return
-			"These brisk and tenacious inhabitants of cave domes may defeat much larger opponents by " +
-			"replenishing their health with each successful attack.";
+			"这些迅捷而顽强的洞穴生物时常击败更强大的对手，每一次成功的攻击都会补充它的生命。";
 	}
 }

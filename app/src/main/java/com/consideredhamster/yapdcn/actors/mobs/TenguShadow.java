@@ -34,8 +34,8 @@ public class TenguShadow extends MobRanged {
 
         super( 3, 6, false );
 
-        name = "shadow clone";
-        info = "Shuriken throw, Stationary";
+        name = "影分身";
+        info = "手里剑投掷, 无法移动";
 
         HT = HP /= 2;
         armorClass = 0;
@@ -81,8 +81,6 @@ public class TenguShadow extends MobRanged {
 	@Override
 	public String description() {
 		return
-			"Despite being made from shadows, this figure looks to be corporeal enough to be " +
-            "harmed by mundane means. However, it doesn't seems to be capable of anything " +
-            "beyond just standing there and throwing shurikens.";
+			"尽管是由影子构成，这些影分身看起来拥有实体并能被寻常手段击散。不过，看起来这玩意除了站定在那扔手里剑外也没什么别的能耐了。";
 	}
 }

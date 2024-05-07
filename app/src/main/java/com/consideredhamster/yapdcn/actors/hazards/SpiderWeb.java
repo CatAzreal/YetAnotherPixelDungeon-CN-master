@@ -52,7 +52,7 @@ public class SpiderWeb extends Hazard {
 
     @Override
     public String desc() {
-        return "There is a bunch of webs covering this tile.";
+        return "层层蛛网覆盖着此处。";
     };
 
     public void setValues( int pos, int duration ) {
