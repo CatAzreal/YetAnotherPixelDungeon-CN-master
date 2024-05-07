@@ -38,7 +38,7 @@ public class WndTranslateLog extends Window {
 	private static final int WIDTH_L	= 170;
 	private static final int HEIGHT_L	= 128;
 
-	private static final String TXT_TITLE	= "YAPD v0.3.3 CN v1.32 翻译声明";
+	private static final String TXT_TITLE	= "YAPD v0.3.3 CN v1.34 翻译声明";
 
     private static final String TXT_DESCR =
             "大家好！我是冰杖。\n\n " +

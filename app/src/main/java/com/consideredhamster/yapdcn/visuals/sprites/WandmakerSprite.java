@@ -21,6 +21,7 @@
 package com.consideredhamster.yapdcn.visuals.sprites;
 
 import com.consideredhamster.yapdcn.visuals.effects.Speck;
+import com.consideredhamster.yapdcn.visuals.effects.particles.ElmoParticle;
 import com.watabou.noosa.TextureFilm;
 import com.consideredhamster.yapdcn.visuals.Assets;
 import com.consideredhamster.yapdcn.actors.Char;
@@ -53,20 +54,20 @@ public class WandmakerSprite extends MobSprite {
 	public void link( Char ch ) {
 		super.link( ch );
 		
-		if (shield == null) {
-			parent.add( shield = new Shield( this ) );
-		}
+//		if (shield == null) {
+//			parent.add( shield = new Shield( this ) );
+//		}
 	}
 	
 	@Override
 	public void die() {
 		super.die();
 		
-		if (shield != null) {
-			shield.putOut();
-		}
+//		if (shield != null) {
+//			shield.putOut();
+//		}
 
-		emitter().start( Speck.factory( Speck.LIGHT ), 0.03f, 60 );
+		emitter().start( ElmoParticle.FACTORY, 0.03f, 60 );
 	}
 	
 

@@ -7,8 +7,8 @@ android {
         applicationId "com.consideredhamster.yapdcn"
         minSdkVersion 14
         targetSdkVersion 33
-        versionCode 347
-        versionName '0.3.3-cn1.32'
+        versionCode 348
+        versionName '0.3.3-cn1.34'
         archivesBaseName = "yapdcn-$versionName"
     }
 
