@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.consideredhamster.yapdcn",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 348,
+      "versionName": "0.3.3-cn1.34",
+      "outputFile": "yapdcn-0.3.3-cn1.34-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

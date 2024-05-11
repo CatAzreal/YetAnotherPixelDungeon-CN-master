@@ -24,7 +24,7 @@
 	    
 		<activity
 			android:label="@string/app_name"
-			android:name="com.consideredhamster.yapdcn.YetAnotherPixelDungeon"
+			android:name="com.consideredhamster.yapdcn.android.AndroidGame"
 			android:screenOrientation="portrait"
 			android:exported="true">
 			<intent-filter >

@@ -4,7 +4,7 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.consideredhamster.yapdcn"
+        applicationId 'com.consideredhamster.yapdcn.android'
         minSdkVersion 14
         targetSdkVersion 33
         versionCode 348
